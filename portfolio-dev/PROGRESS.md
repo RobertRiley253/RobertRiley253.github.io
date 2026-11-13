@@ -189,3 +189,10 @@ Updated: 2026-11-12 (Pacific)
 - QA workflow now ignores documentation-only Markdown and editorial CSV changes, reducing unnecessary repeated runs.
 - Remaining blockers: final visual/editorial inspection of all sections, full-resolution incoming source transfer, Safari/real-device/200% zoom/screen-reader verification, owner-approved RRR identity, individual contribution verification, and explicit release authorization.
 - No changes to `main`, existing original image bytes, source archives or publication. This branch remains a pre-release candidate.
+
+## 2026-11-13 — HQ6 expanded visual QA and Library originals recovery
+- Expanded GitHub Chromium QA to 6 widths (320, 375, 430, 768, 1024, 1440) across all 4 pages, plus simulated 200% CSS zoom on each page. **28/28 checks passed** and **72/72 images decoded successfully** in run 43414176476.
+- Fixed full-page screenshot capture by scrolling entire documents to trigger below-the-fold lazy loading, then returned to top; full desktop/mobile screenshots now show the photograph galleries instead of blank delayed-image spaces. Successful run 43414176476.
+- Recovered both original portfolio ZIPs from ChatGPT Library and inspected embedded full PNG sources for all nine recent JPEG previews. Added INCOMING_ORIGINALS_SOURCE_MANIFEST_2026-11-13.md with source paths, dimensions, sizes and SHA-256 hashes. Source originals remain protected in Library; no new binary assets uploaded to GitHub yet.
+- Prepared an Axe WCAG browser audit as another independent check; separate results pending. Do not equate responsive screenshot success with full accessibility certification.
+- No release or edit to public main, protected original photograph bytes, source archives, editorial exclusions or unapproved RRR mark.
