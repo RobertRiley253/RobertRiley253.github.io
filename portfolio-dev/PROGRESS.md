@@ -144,3 +144,10 @@ Updated: 2026-11-12 (Pacific)
 - Current source tests are not a substitute for rendered visual inspection, actual keyboard/screen reader/browser testing or full source-image appraisal. Attempted fetching GitHub raw assets into the isolated local browser environment failed, so those remain open review items.
 - The current 75% overall-completion figure is a subjective production estimate, not a test-based certification or promise of release readiness.
 - No work on separate photograph transfer; no new images imported; no changes to originals, historical designs, public site or `main`.
+
+## 2026-11-13 — HQ5 editorial readability refinement and source recheck
+- Updated only `portfolio-dev/design.css` for supported-browser balanced multiline headings and improved paragraph wrapping, preventing awkward ragged lines without modifying the actual text or photographs (commit `d80761533ea8dc1c868b9663f05ce135b9c6da08`).
+- Improved long photo-caption wrapping, viewer-title layout on narrow phones and fragment-focus scroll spacing. No new decorative elements, image crops, changed photography or rebranding.
+- Rechecked four current HTML pages and shared assets after the CSS update: 79 photo opening controls, 82 displayed original-photo placements, 63 distinct photo filenames, correct metadata for 82/82 photograph instances, 0 duplicated page IDs, 0 broken local/cross-page fragment links, all four `noindex,nofollow` safeguards present, and no missing alt attributes on displayed images. CSS source braces balanced.
+- These are source-level checks only. Browser rendering, image perception, performance, keyboard/screen-reader execution and device testing remain outstanding. Do not call the candidate approved or finished.
+- Preserve photograph-transfer separation; unchanged public `main`, original images, other source pages, and unapproved RRR branding.
