@@ -41,3 +41,8 @@ The original 63-photo static checks above describe the preserved baseline, not t
 - No browser-rendered screenshot or live interaction certification; need actual device visual checks, contrast and accessibility review, final choice of preview vs full-resolution originals, accurate individual contribution verification, branding decision and owner's full approval before release.
 - Prior curation excludes Wildwood (#46 incoming); the image remains preserved in the incoming archive but has **not** been introduced into the final candidate.
 - Public website, `main` and original image files remain unchanged.
+
+## 2026-11-13 — HQ6 preview provenance and source integrity check
+- Identified the nine development-only incoming JPEG previews individually with `preview-card` styling and descriptive "View JPEG preview" accessible controls (2 on Selected Work, 7 on Production); added a restrained visual JPEG PREVIEW identifier via CSS. These are still compressed preview files, **not** full-resolution archival originals.
+- Re-fetched all four current development HTML pages after commits. Confirmed 72 distinct `data-image` identifiers (1–72) represented, nine integrated preview identifiers (64–72), zero duplicate HTML IDs, and zero unresolved tested local or cross-page fragment targets.
+- All four pages retain `noindex,nofollow`; public `main` not targeted. This is a structural/source-level review. Browser rendering, actual image loading, mobile touch, contrast and assistive technology testing remain pending.
