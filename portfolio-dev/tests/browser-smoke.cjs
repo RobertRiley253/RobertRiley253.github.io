@@ -10,7 +10,7 @@ const path = require('node:path');
   const report = { timestamp: new Date().toISOString(), branch: process.env.GITHUB_REF_NAME || 'local', pages: [], failures: [] };
   const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:8765/portfolio-dev/';
   const pages = ['index.html', 'work.html', 'production.html', 'profile.html'];
-  const viewports = [{ name: 'desktop', width: 1440, height: 900 }, { name: 'mobile', width: 375, height: 812 }, { name: 'small-phone', width: 320, height: 720 }];
+  const viewports = [{ name: 'desktop', width: 1440, height: 900 }, { name: 'laptop', width: 1024, height: 768 }, { name: 'tablet', width: 768, height: 900 }, { name: 'large-phone', width: 430, height: 932 }, { name: 'mobile', width: 375, height: 812 }, { name: 'small-phone', width: 320, height: 720 }];
   for (const viewport of viewports) {
     const page = await browser.newPage({ viewport, deviceScaleFactor: 1, reducedMotion: 'reduce' });
     for (const name of pages) {
@@ -33,9 +33,16 @@ const path = require('node:path');
         result.observations = observations;
         if (observations.h1 !== 1) throw new Error('Expected exactly one main heading');
         if (!observations.noindex) throw new Error('Missing noindex meta');
+        const brokenAnchors = await page.evaluate(() => [...document.querySelectorAll('a[href^="#"]')]
+          .filter(a => a.getAttribute('href').length > 1 && !document.getElementById(decodeURIComponent(a.getAttribute('href').slice(1))))
+          .map(a => a.getAttribute('href')));
+        if (brokenAnchors.length) throw new Error('Broken same-page anchor(s): ' + brokenAnchors.join(', '));
         if (observations.missingAlts || observations.duplicateIds) throw new Error('Missing alt text or duplicate IDs');
         if (observations.scrollWidth > viewport.width + 2) throw new Error('Horizontal overflow ' + observations.scrollWidth + 'px at ' + viewport.width + 'px; elements=' + JSON.stringify(observations.overflowElements));
         await page.screenshot({ path: path.join(output, id + '.png'), animations: 'disabled', timeout: 25000 });
+        if (['desktop','mobile'].includes(viewport.name)) {
+          await page.screenshot({ path: path.join(output, id + '-full.png'), fullPage: true, animations: 'disabled', timeout: 45000 });
+        }
         const first = page.locator('[data-image]').first();
         if (await first.count()) {
           await first.scrollIntoViewIfNeeded();
@@ -64,6 +71,11 @@ const path = require('node:path');
           await page.keyboard.press('Escape');
           if (await dialog.evaluate(node => node.open)) throw new Error('Escape failed to close viewer');
         }
+        // Navigation should lead to another actual page, not simply show a styled label.
+        const navLinks = await page.locator('.nav a').count();
+        if (navLinks !== 4) throw new Error('Expected exactly four navigable main sections, got ' + navLinks);
+        const current = page.locator('.nav a[aria-current="page"]');
+        if (await current.count() !== 1) throw new Error('Missing or repeated current-page navigation marker');
         if (name === 'work.html') {
           const archive = page.locator('details.related-archive').first();
           if (await archive.count()) {
@@ -79,6 +91,27 @@ const path = require('node:path');
       }
       report.pages.push(result);
       console.log((result.ok ? 'PASS ' : 'FAIL ') + id + (result.error ? ' — ' + result.error : ''));
+    }
+    await page.close();
+  }
+  // 200% browser-layout simulation: CSS zoom exercises text, buttons and layout together.
+  // This is not a substitute for human screen magnification / native browser zoom review.
+  for (const name of pages) {
+    const page = await browser.newPage({ viewport: { width: 768, height: 900 }, reducedMotion: 'reduce' });
+    const id = name.replace('.html','') + '-zoom200';
+    try {
+      await page.goto(base + name, { waitUntil: 'domcontentloaded', timeout: 25000 });
+      await page.evaluate(() => { document.documentElement.style.zoom = '2'; });
+      await page.waitForTimeout(125);
+      const dims = await page.evaluate(() => ({ windowWidth: innerWidth, documentWidth: document.documentElement.scrollWidth, hasHorizontalOverflow: document.documentElement.scrollWidth > document.documentElement.clientWidth + 2 }));
+      if (dims.hasHorizontalOverflow) throw Error('Horizontal overflow at 200% zoom: ' + JSON.stringify(dims));
+      await page.screenshot({ path: path.join(output, id + '.png'), animations: 'disabled', timeout: 25000 });
+      report.pages.push({ name, viewport: 'zoom200', ok: true, observations: dims });
+      console.log('PASS ' + id);
+    } catch(error) {
+      report.pages.push({ name, viewport: 'zoom200', ok: false, error: String(error.message || error) });
+      report.failures.push(id + ': ' + String(error.message || error));
+      console.log('FAIL ' + id + ' — ' + String(error.message || error));
     }
     await page.close();
   }
