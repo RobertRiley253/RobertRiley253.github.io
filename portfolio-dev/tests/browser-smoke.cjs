@@ -44,6 +44,16 @@ const path = require('node:path');
           await page.waitForFunction(() => [...document.querySelectorAll('.image-card img')]
             .filter(img => { const r = img.getBoundingClientRect(); return r.bottom > -100 && r.top < innerHeight + 100; })
             .every(img => img.complete && img.naturalWidth > 0), null, { timeout: 20000 });
+          result.galleryImageState = await first.locator('img').first().evaluate(img => {
+            const css = getComputedStyle(img);
+            const rect = img.getBoundingClientRect();
+            return { complete: img.complete, naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight,
+              hidden: img.hidden, display: css.display, visibility: css.visibility, opacity: css.opacity,
+              rectWidth: Math.round(rect.width), rectHeight: Math.round(rect.height),
+              fallback: !!img.closest('.image-wrap')?.querySelector('.image-unavailable') };
+          });
+          // Give Chromium one paint opportunity after decode before capturing gallery imagery.
+          await page.waitForTimeout(250);
           await page.screenshot({ path: path.join(output, id + '-gallery.png'), animations: 'disabled', timeout: 25000 });
           await first.click({ timeout: 12000 });
           const dialog = page.locator('dialog#lightbox');
