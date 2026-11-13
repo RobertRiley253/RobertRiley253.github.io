@@ -94,3 +94,30 @@ html{scroll-padding-top:105px}
 .evidence-items p{font-size:14px;color:#4b6655;line-height:1.7}
 @media(max-width:1100px){.masthead-inner{grid-template-columns:1fr}.masthead-art{padding:0}.hero-composition{min-height:350px;max-width:870px}.hero-lead{min-height:350px}.hero-lead img{max-height:350px}}
 @media(max-width:700px){.hero-composition{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;min-height:0}.hero-lead{grid-row:1;grid-column:1/-1;min-height:180px}.hero-lead img{max-height:280px}.hero-vehicle,.hero-print{min-height:170px}.hero-vehicle img,.hero-print img{max-height:150px}.hero-frame span{font-size:9px}.evidence-items{grid-template-columns:1fr;gap:0}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions>*{width:100%;justify-content:center}.masthead-art{margin-top:5px}}
+
+/* Consistent journey navigation, curated discovery, and tasteful signmaking accents. */
+.journey-map{max-width:var(--max);margin:auto;padding:16px clamp(20px,4vw,72px);background:#e6e8df;border-bottom:1px solid #a8b4a8;display:grid;grid-template-columns:minmax(120px,1fr) minmax(0,4fr);gap:22px;align-items:center}
+.journey-title{color:#3e6551;letter-spacing:.13em;font-size:11px;font-weight:800}
+.journey-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.journey-steps a{display:flex;align-items:center;gap:9px;border:1px solid #bacabb;background:#f7f8f2;min-height:48px;padding:10px 12px;text-decoration:none;border-radius:4px;font-size:13px;font-weight:700;line-height:1.35}
+.journey-number{font-size:12px;font-weight:800;color:#52705b}
+.journey-steps a[aria-current="step"]{background:var(--forest);color:#fff;border-color:var(--forest)}
+.journey-steps a[aria-current="step"] .journey-number{color:#d9bc8f}
+.journey-steps a:hover:not([aria-current="step"]){border-color:#55765f;background:#e2eade}
+.discovery-links{max-width:var(--max);margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;padding:30px clamp(20px,4vw,72px) 45px;background:#e5e9df}
+.discovery-card{position:relative;border:1px solid #a7b7a5;background:#f7f6ef;padding:24px 27px;display:flex;flex-direction:column;gap:12px;text-decoration:none;min-height:164px;border-radius:5px;overflow:hidden;transition:background-color .25s ease,border-color .25s ease,transform .25s ease,box-shadow .25s ease}
+.discovery-card:before{content:"";position:absolute;inset:0;border:2px solid transparent;border-radius:4px;pointer-events:none;transition:border-color .25s ease}
+.discovery-kicker{font-size:11px;letter-spacing:.13em;color:#5c7963;font-weight:800}
+.discovery-card strong{font:normal clamp(23px,2.5vw,35px)/1.08 Georgia,serif;letter-spacing:-.025em}
+.discovery-card>span:last-child{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:14px;font-weight:650}
+.discovery-card:hover{background:#faf9f1;border-color:#b58b51;box-shadow:0 8px 25px #283b2b18;transform:translateY(-2px)}
+.discovery-card:hover:before{border-color:#c4a06a}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+ .discovery-card:hover:after,.action-button:hover:after,.category-strip a:hover:after{content:"✦";position:absolute;right:12px;top:7px;color:#c89e64;font-size:16px;animation:gold-glint .95s ease-out 1;pointer-events:none}
+ .action-button,.category-strip a{position:relative}
+ @keyframes gold-glint{0%{opacity:0;transform:scale(.55) rotate(-25deg)}45%{opacity:.9;transform:scale(1.2) rotate(20deg)}100%{opacity:0;transform:scale(.75) rotate(45deg)}}
+}
+@media(max-width:1100px){.journey-map{grid-template-columns:1fr;gap:9px}.journey-title{font-size:12px}}
+@media(max-width:700px){.journey-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-steps a{font-size:13px;min-height:52px}.discovery-links{grid-template-columns:1fr}.discovery-card{min-height:125px;padding:18px 20px}}
+@media(max-width:420px){.journey-steps a{padding:9px 7px;gap:6px}.journey-number{font-size:11px}.discovery-links{padding-top:20px}}
+@media(prefers-reduced-motion:reduce){.discovery-card{transition:none}.discovery-card:hover{transform:none}}
