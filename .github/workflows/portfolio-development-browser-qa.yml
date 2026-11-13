@@ -5,6 +5,8 @@ on:
       - portfolio-development-2026-11-12
     paths:
       - "portfolio-dev/**"
+      - "!portfolio-dev/**/*.md"
+      - "!portfolio-dev/**/*.csv"
       - ".github/workflows/portfolio-development-browser-qa.yml"
   workflow_dispatch:
 
