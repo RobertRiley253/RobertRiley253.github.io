@@ -179,3 +179,13 @@ Updated: 2026-11-12 (Pacific)
 - Adjusted base muted and eyebrow text colors for improved paper-background contrast, based on calculated WCAG contrast ratios, without changing brand palette identity or photographs. Commits e93a6733de68a2c2e87e5f2c1264f9b92dc1cc22 and 647170b7c972c3e707010abc3029455b1ff75aba.
 - Fresh source-level cross-check: four HTML pages retain noindex, 72 distinct gallery photo identifiers, nine individually labeled incoming previews and 72 metadata entries; no duplicate HTML IDs or missing image alt text; shared CSS and JavaScript brace counts balanced.
 - Original photograph files, incoming editorial manifest and public main branch remain unchanged. Browser/device visual QA and actual assistive-technology tests remain unverified; complete site and final RRR branding require explicit owner review before any release.
+
+## 2026-11-13 — Production HQ6: real Chromium breakthrough and browser-proven corrections
+- Established a GitHub Actions / Playwright browser QA pipeline in the protected development branch; this avoids the isolated ChatGPT browser's DNS restrictions and does **not** publish the portfolio. Runner pinned to Ubuntu 24.04 after debugging Playwright incompatibility with ubuntu-latest's 26.04 runner.
+- Tested actual four-page website at desktop 1440px, mobile 375px and narrow phone 320px: **12/12 page cases pass** after correcting a real 5px narrow-phone header overflow.
+- Tested browser delivery and decoding for **all 72 real photographs**: **72/72 successful**. Existing 63 source photos remain unaltered; incoming nine are still compressed development previews.
+- Visually reviewed real screenshot captures, identified and corrected desktop active-navigation contrast; captured page tops plus gallery sections at all 12 viewport/page combinations. Delayed gallery screenshots until visible lazy-loaded photos and paint complete.
+- New working evidence: https://github.com/RobertRiley253/RobertRiley253.github.io/actions/runs/43412904290 ; QA artifact with 24 screenshots and machine report: https://github.com/RobertRiley253/RobertRiley253.github.io/actions/runs/43412904290/artifacts/14030028318 .
+- QA workflow now ignores documentation-only Markdown and editorial CSV changes, reducing unnecessary repeated runs.
+- Remaining blockers: final visual/editorial inspection of all sections, full-resolution incoming source transfer, Safari/real-device/200% zoom/screen-reader verification, owner-approved RRR identity, individual contribution verification, and explicit release authorization.
+- No changes to `main`, existing original image bytes, source archives or publication. This branch remains a pre-release candidate.
