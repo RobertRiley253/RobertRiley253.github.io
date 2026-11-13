@@ -590,3 +590,10 @@ main{overflow:clip}
  .archive-more-link{padding-bottom:52px}
  .archive-more-link .action-button{width:100%}
 }
+
+/* Final assembled-gallery contrast corrections, after the dark/light art direction is applied. */
+.page-hero.dark-hero{background:var(--forest);color:#f6f4ed}
+.page-hero.dark-hero .eyebrow,.page-hero.dark-hero h1,.page-hero.dark-hero .page-hero-bottom>span{color:#f6f4ed}
+.page-hero.dark-hero .page-hero-bottom p{color:#e1e9e1}
+.closing-cover .cover-photo .image-caption .image-arrow{color:#f4f4ec;border-bottom-color:#b2c8b6}
+.closing-cover .cover-photo .image-card:hover .image-arrow,.closing-cover .cover-photo .image-card:focus-visible .image-arrow{color:#fff;border-bottom-color:#fff}
