@@ -39,6 +39,8 @@ jobs:
           exit 1
       - name: Test four pages at desktop and mobile widths
         run: node portfolio-dev/tests/browser-smoke.cjs
+      - name: Audit desktop and mobile WCAG accessibility
+        run: node portfolio-dev/tests/accessibility-audit.cjs
       - name: Save screenshots and report (development review only)
         if: always()
         uses: actions/upload-artifact@v4
