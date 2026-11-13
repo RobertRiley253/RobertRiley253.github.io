@@ -485,3 +485,34 @@ main{overflow:clip}
  .editorial-grid .image-caption,.category-grid .image-caption,.archive-grid .image-caption,.profile-image-strip .image-caption{min-height:0}
  .editorial-grid .image-card .image-wrap,.category-grid .image-card .image-wrap{padding:10px}
 }
+
+
+/* HQ5 finishing safeguards: modern viewport sizing and comfortable viewer controls.
+   These overrides are non-destructive and preserve the photographic art direction. */
+@supports (height: 100dvh) {
+  .lightbox { height: 100dvh; max-height: 100dvh; }
+}
+.lightbox {
+  overflow: hidden;
+}
+.lightbox-image {
+  min-height: 0;
+}
+.lightbox-image img {
+  min-width: 0;
+}
+.lightbox-head button:focus-visible,
+.lightbox-image button:focus-visible,
+.lightbox-foot a:focus-visible {
+  outline: 3px solid #e5b978;
+  outline-offset: 3px;
+}
+@media (max-width: 540px) {
+  .lightbox-head,
+  .lightbox-foot { padding-inline: 14px; }
+  .lightbox-image { gap: 4px; padding-inline: 4px; }
+  .lightbox-image button { min-width: 44px; padding-inline: 8px; }
+  .lightbox-image img { max-width: calc(100% - 96px); }
+  .lightbox-foot { flex-wrap: wrap; }
+  .lightbox-foot a { white-space: normal; overflow-wrap: anywhere; }
+}
