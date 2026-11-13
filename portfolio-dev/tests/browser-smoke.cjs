@@ -38,6 +38,8 @@ const path = require('node:path');
         await page.screenshot({ path: path.join(output, id + '.png'), animations: 'disabled', timeout: 25000 });
         const first = page.locator('[data-image]').first();
         if (await first.count()) {
+          await first.scrollIntoViewIfNeeded();
+          await page.screenshot({ path: path.join(output, id + '-gallery.png'), animations: 'disabled', timeout: 25000 });
           await first.click({ timeout: 12000 });
           const dialog = page.locator('dialog#lightbox');
           await dialog.waitFor({ state: 'visible', timeout: 5000 });
