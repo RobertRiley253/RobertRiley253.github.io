@@ -32,6 +32,15 @@ Status: Usability implementation and static checks performed; genuine desktop/mo
 - [ ] Confirm individual project roles and attribution before public release.
 - [ ] Validate font and image loading performance on real devices.
 
+## First-time visitor and editorial refinement
+- [x] Homepage opening now features three different verified source images across commercial signage, vehicle graphics and print.
+- [x] Primary call-to-action prominently offers the full portfolio, with a secondary production destination.
+- [x] Selected-work and production page instructions clarify browsing and enlargement.
+- [x] Experience page distinguishes completed applications, artwork/proofs and production records without unsupported individual-project role claims.
+- [x] Responsive three-image hero treatment implemented for narrow phone widths.
+- [ ] Visually compare hero compositions and reading order on actual desktop and mobile browsers.
+- [ ] Verify exact personal contributions to selected projects before adding project-specific role labels.
+
 ## Source control and release safety
 - [x] Static HTML audit: no broken local or cross-page anchor targets.
 - [x] Static audit: all photo elements carry alternative text.
