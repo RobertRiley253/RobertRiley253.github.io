@@ -1,11 +1,5 @@
 name: Portfolio development browser QA
 on:
-  push:
-    branches:
-      - portfolio-development-2026-11-12
-    paths:
-      - "portfolio-dev/**"
-      - ".github/workflows/portfolio-development-browser-qa.yml"
   workflow_dispatch:
 
 permissions:
