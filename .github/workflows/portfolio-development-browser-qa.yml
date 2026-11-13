@@ -1,12 +1,6 @@
 name: Portfolio development browser QA
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - portfolio-brand-review-signature-2026-11-13
-    paths:
-      - 'portfolio-dev/**'
-      - '.github/workflows/portfolio-development-browser-qa.yml'
 
 permissions:
   contents: read
