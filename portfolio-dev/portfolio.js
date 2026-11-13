@@ -21,7 +21,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   status.setAttribute("role","status");
   status.hidden=true;
   pic.insertAdjacentElement("afterend",status);
-  const localButtons=[prev,next,close];
+  const localButtons=[close,prev,next];
   const setStatus=(message)=>{
     status.textContent=message;
     status.hidden=!message;
