@@ -125,3 +125,12 @@ Updated: 2026-11-12 (Pacific)
 - Source-level validation after these changes: CSS and JS brace counts balanced; all four development pages retained `noindex,nofollow`; 63 unique original photograph identifiers remain referenced; previous Home/End keyboard and live position announcements remain present.
 - IMPORTANT: Direct external asset fetching in the isolated browser/container environment still fails; no rendered screenshot, real-device, network-performance, screen-reader, or pixel-level verification is claimed. These are open acceptance tests.
 - Original photography, existing publication and `main` left intact; no merge/deploy/owner approval assumed.
+
+## 2026-11-13 — HQ5 bulk quality and discoverability pass
+- Continued from the existing four-page development source and production checklists; no inventory reconstruction or additional-photo transfer in this headquarters.
+- Improved expandable supporting archives on the Work page: native summary labels now switch between **Show more photographs** and **Hide additional photographs** according to the actual open state (commit `1dcabfdcd6b7454bfbc53c2f5c19eabb9f574574`).
+- Audited all four page navigation targets: zero missing local or cross-page fragment targets; zero duplicated HTML IDs; every actual photograph `img` has alt text. Heading structures use one H1 followed by H2s on each page.
+- Independently cross-checked all 82 HTML photograph instances against the established 63-row dimensions CSV: all `width` and `height` attributes match their corresponding originals, zero mismatches.
+- Confirmed the shared JS metadata still contains 63 unique images, split 51 selected and 12 archived; no duplicated `data-image` controls within any single page; all 63 photo identifiers remain represented by the site.
+- Reviewed the published source copy for experience/production at the source level; cautious proof-versus-installation wording retained, pending owner verification of exact contributions.
+- Open acceptance gates remain: graphical desktop/mobile rendering, accessibility testing with real browsers/assistive technology, full image editorial inspection, integration of the separately transferred source photographs, final RRR identity and owner approval. **No release, public deployment or main-branch changes.**
