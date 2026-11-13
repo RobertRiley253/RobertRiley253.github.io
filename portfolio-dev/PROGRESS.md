@@ -117,3 +117,11 @@ Updated: 2026-11-12 (Pacific)
 - Updated `portfolio-dev/portfolio.js` so the full-size photograph viewer announces its position to assistive technology (`aria-live`/`aria-atomic`) and supports Home/End shortcuts to move to the first/last visible photograph. Existing left/right controls, Escape, swipe and focus restoration remain intact.
 - Change committed as `030765cf34197c3d082f58b2efa5d3a075329cb5`. Original photos, source selections, all four HTML pages and public `main` untouched.
 - This is source-level verification; actual browser, mobile touch and screen-reader interaction tests remain outstanding. No owner approval or publication implied.
+
+## 2026-11-13 — HQ5 photo-viewer resilience and small-screen finishing
+- Continued the established portfolio in place; inspected four HTML pages and shared CSS/JS without changing photographic selection, source images, historic designs or the main branch.
+- Added progressive `100dvh` support for the full-screen photo viewer to improve behavior with mobile browser chrome; tightened narrow-screen viewer controls, link wrapping, and visible keyboard focus in `design.css` (commit `6dbddf474c86150a2959b1ee6fa9115772b68afc`).
+- Added a photograph `load` handler in `portfolio.js` that restores the image and clears a previous error notice when a subsequent image loads successfully (commit `a95e0d30d033eae1db309b5a327eedff43dffe2c`).
+- Source-level validation after these changes: CSS and JS brace counts balanced; all four development pages retained `noindex,nofollow`; 63 unique original photograph identifiers remain referenced; previous Home/End keyboard and live position announcements remain present.
+- IMPORTANT: Direct external asset fetching in the isolated browser/container environment still fails; no rendered screenshot, real-device, network-performance, screen-reader, or pixel-level verification is claimed. These are open acceptance tests.
+- Original photography, existing publication and `main` left intact; no merge/deploy/owner approval assumed.
