@@ -39,6 +39,11 @@ const path = require('node:path');
         const first = page.locator('[data-image]').first();
         if (await first.count()) {
           await first.scrollIntoViewIfNeeded();
+          // Wait for the actual visible lazy-loaded gallery photographs to decode.
+          // Without this, screenshot capture races image loading and shows empty frames.
+          await page.waitForFunction(() => [...document.querySelectorAll('.image-card img')]
+            .filter(img => { const r = img.getBoundingClientRect(); return r.bottom > -100 && r.top < innerHeight + 100; })
+            .every(img => img.complete && img.naturalWidth > 0), null, { timeout: 20000 });
           await page.screenshot({ path: path.join(output, id + '-gallery.png'), animations: 'disabled', timeout: 25000 });
           await first.click({ timeout: 12000 });
           const dialog = page.locator('dialog#lightbox');
