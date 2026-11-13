@@ -38,3 +38,8 @@ Updated: 2026-11-12 (Pacific)
 - Static QA across four new pages: 63 unique numbered source images referenced; no broken local fragment targets, duplicate IDs, missing alt attributes, or missing linked CSS/JS resources. All source photo filenames present in existing `main` repository tree.
 - Private preview route: `https://raw.githack.com/RobertRiley253/RobertRiley253.github.io/portfolio-development-2026-11-12/portfolio-dev/index.html`. Third-party preview service availability **not verified**. This is not publication through GitHub Pages.
 - Outstanding: visually render/test on actual browsers and mobile widths, review imagery and claims, integrate user's future archival originals, finalize PDF/resume coordination if desired. Do not publish/merge without explicit approval.
+
+## Usability overhaul — November 12, 2026
+- Updated four pages, CSS, and JS on the development branch for **discoverability, larger click targets, clear photographic interactions, more obvious archive expansion, category jumps, next-page actions, and back-to-top**.
+- Static audit passed: 63 distinct images still represented, no broken local/cross-page fragment links, no unlabelled gallery buttons, no missing image alt attributes.
+- Detailed implementation and remaining verification list at `portfolio-dev/USABILITY_CHECKLIST.md`. Real-device/browser testing is not claimed complete.
