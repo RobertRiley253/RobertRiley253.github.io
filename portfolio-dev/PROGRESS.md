@@ -16,6 +16,12 @@ Updated: 2026-11-12 (Pacific)
 - The photo links in the private candidate reference the **existing public originals** so no photographs are re-uploaded or recompressed.
 - Review image ownership, caption accuracy, full-size visual quality, responsive rendering and any additional submitted photos before finalizing.
 
+## Latest production update
+- Reverified all 63 image file paths against GitHub's actual `main` tree: 63/63 present.
+- Audited 63 gallery controls, 63 `<figure>` items, linked sources and fragment targets: no missing images or broken anchor targets in the final staged candidate.
+- Corrected `Shop & production` navigation to `#s07`.
+- See `portfolio-dev/QA_REPORT.md` for full verification scope and untested browser/pixel-level items.
+
 ## Continue
 1. Start with the staged candidate and curated log rather than repeating inventory/preflight.
 2. Verify gallery image links, accessibility and visual presentation; adjust **only on this branch**.
