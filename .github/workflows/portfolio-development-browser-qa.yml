@@ -25,7 +25,7 @@ jobs:
           node-version: '22'
       - name: Install Playwright and Chromium
         run: |
-          npm install --no-save playwright@1.56.1
+          npm install --no-save playwright@1.56.1 @axe-core/playwright@4.10.2
           npx playwright install --with-deps chromium
       - name: Serve checked-out development files locally
         run: |
