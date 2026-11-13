@@ -72,3 +72,11 @@ The original 63-photo static checks above describe the preserved baseline, not t
 - Located both protected source ZIP archives in ChatGPT Library, programmatically inspected nine integrated source PNGs, recorded filenames, pixel dimensions, byte counts and SHA-256 checksums in INCOMING_ORIGINALS_SOURCE_MANIFEST_2026-11-13.md. Archived PNGs remain intact and are not yet transferred to GitHub as production images.
 - Confirmed original-63 dimension inventory has 27 files narrower than 700px, 11 narrower than 500px. Treat smaller files as supporting imagery; do not upscale artificially or make unsupported authorship claims.
 - Accessibility Axe runner is being established as an additional automated gate; no claim of Axe passing until its separate result is verified.
+
+## 2026-11-13 — Completed 103-photo integrated development QA
+- GitHub Actions successful run: https://github.com/RobertRiley253/RobertRiley253.github.io/actions/runs/43515548924
+- **28/28 passed:** four pages × six viewport widths (1440/1024/768/430/375/320), and four simulated CSS 200%-zoom tests; no reported horizontal overflow, missing alt attributes, duplicate IDs or navigation failures in those cases.
+- **103/103 passed:** browser image load/decode, including 63 legacy photographs, 31 expanded supporting JPEG archives and nine incoming higher-quality/PNG sources.
+- **Axe automated accessibility:** zero WCAG 2/2.1 A/AA violation types reported for four pages at desktop and mobile widths, following targeted hero/panorama contrast fixes. Does not establish comprehensive accessibility, screen-reader, Safari or physical-device certification.
+- Screenshot/artifact archive: https://github.com/RobertRiley253/RobertRiley253.github.io/actions/runs/43515548924/artifacts/14080941482 ; single four-page contact sheet also created for owner preview.
+- The public main branch and original Library ZIPs were not edited. QA workflow is manual-only after this successful run.
