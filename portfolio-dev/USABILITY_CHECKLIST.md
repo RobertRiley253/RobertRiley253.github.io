@@ -56,6 +56,16 @@ Status: Usability implementation and static checks performed; genuine desktop/mo
 - [x] Post-change static audit passes: cross-page/internal links, duplicate IDs, alt descriptions, 63-image coverage.
 - [ ] Verify thumbnail-failure UI, chapter controls, keyboard and touchscreen interactions in a live rendered browser.
 
+## Image performance and editorial quality
+- [x] Recover and archive actual pixel dimensions for all 63 original JPEGs.
+- [x] Add width and height metadata to all 82 displayed photographic image instances.
+- [x] Prioritize lead gallery imagery while retaining lazy loading for deeper galleries.
+- [x] Lightbox navigation skips closed archive content until expanded.
+- [x] Static verification confirms 63 distinct photo IDs, no broken local anchors, and correct dimensions on all displayed photos.
+- [ ] Evaluate low-resolution photos individually before enlarging them in signature spreads.
+- [ ] Benchmark actual network performance and layout shifting on desktop/mobile browsers.
+- [ ] Test opening and closing the photo viewer with archive sections both collapsed and expanded.
+
 ## Source control and release safety
 - [x] Static HTML audit: no broken local or cross-page anchor targets.
 - [x] Static audit: all photo elements carry alternative text.
