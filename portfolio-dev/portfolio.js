@@ -59,12 +59,12 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   };
   pic.addEventListener("load",()=>{
     // Recover the display after an earlier image fails, including rapid navigation.
-    if(pic.currentSrc!==selectedUrl||!dialog.open)return;
+    if(!dialog.open||(pic.currentSrc&&pic.currentSrc!==pic.src))return;
     pic.hidden=false;
     setStatus("");
   });
   pic.addEventListener("error",()=>{
-    if(pic.currentSrc!==selectedUrl||!dialog.open)return;
+    if(!dialog.open||(pic.currentSrc&&pic.currentSrc!==pic.src))return;
     pic.hidden=true;
     setStatus(link.textContent.includes("preview")?"This JPEG preview could not load. Open the preview link or try the next photograph.":"This photograph could not load. Open the original image or try the next photograph.");
   });
