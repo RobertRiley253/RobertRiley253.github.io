@@ -21,6 +21,9 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   status.setAttribute("role","status");
   status.hidden=true;
   pic.insertAdjacentElement("afterend",status);
+  // Announce gallery position without moving focus from viewer controls.
+  count.setAttribute("aria-live","polite");
+  count.setAttribute("aria-atomic","true");
   const localButtons=[close,prev,next];
   const setStatus=(message)=>{
     status.textContent=message;
@@ -63,6 +66,8 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   dialog.addEventListener("keydown",(event)=>{
     if(event.key==="ArrowRight"){event.preventDefault();select(position+1);}
     else if(event.key==="ArrowLeft"){event.preventDefault();select(position-1);}
+    else if(event.key==="Home"){event.preventDefault();select(0);}
+    else if(event.key==="End"){event.preventDefault();select(currentIds().length-1);}
     else if(event.key==="Tab"){
       // A native modal blocks background focus; cycle through its interactive controls.
       const focusable=localButtons.concat(link).filter(element=>!element.hidden);
