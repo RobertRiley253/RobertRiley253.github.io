@@ -11,7 +11,8 @@ const path = require('node:path');
   const report = { pages: [], failures: [] };
   try {
     for (const viewport of [{ name: 'desktop', width: 1440, height: 900 }, { name: 'mobile', width: 375, height: 812 }]) {
-      const page = await browser.newPage({ viewport, reducedMotion: 'reduce' });
+      const context = await browser.newContext({ viewport, reducedMotion: 'reduce' });
+      const page = await context.newPage();
       for (const name of ['index.html', 'work.html', 'production.html', 'profile.html']) {
         await page.goto(base + name, { waitUntil: 'domcontentloaded', timeout: 25000 });
         const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
@@ -22,7 +23,7 @@ const path = require('node:path');
         }
         console.log('AXE ' + name + ' ' + viewport.name + ': ' + issues.length + ' violation types — ' + issues.map(x => x.id + ':' + x.impact).join(', '));
       }
-      await page.close();
+      await context.close();
     }
   } finally {
     await browser.close();
