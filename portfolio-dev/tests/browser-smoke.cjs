@@ -65,12 +65,12 @@ const path = require('node:path');
     }
     await page.close();
   }
-  // Validate real browser image decoding for signature originals and all nine review previews.
+  // Validate actual browser image decoding for all preserved originals and nine review previews.
   const assetPage = await browser.newPage();
   try {
     await assetPage.goto(base + 'index.html', { waitUntil: 'domcontentloaded', timeout: 25000 });
     const imageResults = await assetPage.evaluate(async () => {
-      const selected = PHOTOS.filter(photo => [6, 9, 23, 48].includes(photo.id) || photo.id >= 64);
+      const selected = PHOTOS;
       return Promise.all(selected.map(photo => new Promise(resolve => {
         const img = new Image();
         const timer = setTimeout(() => resolve({ id: photo.id, file: photo.file, loaded: false, error: 'timeout' }), 15000);
@@ -85,7 +85,7 @@ const path = require('node:path');
     for (const asset of imageResults) {
       if (!asset.loaded) report.failures.push('Image failed to load: ' + asset.file + ' (' + asset.error + ')');
     }
-    console.log('Browser image decoding: ' + imageResults.filter(asset => asset.loaded).length + '/' + imageResults.length + ' representative originals and previews');
+    console.log('Browser image decoding: ' + imageResults.filter(asset => asset.loaded).length + '/' + imageResults.length + ' portfolio photographs (originals and previews)');
   } catch (error) {
     report.failures.push('Browser image checks: ' + String(error.message || error));
   } finally {
