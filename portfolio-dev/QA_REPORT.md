@@ -29,3 +29,15 @@ Candidate: `portfolio-dev/index.html`
 
 ## Release gate
 Review complete candidate, incorporate additional photography, resolve caption/provenance uncertainty, obtain **explicit approval of the final proposed public changes**. Only then prepare a separately authorized main-branch merge/publication.
+
+## 2026-11-13 — Incoming-photo integration QA (HQ 5)
+The original 63-photo static checks above describe the preserved baseline, not the enlarged current candidate.
+
+- Reviewed all 54 manifest-listed incoming JPEG previews visually from GitHub. Committed `portfolio-dev/incoming_previews_editorial_54.csv` with 9 integrated, 31 reserved, and 14 excluded; these decisions are developmental and not final owner approval.
+- Added 2 selectively chosen photographic previews to `work.html` and 7 to `production.html`, retaining the original 51/12 editorial split for the preexisting 63 images. Source photographs and original archival materials remain untouched.
+- Added nine preview viewer records (IDs 64–72) and conditional source URLs in `portfolio.js`. Preview viewer links now explicitly say **Open uploaded JPEG preview**, not **View original image**. The newly integrated JPEGs are compressed review copies; **full-resolution originals have not been transferred to GitHub**.
+- Four-page post-integration source checks: 72 distinct referenced photographs (63 original + 9 new previews), 91 photographic image placements, 88 gallery controls; all source `width` and `height` attributes match the corresponding 63-image dimensions record or the incoming 54-row transfer manifest.
+- The 54-preview manifest and the 54-row editorial decisions correspond one-to-one; no missing alt attributes, duplicate HTML IDs, or broken local/cross-page fragment links found; all four pages retain `noindex,nofollow`.
+- No browser-rendered screenshot or live interaction certification; need actual device visual checks, contrast and accessibility review, final choice of preview vs full-resolution originals, accurate individual contribution verification, branding decision and owner's full approval before release.
+- Prior curation excludes Wildwood (#46 incoming); the image remains preserved in the incoming archive but has **not** been introduced into the final candidate.
+- Public website, `main` and original image files remain unchanged.
