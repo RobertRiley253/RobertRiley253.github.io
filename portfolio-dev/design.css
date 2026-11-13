@@ -121,3 +121,18 @@ html{scroll-padding-top:105px}
 @media(max-width:700px){.journey-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-steps a{font-size:13px;min-height:52px}.discovery-links{grid-template-columns:1fr}.discovery-card{min-height:125px;padding:18px 20px}}
 @media(max-width:420px){.journey-steps a{padding:9px 7px;gap:6px}.journey-number{font-size:11px}.discovery-links{padding-top:20px}}
 @media(prefers-reduced-motion:reduce){.discovery-card{transition:none}.discovery-card:hover{transform:none}}
+
+/* Portfolio chapters should invite onward discovery rather than become dead ends. */
+.chapter-continue{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,72px) 45px;background:inherit}
+.chapter-continue a{min-height:52px;display:inline-flex;align-items:center;text-decoration:none;border-radius:4px}
+.chapter-categories{padding:12px 17px;border:1px solid #a9bba9;background:#f6f7ef;font-size:14px;font-weight:700;color:#28513a}
+.chapter-forward{border:1px solid #b3986f;background:#244034;color:#f8f3e8;padding:12px 18px;gap:24px;justify-content:space-between;min-width:245px}
+.chapter-forward small{display:block;font-size:10px;color:#d9b88b;letter-spacing:.14em;font-weight:800;margin-bottom:4px}
+.chapter-forward strong{display:block;font-size:15px}
+.chapter-forward>span:last-child{font-size:25px;color:#e9c895}
+.chapter-continue a:hover{box-shadow:0 2px 10px #243b2d1c}
+.chapter-forward:hover{background:#325941}
+.chapter-categories:hover{background:#e5eee2}
+.image-wrap img[hidden]{display:none}
+.image-unavailable{display:flex;min-height:140px;padding:25px;align-items:center;text-align:center;justify-content:center;color:#35503e;background:#e3e8df;font-size:14px;line-height:1.6;font-weight:650}
+@media(max-width:560px){.chapter-continue{display:grid;grid-template-columns:1fr;gap:10px;padding-bottom:36px}.chapter-continue a{justify-content:center}.chapter-forward{min-width:0;width:100%}.chapter-categories{order:2}}
