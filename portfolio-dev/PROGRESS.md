@@ -58,3 +58,11 @@ Updated: 2026-11-12 (Pacific)
 - Post-commit structural audit: all four pages have valid local/cross-page fragments, 63 unique original images remain represented, all HTML image tags have alt text, and all pages remain development-only with noindex directives.
 - Browser-rendered visual inspection, actual phone interaction, and project contribution verification remain outstanding. These cannot be represented as completed static QA.
 - **No writes to `main`, no source-image edits, and no deployment.**
+
+## Visitor wayfinding and curiosity-flow pass — November 12, 2026
+- Applied a **consistent four-stage portfolio journey map** to each page: Start here → The work → Behind the work → Meet the maker. Current stage is explicitly highlighted; all stages remain directly accessible.
+- Added **two visible continuation cards on every page**, preventing dead ends and offering purposeful next steps without automatically redirecting a visitor.
+- Introduced a restrained warm-gold, one-shot hover glint for primary/category/discovery actions. Effect runs only on capable hover devices and respects reduced-motion preferences; no incessant blinking or required animation.
+- Replaced repetitive lower-page next-step panels with richer choice-based discovery; retained original photo galleries, main navigation, mobile layouts and photo viewer.
+- Static audit after change: 4/4 pages have 4 journey stages + 2 continuation links, no broken intra-/inter-page anchors, no duplicate IDs, all images have alt text, all 63 image IDs represented, noindex intact. **Rendered UI/device QA remains outstanding.**
+- Source photos and public `main` unchanged.
