@@ -24,6 +24,9 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   // Announce gallery position without moving focus from viewer controls.
   count.setAttribute("aria-live","polite");
   count.setAttribute("aria-atomic","true");
+  prev.setAttribute("aria-keyshortcuts","ArrowLeft");
+  next.setAttribute("aria-keyshortcuts","ArrowRight");
+  close.setAttribute("aria-keyshortcuts","Escape");
   const localButtons=[close,prev,next];
   const setStatus=(message)=>{
     status.textContent=message;
@@ -40,6 +43,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
     pic.alt=rec.title;
     pic.src=url;
     title.textContent=rec.title;
+    dialog.setAttribute("aria-label","Full-size photograph: "+rec.title);
     link.href=url;
     count.textContent=String(position+1).padStart(2,"0")+" / "+String(ids.length).padStart(2,"0");
     setStatus("");
@@ -110,10 +114,10 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
 /* Back-to-top button appears after meaningful page scroll; works without external libraries. */
 (()=>{const b=document.querySelector(".back-top");if(!b)return;const update=()=>b.classList.toggle("is-visible",window.scrollY>700);window.addEventListener("scroll",update,{passive:true});update();b.addEventListener("click",()=>window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));})();
 
-// Thumbnail recovery: preserve labels and provide a usable explanation for failed images.
+// Thumbnail recovery works for ordinary errors and files that failed before JS initialized.
 (()=>{
   for(const img of document.querySelectorAll(".image-card img")){
-    img.addEventListener("error",()=>{
+    const showFailure=()=>{
       const wrap=img.closest(".image-wrap");
       if(!wrap||wrap.querySelector(".image-unavailable"))return;
       img.hidden=true;
@@ -121,6 +125,8 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
       note.className="image-unavailable";
       note.textContent="Image temporarily unavailable — select to view the original.";
       wrap.append(note);
-    });
+    };
+    img.addEventListener("error",showFailure);
+    if(img.complete && img.naturalWidth===0)showFailure();
   }
 })();
