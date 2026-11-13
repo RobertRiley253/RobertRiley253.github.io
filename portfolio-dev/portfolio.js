@@ -59,7 +59,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   });
   pic.addEventListener("error",()=>{
     pic.hidden=true;
-    setStatus("This photograph could not load. Open the original image or try the next photograph.");
+    setStatus(link.textContent.includes("preview")?"This JPEG preview could not load. Open the preview link or try the next photograph.":"This photograph could not load. Open the original image or try the next photograph.");
   });
   cards.forEach(card=>card.addEventListener("click",()=>{
     trigger=card;
@@ -127,7 +127,9 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
       img.hidden=true;
       const note=document.createElement("span");
       note.className="image-unavailable";
-      note.textContent="Image temporarily unavailable — select to view the original.";
+      const id=Number(img.closest("[data-image]")?.dataset.image);
+      const rec=PHOTOS.find(photo=>photo.id===id);
+      note.textContent=rec?.file.startsWith("incoming-portfolio/previews/")?"JPEG preview unavailable — select to open the preview.":"Image temporarily unavailable — select to view the original.";
       wrap.append(note);
     };
     img.addEventListener("error",showFailure);
