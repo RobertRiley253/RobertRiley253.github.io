@@ -561,3 +561,32 @@ main{overflow:clip}
   .site-header .logo-name{min-width:0;flex:1 1 auto;overflow-wrap:anywhere}
   .site-header .logo-name small{font-size:10px;letter-spacing:.04em;line-height:1.35}
 }
+
+/* Full photographic build: expansive original-project archive, not a tiny UI patch.
+   The primary selected-work compositions remain larger; secondary material becomes
+   a three-column editorial contact gallery without cropping the photographs. */
+.archive-expansion{border-top:1px solid var(--line)}
+.archive-expansion-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:34px 22px}
+.archive-expansion-grid>.image-card{grid-column:auto;min-width:0}
+.archive-expansion-grid>.image-card .image-wrap{aspect-ratio:4/3;min-height:0;padding:clamp(7px,1vw,14px)}
+.archive-expansion-grid .image-caption{min-height:64px;align-items:start}
+#archive-highlights .archive-expansion-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.archive-more-link{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,4vw,72px) 70px;display:flex;align-items:center;flex-wrap:wrap;gap:18px 28px}
+.archive-more-link .action-button{display:inline-flex;width:auto;gap:36px}
+.portfolio-archive-index{max-width:var(--max);margin:0 auto;padding:45px clamp(20px,4vw,72px) 80px}
+.portfolio-archive-index h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(31px,4vw,55px);font-weight:400;letter-spacing:-.04em}
+.archive-index-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.archive-index-grid a{padding:24px 26px;border:1px solid var(--line);background:var(--cream);text-decoration:none;display:flex;flex-direction:column;gap:8px}
+.archive-index-grid a strong{font-size:16px}
+.archive-index-grid a span{font-size:13px;color:var(--muted)}
+.archive-index-grid a:hover,.archive-index-grid a:focus-visible{border-color:var(--forest);background:#e7ece5}
+@media(max-width:1100px){
+ .archive-expansion-grid,#archive-highlights .archive-expansion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:540px){
+ .archive-expansion-grid,#archive-highlights .archive-expansion-grid,.archive-index-grid{grid-template-columns:minmax(0,1fr)}
+ .archive-expansion-grid>.image-card .image-wrap{aspect-ratio:8/5;padding:10px}
+ .archive-expansion-grid .image-caption{min-height:0}
+ .archive-more-link{padding-bottom:52px}
+ .archive-more-link .action-button{width:100%}
+}
