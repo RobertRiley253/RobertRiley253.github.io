@@ -185,7 +185,7 @@ body{background:var(--cream)}
 .logo-name{font-size:13px;letter-spacing:.12em}
 .nav{gap:clamp(10px,2vw,30px)}
 .nav a{font-weight:650;font-size:14px;padding:12px 4px;border-bottom:2px solid transparent;transition:color .2s ease,border-color .2s ease}
-.nav a[aria-current="page"]{border-color:var(--copper);color:#102d20}
+.nav a[aria-current="page"]{border-color:var(--copper);background:#e7ece5;color:#102d20}
 .nav a:hover{border-color:#68836d}
 .edition{font-size:11px;letter-spacing:.1em}
 main{overflow:clip}
