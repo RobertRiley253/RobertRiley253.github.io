@@ -39,3 +39,12 @@
 - [ ] Final RRR brand identity is still being produced separately.
 - [ ] Additional original archive photographs are not yet provided.
 - [ ] Portfolio authorship and contribution captions require confirmation.
+ 
+## Photographic composition implementation — HQ4
+- [x] Apply a consistent two-column gallery structure with compact-phone single-column layout.
+- [x] Standardize standard-photo presentation areas and caption alignment without cropping source photos.
+- [x] Reserve full-width emphasis for verified larger source images, not every image flagged wide in older markup.
+- [x] Preserve special full-width panorama using its real recorded aspect ratio.
+- [ ] Inspect actual page screenshots to confirm that internal letterboxing is acceptable and no awkward gaps remain.
+- [ ] Check featured-image visual hierarchy against final photographic selections with Robert.
+- [ ] Compare rendered portfolio to preserved previous candidate before signoff.
