@@ -303,3 +303,48 @@ main{overflow:clip}
 .hero-frame img{flex:1 1 auto;min-height:0;max-height:calc(100% - 34px)!important}
 .hero-frame span{flex:0 0 auto}
 @media(max-width:490px){.hero-frame img{max-height:calc(100% - 30px)!important}}
+
+
+/* Pre-brand shape, form, and color system — 2026-11-12.
+   Purpose: settle coherent underlying presentation before approved RRR artwork arrives.
+   This is intentionally quiet: photography remains the visual centerpiece. */
+:root{
+  --forest:#20362e;
+  --deep:#182a24;
+  --sage:#6e8273;
+  --paper:#f2f1eb;
+  --cream:#faf9f5;
+  --ink:#26392e;
+  --muted:#52665a;
+  --line:#c7d0c5;
+  --copper:#a67d50;
+  --surface-muted:#e9ece5;
+  --content-space:clamp(22px,4vw,72px);
+}
+.site-header,.masthead,.intro-band,.chapter,.page-hero,.manifesto,.profile-content,.site-footer,.explore-guide,.category-strip,.discovery-links,.evidence-panel,.contact-finale{scroll-margin-top:16px}
+.masthead{background:var(--deep)}
+.masthead-top,.masthead-bottom{border-color:#617467}
+.chapter.warm{background:#efefe9}
+.statement-panel{background:#e9ebe5;min-height:240px}
+.statement-panel .rule-drawing,.chapter-heading .crosshair{display:none}
+.chapter-heading{grid-template-columns:minmax(85px,.65fr) minmax(0,3fr);column-gap:clamp(20px,3vw,44px)}
+.image-card .image-wrap{background:#eceee9;border-color:#d7ddd4}
+.image-card:hover .image-wrap,.image-card:focus-visible .image-wrap{box-shadow:0 5px 17px #20382a14}
+.image-caption{border-bottom-color:#cad3c9}
+.action-button,.category-strip a,.discovery-card,.chapter-categories,.chapter-forward,.explore-guide>a,.related-archive,.nav a,.back-top{border-radius:2px}
+.discover-links,.discovery-links,.evidence-panel{background:var(--surface-muted)}
+.explore-guide,.category-strip,.category-label{background:#f5f5f0}
+.explore-guide>a{background:transparent}
+.explore-guide>a:hover{background:#e6ebe3}
+.page-hero{background:#e9ece5}
+.footer-links a:hover,.text-link:hover{text-decoration-thickness:2px;text-underline-offset:5px}
+.nav a:focus-visible,.image-card:focus-visible,.action-button:focus-visible,.chapter-continue a:focus-visible,.discovery-card:focus-visible{outline:3px solid #b98547;outline-offset:4px}
+@media(max-width:750px){
+  .chapter-heading{grid-template-columns:1fr}
+  .chapter-index{grid-column:1}
+  .chapter-heading>div:nth-child(2){grid-column:1}
+  .statement-panel{min-height:auto}
+}
+@media(prefers-reduced-motion:reduce){
+  .explore-guide>a,.discovery-card,.action-button,.image-card .image-wrap{transition:none!important}
+}
