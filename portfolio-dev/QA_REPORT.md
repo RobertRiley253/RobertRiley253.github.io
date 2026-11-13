@@ -80,3 +80,10 @@ The original 63-photo static checks above describe the preserved baseline, not t
 - **Axe automated accessibility:** zero WCAG 2/2.1 A/AA violation types reported for four pages at desktop and mobile widths, following targeted hero/panorama contrast fixes. Does not establish comprehensive accessibility, screen-reader, Safari or physical-device certification.
 - Screenshot/artifact archive: https://github.com/RobertRiley253/RobertRiley253.github.io/actions/runs/43515548924/artifacts/14080941482 ; single four-page contact sheet also created for owner preview.
 - The public main branch and original Library ZIPs were not edited. QA workflow is manual-only after this successful run.
+
+## 2026-11-13 — Final development review after experience and gallery refinements
+- Run: https://github.com/RobertRiley253/RobertRiley253.github.io/actions/runs/43522845666
+- Downloadable QA artifact: https://github.com/RobertRiley253/RobertRiley253.github.io/actions/runs/43522845666/artifacts/14084511052
+- Report results: 28/28 responsive/zoom page checks passed, 103/103 photographs loaded/decoded, eight Axe page scans and zero reported violations. No build failures. Full-page gallery screenshots recorded.
+- Changes since preceding pass: new technical/career editorial section on Experience page, archival source notices relocated from overlaid image to beneath each card's caption, corrected footers and archive provenance wording.
+- Current site remains review-only and intentionally noindexed. The RRR identity is still unapproved, and no public-site deployment or branch merge occurred.
