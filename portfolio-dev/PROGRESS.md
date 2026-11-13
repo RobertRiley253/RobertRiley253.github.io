@@ -166,3 +166,10 @@ Updated: 2026-11-12 (Pacific)
 - Corrected `portfolio.js` fallback copy so a failed incoming JPEG preview is identified as a preview, rather than incorrectly promising a full-resolution original. Both the thumbnail failure notice and full-screen viewer failure message distinguish preview sources from existing original photographs.
 - Implementation committed as `1f4f4976f130992054e87cd2b0f7a2db53139ec5`. No photographic assets, editorial selections, HTML/CSS layouts, archives, original branch assets, or public `main` were modified.
 - This is a source-level wording/resilience fix, not rendered-browser or actual image-loading certification. Actual responsive visual inspection, contrast/screen reader verification, full-resolution incoming-photo transfer, ownership confirmation, branding approval and explicit release authorization remain open.
+
+## 2026-11-13 — HQ6 bulk provenance and accessibility pass
+- Continued from actual GitHub development branch with existing editorial records, without requesting image re-uploads or recreating inventory.
+- Marked all nine integrated compressed photos as JPEG previews using visible but discreet on-card labels; changed each preview control's accessible name from generic "View larger" to "View JPEG preview." Source filenames, descriptions, selected/reserved/excluded decisions, and photo ordering unchanged.
+- Changes committed to `work.html` (`b06d508b5e07f88d08cba031c8fec58fb37d486c`), `production.html` (`1c76095934029d9cfa18b960a84039b62d1c4be0`), and shared `design.css` (`29ddac426b6089317f7c35a98efc3c15444caf81`). The preceding viewer provenance correction remains in place.
+- Post-commit static check confirmed 72 unique portfolio photo IDs, nine preview IDs, 0 missing numeric photo IDs, 0 duplicate page HTML IDs, 0 unresolved local/cross-page fragments, and development-only noindex metadata across four pages.
+- External GitHub access was unavailable to the local graphical testing environment; **no** claim of rendered browser/mobile verification. Source archives, originals and public `main` remained untouched; final brand and release remain unapproved.
