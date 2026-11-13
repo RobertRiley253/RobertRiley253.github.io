@@ -90,3 +90,10 @@ Updated: 2026-11-12 (Pacific)
 - All changes are in `portfolio-dev/design.css` only; zero photo files, gallery selection records, HTML page structures, or public branch assets altered.
 - This is a **source-level accessibility/legibility improvement**, not a claim of successful graphical browser, 200% zoom, touchscreen or screen-reader testing. Those acceptance tests remain open. The three-photo hero still uses a 539×412 print source; evaluate actual crispness before release.
 - Pending: genuine desktop/mobile render inspection, lightbox interaction QA, contrast measurements, and new original-photo integration when provided. Never publish without owner review and approval.
+
+## Production HQ 4 — gallery-first editorial design revision
+- Removed redundant four-stage pre-content journey bar and generic instruction bar across the four pages. All four destinations remain in the persistent main navigation; work-category jumps, next-chapter actions and footer/continuation cards remain in place.
+- Reworked the home hero typography, photographic proportions, image framing, and navigation balance. Replaced low-resolution homepage teaser 033 (539×412) with existing original 023 (1800×1200) as a print-related hero example; original 033 remains in the gallery.
+- Rebalanced header, typography, whitespace, photographic galleries, dividers, the work-page introduction, navigation states, archive blocks and responsive layouts using a documented additive CSS finish pass.
+- No new generated artwork or decorative motifs. No original photo changed. No original source path deleted. Prior design candidate review-v1 remains preserved.
+- Scope: development branch only. This is a source-level design refinement; actual browser screenshots, real phone touch testing, 200% zoom, load metrics and screen-reader testing remain unverified, and no public release is approved.
