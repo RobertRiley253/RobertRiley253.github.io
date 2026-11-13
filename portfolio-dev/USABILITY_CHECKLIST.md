@@ -49,6 +49,13 @@ Status: Usability implementation and static checks performed; genuine desktop/mo
 - [ ] Visually verify controls, contrast, discoverability and page-end invitations on phones and desktop browsers.
 - [ ] Validate animation behavior, keyboard focus, and reduced-motion setting in actual browsers.
 
+## Continuous exploration and resilience
+- [x] Five selected-work chapter transitions provide an explicit onward action and return to category chooser.
+- [x] Thumbnail loading errors now show a readable fallback while keeping the action available.
+- [x] Archive expansion count text uses correct singular/plural wording.
+- [x] Post-change static audit passes: cross-page/internal links, duplicate IDs, alt descriptions, 63-image coverage.
+- [ ] Verify thumbnail-failure UI, chapter controls, keyboard and touchscreen interactions in a live rendered browser.
+
 ## Source control and release safety
 - [x] Static HTML audit: no broken local or cross-page anchor targets.
 - [x] Static audit: all photo elements carry alternative text.
