@@ -103,3 +103,11 @@ Updated: 2026-11-12 (Pacific)
 - Applied a restrained site-wide foundational color and form pass: coordinated deep forest/ivory/sage accents, softened photo framing, minimized decorative crosshair/rule elements, unified corner geometry, normalized section headings and focus styling.
 - Changes deliberately avoid modifying any approved original photographs, page copy, photo curation, public site, or provisional branding. The present `RR/` mark is not an approved final RRR identity.
 - Source-level update committed on development branch. Actual visual/browser validation remains open; do not call this user-approved or ready to publish.
+ 
+## 2026-11-12 — Photo scale, row balance and white-space correction
+- Replaced inconsistent gallery item spans with a predictable two-column photographic grid; on compact phones the grid becomes one column.
+- Standard cards now share 8:5 image presentation areas and aligned caption heights, with the original JPG shown in full using object-fit: contain (no cropping or destructive resize).
+- Reserved full-row featured treatment only for high-resolution commercial signage #006 and vehicle graphics #009 in the home and work galleries, avoiding automatic enlargement of smaller files such as #024 and #033.
+- Standardized supporting archive and experience photo layouts, and matched the original shop panorama to its intrinsic 1800:618 ratio.
+- All changes committed to the existing development branch CSS; no photo files, gallery selection CSVs, HTML page structures or public main content modified.
+- Static source review completed for rule specificity; actual device rendering and photo-content judgment are still pending. Browser screenshot testing could not be performed in the available isolated environment because direct external GitHub fetch was not available.
