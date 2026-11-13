@@ -28,3 +28,13 @@ Updated: 2026-11-12 (Pacific)
 3. Integrate new user-provided original photos without changing existing original assets.
 4. Produce the full final proposed public site and change summary for approval.
 5. Only after explicit permission, handle release separately.
+
+## 2026-11-12 — Full editorial website redesign, development only
+- Created a coordinated four-page website: `portfolio-dev/index.html` (home), `work.html` (selected work), `production.html` (shop/equipment), and `profile.html` (experience/contact).
+- Created shared `design.css` and `portfolio.js` with accessible image-dialog controls, keyboard navigation, original-source links, and responsive page composition.
+- Preserved the previous candidate **unaltered** at `portfolio-dev/review-v1.html`.
+- Reused the established 51 selected / 12 supporting editorial decision set, as well as all existing 63 original JPGs. No photographs were modified.
+- Art direction: dark forest/ivory/sage/copper, restrained industrial diagram linework, asymmetrical photographic galleries, highly differentiated chapter transitions, display serif with sans body.
+- Static QA across four new pages: 63 unique numbered source images referenced; no broken local fragment targets, duplicate IDs, missing alt attributes, or missing linked CSS/JS resources. All source photo filenames present in existing `main` repository tree.
+- Private preview route: `https://raw.githack.com/RobertRiley253/RobertRiley253.github.io/portfolio-development-2026-11-12/portfolio-dev/index.html`. Third-party preview service availability **not verified**. This is not publication through GitHub Pages.
+- Outstanding: visually render/test on actual browsers and mobile widths, review imagery and claims, integrate user's future archival originals, finalize PDF/resume coordination if desired. Do not publish/merge without explicit approval.
