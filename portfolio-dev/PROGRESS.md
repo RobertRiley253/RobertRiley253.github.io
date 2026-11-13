@@ -111,3 +111,9 @@ Updated: 2026-11-12 (Pacific)
 - Standardized supporting archive and experience photo layouts, and matched the original shop panorama to its intrinsic 1800:618 ratio.
 - All changes committed to the existing development branch CSS; no photo files, gallery selection CSVs, HTML page structures or public main content modified.
 - Static source review completed for rule specificity; actual device rendering and photo-content judgment are still pending. Browser screenshot testing could not be performed in the available isolated environment because direct external GitHub fetch was not available.
+
+## 2026-11-13 — Production HQ 5: accessible gallery navigation
+- Verified the existing development branch and read the latest production record, design acceptance list, usability checklist, QA report, editorial review, original-image dimensions and four-page website source. Continued in place without rebuilding inventories.
+- Updated `portfolio-dev/portfolio.js` so the full-size photograph viewer announces its position to assistive technology (`aria-live`/`aria-atomic`) and supports Home/End shortcuts to move to the first/last visible photograph. Existing left/right controls, Escape, swipe and focus restoration remain intact.
+- Change committed as `030765cf34197c3d082f58b2efa5d3a075329cb5`. Original photos, source selections, all four HTML pages and public `main` untouched.
+- This is source-level verification; actual browser, mobile touch and screen-reader interaction tests remain outstanding. No owner approval or publication implied.
