@@ -94,3 +94,8 @@ Status: Usability implementation and static checks performed; genuine desktop/mo
 - [x] Remove duplicate pre-hero navigation/instruction clutter while keeping clear four-page main navigation and direct category shortcuts.
 - [x] Increase photographic emphasis and replace low-resolution home print teaser with higher-resolution existing original.
 - [ ] Visually inspect four pages after editorial CSS changes at desktop, tablet, 320px and 375px phone widths; test zoom, contrast, focus, and lightbox interactions.
+ 
+## Gallery balancing pass — November 12
+- [x] Implement common standard frame ratio, two-column desktop/tablet grid, one-column compact phone grid, matched captions, and selectively full-width high-resolution images.
+- [ ] Test visible image scale and perceived blank space across 320, 375, 430, 768, 1024 and 1440px screenshots.
+- [ ] Verify no text overflow and no photo clipping, and measure cumulative layout shift.
