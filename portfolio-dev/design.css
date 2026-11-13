@@ -136,3 +136,38 @@ html{scroll-padding-top:105px}
 .image-wrap img[hidden]{display:none}
 .image-unavailable{display:flex;min-height:140px;padding:25px;align-items:center;text-align:center;justify-content:center;color:#35503e;background:#e3e8df;font-size:14px;line-height:1.6;font-weight:650}
 @media(max-width:560px){.chapter-continue{display:grid;grid-template-columns:1fr;gap:10px;padding-bottom:36px}.chapter-continue a{justify-content:center}.chapter-forward{min-width:0;width:100%}.chapter-categories{order:2}}
+
+/* HQ4 refinement: readable information hierarchy without adding visual ornament.
+   Source-photo dimensions and uncropped presentation remain unchanged. */
+.review-ribbon{font-size:12px;line-height:1.5;letter-spacing:.1em}
+.logo-name small{font-size:11px;line-height:1.45;letter-spacing:.09em}
+.edition,.masthead-top,.masthead-bottom,.fineprint{font-size:12px;line-height:1.5;letter-spacing:.08em}
+.eyebrow,.chapter-index,.statement-index,.journey-title,.discovery-kicker{font-size:12px;line-height:1.5;letter-spacing:.12em}
+.hero-frame span{font-size:12px;letter-spacing:.08em;line-height:1.45}
+.page-hero-bottom{font-size:12px;line-height:1.5}
+.nav{font-size:14px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:10px 2px}
+.category-strip a,.journey-steps a,.discovery-card,.chapter-forward,.chapter-categories{transition:background-color .2s ease,border-color .2s ease}
+.image-caption>span:first-child{overflow-wrap:anywhere}
+.image-arrow{white-space:normal;text-align:center;justify-content:center}
+.lightbox-head,.lightbox-foot{flex-wrap:wrap}
+.lightbox-foot a{white-space:normal;overflow-wrap:anywhere}
+.related-archive summary:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+@media(max-width:750px){
+ .nav a{font-size:14px}
+ .masthead-top,.masthead-bottom{font-size:11px;letter-spacing:.05em}
+ .hero-frame span{font-size:11px}
+ .journey-steps a{overflow-wrap:anywhere}
+}
+@media(max-width:360px){
+ .hero-composition{gap:8px}
+ .hero-frame{padding:5px}
+ .hero-frame span{font-size:11px;letter-spacing:0}
+ .image-caption{flex-wrap:wrap}
+ .image-caption>span:first-child{max-width:100%}
+ .image-arrow{min-height:44px}
+ .lightbox-head,.lightbox-foot{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .category-strip a,.journey-steps a,.discovery-card,.chapter-forward,.chapter-categories{transition:none}
+}
