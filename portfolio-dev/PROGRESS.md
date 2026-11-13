@@ -66,3 +66,11 @@ Updated: 2026-11-12 (Pacific)
 - Replaced repetitive lower-page next-step panels with richer choice-based discovery; retained original photo galleries, main navigation, mobile layouts and photo viewer.
 - Static audit after change: 4/4 pages have 4 journey stages + 2 continuation links, no broken intra-/inter-page anchors, no duplicate IDs, all images have alt text, all 63 image IDs represented, noindex intact. **Rendered UI/device QA remains outstanding.**
 - Source photos and public `main` unchanged.
+
+## Continuous gallery exploration pass — November 12, 2026
+- Every selected-work chapter now ends with an explicit next-category action plus "All categories" return. Final chapter links into the Production page. This reduces discoverability gaps in the long gallery.
+- Added a readable thumbnail failure fallback with a retained click target to the original image; source JPGs remain untouched.
+- Corrected grammar in archive-expansion counts ("1 additional photograph" vs "N additional photographs").
+- Four-page static post-change audit: five gallery-chapter transitions present; 63 distinct photo IDs still represented; no missing alt text, duplicate HTML IDs, or broken local/cross-page anchor targets.
+- Real browser/device rendering is still outstanding. An attempted direct remote preview fetch from local browser environment did not connect, so **no visual-render certification is claimed**.
+- `main` remains unchanged. No public release.
