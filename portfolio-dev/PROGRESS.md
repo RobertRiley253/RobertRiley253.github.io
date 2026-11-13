@@ -49,3 +49,12 @@ Updated: 2026-11-12 (Pacific)
 - Added small-phone overflow protections and readable failed-photo message styling.
 - Rechecked all four HTML pages: 63 unique photo IDs, no missing fragment targets, no unlabeled images, and development-only indexing safeguards.
 - Updated `USABILITY_CHECKLIST.md`. Browser rendering and mobile interaction tests remain **unverified**; original photographs unmodified; public `main` unchanged.
+
+## First-time visitor and art-direction pass — November 12, 2026
+- Reworked the first screen into a three-image editorial hero: source photographs `portfolio-006.jpg` (commercial signage), `portfolio-009.jpg` (vehicle), and `portfolio-033.jpg` (print). Original photos unchanged and contained within the compositions without destructive crops.
+- Made the principal routes unmistakable: large "See the complete portfolio" action plus a direct production link and three existing destination cards.
+- Strengthened selected-work and production page orientation wording, and added a conservative visual-evidence explanation on Experience distinguishing finished applications, proofs/artwork and production records.
+- Added bespoke responsive composition rules for the homepage, including mobile layouts below 700px.
+- Post-commit structural audit: all four pages have valid local/cross-page fragments, 63 unique original images remain represented, all HTML image tags have alt text, and all pages remain development-only with noindex directives.
+- Browser-rendered visual inspection, actual phone interaction, and project contribution verification remain outstanding. These cannot be represented as completed static QA.
+- **No writes to `main`, no source-image edits, and no deployment.**
