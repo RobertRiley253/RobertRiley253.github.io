@@ -516,3 +516,29 @@ main{overflow:clip}
   .lightbox-foot { flex-wrap: wrap; }
   .lightbox-foot a { white-space: normal; overflow-wrap: anywhere; }
 }
+
+/* HQ5 editorial readability: preserve established composition, reduce ragged headings,
+   prevent off-screen focus and long labels on narrow displays. */
+@supports (text-wrap: balance) {
+  .chapter h2, .page-hero h1, .explore-heading h2,
+  .closing-cover h2, .contact-finale h2 { text-wrap: balance; }
+}
+@supports (text-wrap: pretty) {
+  .chapter-desc, .page-hero-bottom p, .intro-side,
+  .profile-main p, .masthead-copy > p:not(.eyebrow) { text-wrap: pretty; }
+}
+.image-card .image-caption > span:first-child {
+  overflow-wrap: anywhere;
+}
+.lightbox-foot #viewer-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.category-strip a, .nav a, .discovery-card, .chapter-continue a {
+  scroll-margin-block: 18px;
+}
+@media (max-width: 540px) {
+  .lightbox-head, .lightbox-foot { gap: 8px; }
+  .lightbox-foot #viewer-title { flex: 1 1 180px; }
+  .lightbox-foot #viewer-original { flex: 0 1 auto; }
+}
