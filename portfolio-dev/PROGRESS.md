@@ -134,3 +134,13 @@ Updated: 2026-11-12 (Pacific)
 - Confirmed the shared JS metadata still contains 63 unique images, split 51 selected and 12 archived; no duplicated `data-image` controls within any single page; all 63 photo identifiers remain represented by the site.
 - Reviewed the published source copy for experience/production at the source level; cautious proof-versus-installation wording retained, pending owner verification of exact contributions.
 - Open acceptance gates remain: graphical desktop/mobile rendering, accessibility testing with real browsers/assistive technology, full image editorial inspection, integration of the separately transferred source photographs, final RRR identity and owner approval. **No release, public deployment or main-branch changes.**
+
+## 2026-11-13 — HQ5 additional bulk source QA and image-failure hardening
+- Continued a development-only production pass. Modified `portfolio.js` to give the photograph viewer a descriptive per-image accessible label and explicit previous/next/close keyboard shortcut metadata.
+- Hardened thumbnail failure handling: images that already failed before the deferred script initialized now receive the same visible explanatory fallback as images that fail afterward. Commit `aa73da225fdbeb00e90a8dde6340eaccd664d2d1`.
+- Rechecked the four HTML pages against one another: 0 duplicate IDs, 0 missing local or cross-page fragment targets, all pages retain `noindex,nofollow`, and every displayed photograph has alternate text.
+- Cross-checked 82 HTML photograph placements against the authoritative 63-row image-dimensions CSV: all recorded width/height attributes match the original file dimensions, 63 unique files referenced, no mismatches.
+- Inspected image loading attributes and new-window links: lead imagery remains prioritized, deeper photographs lazy loaded, and no `target="_blank"` anchors missing `rel` safeguards.
+- Current source tests are not a substitute for rendered visual inspection, actual keyboard/screen reader/browser testing or full source-image appraisal. Attempted fetching GitHub raw assets into the isolated local browser environment failed, so those remain open review items.
+- The current 75% overall-completion figure is a subjective production estimate, not a test-based certification or promise of release readiness.
+- No work on separate photograph transfer; no new images imported; no changes to originals, historical designs, public site or `main`.
