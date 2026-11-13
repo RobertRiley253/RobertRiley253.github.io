@@ -41,6 +41,14 @@ Status: Usability implementation and static checks performed; genuine desktop/mo
 - [ ] Visually compare hero compositions and reading order on actual desktop and mobile browsers.
 - [ ] Verify exact personal contributions to selected projects before adding project-specific role labels.
 
+## Cohesive visitor journey — November 12
+- [x] Clear four-stage map with active location on every page.
+- [x] Two large, intuitive onward choices at the end of every page; no navigational dead ends.
+- [x] Restrained gold hover-glint interaction added consistently; no perpetual blinking, and reduced-motion users are respected.
+- [x] Static test for stage links, anchors, 63 photographs and alt attributes passed.
+- [ ] Visually verify controls, contrast, discoverability and page-end invitations on phones and desktop browsers.
+- [ ] Validate animation behavior, keyboard focus, and reduced-motion setting in actual browsers.
+
 ## Source control and release safety
 - [x] Static HTML audit: no broken local or cross-page anchor targets.
 - [x] Static audit: all photo elements carry alternative text.
