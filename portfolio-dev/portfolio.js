@@ -4,7 +4,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   const dialog=document.getElementById("lightbox");
   if(!dialog)return;
   const cards=[...document.querySelectorAll("[data-image]")];
-  const ids=[...new Set(cards.map(card=>Number(card.dataset.image)))];
+  const currentIds=()=>[...new Set(cards.filter(card=>{const group=card.closest("details");return !group||group.open;}).map(card=>Number(card.dataset.image)))];
   const pic=document.getElementById("viewer-img");
   const title=document.getElementById("viewer-title");
   const link=document.getElementById("viewer-original");
@@ -12,7 +12,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   const prev=document.getElementById("viewer-prev");
   const next=document.getElementById("viewer-next");
   const close=document.getElementById("viewer-close");
-  if(!ids.length||!pic||!title||!link||!count||!prev||!next||!close)return;
+  if(!cards.length||!pic||!title||!link||!count||!prev||!next||!close)return;
   let position=0;
   let trigger=null;
   let touchStart=null;
@@ -27,6 +27,8 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
     status.hidden=!message;
   };
   const select=(index)=>{
+    const ids=currentIds();
+    if(!ids.length)return;
     position=(index+ids.length)%ids.length;
     const rec=PHOTOS[ids[position]-1];
     if(!rec){setStatus("This photograph is currently unavailable.");return;}
@@ -45,7 +47,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   });
   cards.forEach(card=>card.addEventListener("click",()=>{
     trigger=card;
-    const index=ids.indexOf(Number(card.dataset.image));
+    const index=currentIds().indexOf(Number(card.dataset.image));
     select(index>=0?index:0);
     if(!dialog.open)dialog.showModal();
     close.focus();
