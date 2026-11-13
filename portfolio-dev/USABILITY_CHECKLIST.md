@@ -84,3 +84,8 @@ Status: Usability implementation and static checks performed; genuine desktop/mo
 - [x] All four pages retain development-only noindex metadata.
 - [ ] Run interactive chromium/Safari/mobile tests against actual rendered site. Local browser tools exist but the GitHub project assets cannot be retrieved directly into that browser environment here; **do not treat structural checks as cross-device certification**.
 - [ ] Obtain/inspect additional source originals before final selection and publication.
+
+## HQ4 follow-up: legibility pass
+- [x] Shared CSS source updated to enlarge meaningful tertiary labels, improve narrow-phone wrapping and show archive summary keyboard focus.
+- [ ] Inspect actual rendered text density, navigation and photo layout at 320px, 375px, 430px, 768px and desktop widths, plus 200% zoom.
+- [ ] Validate contrast, screen-reader announce order, keyboard lightbox trap and touch swipe on real browsers/devices.
