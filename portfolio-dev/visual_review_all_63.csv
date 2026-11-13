@@ -1,0 +1,64 @@
+index,index,Filename,Label,Category,Decision,Visual_note,Source,Review,Original_preserved
+0,1,portfolio-001.jpg,Salvation Army chapel — interior lettering,Architecture,support,"Distinctive wall lettering, but the photograph is angled and partially cropped.",GitHub original,"Visually inspected, editorial judgement only",Yes
+1,2,portfolio-002.jpg,Salvation Army — entry-door lettering,Architecture,featured,Strong readable close view of applied glass-door lettering.,GitHub original,"Visually inspected, editorial judgement only",Yes
+2,3,portfolio-003.jpg,That Sticker Store — storefront window graphics,Architecture,support,Informative storefront application; window reflections reduce clarity.,GitHub original,"Visually inspected, editorial judgement only",Yes
+3,4,portfolio-004.jpg,That Sticker Store — walkway graphics,Architecture,archive,The installed work is distant; service vehicle and foreground dominate.,GitHub original,"Visually inspected, editorial judgement only",Yes
+4,5,portfolio-005.jpg,That Sticker Store — illuminated exterior at night,Architecture,archive,Underexposed overall; poor hero candidate.,GitHub original,"Visually inspected, editorial judgement only",Yes
+5,6,portfolio-006.jpg,Affordable Dental Care — rooftop sign,Architecture,featured,"Clear installed large exterior sign, commercial context.",GitHub original,"Visually inspected, editorial judgement only",Yes
+6,7,portfolio-007.jpg,That Sticker Store — roadside identification,Architecture,support,Useful pylon sign photograph; cluttered neighboring advertisements.,GitHub original,"Visually inspected, editorial judgement only",Yes
+7,8,portfolio-008.jpg,Meridian Denture Center — sign layout proof,Design,support,"Design proof, not photographed installation; mark clearly as proof.",GitHub original,"Visually inspected, editorial judgement only",Yes
+8,9,portfolio-009.jpg,Hot Shot — full van graphics,Vehicles,featured,"Colorful, clear four-panel composite showing sides/rear and logo; collage is original source image.",GitHub original,"Visually inspected, editorial judgement only",Yes
+9,10,portfolio-010.jpg,Manners Unleashed — vehicle graphics,Vehicles,featured,Strong finished full-side photo; busy background.,GitHub original,"Visually inspected, editorial judgement only",Yes
+10,11,portfolio-011.jpg,Distinctive — truck lettering,Vehicles,support,"Useful combination of vehicle, logo and detail; collage is busy.",GitHub original,"Visually inspected, editorial judgement only",Yes
+11,12,portfolio-012.jpg,MagiKlean — van graphics,Vehicles,support,Two readable perspectives; legacy collage.,GitHub original,"Visually inspected, editorial judgement only",Yes
+12,13,portfolio-013.jpg,Advance Custom Gutters — box truck,Vehicles,featured,Full-side business identification on service truck.,GitHub original,"Visually inspected, editorial judgement only",Yes
+13,14,portfolio-014.jpg,American Made Concrete — vehicle door,Vehicles,support,Legible applied door graphics; tightly framed.,GitHub original,"Visually inspected, editorial judgement only",Yes
+14,15,portfolio-015.jpg,Fruitland Mutual Water — service truck,Vehicles,support,"Good applied vehicle-door lettering, less distinctive visually.",GitHub original,"Visually inspected, editorial judgement only",Yes
+15,16,portfolio-016.jpg,Northwest Concrete Waterproofing — box truck,Vehicles,archive,Two near-identical truck views in one image; redundant with other fleet entries.,GitHub original,"Visually inspected, editorial judgement only",Yes
+16,17,portfolio-017.jpg,Chinook Refrigeration — placement proof,Design,support,Clearly a vehicle layout proof; avoid labeling installed.,GitHub original,"Visually inspected, editorial judgement only",Yes
+17,18,portfolio-018.jpg,Chinook Refrigeration — finished van,Vehicles,archive,"Installation visible but person, trees, and visual clutter dominate.",GitHub original,"Visually inspected, editorial judgement only",Yes
+18,19,portfolio-019.jpg,Chinook Refrigeration — lettering variants,Design,archive,"Multiple treatment variants, small type and dated layout.",GitHub original,"Visually inspected, editorial judgement only",Yes
+19,20,portfolio-020.jpg,Chinook Refrigeration — truck application,Vehicles,support,"Finished truck-side lettering, tighter composition.",GitHub original,"Visually inspected, editorial judgement only",Yes
+20,21,portfolio-021.jpg,Hot Shot — logo iterations,Design,support,Good design process companion to finished van.,GitHub original,"Visually inspected, editorial judgement only",Yes
+21,22,portfolio-022.jpg,Northwest Car Show — event artwork,Print,featured,Bold illustrated event artwork and a strong non-signage design example.,GitHub original,"Visually inspected, editorial judgement only",Yes
+22,23,portfolio-023.jpg,Northwest Car Show — printed materials,Print,support,Physical production evidence accompanying artwork.,GitHub original,"Visually inspected, editorial judgement only",Yes
+23,24,portfolio-024.jpg,Honda — service direction sign series,Wayfinding,featured,Covers coordinated service navigation; background busy.,GitHub original,"Visually inspected, editorial judgement only",Yes
+24,25,portfolio-025.jpg,Veterans Field Office — A-frame signs,Wayfinding,support,Readable multi-unit portable wayfinding work.,GitHub original,"Visually inspected, editorial judgement only",Yes
+25,26,portfolio-026.jpg,Honda — service entrance sign,Wayfinding,support,"Strong individual directional piece, related to 024.",GitHub original,"Visually inspected, editorial judgement only",Yes
+26,27,portfolio-027.jpg,Learning facility — directional sign,Wayfinding,archive,"Busy typography, limited visual polish.",GitHub original,"Visually inspected, editorial judgement only",Yes
+27,28,portfolio-028.jpg,Nader Family Chiropractic — walk-in panels,Wayfinding,archive,Partially obscured and poorly lit.,GitHub original,"Visually inspected, editorial judgement only",Yes
+28,29,portfolio-029.jpg,Park entrance — temporary directional signs,Wayfinding,support,Clean functional large-type temporary sign pair.,GitHub original,"Visually inspected, editorial judgement only",Yes
+29,30,portfolio-030.jpg,Kings Autoworks — A-frame and magnets,Wayfinding,support,Displays coherent sign and magnet branding.,GitHub original,"Visually inspected, editorial judgement only",Yes
+30,31,portfolio-031.jpg,Safe Harbor Counseling — finished panel,Wayfinding,support,"Readable panel, handheld shop proof rather than installation.",GitHub original,"Visually inspected, editorial judgement only",Yes
+31,32,portfolio-032.jpg,Yummy Yummy — bakery banner,Banners,archive,"Wide low-detail banner image, minor display value.",GitHub original,"Visually inspected, editorial judgement only",Yes
+32,33,portfolio-033.jpg,Jamaican Sensation — menu banner,Banners,featured,"Colorful food-service banner, distinctive application.",GitHub original,"Visually inspected, editorial judgement only",Yes
+33,34,portfolio-034.jpg,Radio Uganda Seattle — broadcast banner,Banners,support,"Cross-cultural promotional banner, busy source background.",GitHub original,"Visually inspected, editorial judgement only",Yes
+34,35,portfolio-035.jpg,Nutrition Authority — business banner,Banners,support,"Good contrast and legibility, photographed obliquely.",GitHub original,"Visually inspected, editorial judgement only",Yes
+35,36,portfolio-036.jpg,Salvation Army — worship banner,Banners,support,Simple bold large-format banner.,GitHub original,"Visually inspected, editorial judgement only",Yes
+36,37,portfolio-037.jpg,Rockstar Powder Coatings — banner,Banners,archive,"Very wide sign, limited technical detail in photo.",GitHub original,"Visually inspected, editorial judgement only",Yes
+37,38,portfolio-038.jpg,Strickland & Sons — banner artwork,Design,support,Digital artwork proof rather than installed banner photograph.,GitHub original,"Visually inspected, editorial judgement only",Yes
+38,39,portfolio-039.jpg,New Patients Welcome — outdoor banner,Banners,support,Two-person outdoor deployment demonstrates scale; banner somewhat sagging.,GitHub original,"Visually inspected, editorial judgement only",Yes
+39,40,portfolio-040.jpg,South Sound Electrical — trailer wrap,Vehicles,featured,Strong large-format branding and trailer surface coverage.,GitHub original,"Visually inspected, editorial judgement only",Yes
+40,41,portfolio-041.jpg,South Sound Electrical — coordinated apparel,Apparel,support,Brand carried from trailer to garments.,GitHub original,"Visually inspected, editorial judgement only",Yes
+41,42,portfolio-042.jpg,South Sound Electrical — truck window graphic,Vehicles,featured,Clear rear-window implementation and coordinated identity.,GitHub original,"Visually inspected, editorial judgement only",Yes
+42,43,portfolio-043.jpg,Distinctive — branded shirts,Apparel,support,"Business apparel production, low contrast photo.",GitHub original,"Visually inspected, editorial judgement only",Yes
+43,44,portfolio-044.jpg,Advance Custom Gutters — apparel,Apparel,support,"Clear print application detail, brand system.",GitHub original,"Visually inspected, editorial judgement only",Yes
+44,45,portfolio-045.jpg,Racing — multi-garment printing,Apparel,featured,"Colorful printed apparel range, multiple garments.",GitHub original,"Visually inspected, editorial judgement only",Yes
+45,46,portfolio-046.jpg,Joe’s Handy Service — workwear,Apparel,archive,Dark garments and low contrast photo.,GitHub original,"Visually inspected, editorial judgement only",Yes
+46,47,portfolio-047.jpg,Silver Hoop Society — coordinated products,Apparel,featured,"Cap, shirt and tote unified with same identity.",GitHub original,"Visually inspected, editorial judgement only",Yes
+47,48,portfolio-048.jpg,That Sticker Store — shop panorama,Studio,featured,Excellent panoramic look at production and retail layout; very wide.,GitHub original,"Visually inspected, editorial judgement only",Yes
+48,49,portfolio-049.jpg,That Sticker Store — workstations,Studio,support,"Useful production equipment view, large unused foreground.",GitHub original,"Visually inspected, editorial judgement only",Yes
+49,50,portfolio-050.jpg,That Sticker Store — shop floor,Studio,support,"Production materials and displays, obstructed foreground.",GitHub original,"Visually inspected, editorial judgement only",Yes
+50,51,portfolio-051.jpg,That Sticker Store — retail products,Studio,archive,Cluttered merchandizing view; less relevant to hiring audience.,GitHub original,"Visually inspected, editorial judgement only",Yes
+51,52,portfolio-052.jpg,That Sticker Store — vinyl inventory,Studio,support,"Good color/material breadth, workshop support photo.",GitHub original,"Visually inspected, editorial judgement only",Yes
+52,53,portfolio-053.jpg,Original Sticker Store — counter,History,support,Early business/retail-history context; lower photographic quality.,GitHub original,"Visually inspected, editorial judgement only",Yes
+53,54,portfolio-054.jpg,Original Sticker Store — displays,History,support,Earlier operations and diverse apparel/portable sign stock.,GitHub original,"Visually inspected, editorial judgement only",Yes
+54,55,portfolio-055.jpg,Lucky Signs — historical exterior,History,featured,Historic archival photo; position only in history section.,GitHub original,"Visually inspected, editorial judgement only",Yes
+55,56,portfolio-056.jpg,CO₂ laser — cutting equipment,Equipment,featured,Strong image of large-format laser cutting bed.,GitHub original,"Visually inspected, editorial judgement only",Yes
+56,57,portfolio-057.jpg,Roland — large-format printer,Equipment,featured,Relevant print production hardware; good visual detail.,GitHub original,"Visually inspected, editorial judgement only",Yes
+57,58,portfolio-058.jpg,Fiber laser — engraving station,Equipment,support,Shows technical production capability; workstation context.,GitHub original,"Visually inspected, editorial judgement only",Yes
+58,59,portfolio-059.jpg,Summa — thermal printing station,Equipment,support,Shows specialty print equipment but visually cluttered.,GitHub original,"Visually inspected, editorial judgement only",Yes
+59,60,portfolio-060.jpg,Roll laminator — finishing equipment,Equipment,support,Relevant finishing tool; compact low-resolution photo.,GitHub original,"Visually inspected, editorial judgement only",Yes
+60,61,portfolio-061.jpg,Transfer printing — workstation,Equipment,archive,"Small generic printer image, limited visual distinction.",GitHub original,"Visually inspected, editorial judgement only",Yes
+61,62,portfolio-062.jpg,Heat press — transfer application,Equipment,support,"Relevant production process, slightly awkward angle.",GitHub original,"Visually inspected, editorial judgement only",Yes
+62,63,portfolio-063.jpg,Anycubic — resin fabrication,Equipment,support,"Modern additive fabrication capabilities, accessory tablet dominates.",GitHub original,"Visually inspected, editorial judgement only",Yes
