@@ -65,6 +65,32 @@ const path = require('node:path');
     }
     await page.close();
   }
+  // Validate real browser image decoding for signature originals and all nine review previews.
+  const assetPage = await browser.newPage();
+  try {
+    await assetPage.goto(base + 'index.html', { waitUntil: 'domcontentloaded', timeout: 25000 });
+    const imageResults = await assetPage.evaluate(async () => {
+      const selected = PHOTOS.filter(photo => [6, 9, 23, 48].includes(photo.id) || photo.id >= 64);
+      return Promise.all(selected.map(photo => new Promise(resolve => {
+        const img = new Image();
+        const timer = setTimeout(() => resolve({ id: photo.id, file: photo.file, loaded: false, error: 'timeout' }), 15000);
+        img.onload = () => { clearTimeout(timer); resolve({ id: photo.id, file: photo.file, loaded: img.naturalWidth > 0, width: img.naturalWidth, height: img.naturalHeight }); };
+        img.onerror = () => { clearTimeout(timer); resolve({ id: photo.id, file: photo.file, loaded: false, error: 'image error' }); };
+        img.src = photo.file.startsWith('incoming-portfolio/previews/')
+          ? 'https://raw.githubusercontent.com/RobertRiley253/RobertRiley253.github.io/portfolio-development-2026-11-12/' + photo.file
+          : 'https://robertriley253.github.io/' + photo.file;
+      })));
+    });
+    report.imageChecks = imageResults;
+    for (const asset of imageResults) {
+      if (!asset.loaded) report.failures.push('Image failed to load: ' + asset.file + ' (' + asset.error + ')');
+    }
+    console.log('Browser image decoding: ' + imageResults.filter(asset => asset.loaded).length + '/' + imageResults.length + ' representative originals and previews');
+  } catch (error) {
+    report.failures.push('Browser image checks: ' + String(error.message || error));
+  } finally {
+    await assetPage.close();
+  }
   await browser.close();
   fs.writeFileSync(path.join(output, 'report.json'), JSON.stringify(report, null, 2));
   if (report.failures.length) {
