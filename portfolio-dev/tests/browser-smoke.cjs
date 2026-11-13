@@ -41,6 +41,21 @@ const path = require('node:path');
         if (observations.scrollWidth > viewport.width + 2) throw new Error('Horizontal overflow ' + observations.scrollWidth + 'px at ' + viewport.width + 'px; elements=' + JSON.stringify(observations.overflowElements));
         await page.screenshot({ path: path.join(output, id + '.png'), animations: 'disabled', timeout: 25000 });
         if (['desktop','mobile'].includes(viewport.name)) {
+          // Browser fullPage screenshots alone do not trigger below-the-fold lazy loading.
+          // Scroll through the full document first, then return to top and capture.
+          await page.evaluate(async () => {
+            document.documentElement.style.scrollBehavior = 'auto';
+            const step = Math.max(350, Math.round(innerHeight * 0.8));
+            for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
+              window.scrollTo(0, y);
+              await new Promise(resolve => setTimeout(resolve, 65));
+            }
+            window.scrollTo(0, 0);
+          });
+          await page.waitForFunction(() => [...document.querySelectorAll('img')]
+            .filter(img => img.getClientRects().length && !img.closest('details:not([open])'))
+            .every(img => img.complete && img.naturalWidth > 0), null, { timeout: 25000 });
+          await page.waitForTimeout(250);
           await page.screenshot({ path: path.join(output, id + '-full.png'), fullPage: true, animations: 'disabled', timeout: 45000 });
         }
         const first = page.locator('[data-image]').first();
