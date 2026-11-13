@@ -27,13 +27,14 @@ const path = require('node:path');
           noindex: !!document.querySelector('meta[name="robots"][content*="noindex"]'),
           cards: document.querySelectorAll('[data-image]').length,
           missingAlts: [...document.images].filter(img => !img.hasAttribute('alt')).length,
-          duplicateIds: (() => { const ids = [...document.querySelectorAll('[id]')].map(el => el.id); return ids.length - new Set(ids).size; })()
+          duplicateIds: (() => { const ids = [...document.querySelectorAll('[id]')].map(el => el.id); return ids.length - new Set(ids).size; })(),
+          overflowElements: [...document.querySelectorAll('body *')].filter(el => { const r = el.getBoundingClientRect(); const st = getComputedStyle(el); return st.position !== 'fixed' && st.display !== 'none' && r.width > 0 && (r.right > innerWidth + 2 || r.left < -2); }).slice(0, 12).map(el => ({ tag: el.tagName, class: String(el.className).slice(0, 85), text: (el.textContent || '').trim().slice(0, 40), right: Math.round(el.getBoundingClientRect().right) }))
         }));
         result.observations = observations;
         if (observations.h1 !== 1) throw new Error('Expected exactly one main heading');
         if (!observations.noindex) throw new Error('Missing noindex meta');
         if (observations.missingAlts || observations.duplicateIds) throw new Error('Missing alt text or duplicate IDs');
-        if (observations.scrollWidth > viewport.width + 2) throw new Error('Horizontal overflow ' + observations.scrollWidth + 'px at ' + viewport.width + 'px');
+        if (observations.scrollWidth > viewport.width + 2) throw new Error('Horizontal overflow ' + observations.scrollWidth + 'px at ' + viewport.width + 'px; elements=' + JSON.stringify(observations.overflowElements));
         await page.screenshot({ path: path.join(output, id + '.png'), animations: 'disabled', timeout: 25000 });
         const first = page.locator('[data-image]').first();
         if (await first.count()) {
