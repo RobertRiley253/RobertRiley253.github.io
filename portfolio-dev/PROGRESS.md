@@ -97,3 +97,9 @@ Updated: 2026-11-12 (Pacific)
 - Rebalanced header, typography, whitespace, photographic galleries, dividers, the work-page introduction, navigation states, archive blocks and responsive layouts using a documented additive CSS finish pass.
 - No new generated artwork or decorative motifs. No original photo changed. No original source path deleted. Prior design candidate review-v1 remains preserved.
 - Scope: development branch only. This is a source-level design refinement; actual browser screenshots, real phone touch testing, 200% zoom, load metrics and screen-reader testing remain unverified, and no public release is approved.
+
+## 2026-11-12 — Pre-brand shape, form and color pass
+- Created `portfolio-dev/DESIGN_ACCEPTANCE_CHECKLIST.md` as the owner-rule and cross-discipline review gate.
+- Applied a restrained site-wide foundational color and form pass: coordinated deep forest/ivory/sage accents, softened photo framing, minimized decorative crosshair/rule elements, unified corner geometry, normalized section headings and focus styling.
+- Changes deliberately avoid modifying any approved original photographs, page copy, photo curation, public site, or provisional branding. The present `RR/` mark is not an approved final RRR identity.
+- Source-level update committed on development branch. Actual visual/browser validation remains open; do not call this user-approved or ready to publish.
