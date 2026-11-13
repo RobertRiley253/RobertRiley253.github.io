@@ -96,6 +96,17 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   },{passive:true});
 })();
 
+/* Optional photograph archives: use clear open/closed labels without hiding the native disclosure control. */
+(()=>{
+  document.querySelectorAll("details.related-archive").forEach(group=>{
+    const label=group.querySelector("summary > span:first-child");
+    if(!label)return;
+    const sync=()=>{label.textContent=group.open?"Hide additional photographs":"Show more photographs";};
+    group.addEventListener("toggle",sync);
+    sync();
+  });
+})();
+
 /* Back-to-top button appears after meaningful page scroll; works without external libraries. */
 (()=>{const b=document.querySelector(".back-top");if(!b)return;const update=()=>b.classList.toggle("is-visible",window.scrollY>700);window.addEventListener("scroll",update,{passive:true});update();b.addEventListener("click",()=>window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));})();
 
