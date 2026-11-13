@@ -60,3 +60,12 @@ html{scroll-padding-top:105px}
 @media(max-width:1200px){.site-header{flex-wrap:wrap;gap:12px}.nav{width:100%;justify-content:space-between}.edition{display:none}.explore-guide{grid-template-columns:repeat(3,1fr)}.explore-heading{grid-column:1/-1}}
 @media(max-width:750px){html{scroll-padding-top:20px}.site-header{position:static;padding:15px 18px}.nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.nav a{justify-content:center;text-align:center;border:1px solid #a9bbad;min-height:50px;padding:12px 9px}.quick-instruction{font-size:13px}.explore-guide{grid-template-columns:1fr;gap:10px}.explore-heading{grid-column:auto}.explore-guide>a{min-height:82px}.category-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.category-strip a{justify-content:center;text-align:center;padding:13px 11px}.category-label{display:block}.category-label span{display:block;margin-top:6px}.next-step{display:block}.next-step .action-button{margin-top:22px;white-space:normal}.image-caption{font-size:13px}.image-arrow{padding:8px 9px}.related-archive summary{gap:13px}.back-top{bottom:12px;right:12px}}
 @media(max-width:490px){.nav a{font-size:14px}.quick-instruction{padding:11px 18px}.image-caption>span:first-child{max-width:65%}.image-arrow{font-size:12px}.category-strip a{font-size:13px}.related-archive summary{font-size:14px;flex-wrap:wrap}.related-archive .archive-grid{padding:15px}.explore-guide{padding-top:22px;padding-bottom:26px}.next-step{padding-top:33px;padding-bottom:38px}.back-top{font-size:13px}}
+
+/* Resilience: clear failed-image states and no-horizontal-scroll typography. */
+.image-status{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);padding:15px 20px;max-width:min(550px,90vw);background:#fbfaf5;color:#193529;border-radius:5px;font-size:15px;line-height:1.5;text-align:center;z-index:2;box-shadow:0 3px 20px #0004}
+.image-status[hidden]{display:none}
+.lightbox-image{position:relative}
+.lightbox-image img[hidden]{display:none}
+.logo-name,.intro-statement,.chapter-heading h2,.page-hero h1,.masthead h1{overflow-wrap:break-word}
+@media(max-width:750px){.logo-name{white-space:normal}.site-header .logo{min-width:0}.lightbox-foot{gap:8px}.lightbox-foot a{white-space:nowrap}.lightbox-image button{min-width:48px;min-height:48px}.image-status{font-size:14px}}
+@media(max-width:400px){.lightbox-foot{flex-direction:column;align-items:flex-start}.lightbox-image{height:calc(100% - 165px)}.logo-name small{line-height:1.4}}
