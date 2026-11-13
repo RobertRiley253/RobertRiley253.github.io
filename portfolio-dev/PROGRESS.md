@@ -43,3 +43,9 @@ Updated: 2026-11-12 (Pacific)
 - Updated four pages, CSS, and JS on the development branch for **discoverability, larger click targets, clear photographic interactions, more obvious archive expansion, category jumps, next-page actions, and back-to-top**.
 - Static audit passed: 63 distinct images still represented, no broken local/cross-page fragment links, no unlabelled gallery buttons, no missing image alt attributes.
 - Detailed implementation and remaining verification list at `portfolio-dev/USABILITY_CHECKLIST.md`. Real-device/browser testing is not claimed complete.
+
+## Finishing pass — November 12, 2026 (Pacific)
+- Implemented robust viewer controls: keyboard Tab cycling, closing focus restoration, left/right navigation, touch swipe gestures and a failed-photograph message.
+- Added small-phone overflow protections and readable failed-photo message styling.
+- Rechecked all four HTML pages: 63 unique photo IDs, no missing fragment targets, no unlabeled images, and development-only indexing safeguards.
+- Updated `USABILITY_CHECKLIST.md`. Browser rendering and mobile interaction tests remain **unverified**; original photographs unmodified; public `main` unchanged.
