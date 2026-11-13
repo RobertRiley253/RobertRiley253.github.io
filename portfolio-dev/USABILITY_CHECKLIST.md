@@ -1,7 +1,7 @@
 # Comprehensive portfolio usability and production checklist
 Updated: November 12, 2026 (Pacific)
 Scope: `portfolio-dev/` on branch `portfolio-development-2026-11-12`
-Status: Implemented improvements and static verification. Browser/device testing and image appraisal remain outstanding.
+Status: Usability implementation and static checks performed; genuine desktop/mobile browser testing and final photographic appraisal still outstanding.
 
 ## Navigation and discoverability
 - [x] Main navigation labels enlarged, with 48px minimum targets and visible current-page highlighting.
@@ -20,7 +20,7 @@ Status: Implemented improvements and static verification. Browser/device testing
 - [x] Larger photo captions and clearer hover/focus styles.
 - [x] Archive expansion relabeled "Show more photographs", with item count.
 - [x] Full-size viewer includes previous/next, keyboard arrows, close and original-image link.
-- [ ] Verify lightbox focus trapping, keyboard and screen-reader behavior in a real browser.
+- [x] Implement modal focus cycling, focus restoration, keyboard arrows, touch swipes, and missing-image feedback.\n- [ ] Verify these behaviors in actual browsers, including screen readers and touch devices.
 - [ ] Complete full-resolution photography assessment, authenticity checks and new-archive integration.
 
 ## Design, messaging and quality
@@ -28,7 +28,7 @@ Status: Implemented improvements and static verification. Browser/device testing
 - [x] Larger and higher-contrast action controls; more explicit browsing instructions.
 - [x] Responsive CSS for navigation and action cards.
 - [x] Natural photographic aspect ratios preserved.
-- [ ] Test mobile/desktop renders, 200% zoom, text wrapping, and color contrast.
+- [x] Add additional narrow-phone text wrapping/overflow protection and failed-image status styling.\n- [ ] Test mobile/desktop renders, 200% zoom, text wrapping, and color contrast.
 - [ ] Confirm individual project roles and attribution before public release.
 - [ ] Validate font and image loading performance on real devices.
 
@@ -41,3 +41,12 @@ Status: Implemented improvements and static verification. Browser/device testing
 - [x] No automatic public release. Development HTML has `noindex,nofollow`.
 - [ ] Integrate additional user-selected original archive photos.
 - [ ] Present entire final version for explicit user approval before any main-branch merge.
+
+## Verification pass — November 12, 2026 (Pacific)
+- [x] Four pages checked for internal fragment links: no missing anchor targets.
+- [x] All 63 distinct portfolio photo IDs remain in the four-page site; original JPGs unchanged.
+- [x] All displayed HTML images have descriptive alt attributes.
+- [x] Full-size viewer now includes explicit failed-photo feedback, Tab focus cycling, focus restoration, and mobile swipe gestures.
+- [x] All four pages retain development-only noindex metadata.
+- [ ] Run interactive chromium/Safari/mobile tests against actual rendered site. Local browser tools exist but the GitHub project assets cannot be retrieved directly into that browser environment here; **do not treat structural checks as cross-device certification**.
+- [ ] Obtain/inspect additional source originals before final selection and publication.
