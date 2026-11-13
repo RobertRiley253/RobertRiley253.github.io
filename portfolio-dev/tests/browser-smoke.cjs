@@ -141,7 +141,7 @@ const path = require('node:path');
         const timer = setTimeout(() => resolve({ id: photo.id, file: photo.file, loaded: false, error: 'timeout' }), 15000);
         img.onload = () => { clearTimeout(timer); resolve({ id: photo.id, file: photo.file, loaded: img.naturalWidth > 0, width: img.naturalWidth, height: img.naturalHeight }); };
         img.onerror = () => { clearTimeout(timer); resolve({ id: photo.id, file: photo.file, loaded: false, error: 'image error' }); };
-        img.src = photo.file.startsWith('incoming-portfolio/previews/')
+        img.src = photo.file.startsWith('incoming-portfolio/')
           ? 'https://raw.githubusercontent.com/RobertRiley253/RobertRiley253.github.io/portfolio-development-2026-11-12/' + photo.file
           : 'https://robertriley253.github.io/' + photo.file;
       })));
