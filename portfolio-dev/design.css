@@ -298,3 +298,8 @@ main{overflow:clip}
  .nav a,.explore-guide>a,.image-card .image-wrap,.image-wrap img{transition:none}
  .image-card:hover img{transform:none}
 }
+
+/* Keep the full photographs visible within each framed hero cell. */
+.hero-frame img{flex:1 1 auto;min-height:0;max-height:calc(100% - 34px)!important}
+.hero-frame span{flex:0 0 auto}
+@media(max-width:490px){.hero-frame img{max-height:calc(100% - 30px)!important}}
