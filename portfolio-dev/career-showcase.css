@@ -142,3 +142,20 @@
 .contact-finale::after{content:"";position:absolute;inset:auto -12% -135px 48%;height:300px;border:1px solid #e9cc9760;border-radius:50%;box-shadow:0 0 0 54px #e9cc9714,0 0 0 110px #e9cc970d;pointer-events:none}
 .contact-finale>*{position:relative;z-index:1}
 @media(max-width:760px){.career-positioning::before,.career-history::before{opacity:.55}.contact-finale::after{display:none}}
+
+
+/* Automotive and motorsport portfolio feature: actual work only, no fabricated racing images. */
+.motorsports-feature{max-width:1600px;margin:0 auto;padding:clamp(64px,7vw,116px) clamp(20px,4vw,72px);background:#f3f1ea;border-top:1px solid #b9c4b9;border-bottom:1px solid #b9c4b9}
+.motorsports-feature-top{display:grid;grid-template-columns:1.25fr .75fr;gap:22px 54px;align-items:end;margin-bottom:36px}
+.motorsports-feature-top .precision-kicker{grid-column:1/-1;color:#526754}
+.motorsports-feature h2{font:400 clamp(43px,5.5vw,87px)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.055em;margin:0;color:#142a26}
+.motorsports-feature h2 em{color:#87694b;font-weight:400}
+.motorsports-feature-top>p:last-child{font-size:clamp(15px,1.35vw,19px);line-height:1.7;color:#405548;margin:0}
+.motorsports-feature-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.motorsports-feature-grid figure{display:flex;flex-direction:column;margin:0;min-width:0;background:#fbfaf6;border:1px solid #c8cfc7}
+.motorsports-feature-grid img{width:100%;height:clamp(230px,21vw,340px);object-fit:contain;display:block;background:#e4e9e2;padding:12px}
+.motorsports-feature-grid figcaption{padding:17px 20px 20px;font:400 clamp(19px,2vw,26px)/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.03em;color:#183c28}
+.motorsports-feature-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;margin-top:26px;padding-top:23px;border-top:1px solid #aab9ab}
+.motorsports-feature-bottom span{font-size:11px;letter-spacing:.1em;font-weight:750;color:#536854}
+.motorsports-feature-bottom a{color:#153e28;font-size:13px;font-weight:700;text-underline-offset:5px}
+@media(max-width:760px){.motorsports-feature-top{grid-template-columns:1fr}.motorsports-feature-top .precision-kicker{grid-column:1}.motorsports-feature-grid{grid-template-columns:1fr}.motorsports-feature-grid img{height:245px}.motorsports-feature-grid figcaption{font-size:22px}}
