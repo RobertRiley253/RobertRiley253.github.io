@@ -89,3 +89,8 @@ Status: Usability implementation and static checks performed; genuine desktop/mo
 - [x] Shared CSS source updated to enlarge meaningful tertiary labels, improve narrow-phone wrapping and show archive summary keyboard focus.
 - [ ] Inspect actual rendered text density, navigation and photo layout at 320px, 375px, 430px, 768px and desktop widths, plus 200% zoom.
 - [ ] Validate contrast, screen-reader announce order, keyboard lightbox trap and touch swipe on real browsers/devices.
+
+## Gallery-first redesign follow-up
+- [x] Remove duplicate pre-hero navigation/instruction clutter while keeping clear four-page main navigation and direct category shortcuts.
+- [x] Increase photographic emphasis and replace low-resolution home print teaser with higher-resolution existing original.
+- [ ] Visually inspect four pages after editorial CSS changes at desktop, tablet, 320px and 375px phone widths; test zoom, contrast, focus, and lightbox interactions.
