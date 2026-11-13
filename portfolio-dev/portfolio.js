@@ -44,6 +44,11 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
     count.textContent=String(position+1).padStart(2,"0")+" / "+String(ids.length).padStart(2,"0");
     setStatus("");
   };
+  pic.addEventListener("load",()=>{
+    // Recover the display after an earlier image fails, including rapid navigation.
+    pic.hidden=false;
+    setStatus("");
+  });
   pic.addEventListener("error",()=>{
     pic.hidden=true;
     setStatus("This photograph could not load. Open the original image or try the next photograph.");
