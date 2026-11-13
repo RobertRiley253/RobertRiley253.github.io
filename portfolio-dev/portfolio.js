@@ -16,6 +16,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   let position=0;
   let trigger=null;
   let touchStart=null;
+  let selectedUrl="";
   const status=document.createElement("p");
   status.className="image-status";
   status.setAttribute("role","status");
@@ -36,28 +37,34 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
     const ids=currentIds();
     if(!ids.length)return;
     position=(index+ids.length)%ids.length;
-    const rec=PHOTOS[ids[position]-1];
+    const rec=PHOTOS.find(photo=>photo.id===ids[position]);
     if(!rec){setStatus("This photograph is currently unavailable.");return;}
     const isPreview=rec.file.startsWith("incoming-portfolio/previews/");
     const url=isPreview
       ? "https://raw.githubusercontent.com/RobertRiley253/RobertRiley253.github.io/portfolio-development-2026-11-12/"+rec.file
       : "https://robertriley253.github.io/"+rec.file;
-    pic.hidden=false;
-    pic.alt=rec.title;
-    pic.src=url;
+    // Update the source label before requesting the photograph so load errors
+    // always describe the image currently selected, including JPEG previews.
+    selectedUrl=url;
     title.textContent=rec.title;
-    dialog.setAttribute("aria-label","Full-size photograph: "+rec.title);
+    dialog.setAttribute("aria-label",(isPreview?"JPEG preview: ":"Full-size photograph: ")+rec.title);
     link.href=url;
     link.textContent=isPreview?"Open uploaded JPEG preview ↗":"View original image ↗";
     count.textContent=String(position+1).padStart(2,"0")+" / "+String(ids.length).padStart(2,"0");
+    count.setAttribute("aria-label","Photograph "+(position+1)+" of "+ids.length+": "+rec.title+(isPreview?", JPEG preview":""));
+    pic.alt=rec.title;
+    pic.hidden=false;
     setStatus("");
+    pic.src=url;
   };
   pic.addEventListener("load",()=>{
     // Recover the display after an earlier image fails, including rapid navigation.
+    if(pic.currentSrc!==selectedUrl||!dialog.open)return;
     pic.hidden=false;
     setStatus("");
   });
   pic.addEventListener("error",()=>{
+    if(pic.currentSrc!==selectedUrl||!dialog.open)return;
     pic.hidden=true;
     setStatus(link.textContent.includes("preview")?"This JPEG preview could not load. Open the preview link or try the next photograph.":"This photograph could not load. Open the original image or try the next photograph.");
   });
@@ -72,6 +79,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   next.addEventListener("click",()=>select(position+1));
   close.addEventListener("click",()=>dialog.close());
   dialog.addEventListener("close",()=>{
+    selectedUrl="";
     pic.removeAttribute("src");
     setStatus("");
     if(trigger&&trigger.isConnected)trigger.focus();
@@ -97,6 +105,7 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
   },{passive:true});
   dialog.addEventListener("touchend",(event)=>{
     if(!touchStart||event.changedTouches.length!==1)return;
+    if(event.target.closest("button,a")){touchStart=null;return;}
     const dx=event.changedTouches[0].clientX-touchStart.x;
     const dy=event.changedTouches[0].clientY-touchStart.y;
     touchStart=null;
