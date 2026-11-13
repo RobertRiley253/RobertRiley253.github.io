@@ -86,3 +86,18 @@ const PHOTOS=[{"id":1,"file":"portfolio-001.jpg","title":"Salvation Army chapel 
 
 /* Back-to-top button appears after meaningful page scroll; works without external libraries. */
 (()=>{const b=document.querySelector(".back-top");if(!b)return;const update=()=>b.classList.toggle("is-visible",window.scrollY>700);window.addEventListener("scroll",update,{passive:true});update();b.addEventListener("click",()=>window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));})();
+
+// Thumbnail recovery: preserve labels and provide a usable explanation for failed images.
+(()=>{
+  for(const img of document.querySelectorAll(".image-card img")){
+    img.addEventListener("error",()=>{
+      const wrap=img.closest(".image-wrap");
+      if(!wrap||wrap.querySelector(".image-unavailable"))return;
+      img.hidden=true;
+      const note=document.createElement("span");
+      note.className="image-unavailable";
+      note.textContent="Image temporarily unavailable — select to view the original.";
+      wrap.append(note);
+    });
+  }
+})();
