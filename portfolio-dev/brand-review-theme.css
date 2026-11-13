@@ -1,4 +1,15 @@
-/* DEVELOPMENT-ONLY RRR BRAND REVIEW — TRADITIONAL candidate. Not owner approval. */
-.brand-review-note{background:#dfc999;color:#142a26;text-align:center;padding:8px 16px;font:700 10px/1.4 Arial,sans-serif;letter-spacing:.09em}
-.site-header .logo{display:flex;align-items:center;gap:12px;min-width:0}.site-footer{align-items:center}.brand-footer-art{flex:none}.brand-logo-asset{display:block}.brand-preview-summary{max-width:var(--max);margin:auto;padding:36px clamp(20px,4vw,72px);display:flex;flex-wrap:wrap;align-items:center;gap:24px;border-top:1px solid var(--line)}.brand-preview-summary img{width:250px;max-width:100%;height:auto;object-fit:contain}.brand-preview-summary p{flex:1 1 280px;font-size:14px;line-height:1.65;color:var(--ink)}.brand-preview-summary small{display:block;letter-spacing:.09em;font-size:10px;font-weight:700;color:var(--muted);margin-bottom:10px}
-.brand-logo-asset{width:68px;height:68px;object-fit:contain;flex:none}.brand-hero-mark{display:flex;gap:16px;align-items:center;color:#e2c795;letter-spacing:.11em;font-size:10px;font-weight:700;margin:0 0 18px}.brand-hero-mark img{width:78px;height:78px;object-fit:contain}.brand-footer-art{width:74px;height:74px;object-fit:contain}.brand-logo-asset,.brand-footer-art{filter:none}@media(max-width:640px){.brand-logo-asset{width:55px;height:55px}.brand-hero-mark img{width:60px;height:60px}.brand-hero-mark span{max-width:140px}}
+/* RRR hybrid brand review — existing traditional header and footer, approved directional signature in green hero. Review-only; public main unaffected. */
+.site-header .logo{display:flex;align-items:center;gap:12px;min-width:0}
+.site-footer{align-items:center}
+.brand-logo-asset,.brand-footer-art{display:block;flex:none;object-fit:contain}
+.brand-logo-asset{width:68px;height:68px}
+.brand-footer-art{width:74px;height:74px}
+.brand-hero-signature{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin:0 0 25px;color:#f1d5a3;font-size:10px;font-weight:700;letter-spacing:.11em}
+.brand-hero-signature img{display:block;width:min(400px,100%);height:auto;max-height:138px;object-fit:contain;object-position:left center}
+.brand-hero-signature span{font-size:10px;line-height:1.45;letter-spacing:.12em}
+.brand-preview-summary{max-width:var(--max);margin:auto;padding:36px clamp(20px,4vw,72px);display:flex;flex-wrap:wrap;align-items:center;gap:24px;border-top:1px solid var(--line)}
+.brand-preview-summary img{width:250px;max-width:100%;height:auto;object-fit:contain}
+.brand-preview-summary p{flex:1 1 280px;font-size:14px;line-height:1.65;color:var(--ink)}
+.brand-preview-summary small{display:block;letter-spacing:.09em;font-size:10px;font-weight:700;color:var(--muted);margin-bottom:10px}
+@media(max-width:750px){.brand-logo-asset{width:55px;height:55px}.brand-footer-art{width:64px;height:64px}.brand-hero-signature img{width:min(320px,100%)}}
+@media(max-width:360px){.brand-logo-asset{width:49px;height:49px}.brand-hero-signature img{width:min(280px,100%)}}
