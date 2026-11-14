@@ -1,0 +1,122 @@
+name: Life Story edition final browser and privacy QA — no deployment
+on:
+  push:
+    branches: [portfolio-life-story-masterpiece-review-2026-11-13]
+    paths: [.github/workflows/life-story-qa.yml]
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Set up Chromium and accessibility
+        run: |
+          npm install --no-save playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Start local preview server (never deploy)
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/portfolio-http.log 2>&1 &
+          for i in $(seq 1 25); do
+            curl -fsS http://127.0.0.1:8765/portfolio-dev/index.html >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/portfolio-http.log; exit 1
+      - name: Verify responsive photos and galleries across four pages
+        id: photos
+        continue-on-error: true
+        run: node portfolio-dev/tests/browser-smoke.cjs
+      - name: Verify automated accessibility of four pages
+        id: axe
+        continue-on-error: true
+        run: node portfolio-dev/tests/accessibility-audit.cjs
+      - name: Verify story navigation, privacy, completeness and typography
+        id: life
+        continue-on-error: true
+        run: |
+          node <<'JS'
+          const {chromium}=require('playwright'),fs=require('fs');
+          (async()=>{
+            const names=['index','work','production','profile'];
+            const h=Object.fromEntries(names.map(n=>[n,fs.readFileSync('portfolio-dev/'+n+'.html','utf8')]));
+            const all=Object.values(h).join('\n');
+            if(/mailto:|[\w.+-]+@[\w.-]+\.[a-z]{2,}|253[-. ]?881[-. ]?9175/i.test(all))throw Error('Direct private contact found in public-facing HTML');
+            if(!Object.values(h).every(x=>x.includes('noindex,nofollow')))throw Error('One preview page lost noindex');
+            if(!Object.values(h).every(x=>x.includes('>My Story</a>')))throw Error('My Story nav missing');
+            const profile=h.profile;
+            const ids=['story-artist','story-business','story-shops','story-aerospace','story-technology','story-teaching','story-racing','story-field','story-history'];
+            for(const id of ids)if(!profile.includes('id="'+id+'"'))throw Error('Missing story chapter '+id);
+            for(const term of ['Boeing','Burke Gibson','Lucky Signs','Speedy Sign-O-Rama','All American Decal Guy','Metropolitan Parks','RIP','ICC','B-2','historian'])if(!new RegExp(term,'i').test(profile))throw Error('Missing career subject '+term);
+            for(const [name,html] of Object.entries(h))for(const m of html.matchAll(/href="([^"]*#[^"]+)"/g)){
+              const [target,anchor]=m[1].split('#');
+              const n=target?target.replace('.html',''):name;
+              if(h[n]&&!h[n].includes('id="'+anchor+'"'))throw Error('Broken link '+name+' '+m[1]);
+            }
+            const photoSet=new Set([...all.matchAll(/data-image="(\d+)"/g)].map(m=>m[1]));
+            if(photoSet.size!==103)throw Error('Original 103 photographic records missing: '+photoSet.size);
+            const browser=await chromium.launch({headless:true});
+            fs.mkdirSync('portfolio-dev/browser-qa',{recursive:true});
+            for(const width of [375,768,1024,1440]){
+              for(const pageName of names){
+                const page=await browser.newPage({viewport:{width,height:900}});
+                await page.goto('http://127.0.0.1:8765/portfolio-dev/'+pageName+'.html',{waitUntil:'domcontentloaded'});
+                const state=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,nav:!!document.querySelector('.nav'),style:!!document.querySelector('link[href="life-edition.css"]'),lifeChapters:document.querySelectorAll('.life-edition-chapter').length,snapshot:!!document.querySelector('.career-snapshot'),ledger:!!document.querySelector('.career-ledger'),noindex:document.querySelector('meta[name="robots"]')?.content==='noindex,nofollow'}));
+                if(state.overflow>4||!state.nav||!state.style||!state.noindex)throw Error('Viewport failure '+pageName+' '+width+' '+JSON.stringify(state));
+                if(pageName==='profile'&&(state.lifeChapters!==9||!state.snapshot||!state.ledger))throw Error('Biography sections not rendered '+width);
+                if(width===1440 || width===375){
+                  if(pageName==='profile'){
+                    await page.locator('#life-story').scrollIntoViewIfNeeded();
+                    await page.screenshot({path:'portfolio-dev/browser-qa/life-story-'+width+'-hero.png',fullPage:false,animations:'disabled'});
+                    await page.locator('#story-aerospace').scrollIntoViewIfNeeded();
+                    await page.screenshot({path:'portfolio-dev/browser-qa/life-story-'+width+'-aerospace.png',fullPage:false,animations:'disabled'});
+                    await page.locator('#career-record').scrollIntoViewIfNeeded();
+                    await page.screenshot({path:'portfolio-dev/browser-qa/life-story-'+width+'-career-ledger.png',fullPage:false,animations:'disabled'});
+                  }
+                  await page.goto('http://127.0.0.1:8765/portfolio-dev/'+pageName+'.html',{waitUntil:'domcontentloaded'});
+                  await page.screenshot({path:'portfolio-dev/browser-qa/'+pageName+'-owner-'+width+'.png',fullPage:false,animations:'disabled'});
+                }
+                console.log('PASS STORY '+pageName+' '+width+'px');
+                await page.close();
+              }
+            }
+            await browser.close();
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Save all page and biography screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robert-r-riley-full-life-edition-visual-review
+          path: portfolio-dev/browser-qa/
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Record test result on protected branch only
+        if: always()
+        env:
+          PHOTO: ${{ steps.photos.outcome }}
+          AXE: ${{ steps.axe.outcome }}
+          LIFE: ${{ steps.life.outcome }}
+          TESTED: ${{ github.sha }}
+          RUN: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo '# Robert R. Riley — My Story visual and privacy QA'
+            echo
+            echo "- Tested revision: \`$TESTED\`"
+            echo "- Responsive and original photos: **$PHOTO**"
+            echo "- Automated accessibility: **$AXE**"
+            echo "- Nine-chapter story, privacy and navigation: **$LIFE**"
+            echo "- Run: $RUN"
+            echo '- Review branch only; no deployment or publication.'
+          } > portfolio-dev/LIFE_EDITION_QA.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio-dev/LIFE_EDITION_QA.md
+          git commit -m "Record My Story private visual QA" || true
+          git push origin HEAD:portfolio-life-story-masterpiece-review-2026-11-13
+      - name: Enforce checks
+        if: steps.photos.outcome != 'success' || steps.axe.outcome != 'success' || steps.life.outcome != 'success'
+        run: exit 1
