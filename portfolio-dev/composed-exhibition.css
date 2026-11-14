@@ -296,3 +296,29 @@ body .chapter .section-next{margin-top:clamp(17px,2vw,28px)!important}
 @media(forced-colors:active){
  body .chapter .image-wrap,.life-edition-photo-sequence figure{border:1px solid CanvasText!important;background:Canvas!important}
 }
+/* Final precedence: low-res/review-only media can NEVER inherit an oversized featured span. */
+@media(min-width:1021px){
+ body .chapter[class*="composition-"] .editorial-grid>.image-card[data-resolution="small"],
+ body .chapter[class*="composition-"] .editorial-grid>.image-card[data-resolution="unverified"]{
+   grid-column:span 3!important;max-width:100%!important;
+ }
+ body .chapter[class*="composition-"] .editorial-grid>.image-card[data-resolution="tiny"]{
+   grid-column:span 2!important;max-width:100%!important;
+ }
+}
+body .chapter .editorial-grid>.image-card[data-resolution="unverified"] .image-wrap{
+ aspect-ratio:5/4!important;max-height:210px!important;
+}
+@media(min-width:721px) and (max-width:1020px){
+ body .chapter .editorial-grid>.image-card[data-resolution="unverified"]{
+  grid-column:span 4!important;
+ }
+}
+@media(max-width:720px){
+ body .chapter .editorial-grid>.image-card[data-resolution="unverified"]{
+  grid-column:span 3!important;
+ }
+ body .chapter .editorial-grid>.image-card[data-resolution="unverified"] .image-wrap{
+  max-height:155px!important;
+ }
+}
