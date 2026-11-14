@@ -1,0 +1,120 @@
+name: Final owner portfolio approval QA — never deploy
+on:
+  push:
+    branches: [portfolio-final-approval-candidate-2026-11-13]
+    paths: [.github/workflows/final-owner-qa.yml]
+permissions:
+  contents: write
+jobs:
+  final_browser:
+    name: Four-page final owner review and accessibility QA
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Install Chromium dependencies
+        run: |
+          npm install --no-save playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Serve the candidate locally, no deployment
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/portfolio-http.log 2>&1 &
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8765/portfolio-dev/index.html >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/portfolio-http.log
+          exit 1
+      - name: All image and responsive browser checks
+        id: smoke
+        continue-on-error: true
+        run: node portfolio-dev/tests/browser-smoke.cjs
+      - name: Automated Axe tests across all four pages
+        id: axe
+        continue-on-error: true
+        run: node portfolio-dev/tests/accessibility-audit.cjs
+      - name: Owner-specific final release preview checks
+        id: owner
+        continue-on-error: true
+        run: |
+          node <<'JS'
+          const fs=require('fs'),{chromium}=require('playwright');
+          (async()=>{
+            const root='portfolio-dev/';
+            const files=['index','work','production','profile'];
+            const htmls=Object.fromEntries(files.map(f=>[f,fs.readFileSync(root+f+'.html','utf8')]));
+            const html=Object.values(htmls).join('\n');
+            const ids=[...html.matchAll(/data-image="(\d+)"/g)].map(x=>x[1]);
+            if(new Set(ids).size!==103)throw Error('103 original photo identifiers not preserved: '+new Set(ids).size);
+            for(const f of files){
+              const s=htmls[f];
+              if(s.includes('review-ribbon')||s.includes('DEVELOPMENT CANDIDATE')||s.includes('Existing public website'))throw Error('Owner review staging copy visible: '+f);
+              if(!s.includes('name="robots" content="noindex,nofollow"'))throw Error('Unapproved preview has lost noindex: '+f);
+              if(!s.includes('owner-final-polish.css'))throw Error('Final stylesheet missing: '+f);
+              if(!s.includes('rrr-traditional-ink.png'))throw Error('Approved monogram missing: '+f);
+              const links=[...s.matchAll(/href="([^"]+)"/g)].map(x=>x[1]);
+              for(const link of links){
+                if(!link.includes('#'))continue;
+                const [target,anchor]=link.split('#');
+                const file=target.replace('.html','')||f;
+                if(files.includes(file) && anchor && !htmls[file].includes('id="'+anchor+'"'))throw Error('Broken anchor: '+f+' '+link);
+              }
+            }
+            const browser=await chromium.launch({headless:true});
+            for(const width of [375,768,1440]){
+              for(const f of files){
+                const page=await browser.newPage({viewport:{width,height:900}});
+                await page.goto('http://127.0.0.1:8765/'+root+f+'.html',{waitUntil:'domcontentloaded'});
+                const t=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,hasHeader:!!document.querySelector('.site-header'),hasFooter:!!document.querySelector('.site-footer'),hasRibbon:!!document.querySelector('.review-ribbon')}));
+                if(t.overflow>4||!t.hasHeader||!t.hasFooter||t.hasRibbon)throw Error('Layout defect at '+f+' '+width+' '+JSON.stringify(t));
+                console.log('PASS owner-ready '+f+' '+width+'px');
+                await page.close();
+              }
+            }
+            const check=await browser.newPage();
+            await check.goto('http://127.0.0.1:8765/portfolio-dev/work.html');
+            const motif=await check.request.get('http://127.0.0.1:8765/portfolio-dev/atelier-illustrations/signmakers-plate.svg');
+            if(!motif.ok())throw Error('Original signmaker illustration missing');
+            const hero=await check.request.get('http://127.0.0.1:8765/portfolio-dev/atelier-illustrations/drafting-registration.svg');
+            if(!hero.ok())throw Error('Original registration illustration missing');
+            await browser.close();
+            console.log('PASS all final owner-specific release-preview checks');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          JS
+      - name: Preserve final full-size screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robert-r-riley-final-approval-visuals
+          path: portfolio-dev/browser-qa/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Save unambiguous run status on protected branch
+        if: always()
+        env:
+          SMOKE: ${{ steps.smoke.outcome }}
+          AXE: ${{ steps.axe.outcome }}
+          OWNER: ${{ steps.owner.outcome }}
+          TESTED_COMMIT: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo '# Final owner approval candidate — browser QA'
+            echo
+            echo "- Tested commit: \`$TESTED_COMMIT\`"
+            echo "- Responsive, photo decoding and zoom: **$SMOKE**"
+            echo "- Accessibility audit: **$AXE**"
+            echo "- Owner candidate, navigation, visual assets and overflow: **$OWNER**"
+            echo "- Run: $RUN_URL"
+            echo "- Development preview remains noindex. Nothing deployed."
+          } > portfolio-dev/FINAL_OWNER_APPROVAL_QA.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio-dev/FINAL_OWNER_APPROVAL_QA.md
+          git commit -m "Record final owner approval visual QA" || true
+          git push origin HEAD:portfolio-final-approval-candidate-2026-11-13
+      - name: Enforce all quality gates
+        if: steps.smoke.outcome != 'success' || steps.axe.outcome != 'success' || steps.owner.outcome != 'success'
+        run: exit 1
