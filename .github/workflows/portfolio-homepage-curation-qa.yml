@@ -44,7 +44,7 @@ jobs:
             const html=fs.readFileSync('portfolio-dev/index.html','utf8');
             const ids=[...html.matchAll(/<img[^>]*src="https:\/\/robertriley253.github.io\/portfolio-(\d+)\.jpg"[^>]*>/g)].map(m=>m[1]);
             if(ids.length!==new Set(ids).size)throw Error('Repeated original JPEGs in homepage');
-            const {chromium}=require('playwright'),browser=await chromium.launch({headless:true});
+            const browser=await chromium.launch({headless:true});
             for(const width of [1440,375]){
               const page=await browser.newPage({viewport:{width,height:900}});
               await page.goto('http://127.0.0.1:8765/portfolio-dev/index.html');
