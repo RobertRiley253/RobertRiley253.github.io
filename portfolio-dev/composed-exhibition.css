@@ -1,0 +1,298 @@
+/* ROBERT R. RILEY | THE COMPOSED EXHIBITION
+   This layer rebuilds photographic COMPOSITION while preserving authentic original
+   JPGs, the approved monogram/signature, authored career prose and the lightbox.
+   Selected in response to owner's rejection of the single-file giant-photo wall.
+   No generated commercial imagery. No fuzzy decorative duplicate photograph.
+*/
+:root{--cd-ink:#182f26;--cd-forest:#183d2e;--cd-dark:#11291f;--cd-brass:#ba9761;--cd-paper:#f2ead9;--cd-ivory:#fff9e9}
+main{overflow-x:clip}
+/* Tighten the opening while retaining the art, display type and three authentic photos. */
+.exhibition-masthead{min-height:0!important}
+.exhibition-masthead .masthead-inner{padding-top:clamp(22px,4vw,58px)!important;padding-bottom:clamp(22px,3vw,50px)!important}
+.exhibition-masthead .masthead-copy h1{font-size:clamp(57px,7vw,108px)!important;line-height:.96!important}
+.exhibition-masthead .hero-composition{max-height:600px}
+.exhibition-masthead .hero-frame{box-shadow:0 12px 30px #020d0a4b}
+.exhibition-masthead .hero-frame img{filter:none!important}
+.exhibition-masthead .masthead-bottom{padding-block:13px!important}
+.exhibition-thesis,.career-positioning{max-width:1600px;margin:auto}
+.exhibition-thesis{padding-block:clamp(28px,4.2vw,64px)!important}
+.exhibition-thesis .exhibition-thesis-main{min-height:0!important}
+.exhibition-thesis .exhibition-thesis-copy h2{font-size:clamp(36px,4.5vw,68px)!important}
+.career-positioning{padding-block:clamp(35px,4vw,64px)!important}
+.career-positioning .career-positioning-main{min-height:0!important}
+.career-positioning h2{font-size:clamp(38px,4.5vw,74px)!important}
+.life-story-teaser{grid-template-columns:minmax(0,1.5fr) minmax(180px,.45fr)!important;padding-block:clamp(31px,4vw,67px)!important}
+.life-story-teaser h2{font-size:clamp(43px,4.3vw,77px)!important}
+.life-story-teaser-art{min-height:200px!important}
+.life-story-teaser-art img{width:min(200px,65%)!important}
+.intro-band{padding-block:clamp(22px,2.9vw,46px)!important}
+.intro-band .intro-statement{font-size:clamp(29px,3.3vw,52px)!important}
+
+/* Photography: compact compositions, NOT a sea of enormous uniform cards. */
+body .chapter{padding-block:clamp(35px,4.5vw,78px)!important}
+body .chapter-heading{margin-bottom:clamp(20px,2.5vw,40px)!important}
+body .chapter-heading h2{font-size:clamp(38px,4.35vw,70px)!important}
+body .chapter-heading .chapter-desc{max-width:58ch;font-size:clamp(13px,1.1vw,16px)!important}
+body .chapter .editorial-grid,
+body .chapter .editorial-grid.category-grid,
+body .chapter .editorial-grid.archive-expansion-grid{
+ display:grid!important;grid-template-columns:repeat(12,minmax(0,1fr))!important;
+ gap:clamp(12px,1.5vw,22px)!important;align-items:stretch!important;
+ grid-auto-flow:row dense;
+}
+/* Baseline is a composed three-up exhibit, never one giant photograph per row. */
+body .chapter .editorial-grid>.image-card,
+body .chapter .editorial-grid>.image-card.wide,
+body .chapter .editorial-grid.category-grid>.image-card,
+body .chapter .editorial-grid.category-grid>.image-card.wide,
+body #chapter-1 .editorial-grid>.image-card[data-image="6"],
+body #chapter-2 .editorial-grid>.image-card[data-image="9"],
+body #architecture .category-grid>.image-card[data-image="6"],
+body #vehicles .category-grid>.image-card[data-image="9"]{
+ grid-column:span 4!important;min-width:0!important;width:100%!important;
+ display:flex!important;align-self:stretch;flex-direction:column;
+}
+/* Designed layouts are chosen per subject, not arbitrary identical rows. */
+@media(min-width:1021px){
+ body .chapter.composition-signs .editorial-grid>.image-card:nth-child(5n+1),
+ body .chapter.composition-architecture .editorial-grid>.image-card:nth-child(5n+1),
+ body .chapter.composition-production .editorial-grid>.image-card:nth-child(5n+1){grid-column:span 6!important}
+ body .chapter.composition-signs .editorial-grid>.image-card:nth-child(5n+2),
+ body .chapter.composition-architecture .editorial-grid>.image-card:nth-child(5n+2),
+ body .chapter.composition-production .editorial-grid>.image-card:nth-child(5n+2){grid-column:span 3!important}
+ body .chapter.composition-signs .editorial-grid>.image-card:nth-child(5n+3),
+ body .chapter.composition-architecture .editorial-grid>.image-card:nth-child(5n+3),
+ body .chapter.composition-production .editorial-grid>.image-card:nth-child(5n+3){grid-column:span 3!important}
+ body .chapter.composition-signs .editorial-grid>.image-card:nth-child(5n+4),
+ body .chapter.composition-signs .editorial-grid>.image-card:nth-child(5n+5),
+ body .chapter.composition-architecture .editorial-grid>.image-card:nth-child(5n+4),
+ body .chapter.composition-architecture .editorial-grid>.image-card:nth-child(5n+5),
+ body .chapter.composition-production .editorial-grid>.image-card:nth-child(5n+4),
+ body .chapter.composition-production .editorial-grid>.image-card:nth-child(5n+5){grid-column:span 6!important}
+ body .chapter.composition-vehicles .editorial-grid>.image-card:nth-child(6n+1),
+ body .chapter.composition-vehicles .editorial-grid>.image-card:nth-child(6n+2){grid-column:span 6!important}
+ body .chapter.composition-vehicles .editorial-grid>.image-card:nth-child(6n+3),
+ body .chapter.composition-vehicles .editorial-grid>.image-card:nth-child(6n+4),
+ body .chapter.composition-vehicles .editorial-grid>.image-card:nth-child(6n+5),
+ body .chapter.composition-vehicles .editorial-grid>.image-card:nth-child(6n+6){grid-column:span 3!important}
+ body .chapter.composition-print .editorial-grid>.image-card:nth-child(6n+1),
+ body .chapter.composition-print .editorial-grid>.image-card:nth-child(6n+4){grid-column:span 6!important}
+ body .chapter.composition-print .editorial-grid>.image-card:nth-child(6n+2),
+ body .chapter.composition-print .editorial-grid>.image-card:nth-child(6n+3),
+ body .chapter.composition-print .editorial-grid>.image-card:nth-child(6n+5),
+ body .chapter.composition-print .editorial-grid>.image-card:nth-child(6n+6){grid-column:span 3!important}
+ body .chapter.composition-contact .editorial-grid>.image-card{grid-column:span 3!important}
+ body .chapter.composition-contact .editorial-grid>.image-card:nth-child(9n+1){grid-column:span 6!important}
+ body .chapter.composition-contact .editorial-grid>.image-card:nth-child(9n+6){grid-column:span 6!important}
+}
+/* Explicit low-native-pixel media: NO hero, NO full row, and a bounded display. */
+body .chapter .editorial-grid>.image-card[data-resolution="small"],
+body .chapter .editorial-grid.category-grid>.image-card[data-resolution="small"]{
+ grid-column:span 3!important;max-width:100%;align-self:start;
+}
+body .chapter .editorial-grid>.image-card[data-resolution="tiny"],
+body .chapter .editorial-grid.category-grid>.image-card[data-resolution="tiny"]{
+ grid-column:span 2!important;max-width:100%;align-self:start;
+}
+/* Preserve natural photographs with a bounded reading frame, not full-height stretched tiles. */
+body .chapter .editorial-grid .image-card .image-wrap,
+body .chapter .editorial-grid.category-grid .image-card .image-wrap,
+body #chapter-1 .editorial-grid>.image-card[data-image="6"] .image-wrap,
+body #chapter-2 .editorial-grid>.image-card[data-image="9"] .image-wrap{
+ position:relative!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;width:100%!important;height:auto!important;
+ aspect-ratio:4/3!important;max-height:360px!important;min-height:0!important;
+ padding:clamp(5px,.65vw,10px)!important;
+ border:1px solid #b7baa8!important;box-shadow:none!important;
+ background:linear-gradient(135deg,#e8e5db,#d7ded4)!important;
+ overflow:hidden!important;
+}
+body .chapter .editorial-grid>.image-card[data-resolution="small"] .image-wrap{aspect-ratio:4/3!important;max-height:215px!important}
+body .chapter .editorial-grid>.image-card[data-resolution="tiny"] .image-wrap{aspect-ratio:4/3!important;max-height:170px!important}
+body .chapter .editorial-grid .image-card .image-wrap img{
+ position:relative!important;display:block!important;
+ width:100%!important;height:100%!important;max-width:100%!important;
+ max-height:100%!important;object-fit:contain!important;object-position:center!important;
+ transform:none!important;filter:none!important;
+}
+body .chapter .editorial-grid .image-card:hover .image-wrap img{transform:none!important}
+body .chapter .editorial-grid .image-card .image-caption{
+ display:flex!important;gap:8px!important;min-height:0!important;
+ padding:9px 0 4px!important;font-size:clamp(11px,.87vw,13px)!important;
+ line-height:1.45!important;letter-spacing:0!important;
+}
+body .chapter .editorial-grid .image-arrow{
+ min-height:0!important;padding:2px 4px!important;font-size:10px!important;
+ white-space:nowrap;
+}
+body .chapter .editorial-grid>.image-card:focus-visible{outline:3px solid #a77f40!important;outline-offset:3px!important}
+/* Archive previews are allowed as smaller contacts; preserve their link and label. */
+body .chapter .archive-expansion-grid>.image-card.preview-card{
+ grid-column:span 3!important;
+}
+body .chapter .archive-expansion-grid>.image-card.preview-card .image-wrap{
+ aspect-ratio:5/4!important;max-height:200px!important;background:#e3ddce!important;
+}
+body .chapter .section-next{margin-top:clamp(17px,2vw,28px)!important}
+/* Compress low-value display pauses while retaining compelling storytelling. */
+.statement-panel{min-height:210px!important;padding-block:clamp(24px,3vw,44px)!important}
+.statement-panel p{font-size:clamp(34px,4vw,65px)!important;line-height:1.04!important}
+.signature-projects{padding-block:clamp(38px,4vw,70px)!important}
+.signature-projects-heading{margin-bottom:clamp(22px,3vw,43px)!important}
+.signature-projects-heading h2{font-size:clamp(39px,4.5vw,73px)!important}
+/* Three distinct genuine projects in one viewport region, not three full-page vertical posters. */
+.project-spotlight{padding-block:clamp(37px,4vw,65px)!important}
+.project-spotlight-title{padding:0 0 26px!important}
+.project-spotlight-title h2{font-size:clamp(38px,4.9vw,77px)!important}
+.project-spotlight-stack{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;align-items:stretch}
+.project-spotlight-stack .project-story,
+.project-spotlight-stack .project-story.project-story-lead,
+.project-spotlight-stack .project-story.project-story-reverse{
+ display:flex!important;flex-direction:column!important;
+ grid-column:auto!important;grid-row:auto!important;
+ width:100%!important;min-height:0!important;transform:none!important;
+ border-radius:5px!important;overflow:hidden!important;
+}
+.project-spotlight-stack .project-story-image{height:auto!important;aspect-ratio:4/3!important;min-height:0!important;flex:0 0 auto!important;max-height:290px!important}
+.project-spotlight-stack .project-story-image img{position:relative!important;width:100%!important;height:100%!important;max-height:100%!important;object-fit:contain!important;filter:none!important;transform:none!important}
+.project-spotlight-stack .project-story-content{padding:clamp(15px,1.7vw,28px)!important;min-height:0!important;flex:1}
+.project-spotlight-stack .project-story-content h3{font-size:clamp(24px,2.2vw,36px)!important}
+.motorsports-feature{padding-block:clamp(37px,4vw,75px)!important}
+.motorsports-feature h2{font-size:clamp(39px,4.4vw,75px)!important}
+/* HERO cover: at most a modest 2-up/3-up photo cluster; no giant blurry duplicate CSS photos. */
+.atelier-cover{min-height:0!important}
+.atelier-cover-columns{padding-block:clamp(30px,4vw,62px)!important}
+.atelier-cover h1{font-size:clamp(54px,6.2vw,100px)!important}
+.atelier-cover-photo:before,.atelier-cover-photo-feature:before{background-image:none!important;filter:none!important}
+.atelier-cover-photo img{filter:none!important}
+/* My Story: nine different creative lives, several visual relationships, not nine 600px clones. */
+.life-edition-opening{padding-block:clamp(36px,4vw,75px)!important}
+.life-edition-intro{margin:clamp(24px,4vw,65px) auto!important}
+.life-edition-intro h2{font-size:clamp(54px,6.8vw,103px)!important}
+.life-edition-chapter{min-height:0!important;gap:clamp(17px,2.5vw,36px)!important;
+ padding:clamp(43px,4.3vw,79px) clamp(23px,4.3vw,76px)!important;
+ grid-template-columns:minmax(60px,.17fr) minmax(0,1fr) minmax(220px,.67fr)!important;
+}
+.life-edition-chapter .life-edition-ordinal{position:static!important}
+.life-edition-chapter .life-edition-ordinal span:first-child{font-size:clamp(45px,5.5vw,83px)!important}
+.life-edition-chapter .life-edition-copy h3{font-size:clamp(39px,4vw,67px)!important;margin:14px 0 16px!important}
+.life-edition-chapter .life-edition-copy p:not(.life-edition-kicker){font-size:clamp(14px,1vw,17px)!important;line-height:1.7!important;margin-bottom:12px!important}
+.life-edition-chapter .life-edition-trade-line{margin-top:16px!important;padding-top:13px!important;gap:5px!important}
+.life-edition-chapter .life-edition-trade-line span{font-size:9px!important;padding:6px 8px!important}
+.life-edition-chapter .life-edition-visual{
+ min-height:0!important;max-height:350px!important;align-self:center!important;
+ padding:9px 9px 34px!important;box-shadow:8px 9px 0 #172b2030!important;
+ transform:none!important;
+}
+.life-edition-chapter .life-edition-visual img{max-height:300px!important;object-fit:contain!important;filter:none!important}
+.life-edition-chapter .life-edition-graphic-number{font-size:clamp(65px,8vw,123px)!important}
+/* Editorial variations: magazine running spreads, reverse vignettes, full-width split. */
+@media(min-width:1061px){
+ .life-edition-chapter:nth-of-type(3n+2){
+  grid-template-columns:minmax(0,.68fr) minmax(0,1fr) minmax(65px,.17fr)!important;
+ }
+ .life-edition-chapter:nth-of-type(3n+2) .life-edition-visual{grid-column:1;grid-row:1}
+ .life-edition-chapter:nth-of-type(3n+2) .life-edition-copy{grid-column:2;grid-row:1}
+ .life-edition-chapter:nth-of-type(3n+2) .life-edition-ordinal{grid-column:3;grid-row:1;align-self:start}
+ .life-edition-chapter:nth-of-type(3n+3){
+  grid-template-columns:80px minmax(0,.8fr) minmax(0,.75fr)!important;
+  gap:20px 40px!important;
+ }
+ .life-edition-chapter:nth-of-type(3n+3) .life-edition-visual{max-height:270px!important;max-width:500px!important}
+}
+.life-edition-chapter:nth-of-type(2n) .life-edition-visual{background:#e9dfc7!important}
+.life-edition-visual::after{inset:5px!important}
+/* Additional authentic photographs for career chapters are editorial groupings, never fabricated evidence of B-2 or a racing event. */
+.life-edition-photo-sequence{grid-column:2/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:clamp(9px,1vw,16px);padding:15px 0 0;border-top:1px solid #bba07277}
+.life-edition-photo-sequence figure{margin:0;min-width:0;position:relative;background:#17372a;padding:7px;border:1px solid #bd9b6b70}
+.life-edition-photo-sequence img{display:block;width:100%;height:clamp(125px,14vw,195px);object-fit:contain;object-position:center}
+.life-edition-photo-sequence figcaption{padding:8px 3px 3px;font-size:11px;line-height:1.3;letter-spacing:.01em;color:#e9d8b7}
+.life-edition-chapter:nth-of-type(2n) .life-edition-photo-sequence figure{background:#e8e5dc;border-color:#9caf96}
+.life-edition-chapter:nth-of-type(2n) .life-edition-photo-sequence figcaption{color:#284333}
+.life-edition-photo-sequence a{outline-offset:3px}
+.life-edition-photo-sequence a:focus-visible{outline:3px solid #b9894a}
+.life-edition-finale{padding-block:clamp(65px,7vw,118px)!important}
+.life-edition-finale h3{font-size:clamp(50px,6.4vw,99px)!important}
+.career-ledger{padding-block:clamp(50px,5vw,85px)!important}
+.career-ledger-heading h2{font-size:clamp(48px,5.3vw,83px)!important}
+.career-ledger-roles{gap:11px!important}
+.career-ledger-roles article{min-height:0!important;padding:clamp(18px,1.8vw,27px)!important}
+.career-ledger-roles h3{font-size:clamp(23px,2vw,33px)!important}
+.career-ledger-roles p{font-size:14px!important;line-height:1.65!important}
+.career-snapshot{padding-block:clamp(36px,4vw,68px)!important}
+.career-snapshot h2{font-size:clamp(42px,5vw,78px)!important}
+.contact-finale{min-height:0!important;padding-block:clamp(44px,5vw,78px)!important}
+/* Keep truthful photographic evidence accessible but prevent endless archive rows. */
+.archive-expansion .chapter-heading{max-width:75ch}
+.archive-more-link,.discovery-links{margin-block:clamp(18px,2vw,32px)!important}
+
+/* Mid-size layouts: dense and balanced, not collapsed to a single image. */
+@media(max-width:1020px){
+ body .chapter .editorial-grid>.image-card,
+ body .chapter .editorial-grid>.image-card.wide,
+ body .chapter .editorial-grid.category-grid>.image-card,
+ body .chapter .editorial-grid.archive-expansion-grid>.image-card,
+ body #chapter-1 .editorial-grid>.image-card[data-image="6"],
+ body #chapter-2 .editorial-grid>.image-card[data-image="9"],
+ body #architecture .category-grid>.image-card[data-image="6"],
+ body #vehicles .category-grid>.image-card[data-image="9"]{grid-column:span 6!important}
+ body .chapter .editorial-grid>.image-card[data-resolution="small"],
+ body .chapter .editorial-grid>.image-card[data-resolution="tiny"],
+ body .chapter .editorial-grid.archive-expansion-grid>.image-card.preview-card{grid-column:span 4!important}
+ .project-spotlight-stack{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .project-spotlight-stack .project-story:last-child{grid-column:1/-1!important}
+ .life-edition-chapter{grid-template-columns:70px minmax(0,1fr)!important}
+ .life-edition-chapter .life-edition-visual{grid-column:2!important;max-width:520px}
+ .life-edition-photo-sequence{grid-column:2}
+}
+@media(max-width:720px){
+ .exhibition-masthead .masthead-copy h1{font-size:clamp(50px,10vw,72px)!important}
+ .life-story-teaser{grid-template-columns:1fr!important}
+ .life-story-teaser-art{display:none!important}
+ .exhibition-thesis .exhibition-thesis-art{max-height:150px}
+ .career-positioning h2{font-size:clamp(37px,8vw,58px)!important}
+ body .chapter{padding-inline:clamp(12px,3.5vw,25px)!important;padding-block:30px!important}
+ body .chapter .editorial-grid,
+ body .chapter .editorial-grid.category-grid,
+ body .chapter .editorial-grid.archive-expansion-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:10px!important}
+ body .chapter .editorial-grid>.image-card,
+ body .chapter .editorial-grid>.image-card.wide,
+ body .chapter .editorial-grid.category-grid>.image-card,
+ body .chapter .editorial-grid.archive-expansion-grid>.image-card,
+ body #chapter-1 .editorial-grid>.image-card[data-image="6"],
+ body #chapter-2 .editorial-grid>.image-card[data-image="9"],
+ body #architecture .category-grid>.image-card[data-image="6"],
+ body #vehicles .category-grid>.image-card[data-image="9"]{grid-column:span 3!important}
+ body .chapter .editorial-grid>.image-card[data-resolution="small"],
+ body .chapter .editorial-grid>.image-card[data-resolution="tiny"],
+ body .chapter .editorial-grid.archive-expansion-grid>.image-card.preview-card{grid-column:span 3!important}
+ body .chapter .editorial-grid .image-card .image-wrap,
+ body .chapter .editorial-grid.category-grid .image-card .image-wrap{aspect-ratio:4/3!important;max-height:220px!important;padding:5px!important}
+ body .chapter .editorial-grid .image-card .image-caption{display:block!important;font-size:11px!important;min-height:0!important;padding:6px 1px!important}
+ body .chapter .editorial-grid .image-arrow{display:none!important}
+ .project-spotlight-stack{grid-template-columns:1fr!important}
+ .project-spotlight-stack .project-story:last-child{grid-column:auto!important}
+ .project-spotlight-stack .project-story-image{max-height:205px!important}
+ .life-edition-chapter{display:grid!important;grid-template-columns:1fr!important;gap:15px!important;padding:34px 20px!important}
+ .life-edition-chapter .life-edition-ordinal{grid-column:1!important;grid-row:auto!important}
+ .life-edition-chapter .life-edition-copy{grid-column:1!important;grid-row:auto!important}
+ .life-edition-chapter .life-edition-visual{grid-column:1!important;grid-row:auto!important;max-width:100%;max-height:245px!important}
+ .life-edition-photo-sequence{grid-column:1!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ .life-edition-photo-sequence figure{padding:4px}
+ .life-edition-photo-sequence img{height:95px}
+ .life-edition-photo-sequence figcaption{font-size:9px}
+ .life-edition-copy h3{font-size:clamp(35px,8vw,54px)!important}
+}
+@media(max-width:375px){
+ .life-edition-photo-sequence{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .life-edition-photo-sequence img{height:110px}
+ body .chapter .editorial-grid .image-card .image-caption{font-size:10px!important}
+ .project-spotlight-stack .project-story-image{max-height:185px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ body .chapter .image-card .image-wrap img{transition:none!important;animation:none!important}
+}
+@media(forced-colors:active){
+ body .chapter .image-wrap,.life-edition-photo-sequence figure{border:1px solid CanvasText!important;background:Canvas!important}
+}
