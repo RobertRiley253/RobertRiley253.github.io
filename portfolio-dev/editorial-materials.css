@@ -147,3 +147,14 @@ body .chapter .editorial-grid .image-card .image-wrap img{filter:none!important}
  body #chapter-2 .editorial-grid>.image-card,
  body #chapter-3 .editorial-grid>.image-card{grid-column:span 6!important}
 }
+
+/* Screenshot QA: a short panorama was stretching its image-card body to the
+   height of a neighboring portrait, marooning the caption far below the photo.
+   Keep captions physically attached to their own photographic frame. */
+body .chapter .editorial-grid>.image-card,
+body .chapter .editorial-grid.category-grid>.image-card{
+ align-self:start!important;height:auto!important;min-height:0!important;
+}
+body .chapter .editorial-grid .image-card .image-caption{
+ margin-top:0!important;flex:0 0 auto!important;
+}
