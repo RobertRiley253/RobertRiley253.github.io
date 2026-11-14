@@ -28,3 +28,17 @@
 4. Continue seven PNG/two AVIF visualization through an actual image-capable decoder if available; do not misclassify originals as broken.
 
 **Safety:** no `main` edits, merge, publication, messages, original-image changes or deletions.
+
+## Follow-on visual screening and source comparison
+
+- Recovered and visually read two further Library images, `/Vintage Racing Couple at Sunset.png` (`file_00000000cab881fdb99a6a24b005a456`) and `/Vintage Racing Couple at Sunset(1).png` (`file_000000004d1881fda91491b145ad1953`). Both portray the same highly similar No. 91 sunset composition as the timestamped November 14 copy. The `(1)` entry's Library inventory marked `model_generated: false`, which means only that the item was uploaded rather than created in that Library operation; it **does not establish untouched camera provenance**. Multiple near-matching edited-looking versions reinforce the need to identify the underlying historical source before documentary labeling.
+- GitHub `Rob-Photo-Uploads/New folder/IMG_20190621_134849.jpg` directly decoded and inspected: white American Made Concrete LLC pickup with completed door lettering, business name, logo and contact details, plus roof-mounted material rack. This is a full-project view of the same pickup whose tighter door view is already `portfolio-014.jpg`. A **companion image to the same commission** is potentially useful but is not a distinct client/job; avoid including its now-historical phone number as prose.
+- GitHub `IMG_20190612_130459.jpg` and `IMG_20190612_130520.jpg` visually inspected and excluded from vehicle-selection candidates: both show a white sci-fi-style helmet fabrication object from two angles, not completed vehicle lettering.
+- GitHub work page source examined: its existing American Made Concrete card `data-image="14"` remains an intact numbered gallery entry and the vehicle category already contains substantial finished-vehicle imagery. Do not replace numbered entries or inject an untested duplicate gallery button merely to increase photograph count.
+- Existing Library red That Sticker Store pickup snapshot is a promotional business vehicle with open hood in workshop, not strong evidence of a separate completed fleet client's commission.
+
+## Delivery limitation
+
+A fully rendered, navigable branch preview has not been independently accessed from this environment: the development branch is not GitHub Pages production, and a third-party HTML branch viewer attempt was inaccessible. Existing workflow screenshot QA is reliable for the prior tested revision but not a substitute for owner review in-browser. Do not assert a working public preview URL.
+
+**Editorial decision:** preserve existing page composition while proof and live-preview access remain unresolved; do not sacrifice the verified design for a speculative addition.
