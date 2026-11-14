@@ -1,0 +1,15 @@
+/* HQ8: a contained original shop-photography composition.
+   Additive only; preserves the established editorial and material styles. */
+.hq8-shop-evidence{padding-block:clamp(2rem,5vw,5rem)}
+.hq8-shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2vw,1.8rem);align-items:start}
+.hq8-shop-proof{margin:0;min-width:0}
+.hq8-shop-image{display:block;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(84,94,75,.28);border-radius:3px;background:#e9e6d9;box-shadow:0 10px 28px rgba(15,34,28,.09)}
+.hq8-shop-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .3s ease}
+.hq8-shop-image:hover img,.hq8-shop-image:focus-visible img{transform:scale(1.025)}
+.hq8-shop-image:focus-visible{outline:3px solid #b18d52;outline-offset:3px}
+.hq8-shop-proof figcaption{padding:.7rem .08rem .05rem;display:flex;flex-direction:column;gap:.25rem;font-size:.88rem;line-height:1.45;color:inherit}
+.hq8-shop-proof figcaption strong{font-weight:650;letter-spacing:.01em}
+.hq8-shop-proof figcaption span{opacity:.8}
+@media(max-width:850px){.hq8-shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.hq8-shop-grid{grid-template-columns:1fr}.hq8-shop-image{aspect-ratio:5/4}}
+@media(prefers-reduced-motion:reduce){.hq8-shop-image img{transition:none}}
