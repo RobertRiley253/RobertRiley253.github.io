@@ -333,3 +333,31 @@ body .chapter .editorial-grid>.image-card[data-resolution="unverified"] .image-w
 @media(max-width:375px){
  body .chapter .editorial-grid .image-card .image-caption{font-size:11.5px!important}
 }
+
+/* Source-shaped framing: artwork's authentic proportions govern the display box. */
+body .chapter .editorial-grid>.image-card[data-shape] .image-wrap,
+body .chapter .editorial-grid.category-grid>.image-card[data-shape] .image-wrap{
+ aspect-ratio:var(--photo-ratio,4/3)!important;
+ height:auto!important;min-height:0!important;
+ max-height:355px!important;
+}
+body .chapter .editorial-grid>.image-card[data-resolution="small"][data-shape] .image-wrap,
+body .chapter .editorial-grid>.image-card[data-resolution="unverified"][data-shape] .image-wrap{
+ max-height:210px!important;
+}
+body .chapter .editorial-grid>.image-card[data-resolution="tiny"][data-shape] .image-wrap{
+ max-height:160px!important;
+}
+@media(max-width:720px){
+ body .chapter .editorial-grid>.image-card[data-shape] .image-wrap,
+ body .chapter .editorial-grid.category-grid>.image-card[data-shape] .image-wrap{
+  aspect-ratio:var(--photo-ratio,4/3)!important;max-height:245px!important;
+ }
+ body .chapter .editorial-grid>.image-card[data-resolution="unverified"][data-shape] .image-wrap,
+ body .chapter .editorial-grid>.image-card[data-resolution="small"][data-shape] .image-wrap{
+  max-height:175px!important;
+ }
+ body .chapter .editorial-grid>.image-card[data-resolution="tiny"][data-shape] .image-wrap{
+  max-height:135px!important;
+ }
+}
