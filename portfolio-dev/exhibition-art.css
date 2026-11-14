@@ -1,0 +1,105 @@
+/* RRR / PERSONAL ART EXHIBITION — exhibition-style art direction.
+   All imagery is approved identity artwork or documented original portfolio photography.
+   Designed to work without external CDNs for fonts/animations. */
+:root{--ex-deep:#0e221d;--ex-forest:#1d3b31;--ex-olive:#405848;--ex-gold:#d8ba85;--ex-bronze:#a58652;--ex-ivory:#f6f0e4;--ex-paper:#eae6d9;--ex-ink:#162d23}
+body{background:radial-gradient(ellipse 83% 55% at 12% 19%,#e1e8d8 0%,transparent 80%),radial-gradient(ellipse 83% 55% at 88% 61%,#e1d4b92b 0%,transparent 78%),linear-gradient(135deg,#f3f0e8,#e5eadf 53%,#f4eee3)}
+.review-ribbon{background:#d5bc8b;color:#172920;font-weight:800}
+.site-header{background:linear-gradient(109deg,#f7f4eb,#e5ebe1);box-shadow:0 7px 30px #07170f15}
+.site-header .brand-monogram-image{filter:drop-shadow(1px 2px 1px #0002)}
+.nav a{font-size:12px;text-transform:uppercase;letter-spacing:.045em}
+.exhibition-masthead{min-height:680px;padding-top:0;position:relative;overflow:hidden;background:radial-gradient(ellipse 90% 70% at 90% 22%,#486a56 0%,transparent 74%),radial-gradient(ellipse 95% 80% at 16% 98%,#3b4731 0%,transparent 76%),linear-gradient(127deg,#0a1c19,#15342b 66%,#0a201b)}
+.exhibition-masthead::before{background:repeating-linear-gradient(90deg,#d2c69a08 0 1px,transparent 1px 96px),repeating-linear-gradient(0deg,#d2c69a08 0 1px,transparent 1px 96px);opacity:1}
+.exhibition-masthead::after{display:none}
+.exhibition-hero-eyebrow{display:flex;justify-content:space-between;gap:15px;padding:18px clamp(20px,4vw,72px);color:#e2d2b2;border-bottom:1px solid #e4d5ad38;letter-spacing:.18em;font-size:10px;font-weight:750;position:relative;z-index:3}
+.exhibition-masthead .masthead-top{opacity:.74}
+.exhibition-masthead .masthead-inner{position:relative;z-index:2}
+.exhibition-masthead .masthead-copy{z-index:5}
+.exhibition-masthead .brand-hero-signature{margin-bottom:24px}
+.exhibition-masthead .brand-hero-signature img{width:clamp(240px,28vw,430px);filter:drop-shadow(0 7px 25px #050d0a76)}
+.exhibition-masthead h1{font:400 clamp(62px,8.4vw,150px)/.89 Georgia,"Times New Roman",serif;letter-spacing:-.073em;color:#fff9ee;text-shadow:0 11px 30px #05100d44;max-width:850px;margin:18px 0 28px}
+.exhibition-masthead h1 em{font-weight:400;color:#f1ce98}
+.exhibition-masthead .masthead-copy>p:not(.eyebrow){font-size:clamp(16px,1.45vw,21px);line-height:1.63;max-width:51ch;color:#e7e6d9}
+.exhibition-masthead .hero-primary{background:#f0d7a8;color:#142c24;border:1px solid #e7c58c}
+.exhibition-masthead .hero-primary:hover,.exhibition-masthead .hero-primary:focus-visible{background:#fff2d5}
+.exhibition-masthead .hero-secondary{color:#f6e4c1}
+.exhibition-masthead .masthead-art{position:relative;z-index:2}
+.exhibition-sculpture{position:absolute;inset:0 0 auto auto;width:min(49vw,655px);height:min(49vw,655px);z-index:0;pointer-events:none;opacity:.9;transform:translate(10%,-8%);}
+.exhibition-sculpture::before{content:"";position:absolute;inset:8%;border:1px solid #eac99248;border-radius:50%;box-shadow:0 0 0 36px #c6a46d07,0 0 0 77px #c6a46d06,0 0 65px 10px #e5c59019}
+.exhibition-sculpture img{position:absolute;inset:10%;width:80%;height:80%;object-fit:contain;filter:drop-shadow(0 18px 15px #05130b75) drop-shadow(0 0 24px #d1ac6c75)}
+.sculpture-orbit{position:absolute;inset:15%;border:1px solid #e2c28a40;border-radius:50%;transform:rotate(-28deg) scaleY(.75)}
+.sculpture-orbit-b{transform:rotate(34deg) scaleY(.72)}
+.sculpture-graticule{position:absolute;bottom:-6px;left:24%;font-size:10px;color:#e4c892;letter-spacing:.19em}
+.exhibition-masthead .hero-composition{position:relative;z-index:3;filter:drop-shadow(0 20px 26px #030e0a60)}
+.exhibition-masthead .hero-frame{border:2px solid #f4d8a463;box-shadow:0 18px 55px #020a0891}
+.exhibition-masthead .hero-frame img{filter:contrast(1.06)}
+.exhibition-masthead .masthead-bottom{border-top:1px solid #e5c99d55;color:#e6d7ba}
+.exhibition-thesis{position:relative;isolation:isolate;overflow:hidden;padding:clamp(46px,6vw,100px) clamp(20px,5vw,88px) clamp(26px,3vw,48px);background:linear-gradient(142deg,#f8f3e7 0%,#e7eadd 62%,#efe0c7 100%);border-bottom:1px solid #9b9f8a}
+.exhibition-thesis::before{content:"";position:absolute;inset:0;opacity:.24;pointer-events:none;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0 119px,#6a806515 119px 120px),repeating-linear-gradient(0deg,transparent 0 119px,#6a806515 119px 120px)}
+.exhibition-thesis-index,.exhibition-thesis-footer{display:flex;gap:20px;justify-content:space-between;align-items:center;color:#4f6756;font-size:11px;letter-spacing:.17em;font-weight:750}
+.exhibition-thesis-index .exhibition-line{flex:1;height:1px;background:#889986}
+.exhibition-thesis-main{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(20px,5vw,80px);align-items:center;padding:clamp(30px,4.2vw,70px) 0}
+.exhibition-thesis-art{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px;aspect-ratio:1;max-width:570px;background:radial-gradient(ellipse at 50% 44%,#e5d3ae,#e9e9dc 54%,transparent 70%);border-radius:50%}
+.exhibition-thesis-art::before,.exhibition-thesis-art::after{content:"";position:absolute;inset:4%;border:1px solid #315b4150;border-radius:50%}
+.exhibition-thesis-art::after{inset:17%;border:1px dashed #8f764a88}
+.exhibition-thesis-art img{position:relative;z-index:2;width:70%;height:70%;object-fit:contain;filter:drop-shadow(0 12px 4px #26392136) drop-shadow(0 22px 20px #273a2c21)}
+.exhibition-thesis-art span{position:absolute;z-index:3;bottom:2%;font-size:11px;font-weight:800;letter-spacing:.2em;color:#42624e}
+.exhibition-thesis-copy .precision-kicker{color:#46664e}
+.exhibition-thesis h2{font:400 clamp(43px,5.7vw,98px)/.99 Georgia,"Times New Roman",serif;letter-spacing:-.06em;color:#152c22;margin:22px 0}
+.exhibition-thesis h2 em{color:#987446;font-weight:400}
+.exhibition-thesis-copy p:not(.precision-kicker){font-size:clamp(16px,1.36vw,20px);line-height:1.7;max-width:55ch;color:#3f5545}
+.exhibition-thesis-copy a{display:inline-flex;gap:35px;padding:16px 0;border-bottom:2px solid #39583d;color:#1c3929;font-size:14px;font-weight:750;text-decoration:none;margin-top:10px}
+.exhibition-thesis-copy a:hover,.exhibition-thesis-copy a:focus-visible{outline:2px solid #44604a;outline-offset:5px}
+.exhibition-thesis-footer{border-top:1px solid #8d9c89;padding-top:23px}
+.exhibition-marquee{overflow:hidden;background:#d1b689;color:#192e24;border-block:1px solid #c8ad7d;padding:14px clamp(20px,4vw,72px)}
+.exhibition-marquee>div{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:10px;font-weight:850;letter-spacing:.135em}
+.exhibition-marquee b{font-size:12px;color:#5b573e}
+.career-positioning{background:radial-gradient(ellipse at 74% 10%,#486252aa,transparent 70%),linear-gradient(140deg,#0c211b,#284638)}
+.career-positioning h2{font-size:clamp(45px,5.4vw,96px)}
+.signature-projects{padding-block:clamp(95px,11vw,160px)}
+.signature-projects-grid{gap:22px}
+.signature-project-item{border:1px solid #968972;box-shadow:0 21px 38px #13281a21}
+.signature-project-feature .signature-project-photo{min-height:575px}
+.signature-project-item .signature-project-copy{border-top:3px solid #ab8750}
+.signature-project-item:hover{box-shadow:0 34px 55px #16281b37}
+.project-spotlight-stack{gap:42px}
+.project-story{border:1px solid #aeb6a7;box-shadow:0 19px 42px #152a1b15}
+.project-story-lead .project-story-image{min-height:600px}
+.project-story-content{border-left:5px solid #b38b57}
+.project-story-reverse .project-story-content{border-left:0;border-right:5px solid #b38b57}
+.project-story h3{font-size:clamp(35px,4vw,69px)}
+.page-hero h1{font-size:clamp(52px,7vw,112px)}
+.page-hero{min-height:360px}
+.chapter-heading h2{font-size:clamp(35px,4.5vw,72px)}
+.chapter-heading::before{width:90px}
+.career-history-entry h3{font-size:clamp(29px,3.3vw,49px)}
+.career-history-num{font-size:clamp(34px,4vw,62px);color:#efd4a0}
+.process-step{border-top:4px solid #b9975b}
+.contact-finale{padding-block:clamp(80px,9vw,150px)}
+.contact-finale .career-closing-signature{width:clamp(255px,33vw,465px)}
+.site-footer{border-top:2px solid #c4a976}
+@media(max-width:1100px){.exhibition-thesis-main{grid-template-columns:.7fr 1fr}.exhibition-thesis-art{min-height:300px}}
+@media(max-width:760px){
+ .exhibition-masthead{min-height:0}
+ .exhibition-hero-eyebrow{letter-spacing:.075em;font-size:9px}
+ .exhibition-masthead h1{font-size:clamp(61px,13vw,90px);line-height:.95}
+ .exhibition-sculpture{opacity:.18;top:7%;right:-16%;width:80vw;height:80vw;transform:none}
+ .exhibition-masthead .masthead-art{position:relative}
+ .exhibition-thesis-main{grid-template-columns:1fr}
+ .exhibition-thesis-art{max-width:400px;width:75%;margin:0 auto;min-height:0}
+ .exhibition-thesis h2{font-size:clamp(46px,11vw,72px)}
+ .exhibition-thesis-footer{font-size:9px;letter-spacing:.07em;flex-wrap:wrap}
+ .exhibition-marquee>div{justify-content:center;gap:10px 14px}
+ .signature-project-feature .signature-project-photo{min-height:300px}
+ .project-story-lead .project-story-image{min-height:280px}
+ .project-story-content,.project-story-reverse .project-story-content{border-left:3px solid #b38b57;border-right:0}
+}
+@media(max-width:450px){
+ .exhibition-masthead .brand-hero-signature img{width:240px}
+ .exhibition-masthead h1{font-size:clamp(56px,12.5vw,74px)}
+ .exhibition-thesis-art{width:100%}
+ .exhibition-thesis-index,.exhibition-thesis-footer{gap:8px;font-size:9px;letter-spacing:.035em}
+ .exhibition-thesis-footer{justify-content:flex-start}
+ .exhibition-hero-eyebrow span:last-child{display:none}
+ .exhibition-marquee{padding-inline:12px}
+}
+@media(prefers-reduced-motion:reduce){.signature-project-item,.image-card,.project-story{transform:none!important;transition:none!important}}
