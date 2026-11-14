@@ -80,3 +80,36 @@
 @media(forced-colors:active){
   .signature-project-item,.project-story,.process-step{border:1px solid CanvasText}
 }
+
+/* HQ7 screenshot-confirmed fix: gallery smoke test decoded portfolio-006.jpg,
+   but the lead hero image had a zero/invalid visible flex height in Chromium.
+   Position it in the actual frame rather than relying on percentage-height flex.
+   This uses the same original JPEG; no crop, substitution or source edit. */
+.exhibition-masthead .hero-lead{
+  position:relative;
+  isolation:isolate;
+}
+.exhibition-masthead .hero-lead img{
+  position:absolute;
+  top:8px;left:8px;
+  width:calc(100% - 16px);
+  height:calc(100% - 50px)!important;
+  max-height:none!important;
+  min-height:0!important;
+  object-fit:contain;
+  display:block;
+  z-index:1;
+}
+.exhibition-masthead .hero-lead>span{
+  position:absolute;
+  inset:auto 8px 8px 8px;
+  z-index:2;
+}
+@media(max-width:420px){
+  .exhibition-masthead .hero-lead img{
+    top:6px;left:6px;
+    width:calc(100% - 12px);
+    height:calc(100% - 45px)!important;
+  }
+  .exhibition-masthead .hero-lead>span{inset:auto 6px 6px 6px}
+}
