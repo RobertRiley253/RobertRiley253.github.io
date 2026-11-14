@@ -116,3 +116,15 @@ body{font-kerning:normal}
 @media(forced-colors:active){
  .chapter-heading::after,.image-wrap::after,.process-step::before,.technical-practice-detail>div:before,.contact-finale:before{display:none}
 }
+
+/* Original drafting/register illustration. Pure decorative SVG, never portrayed as client work. */
+@media(min-width:1051px){
+ .process-story-top,.career-skills-top{position:relative;isolation:isolate}
+ .process-story-top::after,.career-skills-top::after{
+   content:"";position:absolute;pointer-events:none;z-index:-1;
+   width:min(29vw,360px);height:220px;right:0;top:0;
+   background:url("atelier-illustrations/drafting-registration.svg") center/contain no-repeat;
+   opacity:.22
+ }
+ .career-skills-top::after{top:-30px;opacity:.17}
+}
