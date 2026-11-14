@@ -73,3 +73,5 @@ jobs:
       - name: Mark failed checks
         if: steps.browser.outcome != 'success' || steps.accessibility.outcome != 'success'
         run: exit 1
+
+# Retest after screenshot-confirmed hero lead sizing correction.
