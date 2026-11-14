@@ -123,3 +123,27 @@ body .chapter .editorial-grid .image-card .image-wrap img{filter:none!important}
  body .chapter .editorial-grid .image-card .image-wrap{background:Canvas!important}
  .career-snapshot-index>div{background:Canvas!important;color:CanvasText!important;border-color:CanvasText!important}
 }
+
+/* Visual review finding: four-image homepage chapters must not leave a
+   half-empty trailing row. Two precisely balanced, asymmetrical pairings. */
+@media(min-width:1021px){
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card,
+ body #chapter-2.chapter.composition-vehicles .editorial-grid>.image-card,
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card{
+  grid-column:span 6!important;
+ }
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card:nth-child(4n+1),
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card:nth-child(4n+1){grid-column:span 7!important}
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card:nth-child(4n+2),
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card:nth-child(4n+2){grid-column:span 5!important}
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card:nth-child(4n+3),
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card:nth-child(4n+3){grid-column:span 5!important}
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card:nth-child(4n+4),
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card:nth-child(4n+4){grid-column:span 7!important}
+}
+/* Medium view keeps true two-up contact sheets. */
+@media(min-width:721px) and (max-width:1020px){
+ body #chapter-1 .editorial-grid>.image-card,
+ body #chapter-2 .editorial-grid>.image-card,
+ body #chapter-3 .editorial-grid>.image-card{grid-column:span 6!important}
+}
