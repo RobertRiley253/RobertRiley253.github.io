@@ -175,3 +175,45 @@
 }
 @media(prefers-reduced-motion:reduce){.atelier-cover-link{transition:none}.atelier-cover-link:hover{transform:none}}
 @media(forced-colors:active){.atelier-cover,.chapter,.statement-panel,.process-story,.career-history{background:Canvas;color:CanvasText}.atelier-cover :is(h1,em,p,span,a){color:CanvasText}.atelier-cover-photo{border:1px solid CanvasText}.atelier-cover-link{border:2px solid CanvasText;background:Canvas}}
+
+/* SENSORY ART DIRECTION — tactile paper, engraved metals, dimensional signs.
+   All textures are CSS-drawn; the authentic original photos remain unmodified. */
+.atelier-cover{background-blend-mode:screen,normal,normal}
+.atelier-cover .atelier-cover-photography{filter:drop-shadow(0 18px 26px rgba(1,15,11,.4))}
+.atelier-cover-photo{isolation:isolate}
+.atelier-cover-photo::before{content:"";position:absolute;inset:6px 6px 35px;z-index:0;pointer-events:none;
+ background:
+ radial-gradient(ellipse at 48% 36%,rgba(234,193,113,.22),transparent 65%),
+ repeating-linear-gradient(135deg,transparent 0 11px,rgba(210,184,123,.045) 11px 12px),
+ linear-gradient(145deg,#314e3d,#162b23);
+ border:1px solid rgba(227,198,144,.19)}
+.atelier-cover-photo img{z-index:1}
+.atelier-cover-photo figcaption{box-shadow:inset 0 1px 0 rgba(240,205,142,.45)}
+.atelier-cover-photo-feature{border:2px solid rgba(242,212,150,.75)}
+.atelier-cover-lettering h1{filter:drop-shadow(0 3px 1px rgba(11,22,15,.25))}
+.atelier-cover-rule{border-image:linear-gradient(90deg,rgba(238,207,149,.72),transparent) 1}
+.atelier-cover-link{box-shadow:inset 0 1px 0 #fff5d0,0 8px 0 rgba(7,24,16,.45),0 15px 25px rgba(3,18,12,.29)}
+.atelier-cover-link:hover{box-shadow:inset 0 1px 0 #fff5d0,0 6px 0 rgba(7,24,16,.45),0 12px 22px rgba(3,18,12,.28)}
+.chapter:not(.warm) .image-wrap{background:
+ repeating-linear-gradient(145deg,rgba(116,139,108,.045) 0 1px,transparent 1px 8px),
+ linear-gradient(130deg,#e0e7dd,#f4f0e6)}
+.chapter.warm .image-wrap{background:
+ repeating-linear-gradient(90deg,rgba(166,129,84,.035) 0 1px,transparent 1px 6px),
+ linear-gradient(135deg,#ece5d5,#faf4e8)}
+.chapter .chapter-heading h2{filter:drop-shadow(0 1px 0 #fff7ea)}
+/* Restored readable plate number on the dark second production card.
+   The inherited process-step-number has a pale background; dark text must win. */
+.process-step:nth-child(2)>.process-step-number{
+  color:#173a2b!important;background:#e7ddc8!important;
+  border-bottom-color:#b7a37f!important;font-weight:800}
+.process-step:nth-child(2)>.process-step-number::first-letter{color:#173a2b}
+.process-step:nth-child(2) p,.process-step:nth-child(2) h3{color:#f6ecd6}
+@media(max-width:760px){
+ .atelier-cover-link{box-shadow:inset 0 1px 0 #fff5d0,0 4px 0 rgba(7,24,16,.45)}
+ .atelier-cover-photo::before{inset:4px 4px 31px}
+}
+@media(forced-colors:active){
+ .atelier-cover-link{box-shadow:none}
+ .atelier-cover-photo::before{display:none}
+ .process-step:nth-child(2)>.process-step-number{color:CanvasText!important;background:Canvas!important}
+}
