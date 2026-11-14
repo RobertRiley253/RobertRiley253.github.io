@@ -58,6 +58,50 @@ const path = require('node:path');
           await page.waitForTimeout(250);
           await page.screenshot({ path: path.join(output, id + '-full.png'), fullPage: true, animations: 'disabled', timeout: 45000 });
         }
+        // HQ9: independently test the six newly integrated production photographs.
+        if (name === 'production.html') {
+          const evidence = page.locator('#real-shop-equipment');
+          if (await evidence.count() !== 1) throw new Error('Expected one equipment evidence section');
+          await evidence.scrollIntoViewIfNeeded();
+          const photos = evidence.locator('.hq8-shop-proof');
+          if (await photos.count() !== 6) throw new Error('Expected six shop-evidence photographs');
+          const diagnostics = [];
+          for (let i = 0; i < 6; i++) {
+            const figure = photos.nth(i);
+            const img = figure.locator('img');
+            await img.scrollIntoViewIfNeeded();
+            await img.evaluate(async node => {
+              if (!node.complete) await new Promise((resolve, reject) => {
+                node.addEventListener('load', resolve, { once: true });
+                node.addEventListener('error', () => reject(new Error('Image download failed')), { once: true });
+              });
+              if (node.decode && node.naturalWidth > 0) await node.decode();
+            });
+            const state = await figure.evaluate(node => {
+              const img = node.querySelector('img');
+              const link = node.querySelector('a');
+              const caption = node.querySelector('figcaption');
+              const imageRect = img.getBoundingClientRect();
+              const captionRect = caption.getBoundingClientRect();
+              return { src: img.currentSrc, loaded: img.complete && img.naturalWidth > 0,
+                naturalWidth: img.naturalWidth, naturalHeight: img.naturalHeight,
+                imageWidth: Math.round(imageRect.width), imageHeight: Math.round(imageRect.height),
+                captionGap: Math.round(captionRect.top - imageRect.bottom),
+                captionText: caption.textContent.trim(),
+                originalLinkMatches: link.href === img.src };
+            });
+            diagnostics.push(state);
+            if (!state.loaded || !state.originalLinkMatches || !state.captionText)
+              throw new Error('Shop evidence photo ' + (i + 1) + ' failed load/link/caption QA: ' + JSON.stringify(state));
+            if (state.imageWidth < 100 || state.imageHeight < 75 || state.captionGap < -3 || state.captionGap > 48)
+              throw new Error('Shop evidence photo ' + (i + 1) + ' has abnormal geometry: ' + JSON.stringify(state));
+          }
+          result.shopEvidence = diagnostics;
+          if (['desktop','mobile'].includes(viewport.name)) {
+            await evidence.scrollIntoViewIfNeeded();
+            await page.screenshot({ path: path.join(output, 'production-hq9-equipment-' + viewport.name + '.png'), animations: 'disabled' });
+          }
+        }
         const first = page.locator('[data-image]').first();
         if (await first.count()) {
           await first.scrollIntoViewIfNeeded();
