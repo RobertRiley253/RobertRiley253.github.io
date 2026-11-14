@@ -1,0 +1,177 @@
+/* THE SIGNMAKER'S ATELIER — ARTISTIC COVERS
+   True cover compositions and enriched chapter art, not replacement project photos.
+   Original hybrid RRR monogram / gold signature remain authoritative.
+   Only authentic existing portfolio photos appear in photographic positions. */
+
+:root{--ac-deep:#0b201b;--ac-green:#14372c;--ac-mid:#365b47;--ac-brass:#d7b67a;--ac-cream:#f7eedb;--ac-paper:#eee5d2}
+.atelier-cover{position:relative;isolation:isolate;overflow:hidden;min-height:min(91vh,850px);color:var(--ac-cream);background:
+ radial-gradient(ellipse 78% 92% at 93% 18%,rgba(95,136,94,.36),transparent 75%),
+ radial-gradient(ellipse 63% 85% at 12% 108%,rgba(194,148,78,.19),transparent 75%),
+ linear-gradient(126deg,#091b18 0%,#15392e 53%,#091d19 100%)}
+.atelier-cover-production{background:radial-gradient(ellipse 85% 110% at 94% 16%,#53725959,transparent 77%),radial-gradient(ellipse 85% 78% at -9% 107%,#bb885932,transparent 80%),linear-gradient(132deg,#10241f,#2b4435 51%,#101d1a)}
+.atelier-cover-experience{background:radial-gradient(ellipse 80% 115% at 85% 20%,#9c794a3a,transparent 74%),radial-gradient(ellipse 75% 100% at 4% 100%,#496c5642,transparent 78%),linear-gradient(125deg,#1a2821,#34402d 49%,#162720)}
+.atelier-cover:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.40;background:
+ repeating-linear-gradient(0deg,transparent 0 108px,#dbc08b13 108px 109px),
+ repeating-linear-gradient(90deg,transparent 0 108px,#dbc08b13 108px 109px)}
+.atelier-cover:after{content:"";position:absolute;pointer-events:none;z-index:-1;right:-12vw;top:-19vw;width:min(70vw,900px);aspect-ratio:1;border:1px solid #cfb57a32;border-radius:50%;box-shadow:0 0 0 55px #d6b7890a,0 0 0 110px #d6b78909,0 0 0 170px #d6b78906}
+.atelier-cover-ambient{position:absolute;pointer-events:none;left:-5%;bottom:-21%;width:52%;aspect-ratio:1;background:url("atelier-illustrations/signmakers-plate.svg") center/contain no-repeat;opacity:.09;transform:rotate(-12deg)}
+.atelier-cover-content{max-width:1650px;padding:0 clamp(22px,4.3vw,84px);margin:auto;position:relative;z-index:2}
+.atelier-cover-serial,.atelier-cover-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid #d6b58161;padding:22px 0;color:#ddc698;font-size:10px;letter-spacing:.16em;font-weight:750}
+.atelier-cover-bottom{border-top:1px solid #d6b58161;border-bottom:0;padding-block:22px;margin-top:20px}
+.atelier-cover-columns{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.12fr);gap:clamp(18px,3vw,55px);align-items:center;padding:clamp(34px,5.6vw,90px) 0 clamp(25px,3vw,55px);min-height:625px}
+.atelier-cover-lettering{position:relative;z-index:2;min-width:0;padding:12px 0}
+.atelier-cover-eyebrow{display:block;color:#edcf9b;letter-spacing:.23em;font-size:10px;font-weight:750;line-height:1.7;position:relative;z-index:2}
+.atelier-cover-engraving{position:absolute;top:0;right:-7%;width:min(29vw,275px);height:min(29vw,275px);opacity:.19;pointer-events:none;z-index:-1;filter:drop-shadow(0 0 25px #ceae7540)}
+.atelier-cover-engraving img{width:100%;height:100%;object-fit:contain}
+.atelier-cover-lineart{position:absolute;inset:-40px -75px auto auto;width:min(37vw,360px);height:235px;pointer-events:none;z-index:-1;opacity:.25;background:url("atelier-illustrations/drafting-registration.svg") center/contain no-repeat}
+.atelier-cover-signature{margin:24px 0 8px}
+.atelier-cover-signature img{width:clamp(210px,27vw,390px);max-width:100%;height:auto;filter:drop-shadow(0 6px 13px #03180d85)}
+.atelier-cover h1{font:400 clamp(62px,7.7vw,137px)/.91 Georgia,"Times New Roman",serif;color:#fff6e5;letter-spacing:-.068em;margin:28px 0 25px;text-shadow:0 10px 36px #04100b50;max-width:900px}
+.atelier-cover h1 em{font-weight:400;color:#e9c68e}
+.atelier-cover-production h1{font-size:clamp(57px,6.5vw,113px)}
+.atelier-cover-experience h1{font-size:clamp(57px,6.5vw,112px)}
+.atelier-cover-description{max-width:51ch;font-size:clamp(15px,1.22vw,19px);line-height:1.65;color:#f0e9d8}
+.atelier-cover-rule{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:510px;padding:15px 0;border-top:1px solid #d4b27e62;margin-top:30px;color:#e4cea5;font-size:10px;letter-spacing:.13em;line-height:1.5}
+.atelier-cover-link{display:inline-flex;align-items:center;gap:26px;padding:15px 20px;margin-top:17px;background:#e3c393;color:#173127;border:1px solid #f2d7ae;text-decoration:none;font-weight:800;font-size:13px;transition:background .25s ease,transform .25s ease}
+.atelier-cover-link:hover{background:#f5dfb7;transform:translateY(-2px)}
+.atelier-cover-link:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.atelier-cover-photography{position:relative;display:grid;grid-template-columns:1.1fr .85fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:clamp(10px,1.3vw,19px);height:clamp(450px,43vw,630px);padding:23px 0 26px 20px;min-width:0}
+.atelier-cover-photography:before{content:"";position:absolute;inset:1px 14px 4px 0;z-index:-1;border:1px solid #c8a8745a;transform:translate(14px,14px)}
+.atelier-cover-photography:after{content:"";position:absolute;right:-8px;bottom:-13px;border:1px solid #f2d3a2;width:44px;height:44px;border-radius:50%;opacity:.6;pointer-events:none}
+.atelier-cover-photo{margin:0;position:relative;min-width:0;min-height:0;overflow:hidden;display:flex;flex-direction:column;background:#162b25;border:1px solid #ecd4a88c;box-shadow:0 24px 55px #020d0b6c}
+.atelier-cover-photo img{position:absolute;inset:9px 9px 34px;width:calc(100% - 18px);height:calc(100% - 43px);max-height:none;object-fit:contain;object-position:center;background:#1a2f28;filter:contrast(1.035)}
+.atelier-cover-photo figcaption{margin-top:auto;position:absolute;bottom:0;left:0;right:0;z-index:2;padding:11px 12px 9px;background:#0b251dcc;color:#f0d9ae;letter-spacing:.14em;font-size:10px;font-weight:800}
+.atelier-cover-photo-feature{grid-row:1 / 3;grid-column:1;background:linear-gradient(145deg,#18352a,#315342)}
+.atelier-cover-photo-feature img{object-fit:contain}
+.atelier-cover-photo-secondary{grid-row:1;grid-column:2}
+.atelier-cover-photo-third{grid-row:2;grid-column:2}
+.atelier-cover-work .atelier-cover-photo-feature{transform:rotate(-1deg)}
+.atelier-cover-work .atelier-cover-photo-secondary{transform:rotate(1.1deg)}
+.atelier-cover-production .atelier-cover-photo-feature{transform:rotate(.6deg)}
+.atelier-cover-production .atelier-cover-photo-third{transform:rotate(-1deg)}
+.atelier-cover-experience .atelier-cover-photo-feature{transform:rotate(-.5deg)}
+.atelier-cover-experience .atelier-cover-photo-secondary{transform:rotate(.7deg)}
+/* Deeply art-directed gallery environments: alternate green, parchment, and olive without
+   obscuring genuine project images or reducing the contrast of printed labels. */
+.chapter{isolation:isolate}
+.chapter:not(.warm){background:
+ radial-gradient(ellipse 52% 100% at 100% 0%,#c4d6c078,transparent 78%),
+ repeating-linear-gradient(0deg,transparent 0 159px,#647d600d 159px 160px),
+ linear-gradient(115deg,#e6e9df,#f4f0e6 51%,#e4e8db)}
+.chapter.warm{background:
+ radial-gradient(ellipse at 6% 2%,#d5c29955,transparent 50%),
+ repeating-linear-gradient(90deg,transparent 0 169px,#8074530b 169px 170px),
+ linear-gradient(125deg,#eee7d5,#dcdcc8 54%,#f2eadb)}
+.chapter-heading h2{color:#182e24}
+.chapter:not(.warm) .chapter-heading:before,.chapter.warm .chapter-heading:before{width:150px!important;height:3px!important}
+.chapter-heading{padding-bottom:clamp(38px,4vw,68px)}
+.chapter-heading .chapter-index{color:#53735c}
+.chapter-heading::after{width:46px!important;height:46px!important;opacity:.40!important}
+.chapter .editorial-grid{gap:clamp(30px,3.6vw,60px) clamp(20px,2.3vw,42px)}
+.chapter .image-card:first-child .image-wrap{border:4px solid #d2b47e;box-shadow:0 0 0 9px rgba(246,240,219,.6),0 22px 35px #1a342722}
+.chapter .image-card:not(:first-child) .image-wrap{box-shadow:0 9px 19px #1e3a2817}
+.chapter .image-card .image-caption{font-size:clamp(13px,1vw,16px);padding-top:14px}
+.chapter .image-card:first-child .image-caption{font-weight:760;letter-spacing:.015em}
+.chapter .editorial-grid:not(.archive-expansion-grid)>.image-card.wide .image-wrap{min-height:230px}
+/* Deliberate section art: substantial painted divider, not a tiny star */
+.statement-panel{position:relative;overflow:hidden;background:
+ linear-gradient(125deg,#123a2d,#2a523d 55%,#102c22)!important;color:#fff2da;min-height:330px;border-block:2px solid #c7a470}
+.statement-panel:before{content:"";position:absolute;inset:-50% -12% -50% auto;width:66%;background:url("atelier-illustrations/signmakers-plate.svg") center/contain no-repeat;opacity:.25;pointer-events:none;transform:rotate(-12deg)}
+.statement-panel:after{content:"";position:absolute;left:4%;right:4%;top:20px;bottom:20px;border:1px solid #cfac7654;pointer-events:none}
+.statement-panel .statement-index{color:#dfc699}
+.statement-panel p{color:#fff2da!important;position:relative;z-index:1;text-shadow:0 8px 24px #06140f70}
+.statement-panel .accent-period{color:#efcb8f}
+/* New featured exhibition identities, away from miles of pale whitespace */
+.project-spotlight{background:
+ radial-gradient(ellipse at 12% 8%,#d9c69a43,transparent 53%),
+ linear-gradient(130deg,#f1e5cf,#dfdfcc 58%,#e9ecdf)}
+.project-spotlight-title{padding:clamp(36px,5vw,84px) 0}
+.project-spotlight-title h2{font-size:clamp(47px,6.5vw,106px)}
+.project-story{box-shadow:0 26px 54px #263c2a22}
+.project-story-image{background:linear-gradient(160deg,#d3dccf,#e6dcc8)}
+.project-story-content{background:linear-gradient(135deg,#fffaf0,#f1eadb)}
+.project-story-content h3{color:#1b382b}
+.project-story:nth-child(2) .project-story-content{background:linear-gradient(135deg,#243c30,#344e3b);color:#f6e9cf}
+.project-story:nth-child(2) .project-story-content :is(h3,p,span){color:inherit}
+.project-story:nth-child(2) .project-story-content a{color:#f4d09a}
+.project-story:nth-child(2) .project-story-kicker{color:#d5bf92}
+.project-story:nth-child(3) .project-story-content{background:linear-gradient(125deg,#f1e3c8,#ebeadd)}
+/* Production gets an actual crafted-workshop environment, not an unstyled tool list */
+.process-story{background:
+ linear-gradient(110deg,rgba(241,231,205,.75),rgba(224,235,217,.72)),
+ repeating-linear-gradient(90deg,#345f4712 0 1px,transparent 1px 110px)}
+.process-step{background:#f4efe4;box-shadow:0 15px 40px #1f38261a}
+.process-step:nth-child(2){background:linear-gradient(145deg,#304b3c,#20372d);color:#faf0dc}
+.process-step:nth-child(2) :is(h3,p,.process-step-number){color:#f6ecd6}
+.process-step:nth-child(2) .color-workflow span:nth-child(odd){background:#dfc99f;color:#1c372c;border-color:#e0cda7}
+.process-step:nth-child(3){background:linear-gradient(145deg,#e5d7be,#f6f0e5)}
+.process-step:nth-child(4){background:linear-gradient(145deg,#f8f5ec,#dfe7d9)}
+.process-step .process-step-visual{background:#dde4da}
+.process-step:nth-child(2) .process-step-visual{background:#172e26}
+.process-step h3{font-size:clamp(25px,2.3vw,38px)}
+/* Career page: cream should feel like gold-print and technical heritage, not blank white. */
+.profile-content{background:
+ radial-gradient(circle at 85% 10%,#c7ae7b37,transparent 44%),
+ repeating-linear-gradient(90deg,transparent 0 149px,#55705412 149px 150px),
+ linear-gradient(135deg,#f3ead9,#e5e9dd)}
+.career-depth{background:linear-gradient(140deg,#e8e9db,#f0e5d2 54%,#e6ecdf)}
+.career-depth-grid article{background:linear-gradient(140deg,#faf5e8,#ece4d4);border-top:3px solid #ba915b;box-shadow:0 10px 30px #25432d14}
+.career-history{background:
+ radial-gradient(ellipse 69% 90% at 82% 4%,#51735c4a,transparent 72%),
+ repeating-linear-gradient(0deg,transparent 0 140px,#d9bb7e0a 140px 141px),
+ linear-gradient(128deg,#0c201a,#214b35 62%,#10251f)}
+.career-skills{background:linear-gradient(135deg,#eadbc3,#e5ecdf)}
+/* Historic archives stay available but are staged as a quieter reference ledger */
+.archive-expansion{background:
+ repeating-linear-gradient(0deg,transparent 0 142px,#70816d0a 142px 143px),
+ linear-gradient(122deg,#dfe5da,#f5f1e7 62%,#e2dccd)}
+.archive-expansion.warm{background:linear-gradient(130deg,#e8dfca,#e5e5d8)}
+.archive-expansion .archive-expansion-grid .image-card .image-wrap{background:#f7f4eb}
+.archive-expansion .archive-expansion-grid .image-card{box-shadow:none}
+.archive-expansion .archive-expansion-grid .image-card:first-child .image-wrap{border:1px solid #b4bea9;box-shadow:none}
+/* Wider image frames keep images readable without requiring faux cropping */
+@media(max-width:1080px){
+ .atelier-cover-columns{grid-template-columns:1fr;gap:27px;padding-block:30px}
+ .atelier-cover{min-height:0}
+ .atelier-cover h1{font-size:clamp(57px,9vw,107px);margin:16px 0 19px}
+ .atelier-cover-description{max-width:70ch}
+ .atelier-cover-photography{height:clamp(390px,54vw,590px);padding-inline:6px}
+ .atelier-cover-photo-feature img{object-fit:contain}
+ .atelier-cover-engraving{right:2%;width:220px;height:220px}
+ .atelier-cover-bottom{margin-top:4px}
+}
+@media(max-width:760px){
+ .atelier-cover-content{padding-inline:17px}
+ .atelier-cover-serial,.atelier-cover-bottom{font-size:9px;letter-spacing:.07em;padding-block:14px}
+ .atelier-cover-serial span:first-child{max-width:50%}
+ .atelier-cover-serial span:last-child{text-align:right}
+ .atelier-cover-columns{padding-block:24px 15px;gap:12px}
+ .atelier-cover-eyebrow{font-size:9px;letter-spacing:.11em}
+ .atelier-cover h1,.atelier-cover-production h1,.atelier-cover-experience h1{font-size:clamp(48px,11.2vw,77px);line-height:.95;letter-spacing:-.061em;margin:15px 0}
+ .atelier-cover-description{font-size:14px;line-height:1.55}
+ .atelier-cover-rule{padding:12px 0;margin-top:14px;font-size:9px}
+ .atelier-cover-link{margin-top:4px;font-size:12px;padding:12px 15px}
+ .atelier-cover-signature{margin:12px 0 0}
+ .atelier-cover-signature img{width:clamp(200px,66vw,285px)}
+ .atelier-cover-photo figcaption{font-size:9px;letter-spacing:.08em;padding:9px}
+ .atelier-cover-photography{height:clamp(325px,99vw,490px);gap:7px;padding:8px 4px 12px}
+ .atelier-cover-photo img{inset:6px 6px 30px;width:calc(100% - 12px);height:calc(100% - 36px)}
+ .atelier-cover-engraving{opacity:.09;width:140px;height:140px}
+ .atelier-cover-lineart{opacity:.15}
+ .atelier-cover-ambient{opacity:.05}
+ .statement-panel{min-height:230px}
+ .statement-panel:after{left:12px;right:12px;top:12px;bottom:12px}
+ .chapter-heading{padding-bottom:24px}
+ .chapter-heading::after{width:24px!important;height:24px!important}
+ .chapter .image-card:first-child .image-wrap{border-width:2px;box-shadow:0 0 0 4px #e9ddc999,0 9px 23px #1a342720}
+ .project-spotlight-title{padding:35px 0}
+ .project-story:nth-child(2) .project-story-content{color:#f5ecd6}
+}
+@media(max-width:410px){
+ .atelier-cover h1,.atelier-cover-production h1,.atelier-cover-experience h1{font-size:clamp(44px,10.3vw,58px)}
+ .atelier-cover-photography{height:330px}
+ .atelier-cover-rule span:last-child{display:none}
+ .atelier-cover-bottom span:last-child{display:none}
+}
+@media(prefers-reduced-motion:reduce){.atelier-cover-link{transition:none}.atelier-cover-link:hover{transform:none}}
+@media(forced-colors:active){.atelier-cover,.chapter,.statement-panel,.process-story,.career-history{background:Canvas;color:CanvasText}.atelier-cover :is(h1,em,p,span,a){color:CanvasText}.atelier-cover-photo{border:1px solid CanvasText}.atelier-cover-link{border:2px solid CanvasText;background:Canvas}}
