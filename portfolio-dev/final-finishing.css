@@ -1,0 +1,82 @@
+/* HQ7 final-finishing study — additive, non-destructive refinements.
+   Uses the existing approved RRR monogram and signature; no new artwork.
+   This stylesheet is intentionally last in the existing five-layer system. */
+
+/* Soften the overly repetitive framing while preserving photo visibility. */
+.exhibition-masthead .hero-frame{
+  border:1px solid rgba(240,215,174,.42);
+  box-shadow:0 15px 40px rgba(2,10,8,.42);
+}
+.signature-project-item{
+  border:1px solid #b6b8a9;
+  border-radius:3px 23px 3px 3px;
+  overflow:hidden;
+  box-shadow:0 17px 35px #16281b16;
+}
+.project-story{
+  border:1px solid #c4c8bc;
+  border-radius:3px 25px 3px 3px;
+  overflow:hidden;
+  box-shadow:0 15px 35px #152a1b12;
+}
+.project-story-reverse{
+  border-radius:25px 3px 3px 3px;
+}
+.process-step{
+  border:1px solid #c7ccbf;
+  border-top:3px solid #b9975b;
+  border-radius:3px 20px 3px 3px;
+  overflow:hidden;
+  box-shadow:0 10px 26px #182a1b0e;
+}
+.archive-index-grid a{
+  border-radius:2px 17px 2px 2px;
+}
+.explore-guide>a{
+  border-radius:2px 15px 2px 2px;
+}
+
+/* Soft RRR-derived orbit only in spacious, intentionally decorative regions. */
+.exhibition-thesis-art::before{border-style:solid;border-color:rgba(49,91,65,.27)}
+.exhibition-thesis-art::after{border-style:dashed;border-color:rgba(143,118,74,.35)}
+.exhibition-sculpture::before{box-shadow:0 0 0 30px #c6a46d06,0 0 0 64px #c6a46d05,0 0 45px #e5c59012}
+
+/* Reduce stacked chrome at smaller sizes; preserve clear navigation tap targets. */
+@media(max-width:760px){
+  .site-header{gap:8px;padding-block:11px;box-shadow:0 4px 17px rgba(10,30,22,.11)}
+  .site-header .logo{gap:9px}
+  .site-header .brand-monogram-image{width:46px;height:46px;object-fit:contain}
+  .site-header .logo-name{font-size:12px;letter-spacing:.065em}
+  .site-header .logo-name small{font-size:10px;line-height:1.3;letter-spacing:.055em}
+  .site-header .nav{gap:5px}
+  .site-header .nav a{min-height:44px;padding:9px 10px;font-size:11px}
+  .exhibition-hero-eyebrow{padding-block:10px}
+  .exhibition-masthead .masthead-top{display:none}
+  .exhibition-masthead .masthead-inner{padding-top:24px;gap:23px}
+  .exhibition-masthead .brand-hero-signature{margin-bottom:13px}
+  .exhibition-masthead h1{margin:14px 0 20px}
+  .exhibition-masthead .masthead-art{padding-top:5px}
+  .exhibition-thesis{padding-top:48px}
+  .exhibition-thesis-main{gap:15px}
+  .exhibition-thesis-art{width:min(70%,270px)}
+  .signature-project-item,.project-story,.project-story-reverse,.process-step{border-radius:3px 16px 3px 3px}
+}
+@media(max-width:420px){
+  .review-ribbon{padding:5px 10px;font-size:9px;letter-spacing:.025em}
+  .site-header{padding-inline:13px}
+  .site-header .brand-monogram-image{width:40px;height:40px}
+  .site-header .nav{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+  .site-header .nav a{justify-content:center;text-align:center;padding:9px 3px;font-size:10px;line-height:1.15;min-width:0}
+  .exhibition-masthead .brand-hero-signature img{width:min(100%,260px)}
+  .exhibition-masthead h1{font-size:clamp(53px,12.2vw,66px)}
+  .exhibition-masthead .masthead-copy>p:not(.eyebrow){font-size:16px;line-height:1.5}
+  .hero-composition{gap:7px}
+  .hero-frame{padding:5px}
+  .exhibition-thesis h2{font-size:clamp(42px,10.5vw,56px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .signature-project-item,.project-story,.process-step{transition:none!important}
+}
+@media(forced-colors:active){
+  .signature-project-item,.project-story,.process-step{border:1px solid CanvasText}
+}
