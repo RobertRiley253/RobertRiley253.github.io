@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" role="img" aria-labelledby="title desc">
+<title id="title">Drafting and production registration study</title>
+<desc id="desc">Original decorative technical linework: drafting grid, radiating compass circles, registration cross and material guides. Not a project photograph.</desc>
+<g fill="none" stroke="#a98a58" stroke-linecap="round" stroke-linejoin="round">
+ <rect x="26" y="28" width="548" height="304" stroke-width="1" opacity=".58"/>
+ <path d="M26 76H574M26 284H574M74 28V332M526 28V332" stroke-width=".7" opacity=".55"/>
+ <path d="M26 28L50 52M574 28L550 52M26 332L50 308M574 332L550 308" stroke-width="1.5"/>
+ <circle cx="326" cy="180" r="118" stroke-width="1.5" opacity=".75"/>
+ <circle cx="326" cy="180" r="87" stroke-width="1.1" opacity=".8"/>
+ <circle cx="326" cy="180" r="43" stroke-width="1.3"/>
+ <circle cx="326" cy="180" r="7" stroke-width="2"/>
+ <path d="M326 34V326M180 180H472" stroke-width=".9" stroke-dasharray="5 9" opacity=".75"/>
+ <path d="M326 45V67M326 293V315M191 180H213M439 180H461" stroke-width="3"/>
+ <path d="M233 90L417 270M233 270L417 90" stroke-width=".7" opacity=".45"/>
+ <path d="M106 92h60m-60 21h88m-88 21h53m-53 75h61m-61 21h88m-88 21h53" stroke-width="1.4"/>
+ <path d="M458 92h38m-38 21h38m-38 21h27m-27 75h38m-38 21h38m-38 21h27" stroke-width="1.1"/>
+</g>
+<g stroke="#4a705b" fill="none">
+ <path d="M61 64h37m-18.5-18.5v37M502 64h37m-18.5-18.5v37M61 297h37m-18.5-18.5v37M502 297h37m-18.5-18.5v37" stroke-width="1.1"/>
+ <path d="M112 152h58M112 159h47M112 166h34" stroke-width=".85"/>
+</g>
+</svg>
