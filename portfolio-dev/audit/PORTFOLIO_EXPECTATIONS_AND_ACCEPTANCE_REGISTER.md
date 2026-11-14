@@ -24,6 +24,28 @@
 - Historical résumé evidence: `Robert_R_Riley_Technical_Manufacturing_Quality_FINAL_MASTER_2026-11-12.pdf` and `Robert_R_Riley_Universal_Commercial_Signage_Consolidated_Approval_Candidate_2026-11-12.docx`. Private contact details must **not** be copied into public pages.
 - This recovery covers available handoffs, current conversation context, source code, inventories and prior visual reviews; **it is not a verbatim export of every historical chat message**. Any additional source should be reconciled into this register before marking the task accepted.
 
+## Inception-to-current scope and decision chronology
+
+| Phase | Historically recoverable instruction | Current interpretation |
+|---|---|---|
+| **October 5, 2026 — employment-portfolio origins** | Build a compact, image-dominant portfolio of actual signage, wraps, fabricated work and production capabilities; early PBK-targeted PDF was discussed as roughly 4–8 flexible pages, grouped images and equipment secondary. Separate family photographs from professional portfolio. | **Historical predecessor**, not a command to reduce the four-page website to a fixed PDF page count. Compact gallery density, authentic attribution and image quality are still binding. |
+| **October 2026 — Signarama and general job use** | Move beyond a PBK-specific document toward employer-neutral, reusable visual work; retain full source archive and adaptable format. | **Binding** for professional relevance and truthful employer-neutral language. |
+| **November 12 — recovered 63-photo website brief** | Four pages, ~85–90% visual image emphasis, compact captions, genuine original image proportions, 51 selected / 12 archive arrangement, no excessive titles or filler. | **Binding intent**, especially for Home, Work and Production. Later 103 photo references increase archive breadth but do not justify a vertical wall. |
+| **November 12–13 — separate identity/artwork studio** | An exceptional graphic design system, traditional RRR/approved gold script, meaningful frames, dividers, illustrations, texture, elegant UX; preserve 56-file identity exploration and the chosen master. | **Binding visual expectations**; exploratory designs are not automatically approved final assets. |
+| **November 13 — image archive and exhibition branches** | Expand to 103 image records, preserve every original and previous candidate, improve hierarchy, add graphic artwork, test real screenshots. | **Preserve evidence and source assets**; previous implementation choices are subject to the owner's artistic rejection. |
+| **November 13 — sensory art direction** | Deep material character—shape, form, color, texture, dimensionality, and pleasurable visual rhythm. | **Binding artistic quality target**; does not justify giant frames, photographic softness or repetitive one-image panels. |
+| **November 13 — My Story public history** | Transform the source résumé into a complete elegant public life-and-career history for employers and Facebook readers; no telephone, address, email, form or résumé download. | **Binding expansion** of content with public privacy. It does not supersede image-density requirements for the gallery, and the biography needs multiple visual compositions. |
+| **November 13 — repeated owner rejection** | Oversized blurry images, endless scrolling and single-file photographic rows are unacceptable. The complaint concerns layout more than existing palette/branding. | **Highest-priority failed acceptance gate**; no candidate is accepted until the layout is genuinely rebuilt and images are inspected at display size. |
+| **November 13 — team-led design governance** | Specialist design perspectives establish and audit creative direction; assistant executes it; owner has final acceptance authority. | **Binding process restriction**. These are coordinated AI review perspectives, not independently hired staff. |
+
+### Historical instructions that were superseded, not forgotten
+
+- The early compact PBK PDF format and its particular employer were superseded by the four-page general website. Retain the grouped-photo, high-fidelity design principles.
+- The older **Experience/Contact** page changed to **My Story**, and the earlier email links were removed under explicit privacy instruction.
+- The earlier photo inventory of **63** expanded to **103**, but all original 63 and later additions must remain traceable.
+- Any earlier suggested public contact or downloadable résumé is superseded by the explicit current request for no personal contact exposure.
+- Early selected monogram *concept sheets* are not final approval. The exact original plaque master and later RRR assets must be version-checked before final release.
+
 ## Result at a glance
 
 - Total individually actionable expectations: **153** across **10** groups.
