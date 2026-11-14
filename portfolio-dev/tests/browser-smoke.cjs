@@ -58,6 +58,28 @@ const path = require('node:path');
           await page.waitForTimeout(250);
           await page.screenshot({ path: path.join(output, id + '-full.png'), fullPage: true, animations: 'disabled', timeout: 45000 });
         }
+        // HQ9: verify real Lucky Signs historical imagery, not the former commercial van stand-in.
+        if (name === 'profile.html') {
+          const history = page.locator('#story-racing');
+          if (await history.count() !== 1) throw new Error('Missing motorsports history chapter');
+          for (const filename of ['IMG_4623.jpg', 'IMG_4626.jpg']) {
+            const img = history.locator('img[src*="' + filename + '"]');
+            if (await img.count() !== 1) throw new Error('Expected one racing image ' + filename);
+            await img.scrollIntoViewIfNeeded();
+            await img.evaluate(async node => {
+              if (!node.complete) await new Promise((resolve, reject) => {
+                node.addEventListener('load', resolve, { once: true });
+                node.addEventListener('error', () => reject(new Error('Historical photograph download failed')), { once: true });
+              });
+              if (node.decode && node.naturalWidth > 0) await node.decode();
+            });
+            const state = await img.evaluate(node => ({ complete: node.complete,
+              naturalWidth: node.naturalWidth, naturalHeight: node.naturalHeight,
+              alt: node.alt, src: node.currentSrc }));
+            if (!state.complete || state.naturalWidth < 150 || !state.alt)
+              throw new Error('Racing image failed: ' + JSON.stringify(state));
+          }
+        }
         // HQ9: independently test the six newly integrated production photographs.
         if (name === 'production.html') {
           const evidence = page.locator('#real-shop-equipment');
