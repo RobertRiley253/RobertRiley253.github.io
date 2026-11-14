@@ -620,3 +620,10 @@ main{overflow:clip}
 .preview-card .image-wrap::after{content:none;display:none}
 .preview-card .image-caption{flex-wrap:wrap}
 .preview-card .image-caption::after{content:"ARCHIVAL JPEG REVIEW";display:block;flex-basis:100%;font-size:10px;letter-spacing:.09em;font-weight:700;color:var(--muted);line-height:1.35;margin-top:1px}
+
+/* HQ7 approved hybrid: preserve existing Library artwork, not redrawn glyphs. */
+.site-header .brand-monogram{display:block;width:clamp(42px,4vw,54px);height:auto;aspect-ratio:1;object-fit:contain;flex:0 0 auto}
+.footer-monogram img{display:block;width:64px;height:auto;max-width:100%;object-fit:contain}
+.masthead-copy .hero-signature{display:block;width:min(100%,425px);height:auto;object-fit:contain;margin:0 0 18px;filter:none}
+@media(max-width:750px){.site-header .brand-monogram{width:44px}.masthead-copy .hero-signature{width:min(100%,380px);margin-bottom:14px}}
+@media(max-width:360px){.site-header .brand-monogram{width:40px}.masthead-copy .hero-signature{width:min(100%,330px)}}
