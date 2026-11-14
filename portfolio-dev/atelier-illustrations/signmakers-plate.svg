@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 340" role="img" aria-labelledby="title desc">
+<title id="title">Original signmaker's plate illustration</title>
+<desc id="desc">Decorative technical line illustration of a suspended sign panel, registration marks and dimension lines, not an actual client project.</desc>
+<g fill="none" stroke="#957349" stroke-linecap="square" stroke-linejoin="miter">
+ <path d="M20 20H520V320H20Z" stroke-width=".9" opacity=".5"/>
+ <path d="M40 40h27M40 40v27M500 40h-27M500 40v27M40 300h27M40 300v-27M500 300h-27M500 300v-27" stroke-width="2"/>
+ <path d="M102 74H438M102 266H438" stroke-width="1" opacity=".65"/>
+ <path d="M116 116H424V228H116Z" stroke-width="2.5"/>
+ <path d="M126 126H414V218H126Z" stroke-width=".8" opacity=".6"/>
+ <path d="M142 116v-24h8v24M390 116v-24h8v24" stroke-width="1.5"/>
+ <path d="M120 92H420" stroke-width="4"/>
+ <path d="M102 92h18M420 92h18" stroke-width="1.7"/>
+ <path d="M80 116H62V228H80M80 116l-6 8m6 104l-6-8" stroke-width="1.2"/>
+ <path d="M116 240v18H424v-18M116 240l8 6m300-6l-8 6" stroke-width="1"/>
+ <path d="M151 168H389M151 178H352" stroke-width="1" stroke-dasharray="7 7" opacity=".65"/>
+ <path d="M270 124v96" stroke-width=".65" stroke-dasharray="3 7"/>
+ <circle cx="270" cy="172" r="46" stroke-width=".7" opacity=".5"/>
+ <path d="M270 104v13M270 227v13M202 172h13M325 172h13" stroke-width="1.1"/>
+</g>
+<g fill="none" stroke="#42634f" stroke-width="1.2">
+ <path d="M34 170h27M47.5 156.5v27M479 170h27M492.5 156.5v27"/>
+ <circle cx="47.5" cy="170" r="5"/><circle cx="492.5" cy="170" r="5"/>
+</g>
+</svg>
