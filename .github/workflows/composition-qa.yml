@@ -144,3 +144,5 @@ jobs:
         run: exit 1
 
 # Re-run after resolution-classification and grid precedence changes.
+
+# Full final source recuration and identity preservation render verification.
