@@ -220,3 +220,10 @@ Updated: 2026-11-12 (Pacific)
 - Rewrote only the three-card `career-depth` narrative and its introduction on `portfolio-dev/profile.html` to explain a connected practice: visual artwork and RIP/ICC workflows; hands-on sign production and business leadership; aerospace composites/assembly, manufacturing quality and instruction. Claims are phrased conservatively, without assigning individual aircraft projects or unverified certifications.
 - Experience-page editorial commit: `daeb8cf7c373d89b84aa6c26e8d3a69f2d4f139f`. Kept existing three-column structure, all image cards, photographs, gallery IDs, JS and stylesheet untouched.
 - Open: visually assess the updated text at desktop/mobile; final photographic/editorial review; owner-selected RRR brand; explicit approval for release. No merge, main-branch modification or publication.
+
+## 2026-11-13 — Production HQ7: Experience visual-flow correction
+- Inspected the preserved Library visual-review contact sheet and the full desktop Experience screenshot, alongside current GitHub source. Existing visual identity is restrained and photographic; avoided redesign and avoided treating preliminary RRR artwork in screenshots as approved branding.
+- Reordered only Experience-page sections so the career story, evidence notes, sample photographs and archive discovery lead into the contact invitation. Previously, the contact finale interrupted the evidence-to-archive journey.
+- Updated the Experience page's narrow metadata description to reflect its actual cross-disciplinary content. Commit `0373ec8cb7bf034444dfe5a73b066da6b20d5656`.
+- Source structure checked after edit: career narrative precedes evidence, photographic strip and archive; contact invitation follows archive; three existing photo cards retained, and noindex directive remains. No photographs, CSS/JS, other pages, or main branch touched.
+- Previous 28/28 Chromium and 103/103 image-decoding results belong to HQ6's prior release-candidate run and have **not** been rerun for these HQ7 copy/ordering edits. Fresh rendered QA and owner brand/editorial approval remain open.
