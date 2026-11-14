@@ -1,0 +1,125 @@
+/* EDITORIAL / MATERIAL REVIEW — November 2026
+   Owner requested more tangible ambience in the LIGHT parts of the exhibition,
+   stronger editorial consistency, and no change to its approved identity.
+   The textures are CSS-built paper and fine drafting/press details; they DO NOT
+   blur, overlay, distort, reprocess or alter original project photographs. */
+:root{
+  --em-paper:#f0eadf;
+  --em-linen:#e7e2d3;
+  --em-ink:#1c392c;
+  --em-sage:#dfe5d9;
+  --em-aged-brass:#b19464;
+}
+/* The light atmosphere should read as a crafted book page, not an empty white
+   rectangle. The translucent fibers are at a scale below readable lettering. */
+body{
+  background:
+   radial-gradient(ellipse 60% 48% at 5% 7%,rgba(180,146,97,.16),transparent 75%),
+   radial-gradient(ellipse 58% 38% at 95% 33%,rgba(106,140,111,.15),transparent 75%),
+   radial-gradient(ellipse 60% 52% at 0% 70%,rgba(192,169,124,.11),transparent 77%),
+   repeating-linear-gradient(108deg,rgba(107,91,62,.020) 0 1px,transparent 1px 7px),
+   repeating-linear-gradient(0deg,rgba(99,88,67,.014) 0 1px,transparent 1px 5px),
+   linear-gradient(145deg,#f1eadd 0%,#e8ece2 38%,#f1eadc 74%,#e8e4d7 100%);
+}
+/* Alternate quietly between handlaid paper and softly aged drawing stock. */
+body .chapter:not(.warm),
+body .chapter.recovered-section:not(.warm){
+  background:
+   radial-gradient(ellipse 68% 85% at 93% 4%,rgba(150,175,137,.18),transparent 73%),
+   radial-gradient(ellipse 65% 78% at 7% 95%,rgba(189,151,92,.13),transparent 72%),
+   repeating-linear-gradient(99deg,rgba(72,91,76,.026) 0 1px,transparent 1px 10px),
+   repeating-linear-gradient(0deg,rgba(120,106,80,.018) 0 1px,transparent 1px 6px),
+   linear-gradient(118deg,#efece0 0%,#e6e9df 54%,#f2ede0 100%)!important;
+}
+body .chapter.warm{
+  background:
+   radial-gradient(ellipse 62% 85% at 4% 12%,rgba(191,153,92,.19),transparent 72%),
+   radial-gradient(ellipse 67% 90% at 97% 84%,rgba(139,166,123,.14),transparent 72%),
+   repeating-linear-gradient(106deg,rgba(120,91,54,.021) 0 1px,transparent 1px 9px),
+   repeating-linear-gradient(0deg,rgba(110,107,83,.017) 0 1px,transparent 1px 7px),
+   linear-gradient(130deg,#f2eadc 0%,#eae3d4 47%,#e8ebe0 100%)!important;
+}
+/* Gently bordered museum-paper settings rather than cold white blocks. */
+.intro-band,.signature-projects,.project-spotlight,.process-story,.motorsports-feature,
+.portfolio-archive-index,.career-skills,.career-snapshot{
+ background:
+   radial-gradient(ellipse 52% 70% at 100% 0%,rgba(171,143,92,.095),transparent 70%),
+   repeating-linear-gradient(102deg,rgba(77,88,66,.015) 0 1px,transparent 1px 9px),
+   linear-gradient(140deg,rgba(245,238,223,.82),rgba(225,232,220,.76) 56%,rgba(241,231,211,.86))!important;
+}
+.signature-projects,.project-spotlight,.process-story,.motorsports-feature{
+ border-top:1px solid rgba(143,120,81,.25);
+ border-bottom:1px solid rgba(143,120,81,.19);
+}
+body .chapter-heading{
+ border-bottom:1px solid rgba(133,119,91,.24);
+ padding-bottom:clamp(16px,1.8vw,25px);
+}
+body .chapter-heading::before{
+ width:74px!important;height:2px!important;
+ background:linear-gradient(90deg,#8f724d,#cdb17c 65%,transparent)!important;
+}
+/* Existing genuine photographs remain untreated; only the PAPER around them
+   changes. The real photo hue and JPEG signal are never filtered. */
+body .chapter .editorial-grid .image-card .image-wrap{
+ background:
+  repeating-linear-gradient(115deg,rgba(127,108,77,.025) 0 1px,transparent 1px 11px),
+  linear-gradient(135deg,#e5e7dc,#dce3d9 53%,#e9e3d7)!important;
+ border-color:#bdb9a7!important;
+}
+body .chapter .editorial-grid .image-card .image-wrap img{filter:none!important}
+.signature-projects .signature-project-photo{background:linear-gradient(140deg,#e8e3d7,#dce6dc)!important}
+/* Fix mismatched types and number-first cards. One consistent reading sequence:
+   SMALL SUBJECT -> PROMINENT VALUE -> SHORT QUALIFICATION. */
+.career-snapshot-index>div{
+ min-height:155px;gap:10px;padding:clamp(17px,1.6vw,24px);
+ justify-content:flex-start;align-items:flex-start;
+ background:
+  radial-gradient(ellipse at 86% 10%,rgba(180,153,98,.14),transparent 65%),
+  repeating-linear-gradient(90deg,rgba(228,201,149,.042) 0 1px,transparent 1px 31px),
+  linear-gradient(145deg,#173c2d,#234934 65%,#183c2e);
+ border:1px solid #b6996d;
+ box-shadow:0 10px 25px rgba(12,34,22,.15),inset 0 1px rgba(246,218,162,.12);
+}
+.career-snapshot-index .snapshot-subject{
+ font-size:10px!important;line-height:1.35;letter-spacing:.12em!important;
+ font-weight:800;color:#d3bd92!important;min-height:0!important;
+}
+.career-snapshot-index strong{
+ font:400 clamp(25px,2.3vw,39px)/1.07 Georgia,"Times New Roman",serif;
+ letter-spacing:-.035em;overflow-wrap:anywhere;
+ color:#f5d59d!important;margin:4px 0 2px;
+}
+.career-snapshot-index>div>span:last-child{
+ font-size:13px;line-height:1.48;letter-spacing:0;color:#f3e9d8;
+}
+.career-snapshot-index>div:last-child{
+ background:
+  radial-gradient(ellipse at 87% 5%,rgba(229,194,124,.17),transparent 72%),
+  repeating-linear-gradient(90deg,rgba(228,201,149,.042) 0 1px,transparent 1px 31px),
+  linear-gradient(145deg,#193e2e,#294f39 65%,#1a392c);
+}
+/* Quiet reading-paper accent in the detailed record, without adding another
+   full-height poster or switching its approved palettes. */
+.career-ledger{
+ background:
+  radial-gradient(ellipse 67% 65% at 1% 5%,rgba(173,140,91,.15),transparent 71%),
+  radial-gradient(ellipse 65% 70% at 99% 95%,rgba(131,156,113,.15),transparent 72%),
+  repeating-linear-gradient(99deg,rgba(105,89,61,.018) 0 1px,transparent 1px 10px),
+  linear-gradient(138deg,#efe8d9,#e8ebe0 52%,#f1e9d8)!important;
+}
+@media(max-width:720px){
+ .career-snapshot-index>div{min-height:0}
+ .career-snapshot-index strong{font-size:clamp(24px,6vw,32px)}
+ .career-snapshot-index>div>span:last-child{font-size:12px}
+ .career-snapshot-index .snapshot-subject{font-size:10px!important}
+}
+@media(prefers-contrast:more){
+ body .chapter-heading{border-bottom-color:#755d3e}
+ .career-snapshot-index .snapshot-subject{color:#fff0c8!important}
+ .career-snapshot-index>div>span:last-child{color:#fff!important}
+}
+@media(forced-colors:active){
+ body .chapter .editorial-grid .image-card .image-wrap{background:Canvas!important}
+ .career-snapshot-index>div{background:Canvas!important;color:CanvasText!important;border-color:CanvasText!important}
+}
