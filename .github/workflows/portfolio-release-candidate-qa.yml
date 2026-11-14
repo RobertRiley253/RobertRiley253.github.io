@@ -111,3 +111,5 @@ jobs:
       - name: Fail if a quality gate failed
         if: steps.smoke.outcome != 'success' || steps.axe.outcome != 'success' || steps.story.outcome != 'success'
         run: exit 1
+
+# Final no-wrap micro-polish verification.
