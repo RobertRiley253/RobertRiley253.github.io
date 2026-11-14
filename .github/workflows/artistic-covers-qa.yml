@@ -100,3 +100,5 @@ jobs:
       - name: Enforce checks
         if: steps.smoke.outcome != 'success' || steps.axe.outcome != 'success' || steps.art.outcome != 'success'
         run: exit 1
+
+# Verify restored production contrast and tactile cover materials.
