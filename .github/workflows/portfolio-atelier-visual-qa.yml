@@ -99,3 +99,5 @@ jobs:
       - name: Enforce test failures
         if: steps.smoke.outcome != 'success' || steps.axe.outcome != 'success' || steps.layout.outcome != 'success'
         run: exit 1
+
+# Second independent run to verify intermittent external-image timeout.
