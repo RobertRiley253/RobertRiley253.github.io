@@ -92,3 +92,23 @@ Both reference byte-preserving original GitHub files with clickable originals; o
 **QA boundary:** source-level structure verified, but live browser rendering and actual screenshot inspection of these latest two blocks **not yet performed**. No claim of responsive/artistic final approval. Existing prior HQ 9 browser test covered the previous layout, not these exact new sections.
 
 **Archive policy:** all 124 incoming sources remain retained in the original branch folders and in the inventory. This preserves access while preventing misleading public attribution of AI concepts, third-party aerospace photos, near-duplicates, or unresolved nine-format assets. Public-facing use of every file is **not** advisable; meaningful contextual curation is the standard.
+
+## Owner-directed execution reprioritization — high-impact first
+
+**New objective:** accelerate completion by batching content decisions, not making each incoming photo a separate integration cycle. Art direction locked.
+
+### Ordered workstream
+1. **Opening conversion / strongest first:** preserve the established identity and assess Home + Selected Work first-impression images, captions and sequence. Promote authentic, objectively stronger finished work over redundant weaker illustrations.
+2. **Batch integration by subject:** select top eligible images for installed customer signs, vehicle/fleet work, production capabilities, shop/business context, and motorsports personal history. Integrate in section-sized batches and retain related/unselected sources in inventory.
+3. **Latest four-page rendering and functional QA:** capture 1440 and 375 px (plus intermediate accessibility/overflow checks) and inspect actual content including new HQ10 blocks; fix confirmed high-impact defects only.
+4. **Employer accuracy / portfolio coherence:** align photography and narrative, avoid duplicated job counts, ambiguous attribution, claim inflation and contact data.
+5. **Nonblocking provenance/format details:** unresolved nine PNG/AVIF renderings and No. 91 altered-versus-untouched source identification, with safeguards preserved.
+
+### Direct first-impression source audit
+- `index.html`: opening trio **Affordable Dental Care installed rooftop sign** `portfolio-006.jpg`, **Hot Shot completed van** `portfolio-009.jpg`, **Northwest Car Show print** `portfolio-023.jpg`; credible mix of finished physical signs/vehicle/print.
+- `work.html`: cover and spotlight re-use the *same three photographs*, increasing repetitive impression even though they are strong works. **This is the principal content hierarchy opportunity to improve,** not another design-system revision. Change only after alternate finished work is visually confirmed better.
+- `production.html`: opening Roland printer and working shop contextual images are appropriate, followed by capabilities. Some deeper images still reference `portfolio-brand-review-hybrid-2026-11-13`; evaluate their future stability and source attribution during batch QA rather than silently breaking existing content.
+- `profile.html`: starts with actual shop equipment and finished sign. The Lucky Signs motorsports section already has direct authentic photos from HQ9, no need to repeat that integration.
+- Source comparison confirmed all four HTML pages are present in branch, and two HQ10 content blocks remain in Selected Work.
+
+**Do not** interpret the list as permission to publish or merge. Responsive QA of the two new field-records is pending. No changes to those front-page photographs were made during the priority audit.
