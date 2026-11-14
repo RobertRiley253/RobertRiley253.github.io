@@ -72,3 +72,23 @@ All files below were opened as actual image pixels from the designated developme
 **Curation finding:** this batch contains one strong self-business installed-signage scene (`IMG_1536.jpg`) and supporting production/field-equipment imagery, but **no verified new external-client vehicle installation**. Existing site has strong representative client vehicles. Do not insert weaker work or concepts just to raise counts.
 
 **Next high-leverage move:** find authentic new client-installed vehicle or commercial sign sources, or move directly to a complete owner-visible interactive four-page review. A browser-capable preview host is needed before claiming final visual acceptance.
+
+## Content-first placement execution (owner direction)
+
+**Owner directive:** prioritize authentic best work in the visitor's first impression, use the large supplied collection thoughtfully rather than merely staging it; the visual identity/design is locked.
+
+**Front-of-site audit:** Home currently leads with the completed Affordable Dental Care rooftop sign, Hot Shot commercial van, and Northwest Car Show printed promotions. This is a strong signage-employer-first selection across installed sign, vehicle and print. No weak workshop or speculative/AI image was promoted above them.
+
+**Two direct, additive placements committed to Selected Work**:
+1. After the existing **Commercial signs** gallery, a compact actual-business field record of `Rob-Photo-Uploads/New folder/IMG_1536.jpg`: installed That Sticker Store doorway lettering and window display graphics. Clearly described as own-shop identity, not an outside customer job.
+2. After the existing **Vehicle & fleet** gallery, a complementary full-truck image `Rob-Photo-Uploads/New folder/IMG_20190621_134849.jpg` of the finished American Made Concrete LLC lettering, immediately tied editorially to existing close-up `portfolio-014.jpg` as **one project/two views**.
+
+Both reference byte-preserving original GitHub files with clickable originals; original 103 gallery image IDs and all 124 incoming files remain intact. Small responsive stylesheet `portfolio-dev/hq10-field-records.css` created rather than overriding brand/identity styles.
+
+**Commits:** `6e9d28509e2beee0faa3c5b10ae2712579ddc635` (contained stylesheet) and `5874baf78b7796e0cebb90cc3ffd6ff40bf8ae17` (actual placements).
+
+**Post-save source validation:** stylesheet linked and present; exactly two new field-record sections; both originals appear as anchors and images; old American Made Concrete gallery card `data-image="14"` remains; exactly one main opening and closing tag; existing chapter navigation remains; latest HEAD matched saved content commit before this status change.
+
+**QA boundary:** source-level structure verified, but live browser rendering and actual screenshot inspection of these latest two blocks **not yet performed**. No claim of responsive/artistic final approval. Existing prior HQ 9 browser test covered the previous layout, not these exact new sections.
+
+**Archive policy:** all 124 incoming sources remain retained in the original branch folders and in the inventory. This preserves access while preventing misleading public attribution of AI concepts, third-party aerospace photos, near-duplicates, or unresolved nine-format assets. Public-facing use of every file is **not** advisable; meaningful contextual curation is the standard.
