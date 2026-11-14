@@ -5,6 +5,8 @@
 .hq8-shop-proof{margin:0;min-width:0}
 .hq8-shop-image{display:block;overflow:hidden;aspect-ratio:4/3;border:1px solid rgba(84,94,75,.28);border-radius:3px;background:#e9e6d9;box-shadow:0 10px 28px rgba(15,34,28,.09)}
 .hq8-shop-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .3s ease}
+/* The fourth photo is a portrait-format fiber-laser workstation; retain the full apparatus rather than cropping its top and bottom. */
+.hq8-shop-proof:nth-child(4) .hq8-shop-image img{object-fit:contain}
 .hq8-shop-image:hover img,.hq8-shop-image:focus-visible img{transform:scale(1.025)}
 .hq8-shop-image:focus-visible{outline:3px solid #b18d52;outline-offset:3px}
 .hq8-shop-proof figcaption{padding:.7rem .08rem .05rem;display:flex;flex-direction:column;gap:.25rem;font-size:.88rem;line-height:1.45;color:inherit}
