@@ -217,3 +217,60 @@
  .atelier-cover-photo::before{display:none}
  .process-step:nth-child(2)>.process-step-number{color:CanvasText!important;background:Canvas!important}
 }
+
+/* IMAGE SHAPE RECOMPOSITION: actual work commands the frame, rather than floating
+   in oversized vertical green boxes. No original photograph is cropped or replaced. */
+@media(min-width:1081px){
+ .atelier-cover-photography{
+   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+   grid-template-rows:minmax(0,1.15fr) minmax(0,.87fr);
+   height:clamp(480px,43vw,635px);
+   gap:16px;
+ }
+ .atelier-cover-photo-feature{grid-column:1 / 3;grid-row:1;}
+ .atelier-cover-photo-secondary{grid-column:1;grid-row:2;}
+ .atelier-cover-photo-third{grid-column:2;grid-row:2;}
+ .atelier-cover-work .atelier-cover-photo-feature{transform:rotate(-.45deg)}
+ .atelier-cover-work .atelier-cover-photo-secondary{transform:rotate(.45deg)}
+ .atelier-cover-production .atelier-cover-photo-feature{transform:rotate(.25deg)}
+ .atelier-cover-experience .atelier-cover-photo-feature{transform:rotate(-.3deg)}
+}
+@media(min-width:761px) and (max-width:1080px){
+ .atelier-cover-photography{grid-template-columns:1fr 1fr;grid-template-rows:1.1fr .9fr}
+ .atelier-cover-photo-feature{grid-column:1/3;grid-row:1}
+ .atelier-cover-photo-secondary{grid-column:1;grid-row:2}
+ .atelier-cover-photo-third{grid-column:2;grid-row:2}
+}
+@media(max-width:760px){
+ .atelier-cover-photography{grid-template-columns:1fr 1fr;grid-template-rows:1.15fr .85fr}
+ .atelier-cover-photo-feature{grid-column:1/3;grid-row:1}
+ .atelier-cover-photo-secondary{grid-column:1;grid-row:2}
+ .atelier-cover-photo-third{grid-column:2;grid-row:2}
+}
+/* A soft photographic reflected-glass backing adds color and dimensionality
+   behind the intact photograph, as in a physical framed sign-shop exhibit. */
+.atelier-cover-photo-feature::before{
+ inset:6px 6px 35px;
+ filter:blur(0);
+ background-image:linear-gradient(90deg,rgba(10,32,23,.64),rgba(45,70,49,.24)),
+ repeating-linear-gradient(125deg,rgba(223,187,123,.11) 0 1px,transparent 1px 13px);
+}
+.atelier-cover-work .atelier-cover-photo-feature::before{
+ background-image:linear-gradient(90deg,rgba(8,33,27,.55),rgba(21,50,38,.35)),url("https://robertriley253.github.io/portfolio-006.jpg");
+ background-size:cover;background-position:center;
+ filter:saturate(.75) brightness(.64);
+}
+.atelier-cover-production .atelier-cover-photo-feature::before{
+ background-image:linear-gradient(90deg,rgba(13,45,31,.45),rgba(23,48,36,.32)),url("https://robertriley253.github.io/portfolio-057.jpg");
+ background-size:cover;background-position:center;
+ filter:saturate(.78) brightness(.6);
+}
+.atelier-cover-experience .atelier-cover-photo-feature::before{
+ background-image:linear-gradient(90deg,rgba(37,47,27,.52),rgba(40,49,35,.36)),url("https://robertriley253.github.io/portfolio-048.jpg");
+ background-size:cover;background-position:center;
+ filter:saturate(.77) brightness(.62);
+}
+.atelier-cover-photo-feature img{
+ padding:1px 4px;filter:contrast(1.045) drop-shadow(0 4px 14px rgba(0,0,0,.55))
+}
+@media(forced-colors:active){.atelier-cover-photo-feature::before{background:Canvas;filter:none}}
