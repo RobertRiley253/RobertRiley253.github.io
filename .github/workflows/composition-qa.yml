@@ -142,3 +142,5 @@ jobs:
       - name: Enforce checks
         if: steps.photo.outcome != 'success' || steps.accessibility.outcome != 'success' || steps.composition.outcome != 'success'
         run: exit 1
+
+# Re-run after resolution-classification and grid precedence changes.
