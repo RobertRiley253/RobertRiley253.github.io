@@ -2,11 +2,11 @@ name: Composition Rebuild — Private Browser and Visual Audit
 on:
   push:
     branches: [portfolio-composition-rebuild-review-2026-11-13]
-    paths: [.github/workflows/composition-qa.yml]
 permissions:
   contents: write
 jobs:
   review:
+    if: "!contains(github.event.head_commit.message, 'Record measured full-page composition QA')"
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:
