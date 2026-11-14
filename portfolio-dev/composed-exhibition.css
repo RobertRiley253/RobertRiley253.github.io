@@ -361,3 +361,41 @@ body .chapter .editorial-grid>.image-card[data-resolution="tiny"][data-shape] .i
   max-height:135px!important;
  }
 }
+
+/* Screenshot-veto repair: signature projects previously stretched the first
+   photo frame to 575+px and anchored the real image at its bottom. The picture
+   must control the frame, never an inherited flex/min-height filler. */
+.signature-projects .signature-projects-grid{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:clamp(12px,1.5vw,22px)!important;align-items:stretch!important;
+}
+.signature-projects .signature-project-item,
+.signature-projects .signature-project-feature{
+ grid-column:auto!important;grid-row:auto!important;
+ min-height:0!important;align-self:stretch!important;flex-direction:column!important;
+}
+.signature-projects .signature-project-photo,
+.signature-projects .signature-project-feature .signature-project-photo{
+ flex:0 0 auto!important;min-height:0!important;max-height:290px!important;
+ height:auto!important;aspect-ratio:4/3!important;
+ padding:8px!important;background:#e7e6dc!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+}
+.signature-projects .signature-project-photo img,
+.signature-projects .signature-project-feature .signature-project-photo img{
+ display:block!important;width:100%!important;height:100%!important;
+ max-height:100%!important;object-fit:contain!important;object-position:center!important;
+ filter:none!important;transform:none!important;
+}
+.signature-projects .signature-project-copy{flex:1!important;padding:clamp(16px,1.7vw,26px)!important;gap:10px!important}
+.signature-projects .signature-project-copy strong{font-size:clamp(23px,2vw,32px)!important}
+@media(max-width:860px){
+ .signature-projects .signature-projects-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .signature-projects .signature-project-item:last-child{grid-column:1/-1!important}
+}
+@media(max-width:560px){
+ .signature-projects .signature-projects-grid{grid-template-columns:1fr!important}
+ .signature-projects .signature-project-item:last-child{grid-column:1!important}
+ .signature-projects .signature-project-photo,
+ .signature-projects .signature-project-feature .signature-project-photo{max-height:240px!important}
+}
