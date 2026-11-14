@@ -101,3 +101,5 @@ jobs:
         run: exit 1
 
 # Second independent run to verify intermittent external-image timeout.
+
+# Final illustration-integrated editorial verification.
