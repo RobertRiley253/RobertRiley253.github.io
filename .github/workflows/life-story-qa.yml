@@ -120,3 +120,5 @@ jobs:
       - name: Enforce checks
         if: steps.photos.outcome != 'success' || steps.axe.outcome != 'success' || steps.life.outcome != 'success'
         run: exit 1
+
+# Final candidate visual and privacy verification trigger.
