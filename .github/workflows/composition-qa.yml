@@ -8,7 +8,7 @@ jobs:
   review:
     if: "!contains(github.event.head_commit.message, 'Record measured full-page composition QA')"
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -60,8 +60,12 @@ jobs:
                 await page.goto('http://127.0.0.1:8765/'+root+'/'+name+'.html',{waitUntil:'domcontentloaded'});
                 await page.addStyleTag({content:'*{animation:none!important;transition:none!important}'});
                 await page.evaluate(async()=>{
-                  await Promise.all([...document.images].map(img=>img.decode().catch(()=>{})));
+                  document.querySelectorAll('img[loading="lazy"]').forEach(img => { img.loading='eager'; });
                   await document.fonts.ready;
+                  await Promise.race([
+                    Promise.all([...document.images].map(img => img.decode().catch(()=>{}))),
+                    new Promise(resolve => setTimeout(resolve, 10000))
+                  ]);
                 });
                 const measure=await page.evaluate(()=>{
                   const bb=el=>{const r=el.getBoundingClientRect();return {x:+r.x.toFixed(1),y:+r.y.toFixed(1),w:+r.width.toFixed(1),h:+r.height.toFixed(1)}};
