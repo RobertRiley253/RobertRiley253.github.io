@@ -75,3 +75,5 @@ jobs:
           if-no-files-found: warn
 
 # Final review-only QA trigger, no deployment.
+
+# Post-editorial visual workflow verification.
