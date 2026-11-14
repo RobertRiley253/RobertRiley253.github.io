@@ -42,3 +42,33 @@
 A fully rendered, navigable branch preview has not been independently accessed from this environment: the development branch is not GitHub Pages production, and a third-party HTML branch viewer attempt was inaccessible. Existing workflow screenshot QA is reliable for the prior tested revision but not a substitute for owner review in-browser. Do not assert a working public preview URL.
 
 **Editorial decision:** preserve existing page composition while proof and live-preview access remain unresolved; do not sacrifice the verified design for a speculative addition.
+
+## HQ 10 additional batch: 24 direct-decoded GitHub photographs
+
+All files below were opened as actual image pixels from the designated development branch, not judged by filename alone. The 24 are *additional* to the American Made Concrete and two helmet files above.
+
+| Files | Direct visual result | Employer-facing decision |
+| --- | --- | --- |
+| `IMG_0967.jpg`, `IMG_0970.jpg` | Enclosed FDM 3D printer, including overview of filament stock and workspace | Production context only; same equipment |
+| `IMG_0995.jpg`, `IMG_1017.jpg` | Wide-format machinery and multi-monitor graphics work area | Secondary production context |
+| `IMG_1026.jpg` | Organized sample sheets of decals and cut graphics | Product/technique archive, not installed signage |
+| `IMG_1072.jpg`, `IMG_1073.jpg` | Black-background stylized pickup and hatchback illustrations | Artwork/concepts; NOT proof of completed vehicle wraps |
+| `IMG_1099.jpg` | Fictional character sticker illustration | No vehicle-project use, provenance/rights unresolved |
+| `IMG_1156.jpg` | That Sticker Store interior graphic and workstation | Internal brand-history context, not external client work |
+| `IMG_1176.jpg` | Large display of novelty decals and organized stock | Shop operations archive |
+| `IMG_1182.jpg` | Packed equipment shipment and shop printer | Equipment-history context, too cluttered for feature |
+| `IMG_1213.jpg` | Roland wide-format printer with store name and vinyl rolls | **Strong alternate Production equipment context**, but already adequately represented by six-photo HQ 8 section |
+| `IMG_1243.jpg` | Heat-press station being unpacked | Process history, no finished apparel claim |
+| `IMG_1277.jpg` | Broad shop machining/woodworking panorama | Secondary fabrication context; no customer deliverable |
+| `IMG_1536.jpg` | **Actual installed That Sticker Store entrance/window display** with decorated door and commercial window graphics | **Promising authentic installed-signage/business-identity candidate**, but it is the shop's *own* premises, not an outside client's project |
+| `IMG_1660.JPG`, `IMG_1674.JPG` | Illustration decals (floral Puyallup and angel) | Product art only; origin/authorship needs confirmation |
+| `IMG_1762.jpg` | Screenshot of That Sticker Store history text and building photograph | Historical reference only; graphic is a screenshot, not a photo-original |
+| `IMG_1763.jpg` | Long narrow night photo of sticker-covered storefront | Historical business signage; limited resolution/visibility |
+| `IMG_1784.jpg` | White unlettered service bucket truck operating near trees at night | Field-equipment context, **not** installed fleet graphics |
+| `IMG_1799.jpg` | Lit storefront window graphics on That Sticker Store | Supporting view of same shop signage, not separate customer commission |
+| `IMG_2118.jpg` | Fabrication bench and displays | Work environment context |
+| `IMG_2245.jpg`, `IMG_2339.jpg` | Same white bucket truck in two locations | One equipment asset; no lettering, do not count as two jobs |
+
+**Curation finding:** this batch contains one strong self-business installed-signage scene (`IMG_1536.jpg`) and supporting production/field-equipment imagery, but **no verified new external-client vehicle installation**. Existing site has strong representative client vehicles. Do not insert weaker work or concepts just to raise counts.
+
+**Next high-leverage move:** find authentic new client-installed vehicle or commercial sign sources, or move directly to a complete owner-visible interactive four-page review. A browser-capable preview host is needed before claiming final visual acceptance.
