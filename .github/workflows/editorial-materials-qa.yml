@@ -1,0 +1,158 @@
+name: Editorial Materials — Private Browser and Visual QA
+on:
+  push:
+    branches: [portfolio-editorial-material-review-2026-11-13]
+permissions:
+  contents: write
+jobs:
+  review:
+    if: "!contains(github.event.head_commit.message, 'Record editorial materials browser QA')"
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22'}
+      - name: Install browser and automated accessibility tools
+        run: |
+          npm install --no-save playwright@1.56.1 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+      - name: Start preview only, no deployment
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/portfolio-http.log 2>&1 &
+          for i in $(seq 1 25); do
+            curl -fsS http://127.0.0.1:8765/portfolio-dev/index.html >/dev/null && exit 0
+            sleep 1
+          done
+          cat /tmp/portfolio-http.log; exit 1
+      - name: Gallery and photo smoke tests
+        id: photo
+        continue-on-error: true
+        run: node portfolio-dev/tests/browser-smoke.cjs
+      - name: Accessibility scan
+        id: accessibility
+        continue-on-error: true
+        run: node portfolio-dev/tests/accessibility-audit.cjs
+      - name: Verify page compositions, privacy, photo scale and screenshot all pages
+        id: composition
+        continue-on-error: true
+        run: |
+          node <<'JS'
+          const {chromium}=require('playwright'),fs=require('fs');
+          (async()=>{
+            const root='portfolio-dev', names=['index','work','production','profile'];
+            const docs=Object.fromEntries(names.map(n=>[n,fs.readFileSync(root+'/'+n+'.html','utf8')]));
+            for(const [name,html] of Object.entries(docs)){
+              if(!html.includes('composed-exhibition.css')||!html.includes('editorial-materials.css'))throw Error(name+' missing composition/material sheet');
+              if(/mailto:|[\w.+-]+@[\w.-]+\.[a-z]{2,}|253[-. ]?881[-. ]?9175/i.test(html))throw Error('private contact leaked '+name);
+              if(!html.includes('noindex,nofollow'))throw Error(name+' missing noindex');
+              if(!html.includes('>My Story</a>'))throw Error(name+' no story nav');
+            }
+            const all=Object.values(docs).join('\n');
+            const photoIDs=new Set([...all.matchAll(/data-image="(\d+)"/g)].map(m=>+m[1]));
+            if(photoIDs.size!==103)throw Error('Photo IDs not preserved: '+photoIDs.size);
+            const browser=await chromium.launch({headless:true});
+            fs.mkdirSync(root+'/composition-qa-screens', {recursive:true});
+            const summary=[];
+            for(const width of [375,768,1024,1440]){
+              for(const name of names){
+                const page=await browser.newPage({viewport:{width,height:900},deviceScaleFactor:1});
+                await page.goto('http://127.0.0.1:8765/'+root+'/'+name+'.html',{waitUntil:'domcontentloaded'});
+                await page.addStyleTag({content:'*{animation:none!important;transition:none!important}'});
+                await page.evaluate(async()=>{
+                  document.querySelectorAll('img[loading="lazy"]').forEach(img => { img.loading='eager'; });
+                  await document.fonts.ready;
+                  await Promise.race([
+                    Promise.all([...document.images].map(img => img.decode().catch(()=>{}))),
+                    new Promise(resolve => setTimeout(resolve, 10000))
+                  ]);
+                });
+                const measure=await page.evaluate(()=>{
+                  const bb=el=>{const r=el.getBoundingClientRect();return {x:+r.x.toFixed(1),y:+r.y.toFixed(1),w:+r.width.toFixed(1),h:+r.height.toFixed(1)}};
+                  const chapter=document.querySelector('.chapter .editorial-grid');
+                  const photoCards=[...document.querySelectorAll('.chapter .editorial-grid>.image-card')];
+                  const widths=photoCards.slice(0,12).map(c=>({id:c.dataset.image,res:c.dataset.resolution||null,card:bb(c),image:bb(c.querySelector('img'))}));
+                  const snap=document.querySelector('.life-edition');
+                  return {documentHeight:document.documentElement.scrollHeight,
+                  overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,
+                  galleryCards:photoCards.length,chapterColumns:chapter?getComputedStyle(chapter).gridTemplateColumns.split(' ').length:0,
+                  widths,storyChapters:document.querySelectorAll('.life-edition-chapter').length,storyPhotoSequences:document.querySelectorAll('.life-edition-photo-sequence').length,
+                  noindex:document.querySelector('meta[name="robots"]')?.content,css:getComputedStyle(document.body).fontFamily};
+                });
+                if(measure.overflow>4)throw Error('Horizontal overflow '+name+' '+width+' '+measure.overflow);
+                if(measure.noindex!=='noindex,nofollow')throw Error('Robots failed '+name);
+                if(name==='profile'&&(measure.storyChapters!==9||measure.storyPhotoSequences!==6))throw Error('Biography or photographic narratives missing');
+                if(name==='profile'&&!docs.profile.includes('<strong>Teaching</strong><span>Approximately five years'))throw Error('Teaching highlight out of order');
+                if(name==='index'&&width===1440&&measure.chapterColumns!==12)throw Error('Desktop grid columns '+measure.chapterColumns);
+                if(name==='index'&&width===375&&measure.chapterColumns!==6)throw Error('Mobile grid columns '+measure.chapterColumns);
+                for(const card of measure.widths){
+                  if(card.res==='tiny'&&card.image.w>340)throw Error('Tiny photo stretched '+name+' '+width+' '+JSON.stringify(card));
+                  if(card.res==='small'&&card.image.w>640)throw Error('Small photo stretched '+name+' '+width+' '+JSON.stringify(card));
+                }
+                if(width===375||width===1440){
+                  if(name==='profile'){
+                    const metric=page.locator('.career-snapshot-index');
+                    await metric.scrollIntoViewIfNeeded();
+                    await metric.screenshot({path:root+'/composition-qa-screens/career-highlights-'+width+'.png',animations:'disabled'});
+                  }
+                  await page.screenshot({path:root+'/composition-qa-screens/'+name+'-full-'+width+'.png',fullPage:true,animations:'disabled'});
+                  const region=page.locator('.chapter .editorial-grid').first();
+                  if(await region.count()){
+                    await region.scrollIntoViewIfNeeded();
+                    await page.screenshot({path:root+'/composition-qa-screens/'+name+'-gallery-'+width+'.png',fullPage:false,animations:'disabled'});
+                  }
+                  if(name==='profile'){
+                    const target=page.locator('#story-business');
+                    await target.scrollIntoViewIfNeeded();
+                    await page.screenshot({path:root+'/composition-qa-screens/story-business-'+width+'.png',fullPage:false,animations:'disabled'});
+                  }
+                }
+                summary.push({name,width,...measure});
+                console.log('COMPOSITION PASS '+name+' '+width+'px height='+measure.documentHeight+' cards='+measure.galleryCards);
+                await page.close();
+              }
+            }
+            fs.writeFileSync(root+'/composition-qa-screens/measurements.json',JSON.stringify(summary,null,2));
+            await browser.close();
+          })().catch(e=>{console.error(e.stack||e);process.exit(1)});
+          JS
+      - name: Upload actual full page screenshots and scale measurements
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: RRR-Editorial-Material-Rendered-Evidence
+          path: portfolio-dev/composition-qa-screens/
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Write audit summary only on protected branch
+        if: always()
+        env:
+          PHOTO: ${{ steps.photo.outcome }}
+          AXE: ${{ steps.accessibility.outcome }}
+          COMPOSITION: ${{ steps.composition.outcome }}
+          TESTED: ${{ github.sha }}
+          URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          {
+            echo "# Composed Exhibition — Browser and Visual Quality Audit"
+            echo
+            echo "- Source commit: \`$TESTED\`"
+            echo "- Original photographs/interaction: **$PHOTO**"
+            echo "- Automated accessibility: **$AXE**"
+            echo "- Composition, private contact, screen widths: **$COMPOSITION**"
+            echo "- Full-page screenshots and per-card photo size measurements: $URL"
+            echo "- Owner artistic acceptance: **NOT YET GIVEN**"
+            echo "- Protected branch only. No live publication."
+          } > portfolio-dev/EDITORIAL_MATERIAL_QA.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio-dev/EDITORIAL_MATERIAL_QA.md
+          git commit -m "Record editorial materials browser QA" || true
+          git push origin HEAD:portfolio-editorial-material-review-2026-11-13
+      - name: Enforce checks
+        if: steps.photo.outcome != 'success' || steps.accessibility.outcome != 'success' || steps.composition.outcome != 'success'
+        run: exit 1
+
+# Re-run after resolution-classification and grid precedence changes.
+
+# Full final source recuration and identity preservation render verification.
