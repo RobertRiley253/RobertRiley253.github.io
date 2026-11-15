@@ -46,3 +46,9 @@
 .life-edition-facebook-link a{display:inline-flex;align-items:center;gap:8px;padding:9px 0 7px;border-bottom:1px solid #98784a;color:#214b34!important;font:600 13px/1.45 system-ui,sans-serif;text-decoration:none!important}
 .life-edition-facebook-link a:hover{border-color:#214b34;color:#173926!important}
 .life-edition-facebook-link a:focus-visible{outline:3px solid #a97831;outline-offset:3px}
+
+/* Art archive: show complete model sheets, not cropped character silhouettes.
+   Rotation is per-source after orientation verification, not guessed globally. */
+#new-illustration-studies .character-sheet-card>a{background:#e8e5d9;padding:clamp(8px,1vw,15px)}
+#new-illustration-studies .character-sheet-card img{height:clamp(240px,29vw,420px);object-fit:contain;object-position:center}
+@media(max-width:600px){#new-illustration-studies .character-sheet-card img{height:auto;max-height:440px}}
