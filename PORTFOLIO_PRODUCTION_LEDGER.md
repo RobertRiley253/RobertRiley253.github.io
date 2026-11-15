@@ -66,3 +66,12 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - Source edits: `badff40fb4663c427826a6a78cc9e6f3dc7ebd92` and `35a98caa6eeb2feb965b1ad08ccb015cecd8bfa5`.
 - GitHub Actions browser QA run `43692174974` launched; **not yet confirmed passing when this note was written**. Do not declare visual acceptance; owner should review the real development preview at My Story section after passing QA.
 - **Never redo HQ18's caption and photo integration as a prerequisite for this finishing work.** No production publication authorized.
+
+## 2026-11-14 — Current cross-page rendered-finishing review
+- Verified successful GitHub Actions run `43692174974` on edited My Story career-index design.
+- Downloaded actual QA screenshots and visually inspected full desktop pages for Home, Selected Work, Production and My Story, plus mobile My Story.
+- Visual review found an inherited CSS specificity conflict: `.career-snapshot-index strong` still used old pale gold `#f5d59d!important` over new parchment, resulting in low-contrast titles. Fixed on `portfolio-dev/editorial-materials.css` commit `1327f21ff5dc1822922ad9072f479ffeaa0c74e0` with scoped dark-forest text and dark supporting copy. **GitHub Actions run 43692469265 PASSED**.
+- In the successful before-fix full-page Production screenshot, some lower-page photo frames looked visually blank even though the separate photo-path/decoding test was green. Suspect lazy-image rendering or remote loading, not proven absent source files. Added focused late-gallery browser checks on photo IDs 158,159,172,106,107, at desktop and mobile, with new evidence screenshots, commit `9ee95d0ceea9d021cd6e5e78c74df45fbf45cf9c`.
+- **Pending verification:** late-gallery rendered-image test run `43692738427`; do not claim this potential defect repaired before investigating its results. DO NOT delete gallery records to eliminate blanks.
+- Editorial observation: two nearby My Story headings both start with "A lifetime"; consider purposeful copy polish later, but do not alter approved exhibition title without reviewing whole page context.
+- No changes to image registry, gallery placements, original photos, monogram or public `main`; no publication.
