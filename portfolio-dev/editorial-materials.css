@@ -378,3 +378,12 @@ body .chapter .editorial-grid .image-card .image-caption{
    even-chapter card background behind champagne lettering. */
 body .life-edition-chapter-racing .racing-photo-sequence figure{background:#193b2c!important}
 body .life-edition-chapter-racing .racing-photo-sequence figcaption{color:#f1dfb9!important}
+
+/* Final image balance: two real graphic-concept pieces, centered as a pair
+   rather than left-aligned in a four-column grid with two missing slots. */
+@media(min-width:901px){
+ body #new-graphics-layouts .bulk-exhibit-grid{
+   grid-template-columns:repeat(2,minmax(0,1fr));
+   max-width:1050px;margin-inline:auto;
+ }
+}
