@@ -74,3 +74,13 @@
    grid-column:span 6!important;
  }
 }
+
+/* Recovered No. 91 trackside originals: two balanced archival print cards.
+   The portrait original remains fully visible, not cropped to a banner. */
+#racing-trackside-archive .trackside-card>a{padding:clamp(9px,1.2vw,18px);background:#dedbcf}
+#racing-trackside-archive .trackside-card img{height:clamp(310px,37vw,540px);object-fit:contain;object-position:center}
+@media(max-width:600px){#racing-trackside-archive .trackside-card img{height:auto;max-height:520px}}
+/* Four physical sticker/transfer displays form a balanced two-by-two showcase. */
+@media(min-width:601px){
+ #sticker-binder-samples .intake-curated-grid>.sticker-binder-card{grid-column:span 6!important}
+}
