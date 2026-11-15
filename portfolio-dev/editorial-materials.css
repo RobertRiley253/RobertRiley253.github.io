@@ -387,3 +387,21 @@ body .life-edition-chapter-racing .racing-photo-sequence figcaption{color:#f1dfb
    max-width:1050px;margin-inline:auto;
  }
 }
+
+/* Owner-upload orientation correction, confirmed against original preview:
+   sign-production image ID 75 was captured 90 degrees clockwise.
+   Rotate presentation 90deg counterclockwise, keeping original file unchanged. */
+body .image-card[data-image="75"] .image-wrap{
+ position:relative!important;
+ aspect-ratio:4/3!important;
+ max-height:none!important;
+ overflow:hidden!important;
+}
+body .image-card[data-image="75"] .image-wrap img{
+ position:absolute!important;top:50%!important;left:50%!important;
+ width:75%!important;height:133.3333%!important;
+ max-width:none!important;max-height:none!important;
+ object-fit:contain!important;object-position:center!important;
+ transform:translate(-50%,-50%) rotate(-90deg)!important;
+ transform-origin:center center!important;
+}
