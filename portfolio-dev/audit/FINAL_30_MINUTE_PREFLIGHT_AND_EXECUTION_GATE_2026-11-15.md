@@ -51,3 +51,24 @@ This is a synthesis of the existing specialist review lenses (creative/art direc
 
 ## Immediate next operation
 Review current successful Chromium screenshot artifacts (or acquire a fresh exact-HEAD render) and execute **one consolidated ranked image/composition defect batch**. Do not start another conceptual-preflight cycle. Record final status in this same audit/production ledger.
+
+
+## Execution evidence — November 15 controlled correction pass
+
+**Real production-file changes made:**
+1. Commit `4c21436c3ef775c177a28e2c333d3e82d44f4e6d` — `portfolio-dev/production.html`: replaced the Production gallery's `production_multiarm_press_reference.png` (small generic/reference source) with the larger already-uploaded `production_workshop_carousel_press.png`, previously also shown in My Story. Kept its source archived and retained six displayed Production intake cards, with neutral truthful equipment wording. The larger source is 4,047,887 bytes vs. 191,416 bytes for the removed reference; pixel dimensions and visual crop have not been independently measured here, so this is not a proven sharpness gain.
+2. Commit `6c408b5d7f5aa9cd50603f01e84688d3de8cf89f` — `portfolio-dev/index.html`: removed outdated employer-facing '172 photographic records' label, replaced with concise natural description of actual disciplines. It does not change the registered images or the hero composition.
+
+**Actual source-path audit after these changes:**
+- Inspected all four current HTML files against complete development tree (GitHub returned nontruncated recursive tree) and current `main` tree.
+- 52 local/development-relative `<img src>` references checked against development tree: **0 missing**.
+- 145 `raw.githubusercontent.com` development-branch image references checked against development tree: **0 missing**.
+- 117 `robertriley253.github.io` direct image references checked against public `main` tree: **0 missing**.
+- Counts are occurrence counts, not unique image totals; same image may occur on different pages. This is Git-tree path existence proof, not HTTP delivery, browser decode or artistic image inspection.
+- The extra `image_bf246368.jpg` remains safely archived as an unclassified additional JPEG; do not claim to know its subject or display it blindly.
+
+**Latest workflow state while auditing:** last completed older runs passed; CI for the latest content commits `4c21436` and `6c408b5` was still in progress at the last status lookup. Check their exact conclusions before final QA signoff.
+
+**Still open, not falsely labeled complete:** independent visual comparison of homepage's strongest hero images; full-page desktop/mobile negative-space, shape/form/scale/crop inspection; systematic authenticity assessment of every unplaced source; owner acceptance; controlled public release. Do not claim these tasks are completed by the source-path check.
+
+**Decision:** first demonstrated correction batch is committed, all original source files are preserved, public `main` unchanged. Do not extend this bounded employer-ready pass into a redesign. Next action is review of exact-commit CI and actual rendered preview followed by owner decision.
