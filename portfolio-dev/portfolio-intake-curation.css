@@ -32,3 +32,11 @@
 .intake-curated--screenshots .intake-curated-card:not(.feature){grid-column:span 3}
 @media(max-width:900px){.intake-curated--screenshots .intake-curated-card,.intake-curated--screenshots .intake-curated-card.feature,.intake-curated--screenshots .intake-curated-card:not(.feature){grid-column:span 6}}
 @media(max-width:600px){.intake-curated--screenshots .intake-curated-card,.intake-curated--screenshots .intake-curated-card.feature,.intake-curated--screenshots .intake-curated-card:not(.feature){grid-column:span 12}}
+
+/* Transparent verification of social reach: evidence is visibly subordinate
+   to the headline but preserved legibly in its uncropped source image. */
+.history-insights-evidence{margin:18px 0 0!important;max-width:100%;padding:0;display:block}
+.history-insights-evidence a{display:block;background:#10191a;padding:4px;border:1px solid #b99b60;overflow:hidden}
+.history-insights-evidence img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain}
+.history-insights-evidence figcaption{margin:9px 0 0;font:400 11px/1.5 system-ui,sans-serif;color:#f2e2c4}
+.history-insights-evidence a:focus-visible{outline:3px solid #efd6a4;outline-offset:3px}
