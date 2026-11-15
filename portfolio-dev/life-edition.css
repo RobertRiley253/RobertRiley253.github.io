@@ -210,3 +210,15 @@
 .aerospace-b2-reference figcaption{padding:9px 6px 3px;font-size:11px;line-height:1.5;color:#d5ccb8}
 .aerospace-b2-reference a:focus-visible{outline:3px solid #e1c18a;outline-offset:3px}
 @media(max-width:720px){.aerospace-b2-reference{grid-template-columns:1fr;gap:18px}}
+
+/* HQ16: B-2 program context photography, composed in a restrained multi-image exhibit. */
+.aerospace-b2-gallery{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(9px,1.4vw,20px);max-width:1450px;width:100%;margin:5px auto 0}
+.aerospace-b2-gallery .bulk-exhibit-card{background:#153329;color:#f3e7ce;border-color:#d6b87877;padding:7px;box-shadow:0 11px 25px #061b177a}
+.aerospace-b2-gallery .bulk-exhibit-photo{background:#0e251e;aspect-ratio:4/3}
+.aerospace-b2-gallery .bulk-exhibit-card:first-child{grid-column:span 2;grid-row:span 2}
+.aerospace-b2-gallery .bulk-exhibit-card:first-child .bulk-exhibit-photo{aspect-ratio:auto;height:calc(100% - 38px);min-height:250px}
+.aerospace-b2-gallery .bulk-exhibit-caption{color:#eee6d4}
+.aerospace-b2-gallery .bulk-exhibit-caption span:last-child{color:#e1bd7d}
+.aerospace-b2-gallery .bulk-exhibit-card:hover{box-shadow:0 18px 32px #061b17c9}
+@media(max-width:960px){.aerospace-b2-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.aerospace-b2-gallery .bulk-exhibit-card:first-child{grid-row:auto}.aerospace-b2-gallery .bulk-exhibit-card:first-child .bulk-exhibit-photo{height:auto;min-height:250px}}
+@media(max-width:580px){.aerospace-b2-gallery .bulk-exhibit-card:first-child{grid-column:span 2}.aerospace-b2-gallery .bulk-exhibit-card{padding:5px}.aerospace-b2-gallery .bulk-exhibit-caption{font-size:9px}}
