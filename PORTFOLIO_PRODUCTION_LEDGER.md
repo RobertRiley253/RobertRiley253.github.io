@@ -23,3 +23,14 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - Separate documentation-only changes from web output changes.
 - Record commit SHA, changed paths, image counts, audit evidence, open issues and rollback ref after each substantive batch.
 - Do not treat a successful GitHub commit as proof the pages render correctly.
+
+## 2026-11-14 — HQ18 continuity lock implemented
+- Verified HQ18 source registry has 172 unique photo IDs, with 192 page-card appearances across Home 17 / Work 68 / Production 92 / Profile 15.
+- Inspected actual `portfolio-dev/audit/HQ18_IMAGE_IDENTITY_AND_MISSING_UPLOAD_RECONCILIATION_2026-11-14.md` and the 53-row `HQ18_VISUALLY_IDENTIFIED_PHOTO_CROSSWALK_2026-11-14.csv`. These files already existed; do NOT repeat or recreate their completed work.
+- Added `portfolio-dev/tests/hq18-no-regression-baseline.json` as a precise snapshot of gallery IDs, image filenames, captions and per-page appearances from HQ18.
+- Added `portfolio-dev/tests/no-regression.cjs` to fail on removal of protected records/placements, unreviewed caption or source changes, missing source files, unknown gallery IDs, lost noindex or RRR identity.
+- Wired the checker into the existing `.github/workflows/portfolio-development-browser-qa.yml` development-only QA workflow before Playwright. The workflow does not deploy.
+- Verified in GitHub's actual recursive tree that all 172 baseline source image paths exist and source tree listing was not truncated.
+- **Run status:** automation is committed, but a successful GitHub Actions execution has NOT been independently confirmed. Do not claim it passes in Actions until a successful run is obtained.
+- **Editing rule:** changes to protected captions or placements may be intentional improvements; make them deliberately, review them, and update the baseline in the same approved production change. Never bypass the guard silently. `main` and publication remain untouched.
+- Older `portfolio-dev/PROGRESS.md` begins with November 12 material and is not a current-status authority; HQ18 and newer source/ledger evidence win.
