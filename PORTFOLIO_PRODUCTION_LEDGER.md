@@ -48,3 +48,12 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - Run 43682592909 printed individual affected element selectors, confirming the same caption rule, not a wholesale site palette problem.
 - Updated ONLY `portfolio-dev/composed-exhibition.css`: label color #867151 -> #745f40. Calculated contrast against #f8f4e9 is ~5.53:1. Do not infer the full automated audit passes until the new run completes.
 - No gallery/caption/photo source changes, no publishing or `main` branch changes.
+
+## 2026-11-14 — FULL DEVELOPMENT QA GREEN (verified)
+- **GitHub Actions run 43682788817 completed SUCCESS** for site commit `f126390e2a926a184d7b714b4d4767a8da88cfc1`.
+- HQ18 no-regression baseline passed: 172 gallery registry records and 192 page-card appearances protected.
+- Browser smoke: **28/28** viewport/page checks passed, including desktop, laptop, tablet, large phone, mobile, small phone, and 200%-zoom simulations.
+- Browser original-image decoding: **172/172** successfully loaded from current development checkout.
+- Axe accessibility: **0 automated WCAG A/AA violation types on 8 desktop/mobile page scans** (four pages x two sizes).
+- Successful Actions workflow produced review screenshots and QA artifacts. These automated successes **do not constitute human artistic acceptance**.
+- **Next stage: inspect actual rendered visual QA artifacts/screenshots and present final interactive development candidate for explicit owner approval.** Do not revisit HQ18 content integration without evidence; do not publish or modify `main` without permission.
