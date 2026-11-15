@@ -58,6 +58,50 @@ const path = require('node:path');
           await page.waitForTimeout(250);
           await page.screenshot({ path: path.join(output, id + '-full.png'), fullPage: true, animations: 'disabled', timeout: 45000 });
         }
+        // Late-gallery visual safeguard: distinguish accessible source files from
+        // actual decoded images rendered in the long Production page.
+        // These HQ18 cards appeared as empty image frames in a prior full-page screenshot,
+        // despite the separate 172/172 source-asset preflight passing.
+        if (name === 'production.html' && ['desktop','mobile'].includes(viewport.name)) {
+          const ids = [158, 159, 172, 106, 107];
+          const states = [];
+          for (const id of ids) {
+            const img = page.locator('[data-image="' + id + '"] img').first();
+            if (await img.count() !== 1) throw new Error('Missing late-gallery image card ' + id);
+            await img.scrollIntoViewIfNeeded();
+            try {
+              await img.waitFor({ state: 'visible', timeout: 15000 });
+              await img.evaluate(async node => {
+                if (!node.complete) await new Promise((resolve, reject) => {
+                  const timer = setTimeout(() => reject(new Error('Image load timeout')), 15000);
+                  node.addEventListener('load', () => { clearTimeout(timer); resolve(); }, { once: true });
+                  node.addEventListener('error', () => { clearTimeout(timer); reject(new Error('Image error')); }, { once: true });
+                });
+                if (node.decode) await node.decode();
+              });
+            } catch(e) {
+              states.push({ id, error: String(e.message||e) });
+              continue;
+            }
+            states.push(await img.evaluate(node => ({
+              id: Number(node.closest('[data-image]').dataset.image),
+              loaded: node.complete && node.naturalWidth > 0,
+              naturalWidth: node.naturalWidth,
+              renderWidth: Math.round(node.getBoundingClientRect().width),
+              renderHeight: Math.round(node.getBoundingClientRect().height),
+              visibility: getComputedStyle(node).visibility,
+              opacity: getComputedStyle(node).opacity,
+              source: node.currentSrc
+            })));
+          }
+          result.lateGalleryEvidence = states;
+          for (const state of states) {
+            if (!state.loaded || !state.renderWidth || !state.renderHeight || state.visibility === 'hidden' || state.opacity === '0')
+              throw new Error('Late-gallery image not visibly decoded: ' + JSON.stringify(state));
+          }
+          await page.locator('#new-studio-photography').scrollIntoViewIfNeeded();
+          await page.screenshot({ path: path.join(output, 'production-late-gallery-' + viewport.name + '.png'), animations: 'disabled', timeout: 25000 });
+        }
         // HQ9: verify real Lucky Signs historical imagery, not the former commercial van stand-in.
         if (name === 'profile.html') {
           const history = page.locator('#story-racing');
