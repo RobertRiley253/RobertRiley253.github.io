@@ -25,7 +25,7 @@ Past bulk integration counted 166 registered photos but did not mean all GitHub 
 - `incoming-portfolio/previews/`, `high-quality/`, and older JPEG backups: many retained duplicates or source references, not automatically missing unique portfolio projects.
 
 ## Final source-level checks after integration
-- **172 distinct gallery IDs, each with exactly one page card**, and no remaining `photograph 01/02` intake titles.
+- **172 distinct gallery IDs represented across 192 page-card occurrences** (some previously featured IDs deliberately repeat in multiple contexts; 20 extra appearances beyond one per ID), and no remaining `photograph 01/02` intake titles.
 - Development Git tree confirmed every newly registered source path exists; no missing linked raw/local image paths or internal cross-page anchors in scanned production HTML.
 - All inspected HTML `img` elements carry alternative text; all 47 corrected JPEG cards have intrinsic dimensions.
 - Four original pages and locked emerald/gold/ivory artwork remain in place.
