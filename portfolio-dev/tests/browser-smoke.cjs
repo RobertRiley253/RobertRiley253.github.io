@@ -198,27 +198,35 @@ const path = require('node:path');
     }
     await page.close();
   }
-  // Validate actual browser image decoding for all preserved originals and nine review previews.
+  // Verify every registered original from the exact checked-out development commit.
+  // Avoid the former hard-coded older branch and public 'main' URLs, which falsely
+  // reported newly uploaded images as missing although they exist in this checkout.
   const assetPage = await browser.newPage();
   try {
     await assetPage.goto(base + 'index.html', { waitUntil: 'domcontentloaded', timeout: 25000 });
-    const imageResults = await assetPage.evaluate(async () => {
+    const imageResults = await assetPage.evaluate(async ({ baseUrl }) => {
       const selected = PHOTOS;
-      return Promise.all(selected.map(photo => new Promise(resolve => {
-        const img = new Image();
-        const timer = setTimeout(() => resolve({ id: photo.id, file: photo.file, loaded: false, error: 'timeout' }), 15000);
-        img.onload = () => { clearTimeout(timer); resolve({ id: photo.id, file: photo.file, loaded: img.naturalWidth > 0, width: img.naturalWidth, height: img.naturalHeight }); };
-        img.onerror = () => { clearTimeout(timer); resolve({ id: photo.id, file: photo.file, loaded: false, error: 'image error' }); };
-        img.src = photo.file.startsWith('incoming-portfolio/')
-          ? 'https://raw.githubusercontent.com/RobertRiley253/RobertRiley253.github.io/portfolio-development-2026-11-12/' + photo.file
-          : 'https://robertriley253.github.io/' + photo.file;
-      })));
-    });
+      const results = [];
+      // Bounded batches avoid racing 172 image decodes and exhausting Chromium memory.
+      for (let index = 0; index < selected.length; index += 8) {
+        const group = selected.slice(index, index + 8);
+        const batch = await Promise.all(group.map(photo => new Promise(resolve => {
+          const img = new Image();
+          const timer = setTimeout(() => resolve({ id: photo.id, file: photo.file, loaded: false, error: 'timeout' }), 20000);
+          img.onload = () => { clearTimeout(timer); resolve({ id: photo.id, file: photo.file, loaded: img.naturalWidth > 0, width: img.naturalWidth, height: img.naturalHeight }); };
+          img.onerror = () => { clearTimeout(timer); resolve({ id: photo.id, file: photo.file, loaded: false, error: 'image error' }); };
+          const encodedPath = photo.file.split('/').map(encodeURIComponent).join('/');
+          img.src = new URL('../' + encodedPath, baseUrl).href;
+        })));
+        results.push(...batch);
+      }
+      return results;
+    }, { baseUrl: base });
     report.imageChecks = imageResults;
     for (const asset of imageResults) {
-      if (!asset.loaded) report.failures.push('Image failed to load: ' + asset.file + ' (' + asset.error + ')');
+      if (!asset.loaded) report.failures.push('Image failed to load from checked-out development source: ' + asset.file + ' (' + asset.error + ')');
     }
-    console.log('Browser image decoding: ' + imageResults.filter(asset => asset.loaded).length + '/' + imageResults.length + ' portfolio photographs (originals and previews)');
+    console.log('Browser image decoding from checked-out development branch: ' + imageResults.filter(asset => asset.loaded).length + '/' + imageResults.length + ' portfolio photographs');
   } catch (error) {
     report.failures.push('Browser image checks: ' + String(error.message || error));
   } finally {
