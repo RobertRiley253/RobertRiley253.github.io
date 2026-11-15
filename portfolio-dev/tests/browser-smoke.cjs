@@ -80,15 +80,17 @@ const path = require('node:path');
               throw new Error('Racing image failed: ' + JSON.stringify(state));
           }
         }
-        // HQ9: independently test the six newly integrated production photographs.
+        // HQ18: independently verify all retained production-evidence photographs (expanded beyond HQ9's six).
         if (name === 'production.html') {
           const evidence = page.locator('#real-shop-equipment');
           if (await evidence.count() !== 1) throw new Error('Expected one equipment evidence section');
           await evidence.scrollIntoViewIfNeeded();
           const photos = evidence.locator('.hq8-shop-proof');
-          if (await photos.count() !== 6) throw new Error('Expected six shop-evidence photographs');
+          const photoCount = await photos.count();
+          // HQ18 expanded the original six-photo section to twelve; preserve all additions.
+          if (photoCount < 12) throw new Error('Lost shop-evidence photographs: expected at least 12, found ' + photoCount);
           const diagnostics = [];
-          for (let i = 0; i < 6; i++) {
+          for (let i = 0; i < photoCount; i++) {
             const figure = photos.nth(i);
             const img = figure.locator('img');
             await img.scrollIntoViewIfNeeded();
