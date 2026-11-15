@@ -199,11 +199,11 @@ body .chapter .editorial-grid .image-card .image-caption{
 .career-snapshot-index strong{
   font:400 clamp(22px,2vw,33px)/1.16 Georgia,"Times New Roman",serif;
   letter-spacing:-.028em;
-  color:#173d2d;
+  color:#173d2d!important;
   overflow-wrap:break-word;
 }
 .career-snapshot-index>div>span:last-child{
-  color:#4e5b4a;
+  color:#4e5b4a!important;
   font-size:13px;
   line-height:1.5;
   letter-spacing:0;
