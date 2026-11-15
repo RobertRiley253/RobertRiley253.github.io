@@ -82,7 +82,7 @@ const homeRaceEnd=homepageRacing.indexOf('class="life-story-teaser"',homeRaceSta
 if(homeRaceStart<0||homeRaceEnd<=homeRaceStart) failures.push('Homepage racing photo feature is missing');
 else {
  const raceFeature=homepageRacing.slice(homeRaceStart,homeRaceEnd);
- for(const name of ['IMG_4623.jpg','IMG_4626.jpg'])
+ for(const name of ['IMG_4623.jpg','download%20(8).png'])
    if(!raceFeature.includes(name)) failures.push('Homepage racing feature missing authentic photo '+name);
  if(raceFeature.includes('portfolio-018.jpg')||raceFeature.includes('portfolio-040.jpg'))
    failures.push('Unrelated commercial vehicle photo in homepage racing feature');
