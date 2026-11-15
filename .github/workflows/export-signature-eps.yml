@@ -1,0 +1,49 @@
+name: Export RRR signature EPS for FlexiSIGN
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - portfolio-editorial-material-review-2026-11-13
+    paths:
+      - '.github/workflows/export-signature-eps.yml'
+permissions:
+  contents: write
+jobs:
+  export-eps:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install Inkscape
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y inkscape
+      - name: Convert real vector signature paths to EPS
+        run: |
+          set -euo pipefail
+          cd portfolio-dev/brand-assets
+          for color in champagne black; do
+            inkscape "rrr-signature-$color.svg" --export-filename="rrr-signature-$color.eps" --export-text-to-path
+            test -s "rrr-signature-$color.eps"
+            head -c 15 "rrr-signature-$color.eps" | grep -q '%!PS-Adobe'
+            if grep -aq 'image\|DCTDecode\|ASCII85Decode' "rrr-signature-$color.eps"; then
+              echo "Checking EPS may contain raster data"
+            fi
+            wc -c "rrr-signature-$color.eps"
+          done
+      - name: Commit EPS exports only to development branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio-dev/brand-assets/rrr-signature-champagne.eps portfolio-dev/brand-assets/rrr-signature-black.eps
+          if ! git diff --cached --quiet; then
+            git commit -m "Add FlexiSIGN-compatible EPS vector signature exports"
+            git push origin HEAD:portfolio-editorial-material-review-2026-11-13
+          fi
+      - name: Attach EPS downloads
+        uses: actions/upload-artifact@v4
+        with:
+          name: RRR-signatures-Flexi-EPS
+          path: portfolio-dev/brand-assets/rrr-signature-*.eps
+          retention-days: 30
