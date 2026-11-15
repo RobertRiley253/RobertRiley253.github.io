@@ -41,6 +41,24 @@ for(const file of baseline.pages){
  }
  for(const id of ids)if(!byId.has(id))failures.push(file+': unknown gallery photo ID '+id);
 }
+// Owner-confirmed attribution: protect original Lucky Signs/Diamond Electric
+// archival photograph from being reclassified as racing on future handoffs.
+const story=read('profile.html');
+const luckyStart=story.indexOf('id="story-business"');
+const shopsStart=story.indexOf('id="story-shops"');
+const racingStart=story.indexOf('id="story-racing"');
+const fieldStart=story.indexOf('id="story-field"');
+const luckyPhoto='IMG_4649.jpg';
+if([luckyStart,shopsStart,racingStart,fieldStart].some(pos=>pos<0)||
+    !(luckyStart<shopsStart && racingStart<fieldStart))
+  failures.push('Missing My Story chapter boundaries for owner-identified Lucky Signs photograph');
+else{
+  const business=story.slice(luckyStart,shopsStart),racing=story.slice(racingStart,fieldStart);
+  if(!business.includes(luckyPhoto)||!business.includes('Diamond Electric')||!business.includes('downtown Puyallup'))
+    failures.push('Owner-confirmed Lucky Signs / Diamond Electric photo or attribution lost from business history');
+  if(racing.includes(luckyPhoto))
+    failures.push('Owner-confirmed Diamond Electric sign photograph incorrectly reclassified as racing');
+}
 if(photos.length<baseline.photos.length)failures.push('Registry shrank below '+baseline.photos.length);
 if(occurrenceCount<Object.values(baseline.placements).reduce((sum,a)=>sum+a.length,0))failures.push('Total gallery placements decreased');
 console.log('Portfolio HQ18 guard: '+photos.length+' photo records; '+occurrenceCount+' page placements; '+baseline.photos.length+' protected baseline records.');
