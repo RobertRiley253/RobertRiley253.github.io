@@ -170,3 +170,5 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - Full launch gate recorded: `portfolio-dev/audit/HQ20_PREPUBLICATION_EMPLOYER_READINESS_2026-11-15.md`.
 - Crucial release safety: dev and main branches remain diverged (562 commits ahead, 17 behind at audit time); do not blindly merge/force-push. Main-only user uploads must survive any controlled release build. Existing dev pages use `noindex,nofollow` intentionally. No contact email link is yet included; user must choose whether to publish one.
 - Owner's **explicit approval of the final public-facing version is still mandatory**. Nothing has been published or sent to employers.
+
+**HQ20 ADDITIONAL CURATION:** Selected a non-branded dog-and-bird character study from the original upload archive for the opening Artist chapter. This is captioned as a creative image study, not as verified hand-drawn client work. Updated safeguard to 25 My Story intake image appearances. New total **33 unique selected intake images, 35 placements (25 My Story, 4 Selected Work, 6 Production), all 46 source PNGs retained**. No public publication.
