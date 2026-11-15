@@ -113,3 +113,16 @@ Owner clarified that final employer-readiness MUST include all **suitable distin
 - **Proof requirement:** Record before/after visual evidence for material changes and ensure paths, captions, photo preservation and accessibility still pass. Avoid changes merely because empty space exists: only *unjustified* space is a defect.
 
 **Time budget:** This is part of the owner's fixed ~30-minute employer-ready finishing pass, not an authorization for another design overhaul or endless visual experimentation. Prioritize significant visual problems; defer optional microscopic adjustments. No public main changes or release without explicit owner approval.
+
+
+## Owner directive — remove visually anomalous filler and correct misplacements (2026-11-15)
+
+Owner has personally observed unusually placed visuals and placeholder-like images. Treat them as **specific composition/content defects requiring rendered review**, not as approved decorations. During the bounded final finishing pass:
+- Identify any illustrative/reference/representative material occupying a spot that would better feature an authentic owner-uploaded project photograph. Reposition or omit the weaker visual and promote a strong real source into its *correct thematic section* after verifying subject and attribution.
+- Fix images that look out of context, inconsistent in visual scale or strangely sequenced, whether or not their filename contains the word “placeholder.”
+- Compare each proposed replacement for content fit, resolution, native aspect ratio, color mass, shape and surrounding layout; do not substitute one awkward crop for another.
+- Preserve source uploads and underlying gallery records; move or swap displayed positions safely, with a readable placement record and no-regression validation.
+- Prioritize Home first, then leading Work/Production and My Story sections; keep the owner's 30-minute finish objective, deferring nonessential archival refinements.
+- Before claiming completion, inspect the actual rendered pages on desktop and mobile and provide changed-image mappings (old location -> new location) and unresolved exceptions.
+
+**Current source scan:** four development HTML pages had zero literal 'placeholder' occurrences, but that does NOT disprove owner's visual observation. `production.html` includes a displayed `production_multiarm_press_reference.png` described as a carousel machine *reference* rather than verified original workplace photography. Review this particular figure's relevance and position against authentic uploaded production photos; do not casually delete it or misattribute it. Image-tag counts from current HTML are Home 30, Work 91, Production 121, My Story 76 (these include branding/repeated appearances, not unique-source inventory). This source scan is not a substitute for rendered visual inspection.
