@@ -117,3 +117,8 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - History evidence still desirable: 2–3 excellent real historical posts (image plus URL/context), one dated Facebook insights summary screenshot showing total lifetime views/reach and timeframe, optional follower count screenshot. Crop out personal information and private messages. Never equate views with unique visitors or add unverified statistics.
 - Teaching and Burke Gibson sections do NOT require invented employer-specific photos; well-worded career evidence plus labeled contextual imagery is acceptable for résumé outreach. Genuine historical workplace images can be added later if available.
 - The original 172 registry photographs and 192 placements remain unchanged. These edits are developer-branch only. Review live presentation and obtain explicit approval before public release.
+
+### QA result — pre-résumé pass
+- GitHub Actions `43699092528` for Shop Leadership commit `1a3c393edcb50612eb6ca5f2d9f6db0646eb389b`: SUCCESS.
+- GitHub Actions `43699152439` for history-storytelling copy commit `7906789075188023d95394a0bdad4e3e817e55a7`: SUCCESS.
+- The existing gallery inventory, development-only noindex, original art direction and QA checks remain in force. Future social-metric and history-image additions require actual supporting files and attribution verification; public release still requires owner approval.
