@@ -98,3 +98,18 @@ Owner clarified that final employer-readiness MUST include all **suitable distin
 5. Prioritize errors that hurt job applications and stop after the bounded finishing session; leave nonblocking uncertain archival candidates in a clearly logged later-review queue, not a perpetual redesign cycle.
 
 **Current evidence limitation:** the legacy HQ18 audit explicitly says not all earlier image captions were visually verified and identifies unplaced sources from multiple archives. A whole-team assessment cannot be pronounced complete until this crosswalk and rendered inspection are actually performed. Public `main` remains unchanged until separately approved.
+
+
+## Owner directive — scale, shape, form, color and purposeful space (2026-11-15)
+
+**Binding visual acceptance requirement.** The owner prioritizes art-directed page composition, especially image scale and the balancing of shapes/forms, over a repetitive stock grid. Across all four pages and desktop/tablet/mobile widths:
+
+- **Scale:** Match each image's display size to native resolution, visual strength, subject importance and nearby elements. Do not enlarge soft originals into hero images; do not shrink an outstanding work sample into an inconspicuous thumbnail. Use balanced size contrasts and purposeful visual hierarchy.
+- **Shape and form:** Treat photographs as compositional blocks whose aspect ratios, silhouettes, direction, cropping, foreground/background masses and relationship to text determine page structure. Mix wide, portrait, square and detail treatments where warranted by the source. Preserve subjects and avoid arbitrary forced crops.
+- **Color:** Consider the dominant colors of adjacent images alongside the already-approved emerald, champagne-gold and parchment identity. Balance saturated photos, bright signage and quieter archival photos without indiscriminate recoloring of originals.
+- **Negative space:** Blank areas are permitted only when they create intentional breathing room, alignment, hierarchy or visual rhythm. Inspect large voids, orphaned text, grid holes, mismatched column bottoms, overwide gutters and empty-looking decorative blocks. Correct unexplained voids by resizing/reordering existing assets, adjusting layout columns, or rebalancing text/image relationships; never fill a space with random decoration.
+- **Responsive composition:** Inspect full-page desktop and narrow mobile screenshots, not only separate cards. A layout balanced at 1440px may become a monotonous vertical strip at 375px. Verify cumulative page rhythm and spacing at each breakpoint.
+- **Homepage priority:** First-screen images must be authentic, strongest available, correctly scaled, harmonized in form and color, and visually dominant over purely decorative elements. Keep the identity; adjust composition only when evidence demonstrates improvement.
+- **Proof requirement:** Record before/after visual evidence for material changes and ensure paths, captions, photo preservation and accessibility still pass. Avoid changes merely because empty space exists: only *unjustified* space is a defect.
+
+**Time budget:** This is part of the owner's fixed ~30-minute employer-ready finishing pass, not an authorization for another design overhaul or endless visual experimentation. Prioritize significant visual problems; defer optional microscopic adjustments. No public main changes or release without explicit owner approval.
