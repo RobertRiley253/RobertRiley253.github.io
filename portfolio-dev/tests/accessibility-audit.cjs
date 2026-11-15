@@ -19,6 +19,10 @@ const path = require('node:path');
         const issues = results.violations.map(v => ({ id: v.id, impact: v.impact, description: v.description, nodes: v.nodes.map(n => ({ target: n.target, failureSummary: n.failureSummary })).slice(0, 14) }));
         report.pages.push({ name, viewport: viewport.name, violations: issues, passes: results.passes.length });
         for (const issue of issues) {
+          if (issue.impact === 'serious' || issue.impact === 'critical') {
+            console.log('AXE DETAIL ' + name + ' ' + viewport.name + ' ' + issue.id + ': ' +
+              JSON.stringify(issue.nodes.map(node => ({ target: node.target, failureSummary: node.failureSummary })).slice(0, 14)));
+          }
           if (issue.impact === 'critical' || issue.impact === 'serious') report.failures.push(name + ' ' + viewport.name + ': ' + issue.id + ' (' + issue.impact + ')');
         }
         console.log('AXE ' + name + ' ' + viewport.name + ': ' + issues.length + ' violation types — ' + issues.map(x => x.id + ':' + x.impact).join(', '));
