@@ -182,3 +182,18 @@
  .career-snapshot-index strong{font-size:23px}
 }
 @media(forced-colors:active){.career-snapshot,.career-ledger,.career-ledger-roles article,.career-snapshot-index>div{background:Canvas;color:CanvasText;border-color:CanvasText}}
+
+/* Aerospace inspection reference photographs — editorial evidence, not aircraft program images */
+.aerospace-ndt-evidence{margin:0;padding:clamp(30px,4vw,64px) clamp(23px,5vw,86px);background:linear-gradient(135deg,#e9e1d2,#f5efe3);color:#1f3d31;border-block:1px solid #b89c6b66}
+.aerospace-ndt-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:clamp(16px,4vw,58px);max-width:1440px;margin:0 auto 26px}
+.aerospace-ndt-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;color:#766042}
+.aerospace-ndt-heading h3{font:400 clamp(28px,3vw,47px)/1.13 Georgia,serif;letter-spacing:-.035em;margin:12px 0 0}
+.aerospace-ndt-heading p{font-size:14px;line-height:1.72;max-width:58ch;margin:0;color:#405447}
+.aerospace-ndt-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.5vw,22px);max-width:1440px;margin:0 auto}
+.aerospace-ndt-item{min-width:0;margin:0;background:#faf7ef;border:1px solid #bca8848c;padding:8px}
+.aerospace-ndt-item a{display:block;aspect-ratio:4/3;background:#e7e2d6;overflow:hidden}
+.aerospace-ndt-item img{display:block;width:100%;height:100%;object-fit:contain}
+.aerospace-ndt-item figcaption{font-size:12px;font-weight:700;line-height:1.4;padding:11px 5px 5px;color:#294334}
+.aerospace-ndt-item a:focus-visible{outline:3px solid #98733c;outline-offset:3px}
+@media(max-width:960px){.aerospace-ndt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.aerospace-ndt-heading{grid-template-columns:1fr}.aerospace-ndt-grid{gap:10px}.aerospace-ndt-item{padding:5px}.aerospace-ndt-item figcaption{font-size:11px}}
