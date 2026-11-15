@@ -41,3 +41,10 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - The older test also loaded 172 image records from a combination of public `main` and an earlier development branch, causing 102 false failures. Corrected asset-decode checks to use the exact local GitHub Actions checkout with encoded file paths and bounded groups of 8.
 - **Pending evidence:** The corrected run for commit `0a1a61671f73a4ea55ac84507e60ed9f0c346c12` was in progress when this line was recorded. Do not claim an all-green browser test until its result has been inspected.
 - No HTML/CSS/photo changes and no release/publication were made in these QA repairs.
+
+## 2026-11-14 — Final QA milestone (verified from GitHub Actions)
+- Run 43682375170: HQ18 no-regression guard PASS; 28/28 Chromium viewport checks PASS (four pages, six viewport sizes, four zoom simulations); all 172/172 registered original photos decoded from exact branch checkout.
+- Accessibility axe audit identified one repeated issue type: tiny `.bulk-exhibit-caption span:last-child` text, #867151 on #f8f4e9 (4.25:1, under 4.5:1). Home page had 0 violation types; the other three pages each had contrast issue at both desktop/mobile widths.
+- Run 43682592909 printed individual affected element selectors, confirming the same caption rule, not a wholesale site palette problem.
+- Updated ONLY `portfolio-dev/composed-exhibition.css`: label color #867151 -> #745f40. Calculated contrast against #f8f4e9 is ~5.53:1. Do not infer the full automated audit passes until the new run completes.
+- No gallery/caption/photo source changes, no publishing or `main` branch changes.
