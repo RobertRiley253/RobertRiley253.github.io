@@ -258,3 +258,80 @@ body .chapter .editorial-grid .image-card .image-caption{
  .history-audience-evidence p,.history-audience-evidence small,
  .history-audience-eyebrow{color:CanvasText!important}
 }
+
+
+/* HQ21 motorsports editorial correction — original racing photos take precedence.
+   Protect the historic physical prints: avoid aggressive zoom/cropping. */
+.life-edition-chapter-racing .racing-hero-photo{
+  max-width:690px!important;
+  max-height:none!important;
+  min-height:330px;
+  background:linear-gradient(135deg,#18382b,#335142)!important;
+  padding:12px 12px 42px;
+  transform:none!important
+}
+.life-edition-chapter-racing .racing-hero-photo img{
+  display:block;width:100%;height:auto;
+  max-height:440px!important;object-fit:contain!important;
+  object-position:center
+}
+.life-edition-chapter-racing .racing-photo-sequence{
+  grid-column:2/-1;grid-template-columns:minmax(0,1fr)!important;
+  max-width:690px;width:100%;align-self:start;gap:0
+}
+.life-edition-chapter-racing .racing-photo-sequence figure{
+  background:#193b2c;border:1px solid #c7a573a1;padding:12px;
+}
+.life-edition-chapter-racing .racing-photo-sequence img{
+  display:block;width:100%;height:clamp(200px,23vw,330px)!important;
+  object-fit:contain!important;object-position:center
+}
+.life-edition-chapter-racing .racing-photo-sequence figcaption{
+  color:#f1dfb9!important;font-size:clamp(12px,1vw,15px)!important;
+  font-weight:600;line-height:1.45
+}
+.life-edition-chapter-racing .life-edition-ordinal span:last-child{
+  letter-spacing:.11em
+}
+.motorsports-feature--racing-history .motorsports-feature-grid{
+  grid-template-columns:1.15fr 1.15fr .75fr;
+  align-items:stretch
+}
+.motorsports-feature--racing-history .motorsports-feature-grid figure{
+  background:#fcf9f1;border-color:#c5b08d
+}
+.motorsports-feature--racing-history .motorsports-feature-grid img{
+  height:clamp(230px,25vw,370px);
+  padding:10px;object-fit:contain;object-position:center;
+  background:#dcded4
+}
+.motorsports-feature--racing-history .motorsports-feature-grid figcaption{
+  font-size:clamp(17px,1.6vw,25px);line-height:1.25;
+  display:flex;flex-direction:column;gap:7px
+}
+.motorsports-feature--racing-history .motorsports-feature-grid figcaption small{
+  font:400 clamp(12px,.9vw,14px)/1.45 system-ui,sans-serif;
+  color:#5c6659;letter-spacing:0
+}
+@media(max-width:1000px){
+ .motorsports-feature--racing-history .motorsports-feature-grid{grid-template-columns:1fr 1fr}
+ .motorsports-feature--racing-history .motorsports-feature-grid figure:last-child{grid-column:1/-1;max-width:550px}
+}
+@media(max-width:760px){
+ .life-edition-chapter-racing .racing-hero-photo{
+   grid-column:1/-1!important;
+   min-height:0;max-width:100%!important;margin:20px auto 8px
+ }
+ .life-edition-chapter-racing .racing-photo-sequence{
+   grid-column:1/-1!important;max-width:100%
+ }
+ .life-edition-chapter-racing .racing-photo-sequence img{
+   height:clamp(190px,54vw,320px)!important
+ }
+ .motorsports-feature--racing-history .motorsports-feature-grid{
+   grid-template-columns:1fr
+ }
+ .motorsports-feature--racing-history .motorsports-feature-grid figure:last-child{
+   grid-column:auto;max-width:none
+ }
+}
