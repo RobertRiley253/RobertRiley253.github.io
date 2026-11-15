@@ -115,7 +115,7 @@ if(!read('editorial-materials.css').includes('.image-card[data-image="75"]'))
 // Additional genuine shop-equipment originals were verified visually before
 // inclusion; avoid losing them to a future aesthetic/layout revert.
 const studio=read('production.html');
-for(const file of ['image%2820261113-075940%29.png','image%2820261113-080043%29.png','7C78B285A419_1681758519.jpg'])
+for(const file of ['image(20261113-075940).png','image(20261113-080043).png','7C78B285A419_1681758519.jpg'])
  if(!studio.includes(file)) failures.push('Visually screened workshop original lost: '+file);
 // November 15 intake quality gate: all curated images resolve to actual
 // checked-in originals; classification remains intentionally curated.
