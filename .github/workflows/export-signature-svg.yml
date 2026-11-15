@@ -52,7 +52,7 @@ jobs:
               target=root/f"rrr-signature-{kind}.svg"
               subprocess.run(["potrace",str(tmp),"--svg","--output",str(target),"--turdsize","2","--opttolerance","0.2"],check=True)
               svg=target.read_text()
-              svg=svg.replace("<g ",f'<g fill="{color}" ',1)
+              svg=svg.replace('fill="#000000"',f'fill="{color}"',1)
               svg=svg.replace("<svg ", '<svg role="img" aria-label="RRR signature" ',1)
               target.write_text(svg)
               print(f"{target}: {w}x{h} raster -> vector path, {target.stat().st_size} bytes")
