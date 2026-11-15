@@ -102,7 +102,7 @@ else{
 // checked-in originals; classification remains intentionally curated.
 const intakeDir=path.join(dev,'incoming-portfolio-2026-11-15');
 const intakePages={
-  'profile.html':{required:25,sections:['new-illustration-studies','new-flatbed-printing','software-workflow-proof','new-specialty-print-processes','new-local-history-photographs']},
+  'profile.html':{required:29,sections:['new-illustration-studies','new-flatbed-printing','software-workflow-proof','new-specialty-print-processes','new-local-history-photographs']},
   'work.html':{required:4,sections:['new-technical-design-studies']},
   'production.html':{required:6,sections:['new-transfer-screenprinting-archive']}
 };
