@@ -109,3 +109,11 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - GitHub Actions run `43695173896` for the original My Story photo relocation completed SUCCESS.
 - GitHub Actions run `43695250326` on commit `69993ed994881fffbfa70e6de82a3f384de2248d` completed SUCCESS, including new source guard explicitly enforcing owner-confirmed original Lucky Signs / Diamond Electric classification in business chapter rather than motorsports.
 - Latest corrected image is a My Story chapter photo rather than a `data-image` registry card; all 172 gallery records and 192 registered placements remain protected. No production deployment.
+
+## 2026-11-15 — Pre-résumé employer-readiness pass
+- Current development branch maintained; no reset or publication.
+- Strengthened `#story-shops`: renamed chapter label from generic "THE FOREMAN" to "SHOP LEADERSHIP" while explicitly preserving the Burke Gibson foreman role and documented responsibilities; highlighted supervision, color/print quality, six-axis CNC setup/training, and shop management. Clarified supplemental commercial photographs are illustrative, not verified Burke Gibson documentation. Corrected generic decorative "06" to chapter "03". Commit `1a3c393edcb50612eb6ca5f2d9f6db0646eb389b`.
+- Strengthened `#story-history` as an employer-readable demonstration of research, archival-photo selection, fact checking, historical narrative writing, and public social engagement, without inserting invented view counts or unverified attribution. Commit `7906789075188023d95394a0bdad4e3e817e55a7`.
+- History evidence still desirable: 2–3 excellent real historical posts (image plus URL/context), one dated Facebook insights summary screenshot showing total lifetime views/reach and timeframe, optional follower count screenshot. Crop out personal information and private messages. Never equate views with unique visitors or add unverified statistics.
+- Teaching and Burke Gibson sections do NOT require invented employer-specific photos; well-worded career evidence plus labeled contextual imagery is acceptable for résumé outreach. Genuine historical workplace images can be added later if available.
+- The original 172 registry photographs and 192 placements remain unchanged. These edits are developer-branch only. Review live presentation and obtain explicit approval before public release.
