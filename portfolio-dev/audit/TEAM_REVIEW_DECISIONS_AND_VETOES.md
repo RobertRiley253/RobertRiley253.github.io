@@ -84,3 +84,17 @@ The current `portfolio-life-story-masterpiece-review-2026-11-13` layout **fails 
 | Release | Present complete candidate and obtain explicit approval prior to deployment | Owner's unambiguous signoff | NOT APPROVED |
 
 **Non-regression rules:** No deletion of source photographs, design reset, unreviewed changes to the logo/signature, public contact disclosure, or public deployment. Record the exact commit and QA outcome for every future batch in the master production ledger.
+
+
+## Owner directive — photo placement and first-screen priority (2026-11-15)
+
+Owner clarified that final employer-readiness MUST include all **suitable distinct uploaded photos**, working and organized in correct subject areas, with strongest pieces prominent on the first page. This is not permission to expose private screenshots, uncertain rights, misattributed work, or exact-byte duplicates. All uploaded originals stay preserved even when intentionally held from public display.
+
+**New mandatory photo gate, bounded by the owner's 30-minute finishing budget:**
+1. Crosswalk each source inventory against page image references, including the protected 172 registry / 192 original appearances and 46 supplemental PNGs (latest HQ20 report: 33 selected unique / 35 additional appearances); flag unplaced sources by reason, not merely by count.
+2. Verify actual leading homepage image trio `portfolio-006.jpg` (Affordable Dental Care signage), `portfolio-009.jpg` (Hot Shot fleet graphics), and `portfolio-023.jpg` (Northwest Car Show promotional materials) against alternative high-impact authentic images. Preserve approved visual composition; change imagery only when a demonstrated stronger candidate better represents the career.
+3. Review correct subject grouping: commercial signs/storefront, customer vehicle graphics, original racing participation vs customer vehicles, print/illustration, shop equipment/techniques, aerospace/fabrication, teaching, and local-history curation. Validate source captions and alt text, not names alone.
+4. Check actual desktop/mobile rendered images for decode, crop, sharpness and section placement. Never equate a file existing in the Git tree with a successful visual display.
+5. Prioritize errors that hurt job applications and stop after the bounded finishing session; leave nonblocking uncertain archival candidates in a clearly logged later-review queue, not a perpetual redesign cycle.
+
+**Current evidence limitation:** the legacy HQ18 audit explicitly says not all earlier image captions were visually verified and identifies unplaced sources from multiple archives. A whole-team assessment cannot be pronounced complete until this crosswalk and rendered inspection are actually performed. Public `main` remains unchanged until separately approved.
