@@ -455,3 +455,9 @@ body .chapter .editorial-grid>.image-card[data-resolution="tiny"][data-shape] .i
 .additional-shop-methods-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:740px){.additional-shop-methods-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:470px){.additional-shop-methods-grid{grid-template-columns:1fr}}
+
+/* HQ18: three strong full-resolution commercial projects lead; the small archive detail remains optional. */
+.client-portfolio-feature>.bulk-exhibit-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.client-portfolio-feature>.exhibit-more .bulk-exhibit-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:740px){.client-portfolio-feature>.bulk-exhibit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.client-portfolio-feature>.exhibit-more .bulk-exhibit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:470px){.client-portfolio-feature>.bulk-exhibit-grid{grid-template-columns:1fr}.client-portfolio-feature>.exhibit-more .bulk-exhibit-grid{grid-template-columns:1fr}}
