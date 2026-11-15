@@ -66,3 +66,11 @@
 #sticker-binder-samples .sticker-binder-card img{height:clamp(230px,24vw,350px);object-fit:contain;object-position:center}
 #sticker-binder-samples .intake-archive-note a{color:#275b44;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){#sticker-binder-samples .sticker-binder-card img{height:auto;max-height:420px}}
+
+/* Four character-sheet examples: balanced two-by-two rather than
+   a six-column featured card leaving orphan gaps in the gallery. */
+@media(min-width:601px){
+ #illustration-character-sheets .intake-curated-grid > .intake-curated-card{
+   grid-column:span 6!important;
+ }
+}
