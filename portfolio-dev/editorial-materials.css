@@ -407,3 +407,11 @@ body .image-card[data-image="75"] .image-wrap img{
  transform:rotate(90deg) scale(1.3333)!important;
  transform-origin:center center!important;
 }
+
+/* Final screenshot correction: two recovered printed/signage originals must
+   make a balanced pair rather than leave one-third of the row empty. */
+@media(min-width:761px){
+ body #recovered-photography .recovered-grid > .image-card{
+   grid-column:span 6!important;
+ }
+}
