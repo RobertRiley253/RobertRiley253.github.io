@@ -34,3 +34,10 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - **Run status:** automation is committed, but a successful GitHub Actions execution has NOT been independently confirmed. Do not claim it passes in Actions until a successful run is obtained.
 - **Editing rule:** changes to protected captions or placements may be intentional improvements; make them deliberately, review them, and update the baseline in the same approved production change. Never bypass the guard silently. `main` and publication remain untouched.
 - Older `portfolio-dev/PROGRESS.md` begins with November 12 material and is not a current-status authority; HQ18 and newer source/ledger evidence win.
+
+## 2026-11-14 — Browser QA correction after real Actions failure
+- GitHub Actions run 43681983747 confirmed new no-regression checker PASSED. The full browser smoke job failed on 6 Production viewport checks because the older HQ9 test expected exactly 6 shop-evidence figures, whereas HQ18 source correctly has 12. 18 other standard page/viewport checks and 4 simulated zoom checks passed.
+- Corrected `portfolio-dev/tests/browser-smoke.cjs` to require at least 12 equipment photographs and validate the actual number rendered, preserving the extra six.
+- The older test also loaded 172 image records from a combination of public `main` and an earlier development branch, causing 102 false failures. Corrected asset-decode checks to use the exact local GitHub Actions checkout with encoded file paths and bounded groups of 8.
+- **Pending evidence:** The corrected run for commit `0a1a61671f73a4ea55ac84507e60ed9f0c346c12` was in progress when this line was recorded. Do not claim an all-green browser test until its result has been inspected.
+- No HTML/CSS/photo changes and no release/publication were made in these QA repairs.
