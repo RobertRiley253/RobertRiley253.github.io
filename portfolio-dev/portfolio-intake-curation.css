@@ -52,3 +52,10 @@
 #new-illustration-studies .character-sheet-card>a{background:#e8e5d9;padding:clamp(8px,1vw,15px)}
 #new-illustration-studies .character-sheet-card img{height:clamp(240px,29vw,420px);object-fit:contain;object-position:center}
 @media(max-width:600px){#new-illustration-studies .character-sheet-card img{height:auto;max-height:440px}}
+
+/* Selected Work: full character sheets at honest scale, with no cuts to poses
+   or model-sheet borders; preserve image orientation until individually verified. */
+#illustration-character-sheets .character-sheet-card > a{padding:clamp(8px,1vw,15px);background:#e8e5d9}
+#illustration-character-sheets .character-sheet-card img{height:clamp(240px,27vw,400px);object-fit:contain;object-position:center}
+#illustration-character-sheets .intake-archive-note a{color:#275b44;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){#illustration-character-sheets .character-sheet-card img{height:auto;max-height:440px}}
