@@ -6,7 +6,7 @@ const baseline=JSON.parse(fs.readFileSync(path.join(__dirname,'hq18-no-regressio
 const failures=[];
 const read=(p)=>fs.readFileSync(path.join(dev,p),'utf8');
 const currentSrc=read('portfolio.js');
-const found=currentSrc.match(/^const PHOTOS=(\\[[^\\n]+\\]);/);
+const found=currentSrc.match(/^const PHOTOS=(\[[^\n]+\]);/);
 if(!found){console.error('FAIL: unable to parse PHOTOS registry');process.exit(1)}
 const photos=JSON.parse(found[1]);
 const byId=new Map(photos.map(x=>[x.id,x]));
@@ -21,8 +21,8 @@ for(const old of baseline.photos){
 for(const photo of photos){
  if(!photo.file||!photo.title?.trim())failures.push('Missing source/title for ID '+photo.id);
  // All protected photo paths should already exist on this development checkout.
- if(photo.file && !/^https?:\\/\\//.test(photo.file)){
-  const target=path.resolve(root,photo.file.replace(/^\\/+/,'')); 
+ if(photo.file && !/^https?:\/\//.test(photo.file)){
+  const target=path.resolve(root,photo.file.replace(/^\/+/,'')); 
   if(!target.startsWith(root+path.sep)||!fs.existsSync(target))failures.push('Missing local source file for ID '+photo.id+': '+photo.file);
  }
 }
@@ -31,7 +31,7 @@ for(const file of baseline.pages){
  const html=read(file);
  if(!/name=["']robots["'][^>]*noindex/i.test(html))failures.push('Development noindex missing: '+file);
  if(!html.includes('rrr-traditional-ink.png'))failures.push('Traditional RRR identity removed: '+file);
- const ids=[...html.matchAll(/data-image="(\\d+)"/g)].map(x=>Number(x[1]));
+ const ids=[...html.matchAll(/data-image="(\d+)"/g)].map(x=>Number(x[1]));
  occurrenceCount+=ids.length;
  const oldIds=baseline.placements[file];
  const freq=a=>{const map=new Map();for(const id of a)map.set(id,(map.get(id)||0)+1);return map};
