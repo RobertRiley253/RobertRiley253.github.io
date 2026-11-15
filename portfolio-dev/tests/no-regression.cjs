@@ -59,6 +59,37 @@ else{
   if(racing.includes(luckyPhoto))
     failures.push('Owner-confirmed Diamond Electric sign photograph incorrectly reclassified as racing');
 }
+// November 15 intake quality gate: all curated images resolve to actual
+// checked-in originals; classification remains intentionally curated.
+const intakeDir=path.join(dev,'incoming-portfolio-2026-11-15');
+const intakePages={
+  'profile.html':{required:19,sections:['new-illustration-studies','new-flatbed-printing','new-specialty-print-processes','new-local-history-photographs']},
+  'work.html':{required:4,sections:['new-technical-design-studies']},
+  'production.html':{required:6,sections:['new-transfer-screenprinting-archive']}
+};
+for(const [page,{required,sections}] of Object.entries(intakePages)){
+ const html=read(page);
+ if(!html.includes('portfolio-intake-curation.css'))
+   failures.push('Missing intake styles on '+page);
+ for(const id of sections)if(!html.includes('id="'+id+'"'))
+   failures.push('Missing curated section '+id+' on '+page);
+ const urls=[...html.matchAll(/<img[^>]*src="(incoming-portfolio-2026-11-15\/[^"]+)"[^>]*>/g)];
+ if(urls.length!==required)
+   failures.push('New intake image count on '+page+': '+urls.length+' expected '+required);
+ for(const [tag,src] of urls){
+   const name=path.basename(src),file=path.resolve(intakeDir,name);
+   if(!file.startsWith(intakeDir+path.sep)||!fs.existsSync(file))
+     failures.push('Missing curated image: '+page+' '+src);
+   if(!/alt="[^"]+"/.test(tag))
+     failures.push('Missing meaningful curated image alt: '+src);
+ }
+}
+const allIntakeFiles=fs.readdirSync(intakeDir).filter(x=>/\.png$/i.test(x));
+if(allIntakeFiles.length<41)
+ failures.push('Missing owner-upload intake source files: '+allIntakeFiles.length);
+if(!read('profile.html').includes('46,560,500')||
+   !read('profile.html').includes('history_childhood_jp_patches.png'))
+ failures.push('Verified audience evidence or owner-identified personal-history image lost');
 if(photos.length<baseline.photos.length)failures.push('Registry shrank below '+baseline.photos.length);
 if(occurrenceCount<Object.values(baseline.placements).reduce((sum,a)=>sum+a.length,0))failures.push('Total gallery placements decreased');
 console.log('Portfolio HQ18 guard: '+photos.length+' photo records; '+occurrenceCount+' page placements; '+baseline.photos.length+' protected baseline records.');
