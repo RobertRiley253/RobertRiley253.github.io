@@ -49,3 +49,6 @@ The site is long by deliberate owner choice and contains more material than a co
 - Image-by-image intake: `portfolio-dev/audit/HQ19_IMAGE_UPLOAD_INTEGRATION_AND_CURATION_2026-11-15.md`.
 - Tests: `portfolio-dev/tests/no-regression.cjs`, browser/axe workflow `.github/workflows/portfolio-development-browser-qa.yml`.
 - This report reflects reviewed development state at November 15, 2026. The owner visual approval remains outstanding.
+
+### Additional creative work added after visual pass
+One user-uploaded dog-and-bird digital character illustration was added as a visually distinct, non-branded study in the artist chapter without inventing a specific drawing technique or commission. Current intake count is **46 archived PNGs / 33 distinct selected sources / 35 image appearances (25 My Story + 4 Selected Work + 6 Production)**. Technical QA for this last one-image addition must finish before claiming final green state.
