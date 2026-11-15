@@ -438,3 +438,15 @@ body .chapter .editorial-grid>.image-card[data-resolution="tiny"][data-shape] .i
 @media(max-width:630px){.exhibit-journeys-head{grid-template-columns:1fr}.exhibit-journey-grid{grid-template-columns:1fr 1fr;gap:8px}.exhibit-journey-grid a{padding:13px}.exhibit-journey-grid a strong{font-size:19px}.exhibit-journey-grid a>span{font-size:9px}}
 @media(max-width:380px){.exhibit-journey-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.exhibit-journey-grid a{transition:none}.exhibit-journey-grid a:hover{transform:none}}
+
+/* HQ17: keep long photographic field records browseable without removing images. */
+.exhibit-more{position:relative;max-width:1450px;margin:20px auto 0;border:1px solid #ac936ba6;background:linear-gradient(120deg,#f8f1e5,#e9eee5);box-shadow:0 7px 20px #263a3020}
+.exhibit-more>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px clamp(17px,2.8vw,30px);cursor:pointer;color:#254735;font:600 clamp(13px,1.4vw,17px)/1.35 system-ui,sans-serif;list-style:none}
+.exhibit-more>summary::-webkit-details-marker{display:none}
+.exhibit-more>summary::after{content:"+";font:400 25px/1 Georgia,serif;color:#916b32;order:2;margin-left:8px}
+.exhibit-more[open]>summary::after{content:"−"}
+.exhibit-more>summary small{font:500 11px/1.35 system-ui,sans-serif;letter-spacing:.05em;color:#6d725e;margin-left:auto}
+.exhibit-more>summary:hover{background:#e3e9da}
+.exhibit-more>summary:focus-visible{outline:3px solid #916b32;outline-offset:3px}
+.exhibit-more[open]>.bulk-exhibit-grid{padding:8px clamp(9px,1.5vw,18px) clamp(14px,2vw,25px)}
+@media(max-width:520px){.exhibit-more>summary{flex-wrap:wrap}.exhibit-more>summary small{order:3;flex-basis:100%;margin-left:0}}
