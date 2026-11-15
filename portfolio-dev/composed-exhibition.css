@@ -420,3 +420,21 @@ body .chapter .editorial-grid>.image-card[data-resolution="tiny"][data-shape] .i
 @media(max-width:740px){.bulk-exhibit-heading{grid-template-columns:1fr;gap:10px}.bulk-exhibit-heading h2{max-width:none}.bulk-exhibit-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.bulk-exhibit{padding-inline:17px}}
 @media(max-width:420px){.bulk-exhibit-card{padding:4px}.bulk-exhibit-grid{gap:8px}.bulk-exhibit-caption{display:block;font-size:9px}.bulk-exhibit-caption span:last-child{display:block;margin-top:3px;font-size:8px}}
 @media(prefers-reduced-motion:reduce){.bulk-exhibit-card{transition:none}.bulk-exhibit-card:hover{transform:none}}
+
+/* HQ16: discoverable routes to expanded sections, using existing emerald/gold exhibition identity. */
+.exhibit-journeys{padding:clamp(42px,6vw,95px) clamp(20px,5vw,85px);background:radial-gradient(ellipse at 80% 15%,#b49a5940,transparent 54%),linear-gradient(135deg,#102b22,#284b34 68%,#173226);color:#f5ead4;border-block:2px solid #bca371}
+.exhibit-journeys-head{max-width:1410px;margin:0 auto 30px;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(18px,4vw,64px);align-items:end}
+.exhibit-journeys-head h2{margin:12px 0 0;color:#f5ead7;font:400 clamp(39px,5vw,79px)/1.03 Georgia,serif;letter-spacing:-.05em}
+.exhibit-journeys-head h2 em{color:#e1bd86}
+.exhibit-journeys-head>p{max-width:52ch;line-height:1.65;font-size:15px;color:#e5e2d5}
+.exhibit-journey-grid{max-width:1410px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.exhibit-journey-grid a{display:flex;flex-direction:column;min-width:0;gap:12px;padding:clamp(16px,2.3vw,32px);border:1px solid #d2ba8573;background:#f0eadc10;text-decoration:none;color:#f4eadb;transition:background .2s ease,transform .2s ease}
+.exhibit-journey-grid a:hover{background:#e5c88b23;transform:translateY(-2px)}
+.exhibit-journey-grid a:focus-visible{outline:3px solid #eed19a;outline-offset:3px}
+.exhibit-journey-grid a>span{font:700 10px/1.3 system-ui;letter-spacing:.14em;color:#e3bf89}
+.exhibit-journey-grid a strong{font:400 clamp(20px,2.1vw,33px)/1.18 Georgia,serif;letter-spacing:-.02em}
+.exhibit-journey-grid a small{font-size:11px;line-height:1.45;color:#d5d9c9}
+@media(max-width:950px){.exhibit-journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:630px){.exhibit-journeys-head{grid-template-columns:1fr}.exhibit-journey-grid{grid-template-columns:1fr 1fr;gap:8px}.exhibit-journey-grid a{padding:13px}.exhibit-journey-grid a strong{font-size:19px}.exhibit-journey-grid a>span{font-size:9px}}
+@media(max-width:380px){.exhibit-journey-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.exhibit-journey-grid a{transition:none}.exhibit-journey-grid a:hover{transform:none}}
