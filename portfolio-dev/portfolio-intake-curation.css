@@ -40,3 +40,9 @@
 .history-insights-evidence img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain}
 .history-insights-evidence figcaption{margin:9px 0 0;font:400 11px/1.5 system-ui,sans-serif;color:#f2e2c4}
 .history-insights-evidence a:focus-visible{outline:3px solid #efd6a4;outline-offset:3px}
+
+/* Public Facebook profile, attached to the author's own history story. */
+.life-edition-facebook-link{margin:17px 0 0!important}
+.life-edition-facebook-link a{display:inline-flex;align-items:center;gap:8px;padding:9px 0 7px;border-bottom:1px solid #98784a;color:#214b34!important;font:600 13px/1.45 system-ui,sans-serif;text-decoration:none!important}
+.life-edition-facebook-link a:hover{border-color:#214b34;color:#173926!important}
+.life-edition-facebook-link a:focus-visible{outline:3px solid #a97831;outline-offset:3px}
