@@ -59,3 +59,10 @@
 #illustration-character-sheets .character-sheet-card img{height:clamp(240px,27vw,400px);object-fit:contain;object-position:center}
 #illustration-character-sheets .intake-archive-note a{color:#275b44;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:600px){#illustration-character-sheets .character-sheet-card img{height:auto;max-height:440px}}
+
+/* Print sample books: preserve the complete book/sheet within each card.
+   Do not crop the physical binders or rotate them without visual evidence. */
+#sticker-binder-samples .sticker-binder-card > a{padding:clamp(8px,1vw,15px);background:#e5e1d5}
+#sticker-binder-samples .sticker-binder-card img{height:clamp(230px,24vw,350px);object-fit:contain;object-position:center}
+#sticker-binder-samples .intake-archive-note a{color:#275b44;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){#sticker-binder-samples .sticker-binder-card img{height:auto;max-height:420px}}
