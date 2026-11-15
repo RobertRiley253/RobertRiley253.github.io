@@ -96,3 +96,11 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - GitHub Actions `43693444299` completed SUCCESS for My Story editorial revision `5b38c8729370de4dd951fecb463228f1567ec57d`, including the existing no-regression, browser and accessibility workflow steps.
 - Continued source-level heading inventory across all four portfolio pages; future editorial pass should inspect Production gallery section naming in rendered context before changing text. The current scan does **not** justify deleting/reflowing documented sections.
 - Latest development source remains unpublished; owner approval for artistic finish and any production merge is outstanding.
+
+## 2026-11-15 — Owner-confirmed Lucky Signs / Diamond Electric identification
+- Owner visually identified `Rob-Photo-Uploads/New folder/IMG_4649.jpg` as a photograph of the **original Lucky Signs shop in downtown Puyallup**, showing **large cutout signs personally produced for Diamond Electric**. It is not primarily motorsports imagery.
+- Removed only this archival photograph from the My Story motorsports photo sequence, relocated the same linked original (no file modification) to the Lucky Signs / sign business history photo sequence under `#story-business`.
+- Updated accessible label, alt description, and visible caption to credit the original Lucky Signs location and Diamond Electric cutout-sign work. Removed speculative "racing-era scene; exact work attribution unverified" wording for this photo.
+- Git commit `11766fc0efb116d6613c7095b086786f30c34a55` changed `portfolio-dev/profile.html` only. 172 registry records and 192 page-card appearances unaffected; original source file preserved, and remaining motorsport photographs retained.
+- Automated QA run `43695173896` started; confirm its final result separately before reporting full verification. No public main change or publishing authorized.
+- This correction is based on direct owner identification and supersedes earlier generic archival classification. Do not revert it via older HQ18 photo inventories.
