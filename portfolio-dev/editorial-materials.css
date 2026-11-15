@@ -226,3 +226,35 @@ body .chapter .editorial-grid .image-card .image-caption{
   .career-snapshot-index strong,.career-snapshot-index .snapshot-subject,
   .career-snapshot-index>div>span:last-child{color:CanvasText!important}
 }
+
+
+/* Local history: documented social audience, with an exact reporting period.
+   Evidence from owner-provided Facebook Insights image (46,560,500 / 606 days).
+   Statistics represent views, never unique people or inferred lifetime totals. */
+.history-audience-evidence{
+  width:100%;max-width:590px;margin:24px 0 28px;
+  padding:clamp(19px,2.1vw,29px);
+  background:linear-gradient(118deg,#15382c,#214a38);
+  color:#f5ead7;border-left:3px solid #d4aa64;
+  box-shadow:0 12px 29px rgba(16,38,27,.13);
+}
+.history-audience-eyebrow{
+  display:block;font-size:10px;line-height:1.4;letter-spacing:.14em;
+  font-weight:800;color:#e4c78b;
+}
+.history-audience-evidence strong{
+  display:block;margin:12px 0 10px;
+  font:400 clamp(32px,4vw,57px)/1.12 Georgia,"Times New Roman",serif;
+  color:#fae6bf;letter-spacing:-.035em;overflow-wrap:anywhere;
+}
+.history-audience-evidence strong span{
+  font:600 clamp(14px,1.25vw,18px)/1.5 system-ui,sans-serif;letter-spacing:0;color:#f7edd8;
+}
+.history-audience-evidence p{font-size:14px!important;line-height:1.6!important;color:#f4ead8!important;margin:6px 0 12px!important}
+.history-audience-evidence small{display:block;font-size:11px;line-height:1.55;color:#e0d3bd}
+@media(forced-colors:active){
+ .history-audience-evidence{background:Canvas;color:CanvasText;border-color:CanvasText;box-shadow:none}
+ .history-audience-evidence strong,.history-audience-evidence strong span,
+ .history-audience-evidence p,.history-audience-evidence small,
+ .history-audience-eyebrow{color:CanvasText!important}
+}
