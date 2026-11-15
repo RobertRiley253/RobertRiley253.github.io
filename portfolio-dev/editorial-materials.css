@@ -396,12 +396,14 @@ body .image-card[data-image="75"] .image-wrap{
  aspect-ratio:4/3!important;
  max-height:none!important;
  overflow:hidden!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
 }
 body .image-card[data-image="75"] .image-wrap img{
- position:absolute!important;top:50%!important;left:50%!important;
- width:75%!important;height:133.3333%!important;
- max-width:none!important;max-height:none!important;
+ position:static!important;top:auto!important;left:auto!important;
+ width:100%!important;height:100%!important;
+ max-width:100%!important;max-height:100%!important;
+ flex:none!important;
  object-fit:contain!important;object-position:center!important;
- transform:translate(-50%,-50%) rotate(-90deg)!important;
+ transform:rotate(-90deg) scale(1.3333)!important;
  transform-origin:center center!important;
 }
