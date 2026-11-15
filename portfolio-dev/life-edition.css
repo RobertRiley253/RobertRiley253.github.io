@@ -197,3 +197,16 @@
 .aerospace-ndt-item a:focus-visible{outline:3px solid #98733c;outline-offset:3px}
 @media(max-width:960px){.aerospace-ndt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.aerospace-ndt-heading{grid-template-columns:1fr}.aerospace-ndt-grid{gap:10px}.aerospace-ndt-item{padding:5px}.aerospace-ndt-item figcaption{font-size:11px}}
+
+/* B-2 context photo: separate aircraft reference from Exotic Metals evidence. */
+.aerospace-b2-reference{display:grid;grid-template-columns:minmax(210px,.62fr) minmax(0,1.38fr);align-items:center;gap:clamp(18px,3.5vw,50px);padding:clamp(30px,4vw,60px) clamp(23px,5vw,86px);background:linear-gradient(130deg,#15372c,#254737 64%,#102c23);color:#f4ebd9;border-block:1px solid #bd9d6977}
+.aerospace-b2-reference-copy{max-width:52ch}
+.aerospace-b2-reference h3{font:400 clamp(32px,3.5vw,56px)/1.09 Georgia,serif;letter-spacing:-.04em;margin:12px 0 22px}
+.aerospace-b2-reference p{font-size:clamp(13px,1.15vw,17px);line-height:1.7;color:#ebe5d5}
+.aerospace-b2-reference .aerospace-ndt-kicker{color:#e1c18a}
+.aerospace-b2-reference figure{min-width:0;margin:0;border:1px solid #bb9c6f70;padding:8px;background:#0e261f}
+.aerospace-b2-reference a{display:block}
+.aerospace-b2-reference img{display:block;width:100%;height:auto;max-height:530px;object-fit:contain}
+.aerospace-b2-reference figcaption{padding:9px 6px 3px;font-size:11px;line-height:1.5;color:#d5ccb8}
+.aerospace-b2-reference a:focus-visible{outline:3px solid #e1c18a;outline-offset:3px}
+@media(max-width:720px){.aerospace-b2-reference{grid-template-columns:1fr;gap:18px}}
