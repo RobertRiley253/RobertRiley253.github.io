@@ -52,3 +52,10 @@ The site is long by deliberate owner choice and contains more material than a co
 
 ### Additional creative work added after visual pass
 One user-uploaded dog-and-bird digital character illustration was added as a visually distinct, non-branded study in the artist chapter without inventing a specific drawing technique or commission. Current intake count is **46 archived PNGs / 33 distinct selected sources / 35 image appearances (25 My Story + 4 Selected Work + 6 Production)**. Technical QA for this last one-image addition must finish before claiming final green state.
+
+### Routing verification added after branch review
+- On current `main`, the live GitHub Pages source **has `/index.html` at repository root**, titled `Graphic design for physical spaces | Robert Riley` (observed root file SHA `61855a9fb1ac8a86e9db2894b66edd461d5a1b13`).
+- **`main/portfolio-dev/index.html` does not exist** (GitHub API 404). Development site is built inside the `portfolio-dev/` directory **on the separate development branch**.
+- Therefore, simply merging a branch, switching a public URL to `/portfolio-dev/index.html`, or changing `noindex` is **not** a verified publish path. A production release needs the approved four-page assets staged at the actual root output (or an explicitly configured Pages root), with page-relative image/CSS/JS links tested.
+- Select only the image assets actually referenced by the site when preparing public release artifacts; **do not blanket-copy** the entire intake directory because it contains unselected/uncertain artwork and at least one private-correspondence screenshot. Source upload preservation and *public site inclusion* are separate concerns.
+- No public `main` updates were made in this work.
