@@ -19,3 +19,14 @@
 @media(max-width:900px){.intake-curated-header{grid-template-columns:1fr}.intake-curated-card,.intake-curated-card.feature{grid-column:span 6}.intake-curated-card img,.intake-curated-card.feature img{height:clamp(180px,31vw,300px)}}
 @media(max-width:600px){.intake-curated{padding:22px 17px}.intake-curated-grid{gap:13px}.intake-curated-card,.intake-curated-card.feature{grid-column:span 12}.intake-curated-card img,.intake-curated-card.feature img{height:auto;max-height:420px;object-fit:contain}.intake-curated-card figcaption{padding:14px}}
 @media(forced-colors:active){.intake-curated,.intake-curated-card{background:Canvas!important;color:CanvasText!important;border-color:CanvasText!important;box-shadow:none!important}.intake-curated :is(h2,figcaption strong,figcaption span,p,.intake-curated-kicker){color:CanvasText!important}}
+
+/* Software workflow: preserve screenshot interface, node handles and type at any width.
+   The authentic application evidence is more important than full-bleed cropping. */
+.intake-curated--screenshots .intake-curated-card>a{background:#d9dcd3;padding:clamp(8px,1.2vw,16px)}
+.intake-curated--screenshots .intake-curated-card img,
+.intake-curated--screenshots .intake-curated-card.feature img{
+  height:auto;aspect-ratio:16 / 9;max-height:none;object-fit:contain;background:#f5f5f2;
+  border:1px solid #77836f45
+}
+.intake-curated--screenshots .intake-curated-card.feature{grid-column:span 6}
+@media(max-width:600px){.intake-curated--screenshots .intake-curated-card.feature{grid-column:span 12}}
