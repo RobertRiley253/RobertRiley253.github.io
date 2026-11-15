@@ -59,6 +59,10 @@ else{
   if(racing.includes(luckyPhoto))
     failures.push('Owner-confirmed Diamond Electric sign photograph incorrectly reclassified as racing');
 }
+// Guard against the malformed Shop Leadership wrapper that detached its
+// ordinal band and heading from the rest of the three-column chapter.
+if(!story.includes('<div class="life-edition-chapter life-edition-chapter-shops" id="story-shops">'))
+ failures.push('Shop Leadership chapter opening tag is malformed or missing');
 // Owner-directed motorsports curation: actual racing archive first, customer vans elsewhere.
 if(racingStart>=0 && fieldStart>racingStart){
  const racing=story.slice(racingStart,fieldStart);
