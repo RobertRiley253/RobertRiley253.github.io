@@ -83,3 +83,11 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - Specific late Production gallery image IDs 158,159,172,106,107 successfully loaded/rendered when scrolled into view on both desktop and mobile. Previous blanks in one full-page screenshot appear to be lazy-load screenshot timing rather than missing source files; still review live preview before owner signoff.
 - Current My Story parchment-index title contrast fix passed and remains in branch. No changes to public site; owner has not yet approved final visual composition.
 - Current near-term objective: review refreshed My Story page in interactive preview, continue only documented high-impact editorial/artistic corrections.
+
+## 2026-11-15 — Final story hierarchy and copy refinement
+- Started from actual latest HEAD `e32fffba636bbe7fe3acb8113103a46901314e8b`, after all completed HQ18 and visual work. Read current My Story source and live scope; no older branch reset.
+- The My Story opening, nearby career summary and life-story intro repeated the concepts "Decades of making things visible", "A lifetime of them" and "A lifetime of making things visible." Preserved the established cover's "Decades of making things visible" and summary's "Not one trade. A lifetime of them." Changed only the life-story introduction heading to "From the first sketch / to the finished work" to give that chapter a distinct purpose.
+- Corrected the career-summary paragraph's repeated "artist, illustrator" and unsupported implication that its only button also jumps directly to the detailed professional record. Replacement succinctly connects documented disciplines and correctly invites the illustrated chapters.
+- Exact content commit: `5b38c8729370de4dd951fecb463228f1567ec57d`. Files changed: `portfolio-dev/profile.html` ONLY. No gallery registry, photos, CSS, signature assets, main branch or publication changes.
+- Browser QA run `43693444299` initiated; check conclusion before declaring this latest copy revision fully tested. Full previous release-candidate workflow `43692738427` PASS.
+- Remaining: visually assess the latest interactive development page and owner signoff; no automatic publication.
