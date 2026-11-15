@@ -57,3 +57,12 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - Axe accessibility: **0 automated WCAG A/AA violation types on 8 desktop/mobile page scans** (four pages x two sizes).
 - Successful Actions workflow produced review screenshots and QA artifacts. These automated successes **do not constitute human artistic acceptance**.
 - **Next stage: inspect actual rendered visual QA artifacts/screenshots and present final interactive development candidate for explicit owner approval.** Do not revisit HQ18 content integration without evidence; do not publish or modify `main` without permission.
+
+## 2026-11-14 — HQ continuation: owner-identified My Story visual refinement
+- Returned to actual latest development branch HEAD before editing; preserved full HQ18 photograph registry and prior complete QA results.
+- Responded to owner's screenshot of My Story `#technical-background`: four heavy résumé-like green cards had inconsistent hierarchy (company names vs dates vs generic "Teaching").
+- In `portfolio-dev/profile.html`, rewrote only the four career-index entries for consistent employer-readable labels, business names, dates and descriptions; no new biographical claims.
+- In `portfolio-dev/editorial-materials.css`, changed only career-snapshot styling to one restrained parchment editorial index with four separated entries, darker green typographic hierarchy and warm-gold labels. Entire rest of gallery, originals, approved monogram, signatures and navigation untouched.
+- Source edits: `badff40fb4663c427826a6a78cc9e6f3dc7ebd92` and `35a98caa6eeb2feb965b1ad08ccb015cecd8bfa5`.
+- GitHub Actions browser QA run `43692174974` launched; **not yet confirmed passing when this note was written**. Do not declare visual acceptance; owner should review the real development preview at My Story section after passing QA.
+- **Never redo HQ18's caption and photo integration as a prerequisite for this finishing work.** No production publication authorized.
