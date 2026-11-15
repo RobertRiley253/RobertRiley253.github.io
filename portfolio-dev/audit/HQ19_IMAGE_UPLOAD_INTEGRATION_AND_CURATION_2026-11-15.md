@@ -78,3 +78,5 @@ Added a restrained 3-panel screenshot presentation after the Production Technolo
 Also added one more owner-uploaded historical photograph, `history_never_never_land.png`, to the local-history display. Caption is explicitly provisional about location/date/photographer.
 
 **Post-update curation:** initial 27 distinct displayed PNGs + 3 software examples + 1 history image = **31 distinct selected intake images** across **33 page appearances** (My Story 23, Selected Work 4, Production 6). Original 172 registered photographs and 192 legacy placements remain protected. Owner uploads remain safely preserved; all 46 PNGs are retained whether displayed or not.
+
+**Supplemental addition:** `illustration_dog_with_bird.png` was intentionally brought into the artist-gallery as a color-based creative image study, with process/commission left unspecified. This supersedes the earlier held state in the original baseline table without modifying the archived audit of initial 41 files. Updated running count: **33 unique selected source files / 35 new image appearances**; all 46 intake originals still available.
