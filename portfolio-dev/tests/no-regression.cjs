@@ -98,11 +98,25 @@ else{
  if(feature.includes('portfolio-040.jpg'))
   failures.push('Unrelated client trailer imagery reinserted in racing showcase');
 }
+// Recovered original No. 91 trackside photographs must remain actual images,
+// not text-only promises or unrelated commercial vehicles.
+const personalRace=story.slice(story.indexOf('id="racing-trackside-archive"'),story.indexOf('id="story-field"'));
+for(const name of ['download%20(7).png','download%20(8).png'])
+ if(!personalRace.includes(name)) failures.push('No. 91 trackside story missing authentic photo '+name);
+if(!selectedWork.slice(motorsportsStart,motorsportsEnd).includes('download%20(7).png'))
+ failures.push('No. 91 racing photo lost from Selected Work');
+if(!selectedWork.includes('image(20261113-080316).png'))
+ failures.push('Real retail sticker-sample board lost from Selected Work');
+if(!story.includes('illustration_lion_dandelion_composition.png'))
+ failures.push('Recovered lion/dandelion illustration lost from My Story');
+// Rotation applies only to verified sideways original; source file is retained.
+if(!read('editorial-materials.css').includes('.image-card[data-image="75"]'))
+ failures.push('Verified rotated shop-sign photo presentation lost');
 // November 15 intake quality gate: all curated images resolve to actual
 // checked-in originals; classification remains intentionally curated.
 const intakeDir=path.join(dev,'incoming-portfolio-2026-11-15');
 const intakePages={
-  'profile.html':{required:29,sections:['new-illustration-studies','new-flatbed-printing','software-workflow-proof','new-specialty-print-processes','new-local-history-photographs']},
+  'profile.html':{required:30,sections:['new-illustration-studies','new-flatbed-printing','software-workflow-proof','new-specialty-print-processes','new-local-history-photographs']},
   'work.html':{required:11,sections:['new-technical-design-studies','illustration-character-sheets','sticker-binder-samples']},
   'production.html':{required:6,sections:['new-transfer-screenprinting-archive']}
 };
