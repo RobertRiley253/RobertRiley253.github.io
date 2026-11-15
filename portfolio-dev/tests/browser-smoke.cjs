@@ -63,7 +63,7 @@ const path = require('node:path');
         // These HQ18 cards appeared as empty image frames in a prior full-page screenshot,
         // despite the separate 172/172 source-asset preflight passing.
         if (name === 'production.html' && ['desktop','mobile'].includes(viewport.name)) {
-          const ids = [158, 159, 172, 106, 107];
+          const ids = [99, 155, 158, 159, 172, 106, 107];
           const states = [];
           for (const id of ids) {
             const img = page.locator('[data-image="' + id + '"] img').first();
@@ -98,6 +98,13 @@ const path = require('node:path');
           for (const state of states) {
             if (!state.loaded || !state.renderWidth || !state.renderHeight || state.visibility === 'hidden' || state.opacity === '0')
               throw new Error('Late-gallery image not visibly decoded: ' + JSON.stringify(state));
+          }
+          // Check actual paint in a normal viewport, since oversized fullPage
+          // screenshots can omit some compositor layers despite decoded images.
+          for (const photoId of [99, 155]) {
+            await page.locator('[data-image="' + photoId + '"]').first().scrollIntoViewIfNeeded();
+            await page.waitForTimeout(200);
+            await page.screenshot({ path: path.join(output, 'production-photo-' + photoId + '-' + viewport.name + '.png'), animations: 'disabled', timeout: 25000 });
           }
           await page.locator('#new-studio-photography').scrollIntoViewIfNeeded();
           await page.screenshot({ path: path.join(output, 'production-late-gallery-' + viewport.name + '.png'), animations: 'disabled', timeout: 25000 });
