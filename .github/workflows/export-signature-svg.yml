@@ -1,0 +1,75 @@
+name: Export established RRR signature as standalone SVG
+on:
+  push:
+    branches: [portfolio-editorial-material-review-2026-11-13]
+    paths: ['.github/workflows/export-signature-svg.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  trace-signature:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Install tracing dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y potrace
+          python3 -m pip install --user Pillow
+      - name: Trace existing champagne and black RRR signature artwork
+        run: |
+          python3 - <<'PY'
+          from PIL import Image
+          import subprocess
+          from pathlib import Path
+          import re
+          root=Path("portfolio-dev/brand-assets")
+          for kind,color in [("champagne","#d6b67a"),("black","#172920")]:
+              inp=root/f"rrr-signature-{kind}.png"
+              im=Image.open(inp).convert("RGBA")
+              w,h=im.size
+              px=im.load()
+              corners=[px[x,y] for x,y in [(0,0),(w-1,0),(0,h-1),(w-1,h-1)]]
+              transparent=min(a for r,g,b,a in corners)<100
+              if transparent:
+                  al=im.getchannel("A")
+                  mask=al.point(lambda a: 255 if a>=70 else 0,mode="L")
+              else:
+                  # Opaque export fallback: identify pixels different from corner background.
+                  bg=tuple(round(sum(c[i] for c in corners)/4) for i in range(3))
+                  vals=[]
+                  for r,g,b,a in im.getdata():
+                      vals.append(255 if max(abs(r-bg[0]),abs(g-bg[1]),abs(b-bg[2]))>=65 else 0)
+                  mask=Image.new("L",(w,h));mask.putdata(vals)
+              bounds=mask.getbbox()
+              if not bounds: raise RuntimeError(f"No signature ink found in {inp}")
+              # PBM has 1-bit pixels; invert to black ink for potrace.
+              mono=mask.point(lambda a: 0 if a>128 else 255,mode="1")
+              tmp=Path("/tmp")/f"signature-{kind}.pbm"
+              mono.save(tmp)
+              target=root/f"rrr-signature-{kind}.svg"
+              subprocess.run(["potrace",str(tmp),"--svg","--output",str(target),"--turdsize","2","--opttolerance","0.2"],check=True)
+              svg=target.read_text()
+              svg=svg.replace("<g ",f'<g fill="{color}" ',1)
+              svg=svg.replace("<svg ", '<svg role="img" aria-label="RRR signature" ',1)
+              target.write_text(svg)
+              print(f"{target}: {w}x{h} raster -> vector path, {target.stat().st_size} bytes")
+          PY
+      - name: Commit only downloadable vector signatures to development branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio-dev/brand-assets/rrr-signature-champagne.svg portfolio-dev/brand-assets/rrr-signature-black.svg
+          if git diff --cached --quiet; then
+            echo "Vector files already up to date"
+          else
+            git commit -m "Export existing RRR signature artwork to downloadable SVG vectors"
+            git push origin HEAD:portfolio-editorial-material-review-2026-11-13
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: RRR-signature-SVG
+          path: portfolio-dev/brand-assets/rrr-signature-*.svg
+          retention-days: 30
