@@ -54,3 +54,33 @@ The current `portfolio-life-story-masterpiece-review-2026-11-13` layout **fails 
 - `portfolio-dev/audit/PORTFOLIO_EXPECTATIONS_AND_ACCEPTANCE_REGISTER.md` — 153 trackable expectations, each with status, evidence and next action.
 - `portfolio-dev/audit/PHOTO_RESOLUTION_AND_LAYOUT_DEFECTS.md` — measured original-photo risks and exact layout-failure descriptions.
 - `portfolio-dev/design-studies/216-creative-direction-candidates.md` — earlier brainstorming inventory. These were proposals, not 216 approvals.
+
+
+## November 15, 2026 — Current-branch integrated team decision (HQ21 follow-through)
+
+**Authority:** This addendum interprets the existing specialist perspectives against the current editorial-material branch. These are structured review lenses, not independent hired people or a claim of unanimous human approval. The earlier failed layout named above refers to a *different historical branch*, not automatically to the current candidate. Owner approval is still outstanding.
+
+**Current source checkpoint read before this addendum:** development branch `ef7a87159780315c5a3af1a97d2ad0d6c2d8a039`. The current production ledger's HQ21 section supersedes older race-photo placement notes. HQ20 audit reports a passed earlier browser/accessibility suite, not independent proof that HQ21's latest composition was reviewed.
+
+### Joint decisions in descending implementation priority
+
+1. **Creative direction + hiring review — preserve and sharpen the first impression.** Keep the approved four-page emerald/gold/parchment identity, first-person professional voice and photography-led compositions. Evaluate the homepage's real desktop/mobile first screen and first meaningful career pathways; change only defects demonstrated in rendered screenshots. No new concept competition or wholesale restyling.
+2. **Racing + image attribution — protect HQ21 corrections.** Keep authentic Lucky Signs photos `IMG_4623.jpg` and `IMG_4626.jpg` featured with Robert's actual competition history. Do not place unrelated customer van `portfolio-018.jpg` or South Sound Electrical trailer `portfolio-040.jpg` in the racing feature. They can remain in appropriate commercial work sections. Treat the reported No. 91 photograph as a source-identification task, not permission to fabricate or label another photograph as it.
+3. **Sign production + technical career — verify concrete evidence before word polish.** Ensure production methods, software screenshots, employer histories, B-2/composites, welding, teaching and fabrication are visible and specifically supported. Avoid unsupported certification, employer-site photography, or vector-editability claims; retain the genuine FlexiSIGN node-editing evidence and correctly describe the Illustrator JPEG screenshot.
+4. **Editorial + local-history perspectives — one consistent authorial voice.** Write the public-facing pages as Robert's professional first-person presentation. Avoid third-person self-description and leaked audit/placeholder/disclaimer language. Distinguish curated historical photographs from original photographs and social-content views from unique audience counts. Keep exact analytics evidence available.
+5. **Photography + archive stewardship — retain originals, curate display.** Preserve all 46 HQ20 intake PNGs and the earlier protected 172-photo/192-placement baseline. Present 33 selected supplemental sources/35 appearances as the last documented HQ20 position; re-count before declaring a later total. Hold private correspondence, unclear authorship and redundant images outside public display. Recheck image quality, crop and accidental repetition from actual renders.
+6. **UX + accessibility + skeptical reviewer — no shortcut to launch.** Fresh HQ21 browser smoke, page screenshots, mobile/desktop manual inspection, contact-option decision and controlled release-path verification are required. The site is not 'team approved' merely because CI passes. Development still contains noindex metadata and public `main` is divergent; never blindly merge, force-push or publish.
+
+### Immediate execution board
+
+| Priority | Action | Evidence required | Status at decision |
+|---|---|---|---|
+| P0 | Verify the latest HQ21 CI result and inspect current rendered Home/Work/Production/My Story desktop and mobile | Run ID/result plus screenshot review | OPEN — not independently verified here |
+| P0 | Verify HQ21 racing composition and exclusion of unrelated vehicles in both relevant pages | Current HTML/CSS and rendered crop | SOURCE DOCUMENTED; RENDER REVIEW OPEN |
+| P1 | Sweep actual visible captions and page introductions for third-person/audit voice, misattributed samples and repetitive copy | Exact path and excerpt for each defect or recorded clean pass | OPEN |
+| P1 | Confirm provenance/rights and screen out private intake assets before any public release bundle | Selected asset list and disposition | OPEN |
+| P1 | Confirm user-approved public contact route, if portfolio must stand alone | Owner choice; no automatic email publication | AWAITING OWNER |
+| P2 | Build a protected, root-routed release candidate preserving all main-only uploads, then run browser/asset/axe checks | Source diff and CI screenshots | BLOCKED until owner approves candidate preparation/release path |
+| Release | Present complete candidate and obtain explicit approval prior to deployment | Owner's unambiguous signoff | NOT APPROVED |
+
+**Non-regression rules:** No deletion of source photographs, design reset, unreviewed changes to the logo/signature, public contact disclosure, or public deployment. Record the exact commit and QA outcome for every future batch in the master production ledger.
