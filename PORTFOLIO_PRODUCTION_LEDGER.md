@@ -75,3 +75,11 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - **Pending verification:** late-gallery rendered-image test run `43692738427`; do not claim this potential defect repaired before investigating its results. DO NOT delete gallery records to eliminate blanks.
 - Editorial observation: two nearby My Story headings both start with "A lifetime"; consider purposeful copy polish later, but do not alter approved exhibition title without reviewing whole page context.
 - No changes to image registry, gallery placements, original photos, monogram or public `main`; no publication.
+
+## 2026-11-15 — QA confirmation after gallery image diagnostics
+- GitHub Actions run `43692738427` at commit `9ee95d0ceea9d021cd6e5e78c74df45fbf45cf9c` completed SUCCESS.
+- No-regression check protected 172 image records and 192 appearances.
+- 28/28 browser checks passed, 172/172 registry sources decoded, 0 automated WCAG violation types across 8 desktop/mobile scans.
+- Specific late Production gallery image IDs 158,159,172,106,107 successfully loaded/rendered when scrolled into view on both desktop and mobile. Previous blanks in one full-page screenshot appear to be lazy-load screenshot timing rather than missing source files; still review live preview before owner signoff.
+- Current My Story parchment-index title contrast fix passed and remains in branch. No changes to public site; owner has not yet approved final visual composition.
+- Current near-term objective: review refreshed My Story page in interactive preview, continue only documented high-impact editorial/artistic corrections.
