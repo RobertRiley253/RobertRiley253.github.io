@@ -59,6 +59,28 @@ else{
   if(racing.includes(luckyPhoto))
     failures.push('Owner-confirmed Diamond Electric sign photograph incorrectly reclassified as racing');
 }
+// Owner-directed motorsports curation: actual racing archive first, customer vans elsewhere.
+if(racingStart>=0 && fieldStart>racingStart){
+ const racing=story.slice(racingStart,fieldStart);
+ for(const name of ['IMG_4623.jpg','IMG_4626.jpg']){
+  if(!racing.includes(name)) failures.push('Motorsports chapter lost authentic archive image '+name);
+ }
+ if(racing.includes('portfolio-018.jpg')||racing.includes('Branded vehicle work'))
+  failures.push('Commercial customer van has returned to racing biography');
+ if(!racing.includes('demolition derby')||!racing.includes('Thunder Car')||!racing.includes('figure-eight'))
+  failures.push('Racing participation story diminished');
+}
+const selectedWork=read('work.html');
+const motorsportsStart=selectedWork.indexOf('id="motorsports-feature"');
+const motorsportsEnd=selectedWork.indexOf('id="category-menu"',motorsportsStart);
+if(motorsportsStart<0||motorsportsEnd<motorsportsStart)failures.push('Selected Work motorsports feature missing');
+else{
+ const feature=selectedWork.slice(motorsportsStart,motorsportsEnd);
+ if(!feature.includes('IMG_4623.jpg')||!feature.includes('IMG_4626.jpg'))
+  failures.push('Selected Work motorsports lost historic race images');
+ if(feature.includes('portfolio-040.jpg'))
+  failures.push('Unrelated client trailer imagery reinserted in racing showcase');
+}
 // November 15 intake quality gate: all curated images resolve to actual
 // checked-in originals; classification remains intentionally curated.
 const intakeDir=path.join(dev,'incoming-portfolio-2026-11-15');
