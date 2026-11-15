@@ -94,3 +94,21 @@ Owner explicitly corrected misleading placement: **dye-penetrant / NDT inspectio
 
 ## 9. OWNER DISPLAY PREFERENCE — INTERNAL B-2 IMAGERY (2026-11-14)
 Owner requests **finish the internal visual composition now**, using already-uploaded B-2 imagery where appropriate, without presenting image captions as `placeholder` or writing legal/source-rights cautions on the visible page. Owner cannot photograph classified B-2 production; use neutral factual captions of the aircraft while keeping personal career claims separate and truthful. Keep image/source provenance and unresolved future-publication checks in INTERNAL QA notes only; before the final public release, review any third-party photo use as part of ordinary release preparation, not as a repetitive obstacle during design. Prioritize placement, visual relevance, and polished section-specific content. The B-2 public-facing page caption was simplified to `B-2 Spirit · Aircraft lineup` in commit `ede7e40bc3339b228571c6c892f46911c266d5f0`; Exotic Metals and NDT remain their distinct chapter.
+
+## 10. HQ16 MAJOR BULK PRODUCTION CHECKPOINT — SUPERSEDES 103-IMAGE FIGURES
+**Update:** 2026-11-14, following owner's directive to make *substantial visible progress*, integrate as many suitable uploaded photographs as possible in bulk, balance form/shape/color and stop repeating tiny audit cycles.
+
+**NEW AUTHORITATIVE HQ16 DOC:** `portfolio-dev/audit/HQ16_MAJOR_BULK_INTEGRATION_AND_QA_2026-11-14.md`
+**EXACT 63-RECORD SOURCE/PLACEMENT LEDGER:** `portfolio-dev/audit/HQ16_EXPANDED_GALLERY_PLACEMENT_2026-11-14.csv`.
+
+- Actual interactive gallery expanded from **103 to 166** unique record IDs with 63 additional full-image source references from uploaded materials.
+- **38** production-source additions: shop/printing 15, fabrication/laser 19, 3D/materials 4. Three themed grids, responsive and image-proportional in `production.html`.
+- **9** sign-shop-history additions in `profile.html`.
+- **16** newly visually screened additions: **2** commercial graphic layouts in `work.html`, **10** custom fabrication/3D/equipment photos in `production.html`, **4** additional B-2 aircraft photos in `profile.html` and an emerald/gold B-2 mosaic. NDT / Exotic Metals grouping remains separate.
+- Two old full-size JPEG copies in production and gallery ID 71,72 now point to recovered original PNGs. Gallery metadata reflects actual source formats.
+- Homepage now provides a compact six-route link gallery to the new exhibit sections, keyed `#expanded-exhibit`. Existing hero remains.
+- Gallery JS fixed for `Rob-Photo-Uploads/` originals so the modal opens current-branch raw files, not nonexistent older-public copies.
+- Production photo groups styled in `composed-exhibition.css`; B-2 mosaic in `life-edition.css`. Preserve the approved emerald/champagne/ivory design, true image proportions, and original photos. The visual site is materially expanded; not merely extra documentation.
+- Static source verification: all 166 gallery IDs have displayed image cards; 63 new source paths exist; zero missing local/anchor paths or thumbnail-record mismatches in source audit. **Real browser visual QA and actual final artistic acceptance are STILL pending**.
+- No GitHub Actions workflow, no main-site updates, no image-source deletions, no owner-facing “placeholder” disclaimers.
+- **Do not regress** to old HQ14 103-record statistics, stale old HTML copies, or suggest user needs to re-upload. Continue from HEAD, checking current tree and HQ16 files before any further edits.
