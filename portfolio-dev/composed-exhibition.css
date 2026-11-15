@@ -413,7 +413,7 @@ body .chapter .editorial-grid>.image-card[data-resolution="tiny"][data-shape] .i
 .bulk-exhibit-photo{display:flex;align-items:center;justify-content:center;aspect-ratio:4/3;min-width:0;overflow:hidden;background:linear-gradient(145deg,#e4e6dc,#d2dcca)}
 .bulk-exhibit-card img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
 .bulk-exhibit-caption{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 5px 5px;font-size:10px;line-height:1.35;font-weight:700;letter-spacing:.01em}
-.bulk-exhibit-caption span:last-child{font-size:9px;color:#867151;white-space:nowrap}
+.bulk-exhibit-caption span:last-child{font-size:9px;color:#745f40;white-space:nowrap}
 .bulk-exhibit-card:hover{transform:translateY(-2px);box-shadow:0 14px 25px #142a2640}
 .bulk-exhibit-card:focus-visible{outline:3px solid #916b32;outline-offset:3px}
 @media(max-width:1080px){.bulk-exhibit-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
