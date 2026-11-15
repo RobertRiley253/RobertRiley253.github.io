@@ -62,3 +62,19 @@ The approved four-page exhibition, owner monogram/signature, existing 172-photo 
 
 ## Release gate
 Before public publication, inspect the real website at desktop and mobile, confirm all selected photos decode/crop, and obtain the owner's explicit visual approval. No automatic merge to `main` and no automatic employer communications.
+
+## Supplemental owner uploads — five Rob Riley design-program screenshots
+**First batch:** The 41-image count and per-file table above capture the initial intake. Five new screenshots were uploaded later (GitHub user commits `81ab35179fb9f4ff6cd9dff0126f161633bddca4`, `2297b74b1884bf0f44071ac4668d59a7e5c046b3`, `db85d6e0b630728578c4a579f97c3b8de19a41c3`, and `6d3d7da94006d27d611a3b8804980d0b6fcfd6a2`). Current intake source inventory is now **46 PNG files**, all retained.
+
+Directly inspected source images in GitHub rather than extrapolating from filenames:
+- `Screenshot 2026-11-15 024548.png`: filled Robert R. Riley lettering on a FlexiSIGN-PRO page, no nodes visible; retained as alternate/reference.
+- `Screenshot 2026-11-15 024718.png`: FlexiSIGN-PRO shows selected Bézier points/handles on the capital R; **displayed in My Story `#software-workflow-proof`**.
+- `Screenshot 2026-11-15 024748.png`: FlexiSIGN-PRO shows the full signature in vector outline/no-fill mode with many visible editing nodes; **displayed as feature screenshot in My Story `#software-workflow-proof`**.
+- `Screenshot 2026-11-15 024813.png`: another view of capital R curve-editing in FlexiSIGN; near duplicate of 024718, retained only.
+- `Screenshot 2026-11-15 030000.png`: full Adobe Illustrator window showing the signature lettering on a canvas, title bar identifies the opened file as a **JPEG**; **displayed in My Story `#software-workflow-proof`**. Do not claim screenshot demonstrates editable Illustrator vectors, since displayed document is `.jpg`.
+
+Added a restrained 3-panel screenshot presentation after the Production Technologist story, featuring full interface context without cropping crucial application controls. Added a **homepage link** to this evidence (`profile.html#software-workflow-proof`) rather than repeating software screenshots as extra gallery images on other pages. Legacy software versions demonstrate actual hands-on history without implying current-release certification. The source vector SVG assets from the previously completed signature work were not altered.
+
+Also added one more owner-uploaded historical photograph, `history_never_never_land.png`, to the local-history display. Caption is explicitly provisional about location/date/photographer.
+
+**Post-update curation:** initial 27 distinct displayed PNGs + 3 software examples + 1 history image = **31 distinct selected intake images** across **33 page appearances** (My Story 23, Selected Work 4, Production 6). Original 172 registered photographs and 192 legacy placements remain protected. Owner uploads remain safely preserved; all 46 PNGs are retained whether displayed or not.
