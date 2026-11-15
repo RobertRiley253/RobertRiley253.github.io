@@ -69,3 +69,17 @@ Some HQ11 markdown assertions are stale: they say four NDT PNGs or 47 general PN
 
 ## 6. OWNER-FACING STATUS AND HANDOFF DISCIPLINE
 Tell owner what's actually finished, what is still unverified, and one clear next action only if needed. No pretending background work continues between messages. Explicit approval for publishing requires complete final reviewed site, not an incidental “proceed” instruction. New tab must ask **no repeat questions** for confirmed data, and must continue from current branch's latest SHA.
+
+## 7. OWNER-APPROVED NAME FOR THE ACTUAL INTERACTIVE PREVIEW — READ BEFORE SHOWING USER
+**Exact conversation label:** **Robert R. Riley — Interactive Exhibition Portfolio | Live Development Preview**.
+When owner asks to “see the website”, “latest portfolio”, “live preview”, “the new ambiance/monograms”, or “show me progress”, open the **INTERACTIVE DEVELOPMENT WEBSITE**, NOT the published old site, a GitHub file-tree page, or an older static 4-page contact sheet.
+
+**Current-branch preview URLs (RawGitHack; dynamic branch URL, may be cached by external service):**
+- Home: https://raw.githack.com/RobertRiley253/RobertRiley253.github.io/portfolio-editorial-material-review-2026-11-13/portfolio-dev/index.html
+- Selected Work: https://raw.githack.com/RobertRiley253/RobertRiley253.github.io/portfolio-editorial-material-review-2026-11-13/portfolio-dev/work.html
+- Production: https://raw.githack.com/RobertRiley253/RobertRiley253.github.io/portfolio-editorial-material-review-2026-11-13/portfolio-dev/production.html
+- My Story: https://raw.githack.com/RobertRiley253/RobertRiley253.github.io/portfolio-editorial-material-review-2026-11-13/portfolio-dev/profile.html
+
+These links load the existing development HTML/CSS/JS, and do not merge or publish to main. The preview host is external; check that its response reflects current source before asserting a particular change is visibly live. Source: `portfolio-editorial-material-review-2026-11-13`. The older published `https://robertriley253.github.io/` is not the current candidate. Photo and style work remains on development branch pending browser review and explicit owner approval.
+
+**MOST IMPORTANT CONTINUITY MISTAKE TO AVOID:** Owner had already interacted with this live preview and was impressed by its emerald/champagne/ivory atmosphere and artwork before uploading more photos. Previous assistant repeatedly showed outdated saved screenshot boards and GitHub file listings instead, falsely creating impression of regression. Never do that again; recognize the interactive preview by its exact label and URLs. Static preview images are historical evidence, not equivalent to current live branch pages.
