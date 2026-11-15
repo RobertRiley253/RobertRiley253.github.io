@@ -70,6 +70,19 @@ if(racingStart>=0 && fieldStart>racingStart){
  if(!racing.includes('demolition derby')||!racing.includes('Thunder Car')||!racing.includes('figure-eight'))
   failures.push('Racing participation story diminished');
 }
+// Owner priority: racing must be photographically visible on the homepage,
+// not buried in lower chapters or reduced to a text-only link.
+const homepageRacing=read('index.html');
+const homeRaceStart=homepageRacing.indexOf('id="racing-highlights"');
+const homeRaceEnd=homepageRacing.indexOf('class="life-story-teaser"',homeRaceStart);
+if(homeRaceStart<0||homeRaceEnd<=homeRaceStart) failures.push('Homepage racing photo feature is missing');
+else {
+ const raceFeature=homepageRacing.slice(homeRaceStart,homeRaceEnd);
+ for(const name of ['IMG_4623.jpg','IMG_4626.jpg'])
+   if(!raceFeature.includes(name)) failures.push('Homepage racing feature missing authentic photo '+name);
+ if(raceFeature.includes('portfolio-018.jpg')||raceFeature.includes('portfolio-040.jpg'))
+   failures.push('Unrelated commercial vehicle photo in homepage racing feature');
+}
 const selectedWork=read('work.html');
 const motorsportsStart=selectedWork.indexOf('id="motorsports-feature"');
 const motorsportsEnd=selectedWork.indexOf('id="category-menu"',motorsportsStart);
