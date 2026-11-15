@@ -112,6 +112,11 @@ if(!story.includes('illustration_lion_dandelion_composition.png'))
 // Rotation applies only to verified sideways original; source file is retained.
 if(!read('editorial-materials.css').includes('.image-card[data-image="75"]'))
  failures.push('Verified rotated shop-sign photo presentation lost');
+// Additional genuine shop-equipment originals were verified visually before
+// inclusion; avoid losing them to a future aesthetic/layout revert.
+const studio=read('production.html');
+for(const file of ['image%2820261113-075940%29.png','image%2820261113-080043%29.png','7C78B285A419_1681758519.jpg'])
+ if(!studio.includes(file)) failures.push('Visually screened workshop original lost: '+file);
 // November 15 intake quality gate: all curated images resolve to actual
 // checked-in originals; classification remains intentionally curated.
 const intakeDir=path.join(dev,'incoming-portfolio-2026-11-15');
