@@ -104,3 +104,8 @@ This is a handoff baseline compiled 2026-11-14. Figures below are from last HQ s
 - Git commit `11766fc0efb116d6613c7095b086786f30c34a55` changed `portfolio-dev/profile.html` only. 172 registry records and 192 page-card appearances unaffected; original source file preserved, and remaining motorsport photographs retained.
 - Automated QA run `43695173896` started; confirm its final result separately before reporting full verification. No public main change or publishing authorized.
 - This correction is based on direct owner identification and supersedes earlier generic archival classification. Do not revert it via older HQ18 photo inventories.
+
+## 2026-11-15 — Owner attribution regression verification
+- GitHub Actions run `43695173896` for the original My Story photo relocation completed SUCCESS.
+- GitHub Actions run `43695250326` on commit `69993ed994881fffbfa70e6de82a3f384de2248d` completed SUCCESS, including new source guard explicitly enforcing owner-confirmed original Lucky Signs / Diamond Electric classification in business chapter rather than motorsports.
+- Latest corrected image is a My Story chapter photo rather than a `data-image` registry card; all 172 gallery records and 192 registered placements remain protected. No production deployment.
