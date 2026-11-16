@@ -105,12 +105,14 @@ const raceLead=selectedWork.match(/<div class="motorsports-feature-grid racing-f
 if(!raceLead) failures.push('Missing curated three-photo racing introduction');
 else{
  const lead=raceLead[1];
- for(const name of ['726420901_1512973363539860_3039077914059098332_n.jpg','IMG_4646.jpg','IMG_4643.jpg'])
+ for(const name of ['726420901_1512973363539860_3039077914059098332_n.jpg','IMG_4646.jpg','IMG_4625.jpg'])
   if(!lead.includes(name)) failures.push('Missing approved racing lead photograph '+name);
  if((lead.match(/<img\b/g)||[]).length!==3) failures.push('Racing lead is not exactly three selected photographs');
+ if(lead.includes('IMG_4643.jpg')||lead.includes('Demo Daddy')) failures.push('Mike Robinson partner No. 191 incorrectly featured as Rob No. 91');
 }
 const moreRace=selectedWork.match(/<details class="racing-expanded-archive"[^>]*>([\s\S]*?)<\/details>/);
 if(!moreRace) failures.push('Missing expandable See more racing photographs archive');
+else if(!moreRace[1].includes('IMG_4643.jpg')||!moreRace[1].includes('Mike Robinson')) failures.push('Partner Mike Robinson No. 191 not correctly identified in deeper archive');
 else if((moreRace[1].match(/<img\b/g)||[]).length!==25)
  failures.push('Racing detail image count changed from 25');
 const uploadedRace=fs.readdirSync(path.join(root,'Rob-Photo-Uploads','Racing-Archive')).filter(x=>/\.(jpg|jpeg|png|webp)$/i.test(x));
