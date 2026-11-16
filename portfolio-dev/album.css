@@ -128,3 +128,24 @@ body.album-page{background:#18352d;color:#f5ecdb;overflow-x:hidden}body.album-pa
 .album-social-insights{margin-top:clamp(85px,9vw,130px)}
 @media(max-width:950px){.album-social-inner{grid-template-columns:1fr}.album-social-photographs{height:clamp(330px,51vw,450px);margin-bottom:30px}.album-social-insights{margin-top:clamp(38px,6vw,65px)}}
 @media(max-width:600px){.album-social-heading h2{font-size:clamp(2.45rem,10vw,3.4rem)}.album-social-photographs{height:290px;margin-bottom:39px}.album-social-photo-cta{bottom:-36px;max-width:100%;text-align:right;font-size:.72rem}.album-page .album-social-links .album-social-primary{padding:13px}.album-social-button-logo{flex-basis:41px;height:41px;font-size:2.55rem}}
+
+/* Attribution-first Facebook presentation: owner's original research and stories lead;
+   aggregate Insights are evidence, not a second competing destination. */
+.album-social-identity .album-eyebrow{font-size:clamp(.68rem,.77vw,.84rem);letter-spacing:.13em}
+.album-social-heading h2{max-width:660px}
+.album-social-heading>p{max-width:605px}
+.album-social-insights{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(30px,4vw,70px);align-items:center}
+.album-social-insights-copy h3{font:normal clamp(2rem,3.2vw,3.6rem)/1.14 Georgia,serif;letter-spacing:-.025em;color:#f8ead5;margin:15px 0 19px}
+.album-social-insights-copy h3 em{font-weight:normal;color:#dfc18d}
+.album-social-number{border-left:2px solid #caaa6c;padding-left:18px;margin:20px 0}
+.album-social-number strong{display:block;font:normal clamp(2.4rem,3.8vw,4.1rem)/1.05 Georgia,serif;color:#f0cf91}
+.album-social-number span{display:block;font:normal 1.06rem/1.55 Georgia,serif;color:#ecd8b4;margin-top:3px}
+.album-social-insights-copy>p{font:normal .96rem/1.7 Georgia,serif;color:#e4d7c2;max-width:580px}
+.album-social-insights-copy>p b{font-weight:600;color:#f2d6a2}
+.album-social-story-link{display:inline-block;color:#f2d39d;font:600 .84rem/1.6 system-ui,sans-serif;text-decoration:none;border-bottom:1px solid #ad925f;padding-bottom:6px;margin:12px 0}
+.album-social-report{min-width:0}
+.album-report-label{display:block;color:#e6c892;font:700 .69rem/1.4 system-ui,sans-serif;letter-spacing:.10em;padding:6px 7px 11px}
+.album-social-insights-link img{display:block;width:100%;max-height:290px!important;object-fit:contain!important;object-position:center top}
+.album-report-action{display:block;padding:12px 7px 6px;font:600 .84rem/1.5 system-ui,sans-serif;color:#e9d2a8}
+.album-report-note{font:italic .86rem/1.6 Georgia,serif;color:#d5c1a1;margin:9px 2px}
+@media(max-width:950px){.album-social-insights{grid-template-columns:1fr}}
