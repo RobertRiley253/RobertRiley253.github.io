@@ -1,0 +1,37 @@
+name: Portfolio nonpublishing release candidate
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - portfolio-editorial-material-review-2026-11-13
+    paths:
+      - 'portfolio-dev/tests/prepare-release-candidate.cjs'
+      - '.github/workflows/portfolio-release-candidate.yml'
+permissions:
+  contents: read
+jobs:
+  prepare:
+    name: Assemble full website and verify image dependencies
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble protected candidate; do not touch main
+        run: node portfolio-dev/tests/prepare-release-candidate.cjs
+      - name: Verify all four pages and local server responses
+        run: |
+          python3 -m http.server 8877 --bind 127.0.0.1 --directory release-candidate >/tmp/release-server.log 2>&1 &
+          for page in index.html work.html production.html profile.html; do
+            for attempt in 1 2 3 4 5; do
+              if curl -fsS "http://127.0.0.1:8877/$page" >/dev/null; then break; fi
+              sleep 1
+            done
+            curl -fsS "http://127.0.0.1:8877/$page" >/dev/null
+          done
+      - name: Preserve publication candidate for owner's review (not published)
+        uses: actions/upload-artifact@v4
+        with:
+          name: robert-riley-unpublished-release-candidate
+          path: release-candidate/
+          retention-days: 14
+          compression-level: 6
