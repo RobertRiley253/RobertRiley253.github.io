@@ -1,0 +1,54 @@
+name: Portfolio held-artwork provenance visual triage
+on:
+  push:
+    branches:
+      - portfolio-editorial-material-review-2026-11-13
+    paths:
+      - '.github/workflows/portfolio-held-artwork-triage.yml'
+permissions:
+  contents: read
+jobs:
+  triage:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: pip install pillow
+      - name: Create review-only sheets (no publication or modifications)
+        run: |
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          from PIL import Image,ImageOps,ImageDraw
+          selected={'HELD_ARTWORK_PROVENANCE','HELD_ALTERNATE_SOFTWARE_EVIDENCE','HELD_UNVERIFIED_MOCKUP'}
+          data=[r for r in csv.DictReader(open('portfolio-dev/audit/IMAGE_ASSET_DISPOSITION_CROSSWALK_2026-11-15.csv')) if r['disposition'] in selected]
+          out=Path('held-artwork-review');out.mkdir(exist_ok=True)
+          items=[]
+          for offset in range(0,len(data),20):
+            bg=Image.new('RGB',(1350,960),'#ede9e2')
+            d=ImageDraw.Draw(bg)
+            for local,r in enumerate(data[offset:offset+20]):
+              pos=offset+local;p=Path(r['repository_path']);x=(local%5)*270;y=(local//5)*240
+              record={'index':pos,'path':str(p),'disposition':r['disposition']}
+              try:
+                with Image.open(p) as orig:
+                  record['size']=[orig.width,orig.height]
+                  im=ImageOps.exif_transpose(orig).convert('RGB')
+                  im.thumbnail((252,179))
+                  bg.paste(im,(x+(270-im.width)//2,y+(186-im.height)//2))
+              except Exception as e:record['error']=str(e)
+              d.text((x+6,y+189),f"{pos:02d} {p.name[:30]}",fill='#101010')
+              d.text((x+6,y+209),r['disposition'].replace('HELD_','')[:33],fill='#484848')
+              items.append(record)
+            name=f"held-artwork-{offset//20+1:02d}.jpg"
+            bg.save(out/name,quality=91)
+          (out/'index.json').write_text(json.dumps(items,indent=2))
+          print('Review-only images',len(items))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-held-artwork-contact-sheets
+          path: held-artwork-review/
+          retention-days: 14
