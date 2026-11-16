@@ -598,3 +598,17 @@ body .motorsports-feature--racing-history .racing-featured-three figure figcapti
     justify-content: flex-start;
   }
 }
+
+/* Compact, copyable employer contact beneath the established homepage actions. */
+.exhibition-masthead .hero-contact-email{
+ margin-top:8px;
+ color:#dce6d9;
+ font-size:12px;
+ line-height:1.5;
+ letter-spacing:.015em;
+}
+.exhibition-masthead .hero-contact-email a{
+ color:#f3dfb2;
+ text-underline-offset:3px;
+ overflow-wrap:anywhere;
+}
