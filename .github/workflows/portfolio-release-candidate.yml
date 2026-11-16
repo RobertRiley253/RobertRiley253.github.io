@@ -5,7 +5,9 @@ on:
     branches:
       - portfolio-editorial-material-review-2026-11-13
     paths:
-      - 'portfolio-dev/tests/prepare-release-candidate.cjs'
+      - 'portfolio-dev/**'
+      - 'incoming-portfolio/**'
+      - 'Rob-Photo-Uploads/**'
       - '.github/workflows/portfolio-release-candidate.yml'
 permissions:
   contents: read
