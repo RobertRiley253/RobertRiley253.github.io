@@ -139,3 +139,20 @@ Review current successful Chromium screenshot artifacts (or acquire a fresh exac
 - Development `noindex,nofollow` pages remain protected; `main` remains unchanged. No release/publication or employer correspondence permitted without owner's explicit approval.
 
 **Owner review gate:** Present the true latest screenshots/render and four-page development candidate for approval before any public merge. Existing live root and media must be reconciled and protected. Do not start a new concept round.
+
+
+## Owner-directed racing memory presentation, November 15, 2026 evening
+
+**Authoritative owner correction:** The newly uploaded sunset image with Rob and Tammie beside No.91 is **AI-generated/recreated** and is personally meaningful; it is NOT an unaltered photographic historical original. Earlier audit lines referring to this new file as an original authentic trackside photograph were provisional and are **superseded** by this explicit correction.
+
+Owner's approved visual strategy:
+- **Home** `#racing-highlights` displays the recreated personal memory as a single, prominent photograph-like illustration, with a small honest caption identifying a *personal recreation* and alt text explicitly saying `AI-recreated`. Do NOT place original race photos beside it for a direct side-by-side comparison.
+- Homepage CTA `work.html#motorsports-feature` leads into the **authentic** racing-photo collection.
+- **Selected Work** `#motorsports-feature` is now a balanced **four-image gallery of actual archived race-car photographs**: `IMG_4623.jpg`, `IMG_4626.jpg`, `download (7).png`, and `download (8).png`; no AI recreated photo in that section.
+- **My Story** `#racing-trackside-archive` shows the original No.91 trackside `download (7).png` and `download (8).png`, separated from the homepage recreation.
+- The `portfolio-dev/incoming-portfolio-2026-11-15/no91_trackside_couple_user_upload.webp` is a web-optimized representation of the exact AI image supplied in this ChatGPT conversation, not an authentically captured event photo. Original uploaded PNG remains preserved in the conversation.
+- Earlier personal/photo source files remain protected, including original No.91 photos. No main-branch publication authorized. The record `IMAGE_ASSET_DISPOSITION_CROSSWALK_2026-11-15.csv` reflects AI versus authentic provenance and actual page display status.
+
+**Review link approach:** Show the owner a non-deployment read-only HTML preview of the development branch, clearly differentiated from the public `main` site. Do not claim a GitHub Pages release. Verify current development CI and show screenshot artifacts or a non-deploy preview fallback if a third-party rendering service fails.
+
+**Final review gate:** Assess the solo homepage image for a respectful composition, check the four real racing images for suitable balance, and give owner a link to visually review. The owner must explicitly approve any public deployment.
