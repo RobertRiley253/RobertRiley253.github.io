@@ -41,6 +41,10 @@ jobs:
         env:
           PORTFOLIO_TEST_URL: http://127.0.0.1:8877/
         run: node portfolio-dev/tests/cross-browser-release.cjs
+      - name: Decode complete galleries inside the actual release package
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:8877/
+        run: node portfolio-dev/tests/deep-gallery-integrity.cjs
       - name: Verify true touch-enabled iPhone and Android emulation
         env:
           PORTFOLIO_TEST_URL: http://127.0.0.1:8877/
