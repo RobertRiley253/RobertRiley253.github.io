@@ -50,3 +50,38 @@ body.album-page{background:#18352d;color:#f5ecdb;overflow-x:hidden}body.album-pa
 .album-card[data-new-batch="true"]:focus-visible{outline:3px solid #fce4ab;outline-offset:4px}
 @media(max-width:1020px){.album-hero-collection{width:min(100%,760px);margin:0 auto}.album-hero-tile-personal{height:clamp(290px,43vw,485px)}.album-hero-tile-creative,.album-hero-tile-illustration{height:clamp(145px,21vw,237px)}.album-hero-tile-work{height:clamp(130px,22vw,205px)}}
 @media(max-width:600px){.album-hero-collection{gap:9px}.album-hero-tile-personal{height:clamp(235px,66vw,370px)}.album-hero-tile-creative,.album-hero-tile-illustration{height:clamp(114px,32vw,180px)}.album-hero-tile-work{height:clamp(115px,26vw,175px)}.album-hero-tile figcaption{font-size:.48rem;letter-spacing:.08em;padding:5px 3px}}
+
+/* Album history/social exhibition — replaces the generic Facebook logo-and-text bar. */
+.album-page .album-social{display:block;background:radial-gradient(ellipse at 12% 0%,#355c49 0%,transparent 62%),linear-gradient(135deg,#122f27,#224639 67%,#16352b);padding:clamp(54px,6vw,104px) clamp(24px,4vw,70px);border-block:1px solid #bba16e;color:#f6ebd6}
+.album-social-inner,.album-social-insights,.album-social-footer{max-width:1400px;margin-inline:auto}
+.album-social-inner{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:center;gap:clamp(28px,5vw,85px)}
+.album-social-identity{display:flex;align-items:center;gap:20px;margin-bottom:22px}
+.album-page .album-social-mark{font:bold 3.15rem/1 Arial,sans-serif;width:68px;height:68px;min-width:68px;display:grid;place-items:center;border-radius:12px;background:#1877f2;color:white;box-shadow:0 7px 15px #061a145a}
+.album-social-heading h2{font:normal clamp(2.75rem,4.6vw,5.3rem)/1.08 Georgia,serif;letter-spacing:-.035em;color:#fff0d1;margin:15px 0 20px}
+.album-social-heading h2 em{font-weight:normal;color:#dfbc7d}
+.album-social-heading>p{font:normal clamp(1.03rem,1.3vw,1.2rem)/1.77 Georgia,serif;color:#eee0c7;max-width:650px}
+.album-page .album-social-links{display:flex;flex-direction:column;align-items:start;gap:16px;margin-top:34px}
+.album-page .album-social-links a{font:700 .89rem/1.55 system-ui,sans-serif;color:#ffe8b5;text-decoration:none;border:0}
+.album-page .album-social-links .album-social-primary{display:inline-block;background:#e1c38d;color:#1b382c;padding:18px 24px;border:1px solid #f4d7a0;box-shadow:0 5px 0 #8e7248}
+.album-page .album-social-links .album-social-primary:hover,.album-page .album-social-links .album-social-primary:focus-visible{background:#f7dfaa;outline:2px solid white;outline-offset:4px}
+.album-page .album-social-links .album-social-secondary{border-bottom:1px solid #c6a871;padding:5px 0}
+.album-social-photographs{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:repeat(2,minmax(0,1fr));gap:clamp(10px,1.2vw,17px);width:100%;height:clamp(345px,33vw,530px);text-decoration:none;min-width:0}
+.album-social-photo{position:relative;min-width:0;min-height:0;margin:0;border:1px solid #e6cc98;background:#d5bd91;padding:7px;box-shadow:0 14px 25px #071d164d}
+.album-social-photo-feature{grid-row:span 2}
+.album-social-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.album-social-photo figcaption{position:absolute;bottom:7px;left:7px;right:7px;color:#fce8bc;background:#15352dcf;font:700 clamp(.52rem,.75vw,.72rem)/1.35 system-ui,sans-serif;letter-spacing:.11em;padding:10px}
+.album-social-photographs:hover .album-social-photo,.album-social-photographs:focus-visible .album-social-photo{border-color:#fff0c0}
+.album-social-photographs:focus-visible{outline:3px solid #f9ddaa;outline-offset:5px}
+.album-social-insights{margin-top:clamp(45px,7vw,105px);display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(25px,4vw,65px);align-items:center;border-top:1px solid #c5ab7866;padding-top:clamp(40px,5vw,75px)}
+.album-social-insights-copy strong{display:block;font:normal clamp(2.35rem,4.4vw,4.8rem)/1.05 Georgia,serif;color:#f3d69d;margin:13px 0}
+.album-social-insights-copy strong span{display:block;font:normal clamp(1.05rem,1.7vw,1.6rem)/1.5 Georgia,serif;color:#f0e3c9}
+.album-social-insights-copy p{max-width:550px;font:normal .95rem/1.67 system-ui,sans-serif;color:#d9cdb9}
+.album-social-insights-link{display:block;text-decoration:none;color:#f5dba7;border:1px solid #b69a65;background:#102d26;padding:9px}
+.album-social-insights-link img{width:100%;display:block;max-height:255px;object-fit:cover;object-position:top}
+.album-social-insights-link>span{display:block;padding:13px 8px 5px;font:700 .81rem/1.5 system-ui,sans-serif}
+.album-social-insights-link:hover,.album-social-insights-link:focus-visible{outline:2px solid #e9c785;outline-offset:4px}
+.album-social-footer{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;border-top:1px solid #c5ab7866;margin-top:50px;padding-top:26px}
+.album-social-footer p{font:italic 1.13rem/1.55 Georgia,serif;color:#e6d3af;max-width:650px;margin:0}
+.album-social-footer a{font:700 .83rem/1.5 system-ui,sans-serif;border-bottom:1px solid #c6a871;color:#f8dca7;text-decoration:none}
+@media(max-width:950px){.album-social-inner,.album-social-insights{grid-template-columns:1fr}.album-social-photographs{max-width:800px;height:430px}}
+@media(max-width:600px){.album-social-photographs{height:300px}.album-social-identity{align-items:start;gap:12px}.album-page .album-social-mark{width:50px;min-width:50px;height:50px;font-size:2.4rem}.album-social-photo figcaption{font-size:.51rem;padding:6px}.album-social-insights-link img{max-height:190px}}
