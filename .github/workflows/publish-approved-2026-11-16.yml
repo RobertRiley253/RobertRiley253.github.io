@@ -1,0 +1,57 @@
+name: Publish owner-approved Robert Riley portfolio (2026-11-16)
+on:
+  push:
+    branches:
+      - portfolio-publish-approved-2026-11-16
+    paths:
+      - .github/workflows/publish-approved-2026-11-16.yml
+permissions:
+  contents: write
+concurrency:
+  group: robert-riley-approved-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout exact owner-approved source version
+        uses: actions/checkout@v4
+        with:
+          ref: 342f13b4ddaa9f69713106274c142f1639432211
+          fetch-depth: 0
+          persist-credentials: true
+      - name: Assemble verified five-page release package
+        run: node portfolio-dev/tests/prepare-release-candidate.cjs
+      - name: Validate release package and guard publication target
+        shell: bash
+        run: |
+          set -euo pipefail
+          node -e "const m=require('./release-candidate/release-manifest.json'); if(m.publicSiteUpdated!==false || m.filesCopied!==320 || m.imagesCopied!==293 || m.missing.length!==0 || m.pages.join(',')!=='index.html,work.html,production.html,profile.html,album.html') process.exit(1); console.log('Approved release manifest verified')"
+          for p in index.html work.html production.html profile.html album.html; do
+            test -s "release-candidate/$p"
+            if grep -Fq 'name="robots" content="noindex' "release-candidate/$p"; then echo "Unexpected noindex: $p"; exit 1; fi
+          done
+          git fetch origin main
+          actual="$(git rev-parse origin/main)"
+          expected="a1aa4178049c3a466146a9f1bc6f5bdf1ce6b4c9"
+          if [ "$actual" != "$expected" ]; then
+            echo "STOP: public branch advanced since owner approval ($actual), refusing to overwrite"
+            exit 1
+          fi
+      - name: Preserve source history and publish only assembled site files to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/robert-riley-publication
+          git worktree add --detach /tmp/robert-riley-publication origin/main
+          cp -a release-candidate/. /tmp/robert-riley-publication/
+          cd /tmp/robert-riley-publication
+          git config user.name "Robert Riley Portfolio Publisher"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Publish owner-approved five-page Robert R. Riley portfolio from 342f13b"
+          git push origin HEAD:main
+          echo "PUBLISHED_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+      - name: Record publication commit
+        run: echo "Publication commit is $PUBLISHED_COMMIT"
