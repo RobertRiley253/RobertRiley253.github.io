@@ -613,29 +613,6 @@ body .motorsports-feature--racing-history .racing-featured-three figure figcapti
  overflow-wrap:anywhere;
 }
 
-/* Readable gallery signature: replace the faint decorative lettering that
-   sat behind the photo frames with an accessible caption beneath the trio. */
+/* Owner-approved: omit decorative "MAKING THE VISIBLE" lettering near photos. */
 .exhibition-masthead .sculpture-graticule{display:none!important}
-.exhibition-masthead .hero-composition::after{
- content:"RRR / MAKING THE VISIBLE";
- position:absolute;
- left:0;
- right:0;
- bottom:-24px;
- display:block;
- font-size:12px;
- font-weight:700;
- letter-spacing:.11em;
- line-height:1.35;
- text-align:center;
- color:#f4dfb5;
- text-shadow:0 1px 5px #091b15;
- pointer-events:none;
-}
-@media(max-width:700px){
- .exhibition-masthead .hero-composition::after{
-  bottom:-22px;
-  font-size:11px;
-  letter-spacing:.06em;
- }
-}
+.exhibition-masthead .hero-composition::after{content:none!important;display:none!important}
