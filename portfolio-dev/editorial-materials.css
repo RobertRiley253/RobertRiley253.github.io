@@ -622,3 +622,10 @@ body .motorsports-feature--racing-history .racing-featured-three figure figcapti
 .exhibition-masthead .exhibition-sculpture>img{
  box-shadow:none!important;
 }
+
+/* Final owner-approved alignment: contain the tan discipline bar within the
+   same centered exhibition width as the hero and subsequent sections. */
+.exhibition-marquee{
+ max-width:var(--max);
+ margin-inline:auto;
+}
