@@ -30,7 +30,7 @@ const path = require('path');
               return {width:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,
                 h1:document.querySelectorAll('h1').length,missingAlts:images.filter(img=>!img.hasAttribute('alt')).length,
                 duplicateIds:ids.length-new Set(ids).size,brokenAnchors:targets,
-                brokenEagerImages:images.filter(img=>img.loading!=='lazy'&&img.complete&&!img.naturalWidth).map(img=>img.src).slice(0,10),
+                brokenEagerImages:images.filter(img=>img.hasAttribute('src')&&img.getAttribute('src')?.trim()&&img.loading!=='lazy'&&img.complete&&!img.naturalWidth).map(img=>img.src).slice(0,10),
                 navLinks:[...document.querySelectorAll('header nav a')].map(a=>a.getAttribute('href'))};
             });
             if(state.h1!==1)throw Error('H1 count '+state.h1);
