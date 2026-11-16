@@ -1,0 +1,86 @@
+/* November 15 owner upload intake — editorial additions, not a redesign.
+   Preserve existing four-page exhibition system, galleries and image registry. */
+.intake-curated{max-width:1480px;margin:clamp(32px,5vw,78px) auto;padding:clamp(26px,3.5vw,54px);background:linear-gradient(130deg,#f6efdf,#e7e2d0);border-block:1px solid #94744c5c;color:#20392d}
+.intake-curated-header{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(250px,.8fr);gap:24px;align-items:end;margin:0 0 clamp(20px,3vw,37px)}
+.intake-curated-kicker{display:block;font:700 11px/1.5 system-ui,sans-serif;letter-spacing:.17em;color:#84613e;text-transform:uppercase;margin-bottom:12px}
+.intake-curated h2{font:400 clamp(32px,4.3vw,64px)/1.05 Georgia,serif!important;letter-spacing:-.045em;color:#173f2c!important;margin:0;max-width:760px}
+.intake-curated-header p{font:400 clamp(14px,1.2vw,17px)/1.65 system-ui,sans-serif;color:#4d5c4e!important;margin:0;max-width:580px}
+.intake-curated-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(12px,1.45vw,22px)}
+.intake-curated-card{grid-column:span 4;min-width:0;margin:0;background:#fffaf1;border:1px solid #a392745a;display:flex;flex-direction:column;box-shadow:0 12px 26px #132b1c10}
+.intake-curated-card.feature{grid-column:span 6}
+.intake-curated-card>a{display:block;position:relative;overflow:hidden;background:#d2d2c4}
+.intake-curated-card img{display:block;width:100%;height:clamp(190px,21vw,360px);object-fit:cover;object-position:center}
+.intake-curated-card.feature img{height:clamp(230px,27vw,460px)}
+.intake-curated-card figcaption{display:flex;flex-direction:column;gap:7px;padding:clamp(12px,1.5vw,22px)}
+.intake-curated-card figcaption strong{font:400 clamp(17px,1.65vw,25px)/1.21 Georgia,serif;color:#204532}
+.intake-curated-card figcaption span{font:400 13px/1.55 system-ui,sans-serif;color:#4e594f}
+.intake-curated .intake-archive-note{font:400 12px/1.55 system-ui,sans-serif;color:#626a59;margin:20px 0 0;max-width:850px}
+.intake-curated-card>a:focus-visible{outline:3px solid #a97831;outline-offset:3px}
+@media(max-width:900px){.intake-curated-header{grid-template-columns:1fr}.intake-curated-card,.intake-curated-card.feature{grid-column:span 6}.intake-curated-card img,.intake-curated-card.feature img{height:clamp(180px,31vw,300px)}}
+@media(max-width:600px){.intake-curated{padding:22px 17px}.intake-curated-grid{gap:13px}.intake-curated-card,.intake-curated-card.feature{grid-column:span 12}.intake-curated-card img,.intake-curated-card.feature img{height:auto;max-height:420px;object-fit:contain}.intake-curated-card figcaption{padding:14px}}
+@media(forced-colors:active){.intake-curated,.intake-curated-card{background:Canvas!important;color:CanvasText!important;border-color:CanvasText!important;box-shadow:none!important}.intake-curated :is(h2,figcaption strong,figcaption span,p,.intake-curated-kicker){color:CanvasText!important}}
+
+/* Software workflow: preserve screenshot interface, node handles and type at any width.
+   The authentic application evidence is more important than full-bleed cropping. */
+.intake-curated--screenshots .intake-curated-card>a{background:#d9dcd3;padding:clamp(8px,1.2vw,16px)}
+.intake-curated--screenshots .intake-curated-card img,
+.intake-curated--screenshots .intake-curated-card.feature img{
+  height:auto;aspect-ratio:16 / 9;max-height:none;object-fit:contain;background:#f5f5f2;
+  border:1px solid #77836f45
+}
+.intake-curated--screenshots .intake-curated-card.feature{grid-column:span 6}
+.intake-curated--screenshots .intake-curated-card:not(.feature){grid-column:span 3}
+@media(max-width:900px){.intake-curated--screenshots .intake-curated-card,.intake-curated--screenshots .intake-curated-card.feature,.intake-curated--screenshots .intake-curated-card:not(.feature){grid-column:span 6}}
+@media(max-width:600px){.intake-curated--screenshots .intake-curated-card,.intake-curated--screenshots .intake-curated-card.feature,.intake-curated--screenshots .intake-curated-card:not(.feature){grid-column:span 12}}
+
+/* Transparent verification of social reach: evidence is visibly subordinate
+   to the headline but preserved legibly in its uncropped source image. */
+.history-insights-evidence{margin:18px 0 0!important;max-width:100%;padding:0;display:block}
+.history-insights-evidence a{display:block;background:#10191a;padding:4px;border:1px solid #b99b60;overflow:hidden}
+.history-insights-evidence img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain}
+.history-insights-evidence figcaption{margin:9px 0 0;font:400 11px/1.5 system-ui,sans-serif;color:#f2e2c4}
+.history-insights-evidence a:focus-visible{outline:3px solid #efd6a4;outline-offset:3px}
+
+/* Public Facebook profile, attached to the author's own history story. */
+.life-edition-facebook-link{margin:17px 0 0!important}
+.life-edition-facebook-link a{display:inline-flex;align-items:center;gap:8px;padding:9px 0 7px;border-bottom:1px solid #98784a;color:#214b34!important;font:600 13px/1.45 system-ui,sans-serif;text-decoration:none!important}
+.life-edition-facebook-link a:hover{border-color:#214b34;color:#173926!important}
+.life-edition-facebook-link a:focus-visible{outline:3px solid #a97831;outline-offset:3px}
+
+/* Art archive: show complete model sheets, not cropped character silhouettes.
+   Rotation is per-source after orientation verification, not guessed globally. */
+#new-illustration-studies .character-sheet-card>a{background:#e8e5d9;padding:clamp(8px,1vw,15px)}
+#new-illustration-studies .character-sheet-card img{height:clamp(240px,29vw,420px);object-fit:contain;object-position:center}
+@media(max-width:600px){#new-illustration-studies .character-sheet-card img{height:auto;max-height:440px}}
+
+/* Selected Work: full character sheets at honest scale, with no cuts to poses
+   or model-sheet borders; preserve image orientation until individually verified. */
+#illustration-character-sheets .character-sheet-card > a{padding:clamp(8px,1vw,15px);background:#e8e5d9}
+#illustration-character-sheets .character-sheet-card img{height:clamp(240px,27vw,400px);object-fit:contain;object-position:center}
+#illustration-character-sheets .intake-archive-note a{color:#275b44;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){#illustration-character-sheets .character-sheet-card img{height:auto;max-height:440px}}
+
+/* Print sample books: preserve the complete book/sheet within each card.
+   Do not crop the physical binders or rotate them without visual evidence. */
+#sticker-binder-samples .sticker-binder-card > a{padding:clamp(8px,1vw,15px);background:#e5e1d5}
+#sticker-binder-samples .sticker-binder-card img{height:clamp(230px,24vw,350px);object-fit:contain;object-position:center}
+#sticker-binder-samples .intake-archive-note a{color:#275b44;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){#sticker-binder-samples .sticker-binder-card img{height:auto;max-height:420px}}
+
+/* Four character-sheet examples: balanced two-by-two rather than
+   a six-column featured card leaving orphan gaps in the gallery. */
+@media(min-width:601px){
+ #illustration-character-sheets .intake-curated-grid > .intake-curated-card{
+   grid-column:span 6!important;
+ }
+}
+
+/* Recovered No. 91 trackside originals: two balanced archival print cards.
+   The portrait original remains fully visible, not cropped to a banner. */
+#racing-trackside-archive .trackside-card>a{padding:clamp(9px,1.2vw,18px);background:#dedbcf}
+#racing-trackside-archive .trackside-card img{height:clamp(310px,37vw,540px);object-fit:contain;object-position:center}
+@media(max-width:600px){#racing-trackside-archive .trackside-card img{height:auto;max-height:520px}}
+/* Four physical sticker/transfer displays form a balanced two-by-two showcase. */
+@media(min-width:601px){
+ #sticker-binder-samples .intake-curated-grid>.sticker-binder-card{grid-column:span 6!important}
+}

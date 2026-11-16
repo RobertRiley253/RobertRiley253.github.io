@@ -1,0 +1,13 @@
+/* HQ10: quiet secondary evidence blocks underneath completed-work galleries.
+   Keeps established 103-photo gallery indices and art direction untouched. */
+.hq10-field-record{padding:clamp(1rem,2.4vw,2rem) clamp(1rem,3vw,2.5rem);margin:clamp(1rem,2vw,2rem) 0 clamp(1.6rem,3vw,3rem);border-top:1px solid rgba(145,128,93,.34);border-bottom:1px solid rgba(145,128,93,.25);background:linear-gradient(115deg,rgba(246,241,226,.56),rgba(224,229,212,.25))}
+.hq10-field-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(230px,.8fr);gap:clamp(1rem,2.5vw,2.2rem);align-items:center;max-width:1260px;margin:auto}
+.hq10-field-record figure{margin:0;min-width:0}
+.hq10-field-photo{display:block;overflow:hidden;border:1px solid rgba(55,77,60,.2);box-shadow:0 10px 28px rgba(19,44,32,.1);background:#ebe7db}
+.hq10-field-photo img{display:block;width:100%;height:auto;max-height:390px;object-fit:contain}
+.hq10-field-photo:focus-visible{outline:3px solid #ab8b53;outline-offset:3px}
+.hq10-field-record figcaption{font-size:.78rem;line-height:1.45;letter-spacing:.025em;margin-top:.65rem;opacity:.82}
+.hq10-field-copy .hq10-kicker{font-size:.7rem;font-weight:650;letter-spacing:.13em;text-transform:uppercase;color:#67745b;margin:0 0 .6rem}
+.hq10-field-copy h3{font:inherit;font-size:clamp(1.25rem,2.3vw,1.9rem);line-height:1.17;font-weight:600;margin:0 0 .8rem;color:inherit}
+.hq10-field-copy p{font-size:clamp(.9rem,1.25vw,1rem);line-height:1.68;max-width:48ch;margin:0 0 .7rem}
+@media(max-width:700px){.hq10-field-grid{grid-template-columns:1fr}.hq10-field-copy{order:-1}.hq10-field-photo img{max-height:none}}

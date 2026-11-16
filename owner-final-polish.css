@@ -1,0 +1,82 @@
+/* Robert R. Riley / owner approval master.
+   Final visual micro-polish over the approved Atelier design.
+   No project photographs or monogram/signature assets changed. */
+:root{--final-accent:#ac8752;--final-deep:#142e25;--final-surface:#f6f3eb}
+body{text-rendering:optimizeLegibility}
+.site-header{border-bottom:1px solid #87998b66}
+.site-header .logo-name{letter-spacing:.065em}
+.site-header .logo-name small{line-height:1.3}
+.site-footer .fineprint{font-size:11px;letter-spacing:.095em;color:#526358}
+.site-footer .footer-links a{line-height:1.45;text-decoration-thickness:1px;text-underline-offset:4px}
+.site-footer .footer-links a:focus-visible{outline:2px solid #9f7847;outline-offset:3px}
+.chapter-heading{margin-bottom:3px}
+.chapter h2,.project-spotlight h2,.process-story h2{font-kerning:normal}
+.chapter-heading .chapter-desc{max-width:58ch;color:#425d4b}
+/* Signmaking-inspired original line drawing as a quiet editorial accent. */
+.project-spotlight-title{position:relative;isolation:isolate}
+.project-spotlight-title::after{
+ content:"";position:absolute;width:min(28vw,335px);height:210px;
+ top:-4px;right:0;pointer-events:none;z-index:-1;
+ background:url("atelier-illustrations/signmakers-plate.svg") center/contain no-repeat;
+ opacity:.20;
+}
+/* Stronger differentiation between a designed exhibit and a reference archive. */
+.chapter .editorial-grid:not(.archive-expansion-grid)>.image-card:first-child .image-wrap{
+ background:linear-gradient(140deg,#e3e9df,#f4f2e9);
+ border:1px solid #b7b7a4;
+ box-shadow:0 15px 38px rgba(23,42,30,.12)
+}
+.chapter .editorial-grid:not(.archive-expansion-grid)>.image-card:first-child .image-caption{
+ color:#18362a;font-weight:720
+}
+.chapter .editorial-grid:not(.archive-expansion-grid)>.image-card:not(:first-child) .image-wrap{
+ border-color:#d1d9ce
+}
+.archive-expansion .archive-expansion-grid .image-caption{font-size:13px;line-height:1.5;color:#344a3b}
+.archive-expansion .image-card .image-wrap::after{opacity:.26}
+.image-card .image-arrow{color:#24553a}
+.image-card:hover .image-caption,.image-card:focus-visible .image-caption{border-bottom-color:var(--final-accent)}
+/* A reserved metallic rule is better than repeated corner ornament. */
+.chapter-heading .chapter-index{font-weight:750}
+.chapter-heading::before{height:2px!important;background:linear-gradient(90deg,#947349,#d9b57f 65%,transparent)!important}
+.chapter-heading::after{opacity:.42}
+.motorsports-feature-grid figcaption{font-size:clamp(12px,1vw,15px);line-height:1.5}
+/* Distinguish technical expertise from photographs without pretending a machine or aircraft image exists. */
+.career-skills-areas>div{position:relative}
+.career-skills-areas>div::before{
+ content:"";position:absolute;left:30px;top:18px;
+ width:28px;height:1px;background:#b28e5b
+}
+.career-skills-areas>div>span{display:block;margin-top:11px}
+.technical-practice-detail{border-color:#d8b97e70}
+.process-step .color-workflow{justify-content:flex-start}
+/* Clear navigation and readable captions at intermediate widths. */
+@media(min-width:761px) and (max-width:1100px){
+ .archive-expansion .archive-expansion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #archive-highlights .archive-expansion-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .project-spotlight-title::after{opacity:.11}
+}
+@media(max-width:760px){
+ .site-header{border-bottom:1px solid #abbcaf}
+ .exhibition-masthead .masthead-inner{gap:9px}
+ .exhibition-masthead .masthead-copy>p:not(.eyebrow){font-size:14px;line-height:1.42}
+ .exhibition-masthead .hero-actions{gap:9px;margin-bottom:5px}
+ .chapter-heading::after{opacity:.30}
+ .project-spotlight-title::after{display:none}
+ .image-card .image-caption{font-size:13px;min-height:0}
+ .archive-expansion .archive-expansion-grid .image-caption{font-size:12.5px}
+ .career-skills-areas>div::before{left:22px}
+ .site-footer .fineprint{font-size:10px}
+}
+@media(max-width:420px){
+ .exhibition-masthead .brand-hero-signature img{width:min(66vw,245px)}
+ .exhibition-masthead .masthead-copy>p:not(.eyebrow){font-size:14px}
+ .chapter-heading .chapter-desc{font-size:14px}
+}
+@media(prefers-reduced-motion:reduce){
+ .chapter .image-card img{transition:none!important}
+}
+@media(forced-colors:active){
+ .project-spotlight-title::after,.career-skills-areas>div::before{display:none}
+ .chapter .editorial-grid>.image-card .image-wrap{border:1px solid CanvasText}
+}

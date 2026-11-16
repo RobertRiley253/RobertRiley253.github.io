@@ -1,0 +1,182 @@
+/* RRR · DESIGNER STUDIO ATMOSPHERE / 2026-11-13
+   Non-public visual study built on the approved monogram + signature identity.
+   No photographs modified, no external fonts, no image-generation dependencies. */
+:root{
+ --studio-forest:#142a26;
+ --studio-deep:#102420;
+ --studio-brass:#b69158;
+ --studio-cream:#f1ecdf;
+ --studio-ivory:#faf7f0;
+ --studio-mist:#e4e8de;
+ --studio-ink:#263c34;
+ --studio-fine:#d3cbb9;
+}
+html{scroll-behavior:smooth;scroll-padding-top:22px}
+body{
+ background:
+  radial-gradient(ellipse 58% 38% at 8% 9%,rgba(213,187,145,.19),transparent 78%),
+  radial-gradient(ellipse 63% 39% at 99% 32%,rgba(104,137,115,.15),transparent 75%),
+  radial-gradient(ellipse 49% 31% at 13% 66%,rgba(194,178,141,.12),transparent 80%),
+  repeating-linear-gradient(95deg,transparent 0,transparent 5px,rgba(64,75,58,.009) 5.7px,transparent 6.3px),
+  linear-gradient(165deg,#f6f2e8 0%,#ecece5 44%,#f7f2e8 100%);
+ color:var(--studio-ink)
+}
+main{isolation:isolate}
+.site-header{
+ background:linear-gradient(120deg,rgba(251,249,243,.97),rgba(231,235,226,.98));
+ border-bottom:1px solid #aaac98;
+ box-shadow:0 8px 32px rgba(17,39,30,.07);
+}
+.site-header .logo-name{letter-spacing:.055em}
+.nav a{transition:color .2s ease,background-color .2s ease,border-color .2s ease}
+.site-footer{background:linear-gradient(135deg,#e4e5dc,#f7f3e9);border-top:3px double #9b996f}
+.site-footer .brand-footer-art{filter:drop-shadow(0 3px 2px #142a2614)}
+.review-ribbon{letter-spacing:.12em}
+.masthead,.career-positioning,.career-history,.contact-finale{
+ background-color:var(--studio-deep)
+}
+.masthead{position:relative;overflow:hidden;background:
+ radial-gradient(ellipse 48% 75% at 88% 18%,rgba(120,138,99,.22),transparent 80%),
+ radial-gradient(ellipse 48% 60% at 7% 81%,rgba(145,100,44,.2),transparent 83%),
+ linear-gradient(132deg,#0f2622,#193a32 59%,#10231f)}
+.masthead::before,.career-history::after{
+ content:"";position:absolute;inset:0;pointer-events:none;
+ background:repeating-linear-gradient(90deg,transparent 0,transparent 79px,rgba(225,216,169,.045) 79px,rgba(225,216,169,.045) 80px),
+ repeating-linear-gradient(0deg,transparent 0,transparent 79px,rgba(225,216,169,.033) 79px,rgba(225,216,169,.033) 80px);
+ opacity:.48
+}
+.masthead::after{
+ content:"";position:absolute;pointer-events:none;width:45vw;max-width:590px;aspect-ratio:1;
+ top:5%;right:-10%;opacity:.055;
+ background:url("brand-assets/rrr-traditional-gold.png") center/contain no-repeat;
+ filter:grayscale(1) brightness(4);
+}
+.masthead-inner,.masthead-top,.masthead-bottom{position:relative;z-index:1}
+.masthead-copy{position:relative;z-index:2}
+.masthead-copy h1{letter-spacing:-.052em;text-shadow:0 12px 44px #030c0926}
+.brand-hero-signature img{filter:drop-shadow(0 11px 19px rgba(0,0,0,.13))}
+.masthead-art .hero-frame{box-shadow:0 24px 55px rgba(0,0,0,.25)}
+/* Proportional light, fine-line geometry, and texture rather than stock visual effects. */
+.page-hero:not(.dark-hero){
+ background:
+ radial-gradient(ellipse 70% 110% at 96% 5%,rgba(180,196,175,.29),transparent 80%),
+ linear-gradient(142deg,#f4f0e6,#e7e9df 85%);
+ position:relative;overflow:hidden
+}
+.page-hero:not(.dark-hero)::after{
+ content:"";position:absolute;inset:8% -12% auto auto;width:min(52vw,630px);aspect-ratio:1;
+ background:url("brand-assets/rrr-traditional-ink.png") center/contain no-repeat;
+ opacity:.035;pointer-events:none
+}
+.page-hero>*{position:relative;z-index:1}
+.page-hero.dark-hero{
+ background:radial-gradient(ellipse 85% 90% at 86% 0%,#385a4b 0%,#1a382e 48%,#142a26 100%);
+ position:relative
+}
+.page-hero.dark-hero::after{
+ content:"";position:absolute;width:40vw;aspect-ratio:1;max-width:580px;
+ right:-6%;top:-8%;opacity:.055;pointer-events:none;
+ background:url("brand-assets/rrr-traditional-gold.png") center/contain no-repeat
+}
+.page-hero.dark-hero>*{position:relative;z-index:1}
+.chapter:not(.warm),.intro-band,.project-spotlight,.signature-projects,.process-story,
+.career-depth,.portfolio-archive-index,.motorsports-feature{
+ background-color:transparent
+}
+.chapter.warm{background:linear-gradient(115deg,rgba(229,227,212,.72),rgba(233,238,226,.88))}
+.chapter,.archive-expansion{position:relative}
+.chapter-heading{position:relative}
+.chapter-heading::before{
+ content:"";display:block;position:absolute;top:-17px;left:0;
+ width:59px;height:3px;background:linear-gradient(90deg,#b69158,#e1cfa9)
+}
+.chapter-index,.chapter .eyebrow,.precision-kicker{letter-spacing:.13em}
+.chapter h2,.page-hero h1,.signature-projects h2,.project-spotlight h2,.process-story h2,
+.career-history h2,.career-skills h2{letter-spacing:-.055em}
+.editorial-grid .image-card,.archive-grid .image-card,.signature-project-item,.project-story,
+.process-step,.motorsports-feature-grid figure,.profile-image-strip .image-card{
+ box-shadow:0 12px 28px rgba(32,46,37,.065);
+ transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease
+}
+.editorial-grid .image-card:hover,.archive-grid .image-card:hover,
+.signature-project-item:hover,.motorsports-feature-grid figure:hover{
+ transform:translateY(-3px);
+ box-shadow:0 20px 38px rgba(24,43,34,.135)
+}
+.image-wrap{background:linear-gradient(135deg,#e5e9df,#ecefe8)}
+.image-card img,.signature-project-photo img,.project-story-image img,.process-step-visual img{
+ transition:filter .26s ease
+}
+.image-card:hover img,.signature-project-item:hover img{filter:contrast(1.025) saturate(1.025)}
+/* The decorative lines are real CSS geometry and preserve source artwork exactly. */
+.career-positioning{
+ background:
+ radial-gradient(ellipse at 88% 12%,rgba(180,160,102,.19),transparent 55%),
+ radial-gradient(ellipse at 7% 90%,rgba(102,135,110,.22),transparent 62%),
+ linear-gradient(115deg,#112922,#264337);
+ border-block:1px solid #506c53
+}
+.career-positioning::after{
+ content:"";position:absolute;right:4%;top:10%;bottom:8%;
+ border-left:1px solid #e8d6a22e;border-right:1px solid #e8d6a215;width:12%;
+ pointer-events:none
+}
+.career-positioning h2,.career-history h2{filter:drop-shadow(0 7px 18px #08100d25)}
+.signature-projects-heading,.project-spotlight-title,.process-story-top{
+ border-top:1px solid #a5af9f;padding-top:30px;position:relative
+}
+.signature-projects-heading::before,.project-spotlight-title::before,.process-story-top::before{
+ content:"✳";position:absolute;right:0;top:-20px;
+ color:#8e754f;background:#efece3;font-size:21px;padding:0 13px
+}
+.project-story-content{background:linear-gradient(120deg,#fffdf8,#eef0e8)}
+.signature-project-copy{background:linear-gradient(160deg,#fffdf6,#edf0e8)}
+.project-story-image,.signature-project-photo,.process-step-visual{background:linear-gradient(145deg,#dfe6dd,#f4f3eb)}
+.process-track{position:relative}
+.process-step-number{background:#e8ebe1}
+.process-step:nth-child(even){background:#f3f4ef}
+.process-story-note{border-top:1px solid #9aa78f}
+.career-history{
+ background:
+ radial-gradient(ellipse 70% 60% at 84% 18%,rgba(118,140,113,.16),transparent 75%),
+ radial-gradient(ellipse 30% 60% at 7% 89%,rgba(180,155,103,.14),transparent 78%),
+ linear-gradient(160deg,#112721,#1d3a30);
+ position:relative
+}
+.career-history-entry{position:relative}
+.career-history-entry::before{
+ content:"";position:absolute;left:0;bottom:-1px;width:42px;height:1px;background:#e6c68c
+}
+.career-skills{background:linear-gradient(155deg,#e5e9df,#f0ebdf)}
+.career-skills-areas{box-shadow:0 23px 50px #1c322014}
+.career-skills-areas>div{background:linear-gradient(132deg,#fcfaf2,#ebefe7)}
+.motorsports-feature{background:linear-gradient(170deg,#e9e9df,#f6f1e6 72%)}
+.contact-finale{
+ background:
+ radial-gradient(ellipse at 90% 19%,rgba(205,170,109,.17),transparent 62%),
+ linear-gradient(132deg,#112b24,#244437);
+ border-top:1px solid #a48d5b
+}
+.contact-finale .career-closing-signature{filter:drop-shadow(0 8px 22px #040a0640)}
+.contact-finale a:focus-visible{outline:3px solid #ead0a0;outline-offset:5px}
+.brand-preview-summary{background:linear-gradient(140deg,#e8e9df,#f6f0e6);border:1px solid #d7d4c5}
+.capabilities{background:linear-gradient(150deg,#eef0e8,#e1e7dd)}
+/* A consistent small signature-style numbering treatment, not repeated logo graffiti. */
+.career-history-num{font-style:italic}
+.signature-project-copy small,.project-story-kicker,.process-step-number,.career-history-label{
+ text-transform:uppercase
+}
+a:focus-visible,button:focus-visible{outline-offset:4px}
+@media(max-width:760px){
+ .masthead::after{right:-18%;top:12%;width:63vw}
+ .page-hero:not(.dark-hero)::after{opacity:.024}
+ .career-positioning::after{display:none}
+ .editorial-grid .image-card:hover,.archive-grid .image-card:hover,
+ .signature-project-item:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;transition-duration:0ms!important;animation-duration:0ms!important}
+}
+@media(forced-colors:active){
+ body,.page-hero,.career-history,.career-positioning,.contact-finale{background:Canvas!important;color:CanvasText!important}
+}

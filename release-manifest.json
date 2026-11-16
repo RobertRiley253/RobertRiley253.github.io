@@ -1,0 +1,41 @@
+{
+  "publicSiteUpdated": false,
+  "sourceBranch": "portfolio-publish-approved-2026-11-16",
+  "pages": [
+    "index.html",
+    "work.html",
+    "production.html",
+    "profile.html",
+    "album.html"
+  ],
+  "filesCopied": 320,
+  "imagesCopied": 293,
+  "missing": [],
+  "edits": [
+    {
+      "page": "index.html",
+      "removedNoindex": true,
+      "convertedAssetUrls": true
+    },
+    {
+      "page": "work.html",
+      "removedNoindex": true,
+      "convertedAssetUrls": true
+    },
+    {
+      "page": "production.html",
+      "removedNoindex": true,
+      "convertedAssetUrls": true
+    },
+    {
+      "page": "profile.html",
+      "removedNoindex": true,
+      "convertedAssetUrls": true
+    },
+    {
+      "page": "album.html",
+      "removedNoindex": true,
+      "convertedAssetUrls": true
+    }
+  ]
+}

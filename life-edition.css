@@ -1,0 +1,224 @@
+/* Robert R. Riley — THE LIFE EDITION
+   Career biography as an exhibition, not a résumé.
+   Authentic photographs remain originals. Abstract illustrations are labeled editorial, not project evidence.
+   No address, telephone, direct email, contact form or resume download. */
+:root{--life-forest:#10291f;--life-ink:#163c2b;--life-gold:#d6b67a;--life-parchment:#efe5cf;--life-sage:#d5dfce}
+.life-edition{background:#142e24;color:#f7efdf;overflow:hidden;isolation:isolate}
+.life-edition-opening{position:relative;padding:clamp(32px,5vw,80px) clamp(23px,5vw,86px) clamp(35px,5vw,84px);background:
+ radial-gradient(ellipse 68% 100% at 88% 17%,#5f795740,transparent 74%),
+ repeating-linear-gradient(90deg,transparent 0 124px,#e1b87a12 124px 125px),
+ linear-gradient(120deg,#0d221b,#1c4834 64%,#122e24)}
+.life-edition-opening::after{content:"";position:absolute;pointer-events:none;right:-9vw;bottom:-22vw;width:68vw;aspect-ratio:1;border:1px solid #c4a7782e;border-radius:50%;box-shadow:0 0 0 64px #d5b5750c,0 0 0 130px #d5b57508}
+.life-edition-supratitle{display:flex;justify-content:space-between;gap:22px;padding:0 0 19px;border-bottom:1px solid #d5b77b70;color:#e6ce9f;font-size:11px;letter-spacing:.145em;font-weight:750}
+.life-edition-intro{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.65fr);align-items:center;gap:clamp(25px,4vw,72px);margin:clamp(50px,7vw,105px) auto;max-width:1490px}
+.life-edition-intro-copy{max-width:900px;position:relative;z-index:1}
+.life-edition-overline,.life-edition-kicker,.life-edition-final-kicker{display:block;font-size:11px;letter-spacing:.18em;color:#e5c48e;font-weight:800}
+.life-edition-intro h2{font:400 clamp(57px,8.3vw,142px)/.94 Georgia,"Times New Roman",serif;letter-spacing:-.062em;color:#fff4df;margin:21px 0 32px}
+.life-edition-intro h2 em,.life-edition-finale h3 em{color:#e6c58c;font-weight:400}
+.life-edition-intro p{max-width:62ch;font-size:clamp(16px,1.28vw,20px);line-height:1.72;color:#e7e5da}
+.life-edition-intro-art{position:relative;max-width:390px;justify-self:center;width:100%;aspect-ratio:1;border:1px solid #cdb17d6b;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 21px #c7a66c16,0 0 0 50px #c7a66c0e}
+.life-edition-intro-art img{width:77%;height:77%;object-fit:contain;opacity:.82;filter:drop-shadow(0 20px 17px #06160b55)}
+.life-edition-intro-art span{position:absolute;bottom:-35px;font-size:10px;letter-spacing:.17em;color:#d9c496;font-weight:750;white-space:nowrap}
+.life-edition-chapters{max-width:1480px;margin:auto;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px;position:relative;z-index:1}
+.life-edition-chapters a{padding:11px 16px;display:inline-flex;min-height:40px;align-items:center;color:#e9e0cf;text-decoration:none;border:1px solid #c8ad7e69;background:#0d2a209c;font-size:12px;letter-spacing:.035em}
+.life-edition-chapters a:hover{background:#d6bc91;color:#11281e}
+.life-edition-chapters a:focus-visible{outline:3px solid #fff8cc;outline-offset:3px}
+.life-edition-chapter{position:relative;display:grid;grid-template-columns:minmax(0,120px) minmax(0,1.08fr) minmax(285px,.78fr);align-items:center;gap:clamp(24px,3.2vw,58px);padding:clamp(65px,7.4vw,130px) clamp(22px,5.2vw,90px);border-top:1px solid #bca27756;scroll-margin-top:35px;min-height:600px}
+.life-edition-chapter:nth-of-type(2n){background:
+ radial-gradient(ellipse at 9% 20%,#d1b9873a,transparent 42%),
+ repeating-linear-gradient(0deg,transparent 0 131px,#52674b10 131px 132px),
+ linear-gradient(126deg,#eadfc8,#e7e9dc 57%,#cfd8c7);color:#21372a}
+.life-edition-chapter:nth-of-type(2n+1){background:
+ radial-gradient(ellipse at 88% 17%,#66856855,transparent 64%),
+ repeating-linear-gradient(90deg,transparent 0 120px,#b9a1720c 120px 121px),
+ linear-gradient(125deg,#142e25,#224a37 55%,#112c23);color:#f2e9d6}
+.life-edition-ordinal{align-self:start;position:sticky;top:28px;display:flex;flex-direction:column;gap:10px;color:#b9965b}
+.life-edition-ordinal span:first-child{font:400 clamp(60px,7vw,115px)/.9 Georgia,serif;letter-spacing:-.06em}
+.life-edition-ordinal span:last-child{font-size:10px;letter-spacing:.12em;font-weight:750;line-height:1.7}
+.life-edition-chapter:nth-of-type(2n+1) .life-edition-ordinal{color:#e1c18a}
+.life-edition-copy{min-width:0;max-width:830px}
+.life-edition-chapter:nth-of-type(2n) .life-edition-kicker{color:#725332}
+.life-edition-copy h3{font:400 clamp(41px,4.45vw,79px)/1.04 Georgia,"Times New Roman",serif;letter-spacing:-.048em;max-width:14ch;margin:22px 0 28px;color:inherit}
+.life-edition-copy p:not(.life-edition-kicker){font-size:clamp(15px,1.06vw,18px);line-height:1.83;max-width:68ch;margin:0 0 16px;color:inherit}
+.life-edition-trade-line{display:flex;flex-wrap:wrap;gap:7px;margin-top:34px;border-top:1px solid #c6a9797d;padding-top:18px}
+.life-edition-trade-line span{font-size:10px;font-weight:750;letter-spacing:.065em;line-height:1.35;padding:8px 11px;border:1px solid currentColor;opacity:.85}
+.life-edition-visual{position:relative;min-height:340px;align-self:stretch;display:flex;align-items:center;justify-content:center;padding:17px 17px 39px;border:1px solid #c6a97c8c;background:linear-gradient(130deg,#254a36,#4c5c3f);box-shadow:16px 18px 0 #0a1a1540,0 22px 50px #060f0d3d;overflow:hidden}
+.life-edition-chapter:nth-of-type(2n) .life-edition-visual{background:linear-gradient(130deg,#bccab9,#ebd9b7);box-shadow:15px 18px 0 #3043322b,0 18px 40px #253e2a24}
+.life-edition-visual::after{content:"";position:absolute;inset:9px;pointer-events:none;border:1px solid #f1d8a457}
+.life-edition-visual img{display:block;width:100%;height:auto;max-height:470px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 9px 17px #05150e55)}
+.life-edition-visual>span:last-child:not(.life-edition-graphic-caption){position:absolute;bottom:0;left:0;right:0;padding:12px 18px;z-index:2;background:#0d2d22;color:#e2c48d;font-size:10px;letter-spacing:.11em;font-weight:800}
+.life-edition-visual-graphic,.life-edition-visual-engineering,.life-edition-visual-drafting,.life-edition-visual-technology,.life-edition-visual-history{display:flex;flex-direction:column;gap:16px;background-size:cover;background-position:center;isolation:isolate}
+.life-edition-visual-graphic{background-image:linear-gradient(120deg,#17342bbb,#214b37c2),url("atelier-illustrations/signmakers-plate.svg")}
+.life-edition-visual-engineering{background-image:repeating-linear-gradient(135deg,#e0bb7835 0 1px,transparent 1px 16px),linear-gradient(145deg,#11271e,#315341)}
+.life-edition-visual-drafting{background-image:linear-gradient(110deg,#eddcb870,#ead5a557),url("atelier-illustrations/drafting-registration.svg")}
+.life-edition-visual-technology{background-image:radial-gradient(circle at 50% 50%,#5f98734c,transparent 60%),repeating-linear-gradient(0deg,#c6aa763c 0 1px,transparent 1px 30px),repeating-linear-gradient(90deg,#c6aa763c 0 1px,transparent 1px 30px),linear-gradient(130deg,#102b23,#30543e)}
+.life-edition-visual-history{background-image:radial-gradient(circle at 80% 30%,#d5b6804e,transparent 67%),repeating-linear-gradient(0deg,#b8a27b2c 0 1px,transparent 1px 44px),linear-gradient(130deg,#293a2d,#5d6246)}
+.life-edition-visual-graphic:before,.life-edition-visual-engineering:before,.life-edition-visual-technology:before{content:"";position:absolute;width:66%;aspect-ratio:1;border:2px solid #d9b67b80;border-radius:50%;box-shadow:0 0 0 28px #d7bb7520,0 0 0 55px #d7bb7512}
+.life-edition-graphic-number{font:400 clamp(78px,9vw,160px)/1 Georgia,"Times New Roman",serif!important;color:#f0d6a4!important;letter-spacing:-.08em;text-shadow:0 9px 18px #081d157c;position:relative;z-index:1}
+.life-edition-chapter:nth-of-type(2n) .life-edition-graphic-number{color:#3d563d!important;text-shadow:0 2px 0 #e7d6a9}
+.life-edition-graphic-caption{font-size:14px!important;letter-spacing:.24em!important;font-weight:800!important;line-height:1.65;text-align:center;color:#edd2a5!important;position:relative;z-index:1}
+.life-edition-chapter:nth-of-type(2n) .life-edition-graphic-caption{color:#274332!important}
+.life-edition-finale{position:relative;text-align:center;padding:clamp(90px,11vw,185px) 24px;background:
+ radial-gradient(circle at 50% 40%,#4967506b,transparent 67%),linear-gradient(125deg,#092017,#1d4531 60%,#092017);overflow:hidden}
+.life-edition-finale:before{content:"";pointer-events:none;position:absolute;inset:22px;border:1px solid #d2b5784f}
+.life-edition-finale h3{position:relative;font:400 clamp(55px,8vw,134px)/.98 Georgia,"Times New Roman",serif;letter-spacing:-.062em;color:#f5e8ce;margin:28px auto;max-width:1000px}
+.life-edition-finale p{position:relative;max-width:680px;margin:0 auto 40px;font-size:clamp(16px,1.25vw,21px);line-height:1.8;color:#f0e5d5}
+.life-edition-finale img{display:block;position:relative;width:min(380px,70vw);height:auto;margin:35px auto;filter:drop-shadow(0 12px 25px #02110880)}
+.life-edition-footer-links{position:relative;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.life-edition-footer-links a{display:inline-flex;padding:13px 17px;border:1px solid #d2ad72;color:#f9e3bb;text-decoration:none;font-weight:650;font-size:13px}
+.life-edition-footer-links a:hover{background:#d2ad72;color:#10281e}
+.life-edition-footer-links a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+/* Ensure the story is available at first glance, not hidden below enormous galleries */
+.life-story-teaser{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(250px,.7fr);gap:clamp(18px,5vw,80px);align-items:center;padding:clamp(46px,6vw,100px) clamp(23px,5vw,86px);background:
+ radial-gradient(ellipse at 82% 24%,#a1895652,transparent 57%),linear-gradient(125deg,#18372a,#35513a 57%,#182d23);border-block:2px solid #c4a373}
+.life-story-teaser-copy{position:relative;z-index:1}
+.life-story-teaser-kicker{display:block;color:#e6bf81;font-size:11px;font-weight:800;letter-spacing:.17em}
+.life-story-teaser h2{font:400 clamp(52px,6.6vw,110px)/.98 Georgia,serif;letter-spacing:-.059em;color:#f9edd9;margin:19px 0}
+.life-story-teaser h2 em{color:#e1c38f}
+.life-story-teaser p{font-size:clamp(15px,1.18vw,19px);line-height:1.75;color:#ebe7d9;max-width:54ch}
+.life-story-teaser a{display:inline-flex;padding:14px 18px;background:#e1bd7e;color:#193326;text-decoration:none;margin-top:20px;font-weight:800;box-shadow:0 8px 22px #0c211885}
+.life-story-teaser a:hover{background:#ffe1a5}
+.life-story-teaser a:focus-visible{outline:3px solid white;outline-offset:3px}
+.life-story-teaser-art{position:relative;min-height:315px;display:flex;justify-content:center;align-items:center;background:radial-gradient(circle,#b899663e,transparent 67%)}
+.life-story-teaser-art::before{content:"";position:absolute;width:75%;aspect-ratio:1;border:1px solid #e2c7928e;border-radius:50%;box-shadow:0 0 0 24px #c9a97917,0 0 0 48px #c9a9790b}
+.life-story-teaser-art img{position:relative;width:min(270px,65%);height:auto;filter:drop-shadow(0 12px 20px #04170d)}
+@media(min-width:1051px){
+ .life-edition-chapter:nth-of-type(2n+1) .life-edition-visual{transform:rotate(.65deg)}
+ .life-edition-chapter:nth-of-type(2n) .life-edition-visual{transform:rotate(-.6deg)}
+}
+@media(max-width:1180px){
+ .life-edition-chapter{grid-template-columns:90px minmax(0,1fr);gap:24px 36px}
+ .life-edition-visual{grid-column:2;max-width:600px;min-height:300px}
+ .life-edition-copy h3{max-width:22ch}
+}
+@media(max-width:780px){
+ .life-edition-opening{padding-inline:23px}
+ .life-edition-intro{grid-template-columns:1fr;gap:28px;margin:40px auto}
+ .life-edition-intro h2{font-size:clamp(50px,10vw,80px)}
+ .life-edition-intro-art{width:min(260px,72vw);margin-bottom:32px}
+ .life-edition-chapters{justify-content:flex-start}
+ .life-edition-chapters a{font-size:11px;padding:10px 13px}
+ .life-edition-supratitle{font-size:9px}
+ .life-edition-chapter{display:block;padding:65px 23px}
+ .life-edition-ordinal{position:static;flex-direction:row;align-items:center;margin-bottom:25px;gap:15px}
+ .life-edition-ordinal span:first-child{font-size:65px}
+ .life-edition-copy h3{font-size:clamp(39px,8.5vw,67px);max-width:20ch}
+ .life-edition-copy p:not(.life-edition-kicker){font-size:15px;line-height:1.78}
+ .life-edition-visual{margin:35px auto 0;min-height:300px;max-width:600px}
+ .life-edition-graphic-number{font-size:110px!important}
+ .life-story-teaser{grid-template-columns:1fr;gap:4px}
+ .life-story-teaser h2{font-size:clamp(49px,10vw,85px)}
+ .life-story-teaser-art{min-height:220px}
+}
+@media(max-width:420px){
+ .life-edition-intro h2{font-size:47px}
+ .life-edition-chapter{padding:52px 18px}
+ .life-edition-copy h3{font-size:39px}
+ .life-edition-visual{min-height:245px}
+ .life-edition-final-kicker{font-size:10px}
+ .life-edition-finale h3{font-size:49px}
+ .life-story-teaser h2{font-size:47px}
+}
+@media(forced-colors:active){
+ .life-edition,.life-edition-chapter,.life-edition-opening,.life-edition-finale,.life-story-teaser{color:CanvasText;background:Canvas}
+ .life-edition *,.life-story-teaser *{color:CanvasText!important}
+ .life-edition-visual,.life-edition-chapters a,.life-edition-footer-links a{border:1px solid CanvasText}
+}
+@media(prefers-reduced-motion:reduce){.life-edition-chapters a,.life-story-teaser a{transition:none}}
+
+/* Life story public reading introduction and employer-depth appendix */
+.career-snapshot{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.8fr);gap:clamp(28px,6vw,95px);align-items:center;padding:clamp(48px,7vw,115px) clamp(23px,5vw,90px);background:
+ radial-gradient(ellipse at 89% 8%,#d7bc8542,transparent 48%),
+ repeating-linear-gradient(90deg,transparent 0 116px,#8f8a6211 116px 117px),
+ linear-gradient(132deg,#e7ddc8,#e1e8d9 61%,#f0e6d5);color:#20392b}
+.career-snapshot-opening h2{font:400 clamp(50px,6.1vw,105px)/.98 Georgia,serif;letter-spacing:-.058em;margin:18px 0 23px}
+.career-snapshot-opening h2 em{color:#8b6739}
+.career-snapshot-opening p:not(.precision-kicker){font-size:clamp(16px,1.2vw,19px);line-height:1.72;max-width:57ch}
+.career-snapshot-opening a{display:inline-block;background:#153d2d;color:#f7e8cb;padding:15px 20px;margin-top:22px;text-decoration:none;font-size:13px;font-weight:750;border:1px solid #b99761}
+.career-snapshot-opening a:hover{background:#2c6043}
+.career-snapshot-opening a:focus-visible{outline:3px solid #9b7536;outline-offset:4px}
+.career-snapshot-index{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.career-snapshot-index>div{padding:25px 21px;min-height:155px;background:linear-gradient(140deg,#163d2d,#234f38);color:#f2e5cb;border:1px solid #b9935d8c;box-shadow:0 13px 26px #16301f2b;display:flex;flex-direction:column;justify-content:space-between;gap:15px}
+.career-snapshot-index strong{font:400 clamp(24px,2.8vw,46px)/1 Georgia,serif;color:#efc987;letter-spacing:-.02em}
+.career-snapshot-index span{font-size:12px;line-height:1.55;letter-spacing:.02em}
+.career-ledger{padding:clamp(65px,7.5vw,130px) clamp(23px,5.2vw,90px);background:
+ radial-gradient(ellipse at 5% 4%,#d0bc8a48,transparent 48%),
+ repeating-linear-gradient(0deg,transparent 0 125px,#84977d0a 125px 126px),
+ linear-gradient(130deg,#efe3cc,#e3e8dc 65%,#e8d9be);color:#1c3327}
+.career-ledger-heading{max-width:1090px;margin:0 0 50px}
+.career-ledger-heading>span{color:#795b35;letter-spacing:.19em;font-weight:750;font-size:11px}
+.career-ledger-heading h2{font:400 clamp(54px,7.4vw,116px)/.98 Georgia,serif;letter-spacing:-.06em;margin:23px 0}
+.career-ledger-heading h2 em{color:#806136}
+.career-ledger-heading p{font-size:clamp(15px,1.2vw,19px);line-height:1.72;max-width:60ch}
+.career-ledger-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.career-ledger-roles article{min-height:230px;display:flex;flex-direction:column;gap:14px;padding:clamp(23px,2.4vw,38px);border:1px solid #b0b99f;background:linear-gradient(135deg,#fbf6e8,#e4ebdf);box-shadow:0 12px 26px #2b44321a}
+.career-ledger-roles article:nth-child(3n+2){background:linear-gradient(135deg,#183d2b,#2f573d);border-color:#a98e5f;color:#f3e8d4}
+.career-ledger-roles article>span{color:#8c633c;font-size:10px;letter-spacing:.135em;font-weight:800}
+.career-ledger-roles article:nth-child(3n+2)>span{color:#e6c18c}
+.career-ledger-roles h3{font:400 clamp(24px,2.5vw,39px)/1.1 Georgia,serif;letter-spacing:-.03em;margin:0}
+.career-ledger-roles p{font-size:clamp(13px,1vw,15px);line-height:1.74;margin:0;color:inherit}
+.career-ledger-lower{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:50px;border-top:2px solid #b58a55;padding-top:45px}
+.career-ledger-lower h3{font:400 clamp(28px,3vw,47px)/1.1 Georgia,serif;margin:0 0 17px}
+.career-ledger-lower p{font-size:15px;line-height:1.85}
+.career-ledger-note{max-width:700px;font-size:12px;line-height:1.7;opacity:.7;margin-top:40px}
+@media(max-width:1100px){
+ .career-ledger-roles{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .career-snapshot{grid-template-columns:1fr}
+ .career-snapshot-index{max-width:750px}
+}
+@media(max-width:700px){
+ .career-ledger-roles{grid-template-columns:1fr}
+ .career-ledger-roles article{min-height:0}
+ .career-ledger-lower{grid-template-columns:1fr;gap:20px}
+ .career-snapshot-index{gap:9px}
+ .career-snapshot-index>div{padding:18px 14px;min-height:125px}
+ .career-snapshot-index strong{font-size:clamp(25px,7vw,40px)}
+ .career-snapshot-index span{font-size:11px}
+ .career-ledger-heading h2{font-size:clamp(48px,10vw,75px)}
+}
+@media(max-width:390px){
+ .career-snapshot-index{grid-template-columns:1fr 1fr}
+ .career-snapshot-index>div{min-height:115px;padding:15px 11px}
+ .career-snapshot-index strong{font-size:23px}
+}
+@media(forced-colors:active){.career-snapshot,.career-ledger,.career-ledger-roles article,.career-snapshot-index>div{background:Canvas;color:CanvasText;border-color:CanvasText}}
+
+/* Aerospace inspection reference photographs — editorial evidence, not aircraft program images */
+.aerospace-ndt-evidence{margin:0;padding:clamp(30px,4vw,64px) clamp(23px,5vw,86px);background:linear-gradient(135deg,#e9e1d2,#f5efe3);color:#1f3d31;border-block:1px solid #b89c6b66}
+.aerospace-ndt-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:clamp(16px,4vw,58px);max-width:1440px;margin:0 auto 26px}
+.aerospace-ndt-kicker{font-size:10px;font-weight:800;letter-spacing:.16em;color:#766042}
+.aerospace-ndt-heading h3{font:400 clamp(28px,3vw,47px)/1.13 Georgia,serif;letter-spacing:-.035em;margin:12px 0 0}
+.aerospace-ndt-heading p{font-size:14px;line-height:1.72;max-width:58ch;margin:0;color:#405447}
+.aerospace-ndt-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.5vw,22px);max-width:1440px;margin:0 auto}
+.aerospace-ndt-item{min-width:0;margin:0;background:#faf7ef;border:1px solid #bca8848c;padding:8px}
+.aerospace-ndt-item a{display:block;aspect-ratio:4/3;background:#e7e2d6;overflow:hidden}
+.aerospace-ndt-item img{display:block;width:100%;height:100%;object-fit:contain}
+.aerospace-ndt-item figcaption{font-size:12px;font-weight:700;line-height:1.4;padding:11px 5px 5px;color:#294334}
+.aerospace-ndt-item a:focus-visible{outline:3px solid #98733c;outline-offset:3px}
+@media(max-width:960px){.aerospace-ndt-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.aerospace-ndt-heading{grid-template-columns:1fr}.aerospace-ndt-grid{gap:10px}.aerospace-ndt-item{padding:5px}.aerospace-ndt-item figcaption{font-size:11px}}
+
+/* B-2 context photo: separate aircraft reference from Exotic Metals evidence. */
+.aerospace-b2-reference{display:grid;grid-template-columns:minmax(210px,.62fr) minmax(0,1.38fr);align-items:center;gap:clamp(18px,3.5vw,50px);padding:clamp(30px,4vw,60px) clamp(23px,5vw,86px);background:linear-gradient(130deg,#15372c,#254737 64%,#102c23);color:#f4ebd9;border-block:1px solid #bd9d6977}
+.aerospace-b2-reference-copy{max-width:52ch}
+.aerospace-b2-reference h3{font:400 clamp(32px,3.5vw,56px)/1.09 Georgia,serif;letter-spacing:-.04em;margin:12px 0 22px}
+.aerospace-b2-reference p{font-size:clamp(13px,1.15vw,17px);line-height:1.7;color:#ebe5d5}
+.aerospace-b2-reference .aerospace-ndt-kicker{color:#e1c18a}
+.aerospace-b2-reference figure{min-width:0;margin:0;border:1px solid #bb9c6f70;padding:8px;background:#0e261f}
+.aerospace-b2-reference a{display:block}
+.aerospace-b2-reference img{display:block;width:100%;height:auto;max-height:530px;object-fit:contain}
+.aerospace-b2-reference figcaption{padding:9px 6px 3px;font-size:11px;line-height:1.5;color:#d5ccb8}
+.aerospace-b2-reference a:focus-visible{outline:3px solid #e1c18a;outline-offset:3px}
+@media(max-width:720px){.aerospace-b2-reference{grid-template-columns:1fr;gap:18px}}
+
+/* HQ16: B-2 program context photography, composed in a restrained multi-image exhibit. */
+.aerospace-b2-gallery{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(9px,1.4vw,20px);max-width:1450px;width:100%;margin:5px auto 0}
+.aerospace-b2-gallery .bulk-exhibit-card{background:#153329;color:#f3e7ce;border-color:#d6b87877;padding:7px;box-shadow:0 11px 25px #061b177a}
+.aerospace-b2-gallery .bulk-exhibit-photo{background:#0e251e;aspect-ratio:4/3}
+.aerospace-b2-gallery .bulk-exhibit-card:first-child{grid-column:span 2;grid-row:span 2}
+.aerospace-b2-gallery .bulk-exhibit-card:first-child .bulk-exhibit-photo{aspect-ratio:auto;height:calc(100% - 38px);min-height:250px}
+.aerospace-b2-gallery .bulk-exhibit-caption{color:#eee6d4}
+.aerospace-b2-gallery .bulk-exhibit-caption span:last-child{color:#e1bd7d}
+.aerospace-b2-gallery .bulk-exhibit-card:hover{box-shadow:0 18px 32px #061b17c9}
+@media(max-width:960px){.aerospace-b2-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.aerospace-b2-gallery .bulk-exhibit-card:first-child{grid-row:auto}.aerospace-b2-gallery .bulk-exhibit-card:first-child .bulk-exhibit-photo{height:auto;min-height:250px}}
+@media(max-width:580px){.aerospace-b2-gallery .bulk-exhibit-card:first-child{grid-column:span 2}.aerospace-b2-gallery .bulk-exhibit-card{padding:5px}.aerospace-b2-gallery .bulk-exhibit-caption{font-size:9px}}

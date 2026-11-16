@@ -1,0 +1,631 @@
+/* EDITORIAL / MATERIAL REVIEW — November 2026
+   Owner requested more tangible ambience in the LIGHT parts of the exhibition,
+   stronger editorial consistency, and no change to its approved identity.
+   The textures are CSS-built paper and fine drafting/press details; they DO NOT
+   blur, overlay, distort, reprocess or alter original project photographs. */
+:root{
+  --em-paper:#f0eadf;
+  --em-linen:#e7e2d3;
+  --em-ink:#1c392c;
+  --em-sage:#dfe5d9;
+  --em-aged-brass:#b19464;
+}
+/* The light atmosphere should read as a crafted book page, not an empty white
+   rectangle. The translucent fibers are at a scale below readable lettering. */
+body{
+  background:
+   radial-gradient(ellipse 60% 48% at 5% 7%,rgba(180,146,97,.16),transparent 75%),
+   radial-gradient(ellipse 58% 38% at 95% 33%,rgba(106,140,111,.15),transparent 75%),
+   radial-gradient(ellipse 60% 52% at 0% 70%,rgba(192,169,124,.11),transparent 77%),
+   repeating-linear-gradient(108deg,rgba(107,91,62,.020) 0 1px,transparent 1px 7px),
+   repeating-linear-gradient(0deg,rgba(99,88,67,.014) 0 1px,transparent 1px 5px),
+   linear-gradient(145deg,#f1eadd 0%,#e8ece2 38%,#f1eadc 74%,#e8e4d7 100%);
+}
+/* Alternate quietly between handlaid paper and softly aged drawing stock. */
+body .chapter:not(.warm),
+body .chapter.recovered-section:not(.warm){
+  background:
+   radial-gradient(ellipse 68% 85% at 93% 4%,rgba(150,175,137,.18),transparent 73%),
+   radial-gradient(ellipse 65% 78% at 7% 95%,rgba(189,151,92,.13),transparent 72%),
+   repeating-linear-gradient(99deg,rgba(72,91,76,.026) 0 1px,transparent 1px 10px),
+   repeating-linear-gradient(0deg,rgba(120,106,80,.018) 0 1px,transparent 1px 6px),
+   linear-gradient(118deg,#efece0 0%,#e6e9df 54%,#f2ede0 100%)!important;
+}
+body .chapter.warm{
+  background:
+   radial-gradient(ellipse 62% 85% at 4% 12%,rgba(191,153,92,.19),transparent 72%),
+   radial-gradient(ellipse 67% 90% at 97% 84%,rgba(139,166,123,.14),transparent 72%),
+   repeating-linear-gradient(106deg,rgba(120,91,54,.021) 0 1px,transparent 1px 9px),
+   repeating-linear-gradient(0deg,rgba(110,107,83,.017) 0 1px,transparent 1px 7px),
+   linear-gradient(130deg,#f2eadc 0%,#eae3d4 47%,#e8ebe0 100%)!important;
+}
+/* Gently bordered museum-paper settings rather than cold white blocks. */
+.intro-band,.signature-projects,.project-spotlight,.process-story,.motorsports-feature,
+.portfolio-archive-index,.career-skills,.career-snapshot{
+ background:
+   radial-gradient(ellipse 52% 70% at 100% 0%,rgba(171,143,92,.095),transparent 70%),
+   repeating-linear-gradient(102deg,rgba(77,88,66,.015) 0 1px,transparent 1px 9px),
+   linear-gradient(140deg,rgba(245,238,223,.82),rgba(225,232,220,.76) 56%,rgba(241,231,211,.86))!important;
+}
+.signature-projects,.project-spotlight,.process-story,.motorsports-feature{
+ border-top:1px solid rgba(143,120,81,.25);
+ border-bottom:1px solid rgba(143,120,81,.19);
+}
+body .chapter-heading{
+ border-bottom:1px solid rgba(133,119,91,.24);
+ padding-bottom:clamp(16px,1.8vw,25px);
+}
+body .chapter-heading::before{
+ width:74px!important;height:2px!important;
+ background:linear-gradient(90deg,#8f724d,#cdb17c 65%,transparent)!important;
+}
+/* Existing genuine photographs remain untreated; only the PAPER around them
+   changes. The real photo hue and JPEG signal are never filtered. */
+body .chapter .editorial-grid .image-card .image-wrap{
+ background:
+  repeating-linear-gradient(115deg,rgba(127,108,77,.025) 0 1px,transparent 1px 11px),
+  linear-gradient(135deg,#e5e7dc,#dce3d9 53%,#e9e3d7)!important;
+ border-color:#bdb9a7!important;
+}
+body .chapter .editorial-grid .image-card .image-wrap img{filter:none!important}
+.signature-projects .signature-project-photo{background:linear-gradient(140deg,#e8e3d7,#dce6dc)!important}
+/* Fix mismatched types and number-first cards. One consistent reading sequence:
+   SMALL SUBJECT -> PROMINENT VALUE -> SHORT QUALIFICATION. */
+.career-snapshot-index>div{
+ min-height:155px;gap:10px;padding:clamp(17px,1.6vw,24px);
+ justify-content:flex-start;align-items:flex-start;
+ background:
+  radial-gradient(ellipse at 86% 10%,rgba(180,153,98,.14),transparent 65%),
+  repeating-linear-gradient(90deg,rgba(228,201,149,.042) 0 1px,transparent 1px 31px),
+  linear-gradient(145deg,#173c2d,#234934 65%,#183c2e);
+ border:1px solid #b6996d;
+ box-shadow:0 10px 25px rgba(12,34,22,.15),inset 0 1px rgba(246,218,162,.12);
+}
+.career-snapshot-index .snapshot-subject{
+ font-size:10px!important;line-height:1.35;letter-spacing:.12em!important;
+ font-weight:800;color:#d3bd92!important;min-height:0!important;
+}
+.career-snapshot-index strong{
+ font:400 clamp(25px,2.3vw,39px)/1.07 Georgia,"Times New Roman",serif;
+ letter-spacing:-.035em;overflow-wrap:anywhere;
+ color:#f5d59d!important;margin:4px 0 2px;
+}
+.career-snapshot-index>div>span:last-child{
+ font-size:13px;line-height:1.48;letter-spacing:0;color:#f3e9d8;
+}
+.career-snapshot-index>div:last-child{
+ background:
+  radial-gradient(ellipse at 87% 5%,rgba(229,194,124,.17),transparent 72%),
+  repeating-linear-gradient(90deg,rgba(228,201,149,.042) 0 1px,transparent 1px 31px),
+  linear-gradient(145deg,#193e2e,#294f39 65%,#1a392c);
+}
+/* Quiet reading-paper accent in the detailed record, without adding another
+   full-height poster or switching its approved palettes. */
+.career-ledger{
+ background:
+  radial-gradient(ellipse 67% 65% at 1% 5%,rgba(173,140,91,.15),transparent 71%),
+  radial-gradient(ellipse 65% 70% at 99% 95%,rgba(131,156,113,.15),transparent 72%),
+  repeating-linear-gradient(99deg,rgba(105,89,61,.018) 0 1px,transparent 1px 10px),
+  linear-gradient(138deg,#efe8d9,#e8ebe0 52%,#f1e9d8)!important;
+}
+@media(max-width:720px){
+ .career-snapshot-index>div{min-height:0}
+ .career-snapshot-index strong{font-size:clamp(24px,6vw,32px)}
+ .career-snapshot-index>div>span:last-child{font-size:12px}
+ .career-snapshot-index .snapshot-subject{font-size:10px!important}
+}
+@media(prefers-contrast:more){
+ body .chapter-heading{border-bottom-color:#755d3e}
+ .career-snapshot-index .snapshot-subject{color:#fff0c8!important}
+ .career-snapshot-index>div>span:last-child{color:#fff!important}
+}
+@media(forced-colors:active){
+ body .chapter .editorial-grid .image-card .image-wrap{background:Canvas!important}
+ .career-snapshot-index>div{background:Canvas!important;color:CanvasText!important;border-color:CanvasText!important}
+}
+
+/* Visual review finding: four-image homepage chapters must not leave a
+   half-empty trailing row. Two precisely balanced, asymmetrical pairings. */
+@media(min-width:1021px){
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card,
+ body #chapter-2.chapter.composition-vehicles .editorial-grid>.image-card,
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card{
+  grid-column:span 6!important;
+ }
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card:nth-child(4n+1),
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card:nth-child(4n+1){grid-column:span 7!important}
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card:nth-child(4n+2),
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card:nth-child(4n+2){grid-column:span 5!important}
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card:nth-child(4n+3),
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card:nth-child(4n+3){grid-column:span 5!important}
+ body #chapter-1.chapter.composition-architecture .editorial-grid>.image-card:nth-child(4n+4),
+ body #chapter-3.chapter.composition-print .editorial-grid>.image-card:nth-child(4n+4){grid-column:span 7!important}
+}
+/* Medium view keeps true two-up contact sheets. */
+@media(min-width:721px) and (max-width:1020px){
+ body #chapter-1 .editorial-grid>.image-card,
+ body #chapter-2 .editorial-grid>.image-card,
+ body #chapter-3 .editorial-grid>.image-card{grid-column:span 6!important}
+}
+
+/* Screenshot QA: a short panorama was stretching its image-card body to the
+   height of a neighboring portrait, marooning the caption far below the photo.
+   Keep captions physically attached to their own photographic frame. */
+body .chapter .editorial-grid>.image-card,
+body .chapter .editorial-grid.category-grid>.image-card{
+ align-self:start!important;height:auto!important;min-height:0!important;
+}
+body .chapter .editorial-grid .image-card .image-caption{
+ margin-top:0!important;flex:0 0 auto!important;
+}
+
+
+/* My Story — final editorial career index.
+   Responds to owner review: avoid four heavy, disconnected résumé tiles.
+   Retains the approved emerald / parchment / warm-gold visual language.
+   Scoped to this one section; all other pages and galleries are unchanged. */
+.career-snapshot{grid-template-columns:minmax(0,1fr) minmax(320px,.97fr);gap:clamp(32px,5.2vw,82px);align-items:center}
+.career-snapshot-index{
+  display:grid;grid-template-columns:minmax(0,1fr);
+  gap:0;max-width:none;
+  padding:8px clamp(22px,2.6vw,44px);
+  background:linear-gradient(125deg,#f8f3e7d9,#efe7d6ed);
+  border-top:2px solid #9b7951;
+  border-bottom:1px solid #9b7951;
+  box-shadow:0 18px 45px #263a2810;
+}
+.career-snapshot-index>div,
+.career-snapshot-index>div:last-child{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  align-content:center;
+  justify-content:start;
+  min-height:0;
+  gap:5px;
+  padding:clamp(16px,1.6vw,24px) 0;
+  background:transparent;
+  border:0;
+  border-bottom:1px solid #9a8e744f;
+  box-shadow:none;
+  color:#233a2d;
+}
+.career-snapshot-index>div:last-child{border-bottom:0}
+.career-snapshot-index .snapshot-subject{
+  color:#755939!important;
+  font-size:10px!important;
+  line-height:1.35;
+  letter-spacing:.15em!important;
+}
+.career-snapshot-index strong{
+  font:400 clamp(22px,2vw,33px)/1.16 Georgia,"Times New Roman",serif;
+  letter-spacing:-.028em;
+  color:#173d2d!important;
+  overflow-wrap:break-word;
+}
+.career-snapshot-index>div>span:last-child{
+  color:#4e5b4a!important;
+  font-size:13px;
+  line-height:1.5;
+  letter-spacing:0;
+}
+@media(max-width:980px){
+  .career-snapshot{grid-template-columns:1fr;gap:clamp(24px,4vw,40px)}
+  .career-snapshot-index{max-width:820px;width:100%}
+}
+@media(max-width:720px){
+  .career-snapshot-index{grid-template-columns:1fr;padding-inline:clamp(18px,4vw,30px)}
+  .career-snapshot-index>div{padding:16px 0}
+  .career-snapshot-index strong{font-size:clamp(23px,5.4vw,30px)}
+  .career-snapshot-index>div>span:last-child{font-size:13px}
+}
+@media(forced-colors:active){
+  .career-snapshot-index,.career-snapshot-index>div,.career-snapshot-index>div:last-child{
+    background:Canvas!important;color:CanvasText!important;
+    border-color:CanvasText!important;box-shadow:none!important;
+  }
+  .career-snapshot-index strong,.career-snapshot-index .snapshot-subject,
+  .career-snapshot-index>div>span:last-child{color:CanvasText!important}
+}
+
+
+/* Local history: documented social audience, with an exact reporting period.
+   Evidence from owner-provided Facebook Insights image (46,560,500 / 606 days).
+   Statistics represent views, never unique people or inferred lifetime totals. */
+.history-audience-evidence{
+  width:100%;max-width:590px;margin:24px 0 28px;
+  padding:clamp(19px,2.1vw,29px);
+  background:linear-gradient(118deg,#15382c,#214a38);
+  color:#f5ead7;border-left:3px solid #d4aa64;
+  box-shadow:0 12px 29px rgba(16,38,27,.13);
+}
+.history-audience-eyebrow{
+  display:block;font-size:10px;line-height:1.4;letter-spacing:.14em;
+  font-weight:800;color:#e4c78b;
+}
+.history-audience-evidence strong{
+  display:block;margin:12px 0 10px;
+  font:400 clamp(32px,4vw,57px)/1.12 Georgia,"Times New Roman",serif;
+  color:#fae6bf;letter-spacing:-.035em;overflow-wrap:anywhere;
+}
+.history-audience-evidence strong span{
+  font:600 clamp(14px,1.25vw,18px)/1.5 system-ui,sans-serif;letter-spacing:0;color:#f7edd8;
+}
+.history-audience-evidence p{font-size:14px!important;line-height:1.6!important;color:#f4ead8!important;margin:6px 0 12px!important}
+.history-audience-evidence small{display:block;font-size:11px;line-height:1.55;color:#e0d3bd}
+@media(forced-colors:active){
+ .history-audience-evidence{background:Canvas;color:CanvasText;border-color:CanvasText;box-shadow:none}
+ .history-audience-evidence strong,.history-audience-evidence strong span,
+ .history-audience-evidence p,.history-audience-evidence small,
+ .history-audience-eyebrow{color:CanvasText!important}
+}
+
+
+/* HQ21 motorsports editorial correction — original racing photos take precedence.
+   Protect the historic physical prints: avoid aggressive zoom/cropping. */
+.life-edition-chapter-racing .racing-hero-photo{
+  max-width:690px!important;
+  max-height:none!important;
+  min-height:330px;
+  background:linear-gradient(135deg,#18382b,#335142)!important;
+  padding:12px 12px 42px;
+  transform:none!important
+}
+.life-edition-chapter-racing .racing-hero-photo img{
+  display:block;width:100%;height:auto;
+  max-height:440px!important;object-fit:contain!important;
+  object-position:center
+}
+.life-edition-chapter-racing .racing-photo-sequence{
+  grid-column:2/-1;grid-template-columns:minmax(0,1fr)!important;
+  max-width:690px;width:100%;align-self:start;gap:0
+}
+.life-edition-chapter-racing .racing-photo-sequence figure{
+  background:#193b2c;border:1px solid #c7a573a1;padding:12px;
+}
+.life-edition-chapter-racing .racing-photo-sequence img{
+  display:block;width:100%;height:clamp(200px,23vw,330px)!important;
+  object-fit:contain!important;object-position:center
+}
+.life-edition-chapter-racing .racing-photo-sequence figcaption{
+  color:#f1dfb9!important;font-size:clamp(12px,1vw,15px)!important;
+  font-weight:600;line-height:1.45
+}
+.life-edition-chapter-racing .life-edition-ordinal span:last-child{
+  letter-spacing:.11em
+}
+.motorsports-feature--racing-history .motorsports-feature-grid{
+  grid-template-columns:1.15fr 1.15fr .75fr;
+  align-items:stretch
+}
+.motorsports-feature--racing-history .motorsports-feature-grid figure{
+  background:#fcf9f1;border-color:#c5b08d
+}
+.motorsports-feature--racing-history .motorsports-feature-grid img{
+  height:clamp(230px,25vw,370px);
+  padding:10px;object-fit:contain;object-position:center;
+  background:#dcded4
+}
+.motorsports-feature--racing-history .motorsports-feature-grid figcaption{
+  font-size:clamp(17px,1.6vw,25px);line-height:1.25;
+  display:flex;flex-direction:column;gap:7px
+}
+.motorsports-feature--racing-history .motorsports-feature-grid figcaption small{
+  font:400 clamp(12px,.9vw,14px)/1.45 system-ui,sans-serif;
+  color:#5c6659;letter-spacing:0
+}
+@media(max-width:1000px){
+ .motorsports-feature--racing-history .motorsports-feature-grid{grid-template-columns:1fr 1fr}
+ .motorsports-feature--racing-history .motorsports-feature-grid figure:last-child{grid-column:1/-1;max-width:550px}
+}
+@media(max-width:760px){
+ .life-edition-chapter-racing .racing-hero-photo{
+   grid-column:1/-1!important;
+   min-height:0;max-width:100%!important;margin:20px auto 8px
+ }
+ .life-edition-chapter-racing .racing-photo-sequence{
+   grid-column:1/-1!important;max-width:100%
+ }
+ .life-edition-chapter-racing .racing-photo-sequence img{
+   height:clamp(190px,54vw,320px)!important
+ }
+ .motorsports-feature--racing-history .motorsports-feature-grid{
+   grid-template-columns:1fr
+ }
+ .motorsports-feature--racing-history .motorsports-feature-grid figure:last-child{
+   grid-column:auto;max-width:none
+ }
+}
+
+
+/* HQ final visual pass: resolve observed orphan rows, not the broader exhibition.
+   Home archive is four genuine photos; two balanced pairs remove the lone last card.
+   Production custom fabrication has five photos; three + two fills both rows.
+   Small screens retain their original stacking and established identity. */
+@media (min-width:1021px) {
+ body #archive-highlights .archive-expansion-grid > .image-card {
+   grid-column:span 6!important;
+ }
+ body #new-custom-fabrication .bulk-exhibit-grid {
+   grid-template-columns:repeat(6,minmax(0,1fr));
+ }
+ body #new-custom-fabrication .bulk-exhibit-grid > .bulk-exhibit-card {
+   grid-column:span 2;
+ }
+ body #new-custom-fabrication .bulk-exhibit-grid > .bulk-exhibit-card:nth-last-child(-n+2) {
+   grid-column:span 3;
+ }
+}
+
+/* Homepage race history: authentic archival imagery, prominent but restrained.
+   Aged original photographs remain uncropped; commercial hero identity stays intact. */
+.home-racing-feature{padding:clamp(35px,4.5vw,75px) clamp(18px,4.5vw,76px);background:linear-gradient(145deg,#18362e,#28493a 65%,#18352d);color:#f4edda;border-block:1px solid #ad915f}
+.home-racing-intro,.home-racing-photos{max-width:1450px;margin-inline:auto}
+.home-racing-intro{display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:clamp(18px,3vw,56px);margin-bottom:clamp(18px,2.5vw,32px)}
+.home-racing-intro .eyebrow{color:#d6bc8b}
+.home-racing-intro h2{font:400 clamp(34px,4.3vw,66px)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.035em;margin:10px 0 0;color:#f4edda}
+.home-racing-intro h2 em{color:#e1c58d;font-weight:400}
+.home-racing-intro p{font-size:clamp(14px,1.2vw,17px);line-height:1.65;color:#eee6d6;margin:0 0 16px}
+.home-racing-intro a{color:#e8c98d;text-decoration:underline;text-underline-offset:5px;font-weight:650}
+.home-racing-photos{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(12px,2vw,28px);align-items:stretch}
+.home-racing-photos figure{margin:0;padding:clamp(8px,1vw,14px);border:1px solid #c6a66b88;background:#f4eddb;color:#254235;min-width:0}
+.home-racing-photos a{display:block;background:#e2dfd4}
+.home-racing-photos img{display:block;width:100%;height:clamp(220px,28vw,410px);object-fit:contain;object-position:center}
+.home-racing-photos figcaption{font:600 clamp(16px,1.5vw,22px)/1.3 Georgia,serif;padding:11px 5px 4px}
+.home-racing-photos figcaption small{display:block;font:400 12px/1.5 system-ui,sans-serif;color:#576456;margin-top:4px}
+@media(max-width:760px){.home-racing-intro,.home-racing-photos{grid-template-columns:1fr}.home-racing-photos img{height:auto;max-height:360px}.home-racing-feature{padding-inline:18px}}
+
+/* Accessibility closeout: the racing caption must not inherit the pale-paper
+   even-chapter card background behind champagne lettering. */
+body .life-edition-chapter-racing .racing-photo-sequence figure{background:#193b2c!important}
+body .life-edition-chapter-racing .racing-photo-sequence figcaption{color:#f1dfb9!important}
+
+/* Final image balance: two real graphic-concept pieces, centered as a pair
+   rather than left-aligned in a four-column grid with two missing slots. */
+@media(min-width:901px){
+ body #new-graphics-layouts .bulk-exhibit-grid{
+   grid-template-columns:repeat(2,minmax(0,1fr));
+   max-width:1050px;margin-inline:auto;
+ }
+}
+
+/* Owner-upload orientation correction, confirmed against original preview:
+   sign-production image ID 75 was captured 90 degrees clockwise.
+   Rotate presentation 90deg clockwise, keeping original file unchanged. */
+body .image-card[data-image="75"] .image-wrap{
+ position:relative!important;
+ aspect-ratio:4/3!important;
+ max-height:none!important;
+ overflow:hidden!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+}
+body .image-card[data-image="75"] .image-wrap img{
+ position:static!important;top:auto!important;left:auto!important;
+ width:100%!important;height:100%!important;
+ max-width:100%!important;max-height:100%!important;
+ flex:none!important;
+ object-fit:contain!important;object-position:center!important;
+ transform:rotate(90deg) scale(1.3333)!important;
+ transform-origin:center center!important;
+}
+
+/* Final screenshot correction: two recovered printed/signage originals must
+   make a balanced pair rather than leave one-third of the row empty. */
+@media(min-width:761px){
+ body #recovered-photography .recovered-grid > .image-card{
+   grid-column:span 6!important;
+ }
+}
+
+/* Final racing hierarchy: the recreated personal memory appears alone on
+   Home, separated from authentic track photographs linked deeper. */
+.home-racing-feature .home-racing-photos--single{
+  grid-template-columns:minmax(0,1fr)!important;
+  max-width:680px!important;
+  margin-inline:auto!important;
+}
+.home-racing-feature .home-racing-memory{
+  width:100%!important;max-width:680px!important;
+  margin-inline:auto!important;
+}
+.home-racing-feature .home-racing-memory img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:620px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.home-racing-feature .home-racing-memory figcaption{
+  text-align:center!important;
+}
+/* Four real racing photos form an intentional 2-by-2 deeper gallery. */
+@media(min-width:761px){
+  body .motorsports-feature--racing-history .motorsports-feature-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  body .motorsports-feature--racing-history .motorsports-feature-grid figure:last-child{
+    grid-column:auto!important;
+    max-width:none!important;
+  }
+}
+@media(max-width:760px){
+  body .home-racing-feature .home-racing-memory img{
+    max-height:590px!important;
+  }
+  body .motorsports-feature--racing-history .motorsports-feature-grid figure:last-child{
+    grid-column:auto!important;
+  }
+}
+
+/* Verified Racing-Archive intake: three deliberate lead photographs, followed
+   by an optional, subject-grouped historical archive. This is editorial content
+   separate from the AI-created memory shown alone on Home. */
+body .motorsports-feature--racing-history .racing-curated-intro{
+  max-width:930px;margin:0 auto clamp(18px,2vw,32px);
+  text-align:center;color:#294736;
+}
+body .motorsports-feature--racing-history .racing-curated-intro>p:last-child{
+  margin:10px auto 0;max-width:790px;line-height:1.6;font-size:clamp(14px,1.05vw,17px);
+}
+@media(min-width:901px){
+ body .motorsports-feature--racing-history .racing-featured-three{
+   grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(14px,1.8vw,26px)!important;
+ }
+}
+body .motorsports-feature--racing-history .racing-featured-three figure{
+ min-width:0!important;max-width:none!important;grid-column:auto!important;
+ background:#f8f1e2;border:1px solid #bca57e;
+}
+body .motorsports-feature--racing-history .racing-featured-three figure a{
+ display:block;background:#e4e2d6;padding:8px;
+}
+body .motorsports-feature--racing-history .racing-featured-three figure img{
+ display:block;width:100%;height:clamp(225px,26vw,360px);object-fit:contain;object-position:center;
+}
+body .motorsports-feature--racing-history .racing-featured-three figure figcaption{
+ padding:10px 13px 15px;
+}
+.racing-expanded-archive{
+ max-width:1430px;margin:clamp(22px,2.8vw,40px) auto;
+ border:1px solid #9d8764;background:#f1e9d8;color:#263d30;
+ box-shadow:0 7px 28px rgba(31,50,39,.08);
+}
+.racing-expanded-archive>summary{
+ list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+ gap:20px;padding:clamp(16px,2vw,27px) clamp(19px,2.5vw,38px);
+ color:#264c39;background:linear-gradient(115deg,#f2ead9,#e7e9dc);
+}
+.racing-expanded-archive>summary::-webkit-details-marker{display:none}
+.racing-expanded-archive>summary strong{font:400 clamp(24px,2.7vw,37px)/1.2 Georgia,"Times New Roman",serif}
+.racing-expanded-archive>summary small{display:block;font:400 13px/1.5 system-ui,sans-serif;margin-top:5px;color:#526457}
+.racing-expanded-archive>summary:focus-visible{outline:3px solid #b99252;outline-offset:-4px}
+.racing-expand-indicator{font:400 34px/1 Georgia,serif;color:#947040}
+.racing-expanded-archive[open] .racing-expand-indicator{transform:rotate(45deg)}
+.racing-expanded-inner{padding:clamp(18px,2.4vw,37px);border-top:1px solid #c9b89a}
+.racing-archive-group+.racing-archive-group{margin-top:clamp(27px,3.4vw,51px)}
+.racing-archive-group h3{font:400 clamp(23px,2.3vw,34px)/1.16 Georgia,serif;margin:0 0 17px;color:#1c4535}
+.racing-archive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.5vw,21px)}
+.racing-archive-card{min-width:0;margin:0;background:#f9f5e9;border:1px solid #c6b18b}
+.racing-archive-card>a{display:block;padding:8px;background:#e5e3d9}
+.racing-archive-card img{display:block;width:100%;height:clamp(150px,16vw,240px);object-fit:contain;object-position:center}
+.racing-archive-card figcaption{padding:12px;font:500 15px/1.4 Georgia,serif}
+.racing-archive-card figcaption small{display:block;font:400 12px/1.5 system-ui,sans-serif;color:#506456;margin-top:4px}
+@media(max-width:1000px){
+ body .motorsports-feature--racing-history .racing-featured-three{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .racing-archive-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ body .motorsports-feature--racing-history .racing-featured-three{grid-template-columns:1fr!important}
+ body .motorsports-feature--racing-history .racing-featured-three figure img{height:auto;max-height:380px}
+ .racing-archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .racing-archive-card img{height:230px}
+}
+@media(max-width:480px){
+ .racing-archive-grid{grid-template-columns:1fr}
+ .racing-archive-card img{height:auto;max-height:330px}
+}
+
+/* Employment-first preflight: the main sign photograph must be visibly
+   painted on first-screen desktop. Previous absolute/flex sizing produced
+   an empty dark frame in the actual Chromium screenshot, despite image decode.
+   Present the existing authentic rooftop-sign JPEG without cropping. */
+.exhibition-masthead .hero-composition .hero-lead{
+ display:flex!important;
+ flex-direction:column!important;
+ justify-content:center!important;
+ align-items:stretch!important;
+ min-height:265px!important;
+}
+.exhibition-masthead .hero-composition .hero-lead>img{
+ position:relative!important;
+ inset:auto!important;
+ left:auto!important;top:auto!important;right:auto!important;bottom:auto!important;
+ width:100%!important;
+ height:auto!important;
+ max-width:100%!important;
+ min-height:0!important;
+ max-height:390px!important;
+ margin:auto 0!important;
+ display:block!important;
+ object-fit:contain!important;
+ opacity:1!important;
+ visibility:visible!important;
+ transform:none!important;
+ z-index:3!important;
+}
+.exhibition-masthead .hero-composition .hero-lead>span{
+ position:relative!important;
+ inset:auto!important;
+ left:auto!important;top:auto!important;
+ margin-top:auto!important;
+ flex:none!important;
+}
+.intro-band .intro-side a{color:inherit;text-underline-offset:3px;text-decoration:underline}
+
+/* Current homepage lead: render only the actual HTML photograph. The prior
+   pseudo-element duplicated a hard-coded Dental Care image over the owner's
+   chosen shop photograph. No overlay or second picture is permitted. */
+.exhibition-masthead .hero-composition .hero-lead::before{
+ content:none!important;
+ display:none!important;
+ background-image:none!important;
+}
+.exhibition-masthead .hero-composition .hero-lead>img{
+ opacity:1!important;
+ visibility:visible!important;
+}
+.exhibition-masthead .hero-composition .hero-lead>span{
+ z-index:21!important;
+}
+
+/* Wide-monitor homepage regression: the exhibition wrapper is narrower than the
+   browser viewport; never calculate inner padding from the outer viewport width. */
+@media (min-width: 1200px) {
+  .career-positioning {
+    padding-inline: clamp(28px, 4vw, 72px) !important;
+  }
+  .career-positioning .career-positioning-main {
+    width: 100%;
+    grid-template-columns: minmax(0, 1.45fr) minmax(300px, .85fr);
+    gap: clamp(28px, 3vw, 56px);
+    align-items: center;
+  }
+  .career-positioning .career-positioning-main > div,
+  .career-positioning .career-positioning-main > p {
+    min-width: 0;
+  }
+  .career-positioning .career-positioning-links {
+    justify-content: flex-start;
+  }
+}
+
+/* Compact, copyable employer contact beneath the established homepage actions. */
+.exhibition-masthead .hero-contact-email{
+ margin-top:8px;
+ color:#dce6d9;
+ font-size:12px;
+ line-height:1.5;
+ letter-spacing:.015em;
+}
+.exhibition-masthead .hero-contact-email a{
+ color:#f3dfb2;
+ text-underline-offset:3px;
+ overflow-wrap:anywhere;
+}
+
+/* Owner-approved: omit decorative "MAKING THE VISIBLE" lettering near photos. */
+.exhibition-masthead .sculpture-graticule{display:none!important}
+.exhibition-masthead .hero-composition::after{content:none!important;display:none!important}
+
+/* Keep the ambient gold sculpture but remove the generic rectangular image
+   shadow inherited from .masthead-art img behind the photographic frames. */
+.exhibition-masthead .exhibition-sculpture>img{
+ box-shadow:none!important;
+}
+
+/* Final owner-approved alignment: contain the tan discipline bar within the
+   same centered exhibition width as the hero and subsequent sections. */
+.exhibition-marquee{
+ max-width:var(--max);
+ margin-inline:auto;
+}
