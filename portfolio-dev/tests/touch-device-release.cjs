@@ -21,7 +21,7 @@ const fs=require('node:fs'),path=require('node:path');
      if(!state.touch)throw Error('Touch not enabled');
      if(state.scroll>state.actual+2)throw Error('Horizontal scrolling: '+JSON.stringify(state));
      if(state.heading!==1)throw Error('Incorrect main heading count');
-     const links=page.locator('header nav a');if(await links.count()!==4)throw Error('Incorrect top navigation count');
+     const links=page.locator('header nav a');if(await links.count()!==5)throw Error('Incorrect top navigation count');
      const card=page.locator('button[data-image]:visible').first();
      if(await card.count()!==1)throw Error('Interactive photo card missing');
      await card.tap({timeout:12000});
