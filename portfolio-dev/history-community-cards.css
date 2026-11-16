@@ -31,3 +31,19 @@
 .history-community-author strong{font:normal 1.55rem/1.2 Georgia,serif;color:#fbe9c9}
 .history-community-author a{font:600 .72rem/1.5 system-ui,sans-serif;color:#f6d18c;text-decoration:underline;text-underline-offset:3px}
 @media(max-width:620px){.history-community-author img{width:65px;height:65px;min-width:65px}.history-community-author strong{font-size:1.25rem}}
+
+/* November 16 editorial finish: wider featured Time Vault banner and improved accessibility. */
+.history-community-feature .history-community-card-label{color:#315040!important}
+.history-community-feature .history-community-card-description{color:#455542!important}
+.history-community-feature .history-community-card-open{color:#174c38!important}
+.history-community-feature .history-community-kicker{color:#f0d39b}
+.history-community-art{padding:clamp(5px,.75vw,12px);height:clamp(220px,23vw,315px)}
+.history-community-art img{object-fit:contain;object-position:center center}
+.history-community-card:nth-child(3){grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(290px,.75fr);align-items:stretch;min-height:clamp(315px,31vw,440px)}
+.history-community-card:nth-child(3) .history-community-art{height:100%;min-height:315px;border-bottom:0;border-right:3px solid #bda06a;padding:clamp(4px,.65vw,10px)}
+.history-community-card:nth-child(3) .history-community-card-body{justify-content:center;padding:clamp(25px,3vw,48px)}
+.history-community-card:nth-child(3) strong{font-size:clamp(2.05rem,3vw,3.3rem)}
+.history-community-card:nth-child(3) .history-community-card-description{font-size:clamp(1.06rem,1.35vw,1.3rem)}
+.history-community-card:nth-child(3) .history-community-card-open{margin-top:28px}
+@media(max-width:1000px){.history-community-card:nth-child(3){grid-template-columns:minmax(0,1.2fr) minmax(210px,.8fr)}.history-community-card:nth-child(3) .history-community-art{min-height:290px}}
+@media(max-width:700px){.history-community-card:nth-child(3){grid-column:auto;display:flex;min-height:0}.history-community-card:nth-child(3) .history-community-art{height:clamp(235px,56vw,350px);min-height:0;border-right:0;border-bottom:3px solid #bda06a}.history-community-card:nth-child(3) strong{font-size:clamp(1.9rem,7vw,2.5rem)}.history-community-card:nth-child(3) .history-community-card-body{padding:clamp(17px,2.1vw,28px)}}
