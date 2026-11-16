@@ -45,7 +45,24 @@ function scanUris(text){
 for(const page of pages){
   const content=fs.readFileSync(path.join(dev,page),'utf8');
   const dest=path.join(out,page);
-  const updated=rewrite(content).replace(/<meta name="robots" content="noindex,nofollow">/g,'');
+  let updated=rewrite(content).replace(/<meta name="robots" content="noindex,nofollow">/g,'');
+  // Public-only canonical address and link preview for resumes and employer correspondence.
+  const title=(updated.match(/<title>([^<]+)<\/title>/)||[])[1];
+  const desc=(updated.match(/<meta name="description" content="([^"]+)"/)||[])[1];
+  if(!title||!desc)throw Error('Public metadata missing on '+page);
+  const absolute='https://robertriley253.github.io/'+page;
+  const escapeAttr=value=>value.replace(/&amp;/g,'&').replace(/&/g,'&amp;').replace(/"/g,'&quot;');
+  const metadata=[
+   '<link rel="canonical" href="'+absolute+'">',
+   '<meta property="og:type" content="website">',
+   '<meta property="og:title" content="'+escapeAttr(title)+'">',
+   '<meta property="og:description" content="'+escapeAttr(desc)+'">',
+   '<meta property="og:url" content="'+absolute+'">',
+   '<meta property="og:image" content="https://robertriley253.github.io/portfolio-001.jpg">',
+   '<meta name="twitter:card" content="summary_large_image">'
+  ].join('');
+  if(updated.includes('rel="canonical"'))throw Error('Duplicate canonical metadata: '+page);
+  updated=updated.replace('</head>',metadata+'</head>');
   fs.writeFileSync(dest,updated);
   copied.add(page);
   for(const uri of scanUris(content)){const asset=resolveAsset(uri);if(!asset)continue;const [src,dst]=assetToSource(asset);copy(src,dst);}
