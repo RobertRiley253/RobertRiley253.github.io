@@ -41,6 +41,13 @@ const fs=require('node:fs'),path=require('node:path');
     if(await page.locator('.album-social-photo-cta').count()!==1)throw Error('Historical picture preview click affordance missing');
     const insights=await page.locator('.album-social-insights').innerText();
     if(!insights.includes('46,560,500')||!insights.includes('606-day'))throw Error('Facebook Insights missing or imprecise');
+    const historyCards=page.locator('#robert-history-communities .history-community-card');
+    if(await historyCards.count()!==6)throw Error('Expected six verified history groups');
+    const ids=['1564227011225101','1737856936769524','698198932918069','1122626339331764','9675742525806537','1198695048625003'];
+    for(const id of ids)if(await historyCards.locator('[href="https://www.facebook.com/groups/'+id+'"]').count()!==1&&await page.locator('#robert-history-communities .history-community-card[href="https://www.facebook.com/groups/'+id+'"]').count()!==1)throw Error('Group link mismatch '+id);
+    const communityPhotos=page.locator('#robert-history-communities .history-community-artwork img');
+    if(await communityPhotos.count()!==5)throw Error('Missing uploaded group photos');
+    for(const image of await communityPhotos.all()){await image.scrollIntoViewIfNeeded();await image.evaluate(img=>img.decode().catch(()=>{}));if(!await image.evaluate(img=>img.complete&&img.naturalWidth>0))throw Error('Uploaded group photograph failed to render: '+await image.getAttribute('src'));}
     const nav=await page.locator('nav[aria-label="Main pages"] a').count();if(nav!==5)throw Error('Expected five navigation links, got '+nav);
     const routes=await page.locator('.album-routes a').count();if(routes!==5)throw Error('Missing site-guide route');
     const bad=await page.locator('a[href=""]').count();if(bad)throw Error('Empty anchor');
