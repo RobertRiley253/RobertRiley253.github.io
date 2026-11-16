@@ -51,6 +51,12 @@ jobs:
             sheet.save(Path('photo-triage')/name,quality=90)
             print(name,'images',len(candidates[offset:offset+batch]))
           (Path('photo-triage')/'unused-metadata.json').write_text(json.dumps(metadata,indent=2),encoding='utf-8')
+          import shutil
+          (Path('photo-triage')/'sources').mkdir(exist_ok=True)
+          for item in metadata:
+            src=Path(item['path'])
+            if src.is_file() and src.suffix.lower() in {'.jpg','.jpeg','.png','.webp'}:
+              shutil.copyfile(src,Path('photo-triage')/'sources'/f"{item['index']:02d}-{src.name}")
           PY
       - uses: actions/upload-artifact@v4
         with:
