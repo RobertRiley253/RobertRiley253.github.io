@@ -583,3 +583,25 @@ body .motorsports-feature--racing-history .racing-featured-three figure figcapti
 .exhibition-masthead .hero-composition .hero-lead>span{
  z-index:21!important;
 }
+
+
+/* Wide-monitor homepage regression: the exhibition wrapper is narrower than the
+   browser viewport; never calculate inner padding from the outer viewport width. */
+@media (min-width: 1200px) {
+  .career-positioning {
+    padding-inline: clamp(28px, 4vw, 72px) !important;
+  }
+  .career-positioning .career-positioning-main {
+    width: 100%;
+    grid-template-columns: minmax(0, 1.45fr) minmax(300px, .85fr);
+    gap: clamp(28px, 3vw, 56px);
+    align-items: center;
+  }
+  .career-positioning .career-positioning-main > div,
+  .career-positioning .career-positioning-main > p {
+    min-width: 0;
+  }
+  .career-positioning .career-positioning-links {
+    justify-content: flex-start;
+  }
+}
