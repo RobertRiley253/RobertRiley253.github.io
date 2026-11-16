@@ -616,3 +616,9 @@ body .motorsports-feature--racing-history .racing-featured-three figure figcapti
 /* Owner-approved: omit decorative "MAKING THE VISIBLE" lettering near photos. */
 .exhibition-masthead .sculpture-graticule{display:none!important}
 .exhibition-masthead .hero-composition::after{content:none!important;display:none!important}
+
+/* Keep the ambient gold sculpture but remove the generic rectangular image
+   shadow inherited from .masthead-art img behind the photographic frames. */
+.exhibition-masthead .exhibition-sculpture>img{
+ box-shadow:none!important;
+}
