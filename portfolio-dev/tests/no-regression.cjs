@@ -87,9 +87,20 @@ else {
  if(raceFeature.includes('portfolio-018.jpg')||raceFeature.includes('portfolio-040.jpg'))
    failures.push('Unrelated commercial vehicle photo in homepage racing feature');
 }
+// Employment-first presentation order: make the strongest commercial and
+// manufacturing evidence visible before optional personal/racing history.
+const homeHtml=read('index.html');
+if(!(homeHtml.indexOf('id="chapter-3"')>=0 && homeHtml.indexOf('id="chapter-3"')<homeHtml.indexOf('id="racing-highlights"')))
+ failures.push('Homepage racing appears before finished commercial / print chapters');
+if(!(homeHtml.indexOf('id="racing-highlights"')<homeHtml.indexOf('id="expanded-exhibit"')))
+ failures.push('Homepage racing feature no longer sits near the deeper exploration paths');
 const selectedWork=read('work.html');
+for(const cid of ['chapter-1','chapter-2','chapter-3','chapter-4','chapter-5']){
+ if(!(selectedWork.indexOf('id="'+cid+'"')>=0 && selectedWork.indexOf('id="'+cid+'"')<selectedWork.indexOf('id="motorsports-feature"')))
+  failures.push('Selected Work racing precedes professional category '+cid);
+}
 const motorsportsStart=selectedWork.indexOf('id="motorsports-feature"');
-const motorsportsEnd=selectedWork.indexOf('id="category-menu"',motorsportsStart);
+const motorsportsEnd=selectedWork.indexOf('</section>',motorsportsStart)+10;
 if(motorsportsStart<0||motorsportsEnd<motorsportsStart)failures.push('Selected Work motorsports feature missing');
 else{
  const feature=selectedWork.slice(motorsportsStart,motorsportsEnd);
