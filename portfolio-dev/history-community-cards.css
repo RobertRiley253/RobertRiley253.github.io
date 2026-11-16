@@ -23,3 +23,11 @@
 @media(max-width:1000px){.history-community-top{grid-template-columns:1fr}.history-community-art{height:clamp(185px,26vw,250px)}}
 @media(max-width:700px){.history-community-grid{grid-template-columns:1fr}.history-community-art{height:clamp(210px,55vw,310px)}.history-community-feature{padding-inline:20px}.history-community-card strong{font-size:clamp(1.7rem,6vw,2.4rem)}}
 @media(prefers-reduced-motion:reduce){.history-community-card,.history-community-art img{transition:none}}
+
+.history-community-author{display:flex;align-items:center;gap:16px;margin:0 0 20px;padding:11px 15px 11px 11px;border:1px solid #bfa57173;background:#0d29234f;max-width:480px}
+.history-community-author img{width:78px;height:78px;min-width:78px;display:block;object-fit:contain;background:#16352c;border:1px solid #c6a971}
+.history-community-author div{display:flex;flex-direction:column;gap:3px}
+.history-community-author div>span{font:700 .63rem/1.45 system-ui,sans-serif;letter-spacing:.15em;color:#d9bb7d}
+.history-community-author strong{font:normal 1.55rem/1.2 Georgia,serif;color:#fbe9c9}
+.history-community-author a{font:600 .72rem/1.5 system-ui,sans-serif;color:#f6d18c;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:620px){.history-community-author img{width:65px;height:65px;min-width:65px}.history-community-author strong{font-size:1.25rem}}
