@@ -108,3 +108,23 @@ body.album-page{background:#18352d;color:#f5ecdb;overflow-x:hidden}body.album-pa
 .album-social-mini-f{background:#1877f2;color:white;font-size:1.3rem}
 @media(max-width:600px){.album-social-button-logo{flex-basis:41px;height:41px;font-size:2.55rem}.album-page .album-social-links .album-social-primary{padding:14px 12px;gap:10px}.album-social-button-text small{font-size:.52rem}.album-social-photo-cta{font-size:.68rem;padding:8px;left:4px;right:4px;gap:7px}.album-social-photographs{padding-bottom:43px}}
 @media(prefers-reduced-motion:reduce){.album-page .album-social-links .album-social-primary,.album-social-photo{transition:none}}
+
+/* Final editorial balance: single unmistakable Facebook CTA, no photo-overlay billboard. */
+.album-social-heading h2{font-size:clamp(2.65rem,3.8vw,4.35rem);line-height:1.1;letter-spacing:-.025em;max-width:700px}
+.album-social-heading>p{max-width:610px;line-height:1.72}
+.album-social-inner{grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(32px,3.6vw,67px)}
+.album-social-identity{margin-bottom:17px}
+.album-social-preview{margin:22px 0 8px}
+.album-social-preview span{padding-bottom:7px}
+.album-page .album-social-links{margin-top:27px}
+.album-page .album-social-links .album-social-primary{max-width:605px;padding:12px 17px;border-width:1px;box-shadow:0 5px 0 #073774,0 13px 24px #061a143d}
+.album-social-button-logo{flex-basis:46px;height:46px;font-size:2.9rem}
+.album-social-button-text strong{font-size:clamp(.98rem,1.15vw,1.18rem)}
+.album-social-button-text small{font-size:.68rem;letter-spacing:.015em;text-transform:none}
+.album-social-photographs{height:clamp(330px,30vw,480px);padding-bottom:0;align-self:center;position:relative}
+.album-social-photo-cta{position:absolute;left:auto;right:0;bottom:-36px;min-height:0;padding:7px 0;display:inline-flex;gap:10px;align-items:center;background:transparent!important;border:0;box-shadow:none;color:#f6dcaa;font:600 .83rem/1.4 system-ui,sans-serif;text-decoration:underline;text-underline-offset:4px}
+.album-social-photographs:hover .album-social-photo-cta,.album-social-photographs:focus-visible .album-social-photo-cta{color:#fff0cf;background:transparent!important}
+.album-social-photo-cta-logo{display:none}
+.album-social-insights{margin-top:clamp(85px,9vw,130px)}
+@media(max-width:950px){.album-social-inner{grid-template-columns:1fr}.album-social-photographs{height:clamp(330px,51vw,450px);margin-bottom:30px}.album-social-insights{margin-top:clamp(38px,6vw,65px)}}
+@media(max-width:600px){.album-social-heading h2{font-size:clamp(2.45rem,10vw,3.4rem)}.album-social-photographs{height:290px;margin-bottom:39px}.album-social-photo-cta{bottom:-36px;max-width:100%;text-align:right;font-size:.72rem}.album-page .album-social-links .album-social-primary{padding:13px}.album-social-button-logo{flex-basis:41px;height:41px;font-size:2.55rem}}
