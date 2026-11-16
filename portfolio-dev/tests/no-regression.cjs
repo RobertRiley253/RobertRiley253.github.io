@@ -125,8 +125,9 @@ if(!selectedWork.includes('id="more-racing-photographs"'))failures.push('Racing 
 // Recovered original No. 91 trackside photographs must remain actual images,
 // not text-only promises or unrelated commercial vehicles.
 const personalRace=story.slice(story.indexOf('id="racing-trackside-archive"'),story.indexOf('id="story-field"'));
-for(const name of ['download%20(7).png','download%20(8).png'])
- if(!personalRace.includes(name)) failures.push('No. 91 trackside story missing original photo '+name);
+if(!personalRace.includes('download%20(7).png')) failures.push('No. 91 trackside story missing original historical photo');
+if(!personalRace.includes('rob_tammie_no91_exact_user_crop.webp')) failures.push('Exact user-cropped Rob and Tammie picture missing from My Story');
+if(personalRace.includes('download%20(8).png')) failures.push('Wrong older couple image still shown in right-hand racing story card');
 if(personalRace.includes('no91_trackside_couple_user_upload.webp')) failures.push('AI recreation should remain on homepage, separated from historical archive');
 for(const name of ['IMG_4623.jpg','IMG_4626.jpg','download%20(7).png','download%20(8).png'])
  if(!selectedWork.slice(motorsportsStart,motorsportsEnd).includes(name)) failures.push('Original racing gallery missing '+name);
@@ -155,7 +156,7 @@ if(read('profile.html').includes('src="'+replacementNo91+'"'))
 // checked-in originals; classification remains intentionally curated.
 const intakeDir=path.join(dev,'incoming-portfolio-2026-11-15');
 const intakePages={
-  'profile.html':{required:30,sections:['new-illustration-studies','new-flatbed-printing','software-workflow-proof','new-specialty-print-processes','new-local-history-photographs']},
+  'profile.html':{required:31,sections:['new-illustration-studies','new-flatbed-printing','software-workflow-proof','new-specialty-print-processes','new-local-history-photographs']},
   'work.html':{required:11,sections:['new-technical-design-studies','illustration-character-sheets','sticker-binder-samples']},
   'production.html':{required:6,sections:['new-transfer-screenprinting-archive']}
 };
