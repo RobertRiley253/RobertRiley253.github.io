@@ -10,6 +10,22 @@ const fs=require('node:fs'),path=require('node:path');
    const response=await page.goto(base+'album.html',{waitUntil:'domcontentloaded',timeout:30000});
    if(response.status()!==200)throw Error('Album status '+response.status());
    await page.locator('.album-card').first().waitFor({timeout:12000});
+   // Protect owner-approved employer-first sequence; this is a loading batch, not a chapter boundary.
+   const inventory=await page.evaluate(()=>{
+     const raw=document.querySelector('#album-data')?.textContent;
+     const items=JSON.parse(raw||'[]');
+     return {total:items.length,unique:new Set(items.map(x=>x.f)).size,
+       missing:items.filter(x=>!x.f||!x.t||!x.c).length,
+       first:items.slice(0,48).map(x=>x.c),
+       last:items.slice(-14).map(x=>x.c),
+       categoryNames:[...new Set(items.map(x=>x.c))]};
+   });
+   if(inventory.total!==259||inventory.unique!==259||inventory.missing)throw Error('Album source manifest loss/duplication');
+   if(inventory.first.some(c=>!['Signs & Design','Vehicles & Wraps','Illustration & Print'].includes(c)))throw Error('Nonprofessional category inserted into first 48');
+   if(inventory.last.some(c=>c!=='History & Memories'))throw Error('Historical finale moved');
+   const sequence=['Signs & Design','Vehicles & Wraps','Illustration & Print'];
+   const sorted=inventory.first.slice().sort((a,b)=>sequence.indexOf(a)-sequence.indexOf(b));
+   if(JSON.stringify(sorted)!==JSON.stringify(inventory.first))throw Error('Opening image groups lose coherent order');
    const count=await page.locator('.album-card').count();
    if(count<30)throw Error('Fewer than 30 starting cards: '+count);
    const all=await page.locator('#album-count').innerText();if(!/259 photographs/.test(all))throw Error('Inventory count mismatch: '+all);
