@@ -130,7 +130,7 @@ if(!read('profile.html').includes('src="'+replacementNo91+'"'))
 // checked-in originals; classification remains intentionally curated.
 const intakeDir=path.join(dev,'incoming-portfolio-2026-11-15');
 const intakePages={
-  'profile.html':{required:30,sections:['new-illustration-studies','new-flatbed-printing','software-workflow-proof','new-specialty-print-processes','new-local-history-photographs']},
+  'profile.html':{required:31,sections:['new-illustration-studies','new-flatbed-printing','software-workflow-proof','new-specialty-print-processes','new-local-history-photographs']},
   'work.html':{required:11,sections:['new-technical-design-studies','illustration-character-sheets','sticker-binder-samples']},
   'production.html':{required:6,sections:['new-transfer-screenprinting-archive']}
 };
