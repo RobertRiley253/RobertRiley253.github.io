@@ -37,6 +37,10 @@ jobs:
           done
           cat /tmp/portfolio-http.log
           exit 1
+      - name: Guard against wide-monitor homepage text overlap
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:8765/portfolio-dev/
+        run: node portfolio-dev/tests/wide-monitor-home-layout.cjs
       - name: Test four pages at desktop and mobile widths
         run: node portfolio-dev/tests/browser-smoke.cjs
       - name: Install Firefox and WebKit for release cross-browser testing
