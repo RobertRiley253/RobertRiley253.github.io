@@ -34,3 +34,19 @@ body.album-page{background:#18352d;color:#f5ecdb;overflow-x:hidden}body.album-pa
 @media(max-width:950px){.album-story-lead{grid-template-columns:1fr}.album-history-collage{max-width:720px;height:400px}.album-wayfinding .album-routes a{grid-column:span 3!important}}
 @media(max-width:600px){.album-history-collage{height:280px}.album-history-photo figcaption{font-size:.56rem;padding:6px}.album-wayfinding .album-routes a{grid-column:span 6!important;min-height:0}.album-route-intro p{max-width:100%}}
 @media(prefers-reduced-motion:reduce){.album-history-photo img,.album-wayfinding .album-routes a{transition:none}}
+
+/* Opening album plate — four actual owner-archive photographs in coordinated gold frames. */
+.album-hero-collection{min-width:0;display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr) auto;gap:clamp(9px,1.2vw,17px);align-self:center;filter:drop-shadow(0 22px 25px #071a1466)}
+.album-hero-tile{position:relative;margin:0;min-width:0;overflow:hidden;padding:clamp(5px,.6vw,9px);background:linear-gradient(135deg,#e9d7b1,#b8975e 66%,#f4e0b7);border:1px solid #ead5a2;box-shadow:0 8px 18px #071f185e}
+.album-hero-tile img{display:block;width:100%;height:100%;object-fit:cover;background:#dccdb3}
+.album-hero-tile-personal{grid-column:1;grid-row:1/3;transform:rotate(-1.2deg);height:clamp(285px,27vw,440px)}
+.album-hero-tile-personal img{object-position:50% 35%}
+.album-hero-tile-creative{grid-column:2;grid-row:1;height:clamp(130px,13vw,210px);transform:rotate(1.3deg)}
+.album-hero-tile-illustration{grid-column:2;grid-row:2;height:clamp(130px,13vw,210px);transform:rotate(-.7deg)}
+.album-hero-tile-illustration img{object-fit:contain;background:#e8e2d5}
+.album-hero-tile-work{grid-column:1/3;grid-row:3;height:clamp(120px,11vw,185px);transform:rotate(.4deg)}
+.album-hero-tile-work img{object-position:center 46%}
+.album-hero-tile figcaption{position:absolute;bottom:clamp(5px,.6vw,9px);left:clamp(5px,.6vw,9px);right:clamp(5px,.6vw,9px);padding:7px 10px;background:#18382fdc;color:#f7dcaa;text-align:center;letter-spacing:.16em;font:700 clamp(.53rem,.61vw,.7rem)/1.4 system-ui,sans-serif}
+.album-card[data-new-batch="true"]:focus-visible{outline:3px solid #fce4ab;outline-offset:4px}
+@media(max-width:1020px){.album-hero-collection{width:min(100%,760px);margin:0 auto}.album-hero-tile-personal{height:clamp(290px,43vw,485px)}.album-hero-tile-creative,.album-hero-tile-illustration{height:clamp(145px,21vw,237px)}.album-hero-tile-work{height:clamp(130px,22vw,205px)}}
+@media(max-width:600px){.album-hero-collection{gap:9px}.album-hero-tile-personal{height:clamp(235px,66vw,370px)}.album-hero-tile-creative,.album-hero-tile-illustration{height:clamp(114px,32vw,180px)}.album-hero-tile-work{height:clamp(115px,26vw,175px)}.album-hero-tile figcaption{font-size:.48rem;letter-spacing:.08em;padding:5px 3px}}
