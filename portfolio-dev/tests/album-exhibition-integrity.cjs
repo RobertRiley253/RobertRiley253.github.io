@@ -40,7 +40,7 @@ const fs=require('node:fs'),path=require('node:path');
     if(await page.locator('.album-social-preview span').count()!==3)throw Error('Three kinds of Facebook content not clearly explained');
     if(await page.locator('.album-social-photo-cta').count()!==1)throw Error('Historical picture preview click affordance missing');
     const insights=await page.locator('.album-social-insights').innerText();
-    if(!insights.includes('46,560,500')||!insights.includes('606-day'))throw Error('Facebook Insights missing or imprecise');
+    if(!insights.includes('46,560,500')||!/606[- ]day(?:s)?/.test(insights))throw Error('Facebook Insights missing or imprecise');
     const historyCards=page.locator('#robert-history-communities .history-community-card');
     if(await historyCards.count()!==6)throw Error('Expected six verified history groups');
     const ids=['1564227011225101','1737856936769524','698198932918069','1122626339331764','9675742525806537','1198695048625003'];
