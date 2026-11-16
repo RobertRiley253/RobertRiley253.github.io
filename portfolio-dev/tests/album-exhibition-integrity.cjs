@@ -26,6 +26,8 @@ const fs=require('node:fs'),path=require('node:path');
     await page.getByRole('button',{name:'All photographs'}).click();
     await page.getByRole('button',{name:/Turn to the next photographs/}).click();
     if(await page.locator('.album-card').count()<=count)throw Error('Show more failed');
+    if(!(await page.locator('#album-progress-label').innerText()).includes('96 of 259'))throw Error('Progress tally not updated after paging');
+    if(!(await page.locator('#album-remaining').innerText()).includes('163 more'))throw Error('Remaining photo total incorrect');
     const nav=await page.locator('nav[aria-label="Main pages"] a').count();if(nav!==5)throw Error('Expected five navigation links, got '+nav);
     const routes=await page.locator('.album-routes a').count();if(routes!==5)throw Error('Missing site-guide route');
     const bad=await page.locator('a[href=""]').count();if(bad)throw Error('Empty anchor');
