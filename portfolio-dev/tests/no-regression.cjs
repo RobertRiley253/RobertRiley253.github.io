@@ -82,7 +82,7 @@ const homeRaceEnd=homepageRacing.indexOf('class="life-story-teaser"',homeRaceSta
 if(homeRaceStart<0||homeRaceEnd<=homeRaceStart) failures.push('Homepage racing photo feature is missing');
 else {
  const raceFeature=homepageRacing.slice(homeRaceStart,homeRaceEnd);
- for(const name of ['IMG_4623.jpg','download%20(8).png'])
+ for(const name of ['IMG_4623.jpg','no91_trackside_couple_user_upload.webp'])
    if(!raceFeature.includes(name)) failures.push('Homepage racing feature missing authentic photo '+name);
  if(raceFeature.includes('portfolio-018.jpg')||raceFeature.includes('portfolio-040.jpg'))
    failures.push('Unrelated commercial vehicle photo in homepage racing feature');
@@ -101,7 +101,7 @@ else{
 // Recovered original No. 91 trackside photographs must remain actual images,
 // not text-only promises or unrelated commercial vehicles.
 const personalRace=story.slice(story.indexOf('id="racing-trackside-archive"'),story.indexOf('id="story-field"'));
-for(const name of ['download%20(7).png','download%20(8).png'])
+for(const name of ['download%20(7).png','no91_trackside_couple_user_upload.webp'])
  if(!personalRace.includes(name)) failures.push('No. 91 trackside story missing authentic photo '+name);
 if(!selectedWork.slice(motorsportsStart,motorsportsEnd).includes('download%20(7).png'))
  failures.push('No. 91 racing photo lost from Selected Work');
@@ -117,6 +117,15 @@ if(!read('editorial-materials.css').includes('.image-card[data-image="75"]'))
 const studio=read('production.html');
 for(const file of ['image(20261113-075940).png','image(20261113-080043).png','7C78B285A419_1681758519.jpg'])
  if(!studio.includes(file)) failures.push('Visually screened workshop original lost: '+file);
+// Owner-approved replacement is the uploaded photo, not the older archived
+// couple image. Keep the uploaded web-optimized source in both visible chapters.
+const replacementNo91='incoming-portfolio-2026-11-15/no91_trackside_couple_user_upload.webp';
+if(!fs.existsSync(path.join(dev,replacementNo91)))
+ failures.push('New user-supplied No. 91 photo is missing from development assets');
+if(!read('index.html').includes('src="'+replacementNo91+'"'))
+ failures.push('Homepage still uses old No. 91 couple photograph');
+if(!read('profile.html').includes('src="'+replacementNo91+'"'))
+ failures.push('My Story still uses old No. 91 couple photograph');
 // November 15 intake quality gate: all curated images resolve to actual
 // checked-in originals; classification remains intentionally curated.
 const intakeDir=path.join(dev,'incoming-portfolio-2026-11-15');
