@@ -207,7 +207,7 @@ const path = require('node:path');
         }
         // Navigation should lead to another actual page, not simply show a styled label.
         const navLinks = await page.locator('.nav a').count();
-        if (navLinks !== 4) throw new Error('Expected exactly four navigable main sections, got ' + navLinks);
+        if (navLinks !== 5) throw new Error('Expected exactly five navigable main sections, got ' + navLinks);
         const current = page.locator('.nav a[aria-current="page"]');
         if (await current.count() !== 1) throw new Error('Missing or repeated current-page navigation marker');
         if (name === 'work.html') {
