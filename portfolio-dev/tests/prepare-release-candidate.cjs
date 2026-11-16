@@ -3,7 +3,7 @@ const fs=require('node:fs'), path=require('node:path');
 const root=path.resolve(__dirname,'../..');
 const dev=path.join(root,'portfolio-dev');
 const out=path.join(root,'release-candidate');
-const pages=['index.html','work.html','production.html','profile.html'];
+const pages=['index.html','work.html','production.html','profile.html','album.html'];
 fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
 const copied=new Set(), missing=new Set(), paths=new Set(), edits=[];
 function safe(rel){const clean=rel.replace(/\\/g,'/').replace(/^\/+/,'');if(!clean||clean==='.'||clean.split('/').includes('..'))throw Error('Unsafe path: '+rel);return clean;}
@@ -71,6 +71,19 @@ for(const page of pages){
 const js=fs.readFileSync(path.join(dev,'portfolio.js'),'utf8');
 copy('portfolio-dev/portfolio.js','portfolio.js');
 for(const m of js.matchAll(/"file":"([^"]+)"/g)){const asset=resolveAsset(m[1]);if(asset){const [src,dst]=assetToSource(asset);copy(src,dst);}}
+/* Album uses a structured JSON manifest and a dedicated viewer script. Both are
+   required in the unpublished release even when images load lazily. */
+copy('portfolio-dev/album.js','album.js');
+const albumHtml=fs.readFileSync(path.join(dev,'album.html'),'utf8');
+const albumMatch=albumHtml.match(/<script id="album-data" type="application\/json">([\s\S]*?)<\/script>/);
+if(!albumMatch)throw Error('Album image manifest missing');
+const albumImages=JSON.parse(albumMatch[1]);
+for(const photo of albumImages){
+  const asset=resolveAsset(photo.f);
+  if(!asset)throw Error('Invalid album source: '+photo.f);
+  const [src,dst]=assetToSource(asset);
+  copy(src,dst);
+}
 /* CSS may reference background artwork not directly used in HTML. */
 let inspected=new Set();
 while(true){
@@ -85,7 +98,7 @@ while(true){
     }
   }
 }
-const required=['portfolio.js',...pages];
+const required=['portfolio.js','album.js',...pages];
 for(const name of required)if(!copied.has(name))missing.add(name);
 const imageCount=[...copied].filter(f=>/\.(jpg|jpeg|png|webp|avif|gif)$/i.test(f)).length;
 if(imageCount<160)throw Error('Insufficient images copied: '+imageCount);
