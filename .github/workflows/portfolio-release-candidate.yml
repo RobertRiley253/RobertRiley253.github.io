@@ -28,6 +28,25 @@ jobs:
             done
             curl -fsS "http://127.0.0.1:8877/$page" >/dev/null
           done
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium Firefox and Safari WebKit
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium firefox webkit
+      - name: Browser-test actual publication candidate before approval
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:8877/
+        run: node portfolio-dev/tests/cross-browser-release.cjs
+      - name: Preserve screenshots of publication candidate for visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robert-riley-release-candidate-screenshots
+          path: portfolio-dev/browser-qa/
+          retention-days: 14
+          if-no-files-found: warn
       - name: Preserve publication candidate for owner's review (not published)
         uses: actions/upload-artifact@v4
         with:
