@@ -33,12 +33,12 @@ for(const [engine,launcher] of Object.entries(browsers)){
                 loaded:img.complete&&img.naturalWidth>0&&img.naturalHeight>0,
                 width:img.naturalWidth,height:img.naturalHeight,opacity:css.opacity,
                 visible:css.display!=='none'&&css.visibility!=='hidden',
-                rectWidth:rect.width,rectHeight:rect.height,error};
+                rectWidth:rect.width,rectHeight:rect.height,layoutExpected:!img.closest('details:not([open])')&&css.display!=='none',error};
             }));
           },{start,end:Math.min(count,start+12)});
           records.push(...chunk);
         }
-        const broken=records.filter(x=>!x.loaded||!x.rectWidth||!x.rectHeight);
+        const broken=records.filter(x=>!x.loaded||(x.layoutExpected&&(!x.rectWidth||!x.rectHeight)));
         if(broken.length)throw Error('Gallery images not loaded or no layout: '+JSON.stringify(broken.slice(0,10)));
         // Inspect the formerly blank CO2 laser machine card on Production.
         if(route==='production.html'){
