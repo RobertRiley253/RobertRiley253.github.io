@@ -45,6 +45,8 @@ jobs:
         run: node portfolio-dev/tests/cross-browser-release.cjs
       - name: Decode every rendered gallery image across Chromium Firefox and WebKit
         run: node portfolio-dev/tests/deep-gallery-integrity.cjs
+      - name: Verify true touch-enabled iPhone and Android emulation
+        run: node portfolio-dev/tests/touch-device-release.cjs
       - name: Audit desktop and mobile WCAG accessibility
         run: node portfolio-dev/tests/accessibility-audit.cjs
       - name: Generate development-only contact sheets of unplaced originals
