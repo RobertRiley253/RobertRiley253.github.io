@@ -1,0 +1,59 @@
+name: Portfolio unused-photo visual triage
+on:
+  push:
+    branches:
+      - portfolio-editorial-material-review-2026-11-13
+    paths:
+      - '.github/workflows/portfolio-unused-photo-triage.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contact-sheets:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pillow
+      - name: Build labeled unused-asset sheets and metadata
+        run: |
+          python - <<'PY'
+          import csv,io,json,os,re
+          from pathlib import Path
+          from PIL import Image,ImageDraw,ImageOps
+          rows=list(csv.DictReader(open('portfolio-dev/audit/IMAGE_ASSET_DISPOSITION_CROSSWALK_2026-11-15.csv',encoding='utf-8')))
+          candidates=[r for r in rows if r['disposition']=='SUPPORT_OR_UNREFERENCED' and not r['repository_path'].startswith('portfolio-dev/brand-assets/')]
+          cols=5; cellw=270; cellh=240; batch=20
+          Path('photo-triage').mkdir(exist_ok=True)
+          metadata=[]
+          for offset in range(0,len(candidates),batch):
+            sheet=Image.new('RGB',(cols*cellw,4*cellh),'#eeeae4')
+            draw=ImageDraw.Draw(sheet)
+            for j,r in enumerate(candidates[offset:offset+batch]):
+              p=Path(r['repository_path']); idx=offset+j
+              x=(j%cols)*cellw;y=(j//cols)*cellh
+              info={'index':idx,'path':r['repository_path'],'blob':r['blob_sha'],'bytes':int(r['size_bytes'])}
+              try:
+                with Image.open(p) as im:
+                  info.update(width=im.width,height=im.height,mode=im.mode)
+                  im=ImageOps.exif_transpose(im).convert('RGB')
+                  im.thumbnail((cellw-18,cellh-65))
+                  sheet.paste(im,(x+(cellw-im.width)//2,y+5+(cellh-65-im.height)//2))
+              except Exception as e:info['error']=str(e)
+              label=f"{idx:02d} | {p.name}"
+              draw.text((x+6,y+cellh-57),label[:39],fill='#171e20')
+              draw.text((x+6,y+cellh-37),f"{info.get('width','?')} x {info.get('height','?')} | {info['bytes']//1024} KB",fill='#444444')
+              metadata.append(info)
+            name=f"unused-contact-{offset//batch+1:02d}.jpg"
+            sheet.save(Path('photo-triage')/name,quality=90)
+            print(name,'images',len(candidates[offset:offset+batch]))
+          (Path('photo-triage')/'unused-metadata.json').write_text(json.dumps(metadata,indent=2),encoding='utf-8')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-unused-asset-contact-sheets
+          path: photo-triage/
+          retention-days: 14
