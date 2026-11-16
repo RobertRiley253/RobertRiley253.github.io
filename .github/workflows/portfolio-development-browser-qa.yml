@@ -44,6 +44,9 @@ jobs:
       - name: Generate development-only contact sheets of unplaced originals
         if: always()
         run: node portfolio-dev/tests/unplaced-contact-sheets.cjs
+      - name: Review all newly uploaded racing photographs
+        if: always()
+        run: node portfolio-dev/tests/racing-upload-contact.cjs
       - name: Save screenshots and report (development review only)
         if: always()
         uses: actions/upload-artifact@v4
