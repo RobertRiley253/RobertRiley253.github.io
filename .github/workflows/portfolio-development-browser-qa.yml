@@ -39,6 +39,10 @@ jobs:
           exit 1
       - name: Test four pages at desktop and mobile widths
         run: node portfolio-dev/tests/browser-smoke.cjs
+      - name: Install Firefox and WebKit for release cross-browser testing
+        run: npx playwright install --with-deps firefox webkit
+      - name: Verify Safari-engine, Firefox and Chromium on desktop and phones
+        run: node portfolio-dev/tests/cross-browser-release.cjs
       - name: Audit desktop and mobile WCAG accessibility
         run: node portfolio-dev/tests/accessibility-audit.cjs
       - name: Generate development-only contact sheets of unplaced originals
