@@ -126,7 +126,7 @@ if(!selectedWork.includes('id="more-racing-photographs"'))failures.push('Racing 
 // not text-only promises or unrelated commercial vehicles.
 const personalRace=story.slice(story.indexOf('id="racing-trackside-archive"'),story.indexOf('id="story-field"'));
 if(!personalRace.includes('download%20(7).png')) failures.push('No. 91 trackside story missing original historical photo');
-if(!personalRace.includes('rob_tammie_no91_exact_user_crop.webp')) failures.push('Exact user-cropped Rob and Tammie picture missing from My Story');
+if(!personalRace.includes('rob_tammie_no91_user_crop_752x634.webp')) failures.push('Exact user-cropped Rob and Tammie picture missing from My Story');
 if(personalRace.includes('download%20(8).png')) failures.push('Wrong older couple image still shown in right-hand racing story card');
 if(personalRace.includes('no91_trackside_couple_user_upload.webp')) failures.push('AI recreation should remain on homepage, separated from historical archive');
 for(const name of ['IMG_4623.jpg','IMG_4626.jpg','download%20(7).png','download%20(8).png'])
