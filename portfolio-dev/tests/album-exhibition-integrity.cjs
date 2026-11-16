@@ -47,6 +47,9 @@ const fs=require('node:fs'),path=require('node:path');
     for(const id of ids)if(await historyCards.locator('[href="https://www.facebook.com/groups/'+id+'"]').count()!==1&&await page.locator('#robert-history-communities .history-community-card[href="https://www.facebook.com/groups/'+id+'"]').count()!==1)throw Error('Group link mismatch '+id);
     const communityPhotos=page.locator('#robert-history-communities .history-community-card .history-community-art img');
     if(await communityPhotos.count()!==6)throw Error('Every community must have one banner photograph');
+    const featuredVault=page.locator('#robert-history-communities .history-community-card').nth(2);
+    const featuredLayout=await featuredVault.evaluate(el=>({columns:getComputedStyle(el).gridTemplateColumns,display:getComputedStyle(el).display,span:getComputedStyle(el).gridColumnEnd}));
+    if(featuredLayout.display!=='grid'||featuredLayout.span!=='-1')throw Error('Time Vault not displayed as featured full-width community card');
     for(const image of await communityPhotos.all()){await image.scrollIntoViewIfNeeded();await image.evaluate(img=>img.decode().catch(()=>{}));if(!await image.evaluate(img=>img.complete&&img.naturalWidth>0))throw Error('Uploaded group photograph failed to render: '+await image.getAttribute('src'));}
     const exactArt={'1564227011225101':'542002597_','1737856936769524':'497586346_','698198932918069':'506466145_','1122626339331764':'571242153_','9675742525806537':'526356936_','1198695048625003':'494663516_'};
     for(const [id,part] of Object.entries(exactArt)){const src=await page.locator('#robert-history-communities .history-community-card[href="https://www.facebook.com/groups/'+id+'"] img').getAttribute('src');if(!src?.includes(part))throw Error('Wrong cover art matched to group '+id);}
