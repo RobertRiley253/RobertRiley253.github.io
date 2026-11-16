@@ -99,21 +99,21 @@ else{
   failures.push('Unrelated client trailer imagery reinserted in racing showcase');
 }
 // Newly uploaded owner racing archive: three verified lead images and an
-// expandable original-photo collection. Exactly one older identical hood view
+// expandable original-photo collection. Exactly one near-duplicate hood view
 // remains archived instead of duplicated onscreen.
-const raceLead=selectedWork.match(/<div class="motorsports-feature-grid racing-featured-three">([\\s\\S]*?)<\\/div>/);
+const raceLead=selectedWork.match(/<div class="motorsports-feature-grid racing-featured-three">([\s\S]*?)<\/div>/);
 if(!raceLead) failures.push('Missing curated three-photo racing introduction');
 else{
  const lead=raceLead[1];
  for(const name of ['726420901_1512973363539860_3039077914059098332_n.jpg','IMG_4646.jpg','IMG_4643.jpg'])
   if(!lead.includes(name)) failures.push('Missing approved racing lead photograph '+name);
- if((lead.match(/<img\\b/g)||[]).length!==3) failures.push('Racing lead is not exactly three selected photographs');
+ if((lead.match(/<img\b/g)||[]).length!==3) failures.push('Racing lead is not exactly three selected photographs');
 }
-const moreRace=selectedWork.match(/<details class="racing-expanded-archive"[^>]*>([\\s\\S]*?)<\\/details>/);
+const moreRace=selectedWork.match(/<details class="racing-expanded-archive"[^>]*>([\s\S]*?)<\/details>/);
 if(!moreRace) failures.push('Missing expandable See more racing photographs archive');
-else if((moreRace[1].match(/<img\\b/g)||[]).length!==25)
+else if((moreRace[1].match(/<img\b/g)||[]).length!==25)
  failures.push('Racing detail image count changed from 25');
-const uploadedRace=fs.readdirSync(path.join(root,'Rob-Photo-Uploads','Racing-Archive')).filter(x=>/\\.(jpg|jpeg|png|webp)$/i.test(x));
+const uploadedRace=fs.readdirSync(path.join(root,'Rob-Photo-Uploads','Racing-Archive')).filter(x=>/\.(jpg|jpeg|png|webp)$/i.test(x));
 if(uploadedRace.length<25) failures.push('Original owner Racing-Archive images are missing');
 for(const name of uploadedRace){
  if(name==='IMG_4626.jpg')continue; // Alternate of already featured original hood photograph
