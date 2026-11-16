@@ -3,6 +3,9 @@
 ## Purpose
 These repository documents survive ChatGPT conversation size limits. This file is a starting index, not proof that the whole history has been reconstructed.
 
+## Latest verified successor handoff — November 15 late evening
+**READ FIRST:** [`portfolio-dev/audit/SAFEKEEP_PORTFOLIO_SUCCESSOR_HQ_2026-11-15.md`](portfolio-dev/audit/SAFEKEEP_PORTFOLIO_SUCCESSOR_HQ_2026-11-15.md). It supersedes older snapshot SHAs and summarizes current release tests, the photo-disposition ledger, previous 153-item specialist expectations, unresolved uploaded-image placement, D10 Draft 17 and explicit publication restrictions. Verify live development HEAD and GitHub Actions before acting.
+
 ## Opening sequence for every new HQ
 1. Identify repository RobertRiley253/RobertRiley253.github.io and development branch portfolio-editorial-material-review-2026-11-13; verify current branch HEAD, don't assume it is unchanged.
 2. Read PORTFOLIO_CREATIVE_CONSTITUTION.md, PORTFOLIO_PRODUCTION_LEDGER.md, and this file on the same branch.
