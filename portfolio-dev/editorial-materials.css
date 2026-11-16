@@ -415,3 +415,44 @@ body .image-card[data-image="75"] .image-wrap img{
    grid-column:span 6!important;
  }
 }
+
+/* Final racing hierarchy: the recreated personal memory appears alone on
+   Home, separated from authentic track photographs linked deeper. */
+.home-racing-feature .home-racing-photos--single{
+  grid-template-columns:minmax(0,1fr)!important;
+  max-width:680px!important;
+  margin-inline:auto!important;
+}
+.home-racing-feature .home-racing-memory{
+  width:100%!important;max-width:680px!important;
+  margin-inline:auto!important;
+}
+.home-racing-feature .home-racing-memory img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  max-height:620px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.home-racing-feature .home-racing-memory figcaption{
+  text-align:center!important;
+}
+/* Four real racing photos form an intentional 2-by-2 deeper gallery. */
+@media(min-width:761px){
+  body .motorsports-feature--racing-history .motorsports-feature-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  body .motorsports-feature--racing-history .motorsports-feature-grid figure:last-child{
+    grid-column:auto!important;
+    max-width:none!important;
+  }
+}
+@media(max-width:760px){
+  body .home-racing-feature .home-racing-memory img{
+    max-height:590px!important;
+  }
+  body .motorsports-feature--racing-history .motorsports-feature-grid figure:last-child{
+    grid-column:auto!important;
+  }
+}
