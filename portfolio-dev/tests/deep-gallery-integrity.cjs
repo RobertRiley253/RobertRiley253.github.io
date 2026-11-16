@@ -40,6 +40,18 @@ for(const [engine,launcher] of Object.entries(browsers)){
         }
         const broken=records.filter(x=>!x.loaded||(x.layoutExpected&&(!x.rectWidth||!x.rectHeight)));
         if(broken.length)throw Error('Gallery images not loaded or no layout: '+JSON.stringify(broken.slice(0,10)));
+        // Capture the newly curated archive sections at phone width for an actual composition review.
+        if(engine==='chromium'||engine==='webkit'){
+          const sections=route==='work.html'?['legacy-commercial-proof-archive','historic-sticker-display-archive']:
+            route==='production.html'?['archive-finishing-shop-equipment']:
+            route==='profile.html'?['story-business']:[];
+          for(const section of sections){
+            const el=page.locator('#'+section);
+            if(await el.count()!==1)throw Error('Missing curated section '+section);
+            await el.scrollIntoViewIfNeeded({timeout:12000});
+            await el.screenshot({path:path.join(output,engine+'-'+section+'-phone.png'),animations:'disabled',timeout:45000});
+          }
+        }
         // Inspect the formerly blank CO2 laser machine card on Production.
         if(route==='production.html'){
           const card=page.locator('[data-image="94"]');
