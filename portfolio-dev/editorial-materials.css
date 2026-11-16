@@ -571,7 +571,7 @@ body .motorsports-feature--racing-history .racing-featured-three figure figcapti
  display:block!important;
  position:absolute!important;
  inset:8px 8px 42px 8px!important;
- background-image:url("https://robertriley253.github.io/portfolio-006.jpg")!important;
+ background-image:url("https://raw.githubusercontent.com/RobertRiley253/RobertRiley253.github.io/portfolio-editorial-material-review-2026-11-13/portfolio-051.jpg")!important;
  background-repeat:no-repeat!important;
  background-position:center center!important;
  background-size:contain!important;
@@ -579,6 +579,11 @@ body .motorsports-feature--racing-history .racing-featured-three figure figcapti
  pointer-events:none!important;
  opacity:1!important;
  visibility:visible!important;
+}
+/* The visible lead is rendered once by the reliable visual layer above.
+   Preserve the semantic HTML image while preventing doubled photographs. */
+.exhibition-masthead .hero-composition .hero-lead>img{
+ opacity:0!important;
 }
 .exhibition-masthead .hero-composition .hero-lead>span{
  z-index:21!important;
