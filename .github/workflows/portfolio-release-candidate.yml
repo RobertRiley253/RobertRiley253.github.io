@@ -20,10 +20,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Assemble protected candidate; do not touch main
         run: node portfolio-dev/tests/prepare-release-candidate.cjs
-      - name: Verify all four pages and local server responses
+      - name: Verify all five pages and local server responses
         run: |
           python3 -m http.server 8877 --bind 127.0.0.1 --directory release-candidate >/tmp/release-server.log 2>&1 &
-          for page in index.html work.html production.html profile.html; do
+          for page in index.html work.html production.html profile.html album.html; do
             for attempt in 1 2 3 4 5; do
               if curl -fsS "http://127.0.0.1:8877/$page" >/dev/null; then break; fi
               sleep 1
@@ -37,6 +37,10 @@ jobs:
         run: |
           npm install --no-save playwright@1.56.1
           npx playwright install --with-deps chromium firefox webkit
+      - name: Verify the new album, navigation, filtering, and enlargement
+        env:
+          PORTFOLIO_TEST_URL: http://127.0.0.1:8877/
+        run: node portfolio-dev/tests/album-exhibition-integrity.cjs
       - name: Guard against wide-monitor homepage text overlap
         env:
           PORTFOLIO_TEST_URL: http://127.0.0.1:8877/
