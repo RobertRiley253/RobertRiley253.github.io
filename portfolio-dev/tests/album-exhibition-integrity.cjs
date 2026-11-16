@@ -24,7 +24,7 @@ const fs=require('node:fs'),path=require('node:path');
     if(!(await page.locator('#album-viewer-count').innerText()).includes('2 /'))throw Error('Viewer next failed');
     await page.locator('#album-close').click();
     await page.getByRole('button',{name:'All photographs'}).click();
-    await page.getByRole('button',{name:/Turn to the next photographs/}).click();
+    await page.getByRole('button',{name:/See the next/}).click();
     if(await page.locator('.album-card').count()<=count)throw Error('Show more failed');
     if(!(await page.locator('#album-progress-label').innerText()).includes('96 of 259'))throw Error('Progress tally not updated after paging');
     if(!(await page.locator('#album-remaining').innerText()).includes('163 more'))throw Error('Remaining photo total incorrect');
