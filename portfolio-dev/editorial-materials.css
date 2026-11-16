@@ -524,3 +524,40 @@ body .motorsports-feature--racing-history .racing-featured-three figure figcapti
  .racing-archive-grid{grid-template-columns:1fr}
  .racing-archive-card img{height:auto;max-height:330px}
 }
+
+/* Employment-first preflight: the main sign photograph must be visibly
+   painted on first-screen desktop. Previous absolute/flex sizing produced
+   an empty dark frame in the actual Chromium screenshot, despite image decode.
+   Present the existing authentic rooftop-sign JPEG without cropping. */
+.exhibition-masthead .hero-composition .hero-lead{
+ display:flex!important;
+ flex-direction:column!important;
+ justify-content:center!important;
+ align-items:stretch!important;
+ min-height:265px!important;
+}
+.exhibition-masthead .hero-composition .hero-lead>img{
+ position:relative!important;
+ inset:auto!important;
+ left:auto!important;top:auto!important;right:auto!important;bottom:auto!important;
+ width:100%!important;
+ height:auto!important;
+ max-width:100%!important;
+ min-height:0!important;
+ max-height:390px!important;
+ margin:auto 0!important;
+ display:block!important;
+ object-fit:contain!important;
+ opacity:1!important;
+ visibility:visible!important;
+ transform:none!important;
+ z-index:3!important;
+}
+.exhibition-masthead .hero-composition .hero-lead>span{
+ position:relative!important;
+ inset:auto!important;
+ left:auto!important;top:auto!important;
+ margin-top:auto!important;
+ flex:none!important;
+}
+.intro-band .intro-side a{color:inherit;text-underline-offset:3px;text-decoration:underline}
