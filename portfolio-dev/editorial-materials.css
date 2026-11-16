@@ -456,3 +456,71 @@ body .image-card[data-image="75"] .image-wrap img{
     grid-column:auto!important;
   }
 }
+
+/* Verified Racing-Archive intake: three deliberate lead photographs, followed
+   by an optional, subject-grouped historical archive. This is editorial content
+   separate from the AI-created memory shown alone on Home. */
+body .motorsports-feature--racing-history .racing-curated-intro{
+  max-width:930px;margin:0 auto clamp(18px,2vw,32px);
+  text-align:center;color:#294736;
+}
+body .motorsports-feature--racing-history .racing-curated-intro>p:last-child{
+  margin:10px auto 0;max-width:790px;line-height:1.6;font-size:clamp(14px,1.05vw,17px);
+}
+@media(min-width:901px){
+ body .motorsports-feature--racing-history .racing-featured-three{
+   grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:clamp(14px,1.8vw,26px)!important;
+ }
+}
+body .motorsports-feature--racing-history .racing-featured-three figure{
+ min-width:0!important;max-width:none!important;grid-column:auto!important;
+ background:#f8f1e2;border:1px solid #bca57e;
+}
+body .motorsports-feature--racing-history .racing-featured-three figure a{
+ display:block;background:#e4e2d6;padding:8px;
+}
+body .motorsports-feature--racing-history .racing-featured-three figure img{
+ display:block;width:100%;height:clamp(225px,26vw,360px);object-fit:contain;object-position:center;
+}
+body .motorsports-feature--racing-history .racing-featured-three figure figcaption{
+ padding:10px 13px 15px;
+}
+.racing-expanded-archive{
+ max-width:1430px;margin:clamp(22px,2.8vw,40px) auto;
+ border:1px solid #9d8764;background:#f1e9d8;color:#263d30;
+ box-shadow:0 7px 28px rgba(31,50,39,.08);
+}
+.racing-expanded-archive>summary{
+ list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+ gap:20px;padding:clamp(16px,2vw,27px) clamp(19px,2.5vw,38px);
+ color:#264c39;background:linear-gradient(115deg,#f2ead9,#e7e9dc);
+}
+.racing-expanded-archive>summary::-webkit-details-marker{display:none}
+.racing-expanded-archive>summary strong{font:400 clamp(24px,2.7vw,37px)/1.2 Georgia,"Times New Roman",serif}
+.racing-expanded-archive>summary small{display:block;font:400 13px/1.5 system-ui,sans-serif;margin-top:5px;color:#526457}
+.racing-expanded-archive>summary:focus-visible{outline:3px solid #b99252;outline-offset:-4px}
+.racing-expand-indicator{font:400 34px/1 Georgia,serif;color:#947040}
+.racing-expanded-archive[open] .racing-expand-indicator{transform:rotate(45deg)}
+.racing-expanded-inner{padding:clamp(18px,2.4vw,37px);border-top:1px solid #c9b89a}
+.racing-archive-group+.racing-archive-group{margin-top:clamp(27px,3.4vw,51px)}
+.racing-archive-group h3{font:400 clamp(23px,2.3vw,34px)/1.16 Georgia,serif;margin:0 0 17px;color:#1c4535}
+.racing-archive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.5vw,21px)}
+.racing-archive-card{min-width:0;margin:0;background:#f9f5e9;border:1px solid #c6b18b}
+.racing-archive-card>a{display:block;padding:8px;background:#e5e3d9}
+.racing-archive-card img{display:block;width:100%;height:clamp(150px,16vw,240px);object-fit:contain;object-position:center}
+.racing-archive-card figcaption{padding:12px;font:500 15px/1.4 Georgia,serif}
+.racing-archive-card figcaption small{display:block;font:400 12px/1.5 system-ui,sans-serif;color:#506456;margin-top:4px}
+@media(max-width:1000px){
+ body .motorsports-feature--racing-history .racing-featured-three{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .racing-archive-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ body .motorsports-feature--racing-history .racing-featured-three{grid-template-columns:1fr!important}
+ body .motorsports-feature--racing-history .racing-featured-three figure img{height:auto;max-height:380px}
+ .racing-archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .racing-archive-card img{height:230px}
+}
+@media(max-width:480px){
+ .racing-archive-grid{grid-template-columns:1fr}
+ .racing-archive-card img{height:auto;max-height:330px}
+}
