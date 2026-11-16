@@ -41,6 +41,16 @@ const path = require('path');
             if(route==='profile.html'&&!await page.locator('a[href^="mailto:"]').count())throw Error('Missing email contact');
             // One readable screenshot per page/engine at mobile and desktop sizes.
             if(vp.name!=='narrow-phone')await page.screenshot({path:path.join(out,key+'.png'),animations:'disabled',timeout:45000});
+            // Verify actual gallery interaction on desktop and standard phones in every browser engine.
+            if(vp.name!=='narrow-phone') {
+              const card=page.locator('button[data-image]:visible').first();
+              if(await card.count()) {
+                await card.click({timeout:12000});
+                await page.waitForFunction(() => !!document.querySelector('dialog#lightbox')?.open,null,{timeout:12000});
+                await page.locator('#viewer-close').click({timeout:12000});
+                if(await page.locator('dialog#lightbox').evaluate(el=>el.open))throw Error('Gallery viewer did not close');
+              } else throw Error('No visible interactive photo card');
+            }
             console.log('PASS '+key);results.push({key,ok:true,state});
           } catch(e) {console.error('FAIL '+key+' '+e.message);failures.push({key,error:e.message});results.push({key,ok:false,error:e.message});}
         }
