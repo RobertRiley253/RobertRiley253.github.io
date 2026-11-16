@@ -149,3 +149,19 @@ body.album-page{background:#18352d;color:#f5ecdb;overflow-x:hidden}body.album-pa
 .album-report-action{display:block;padding:12px 7px 6px;font:600 .84rem/1.5 system-ui,sans-serif;color:#e9d2a8}
 .album-report-note{font:italic .86rem/1.6 Georgia,serif;color:#d5c1a1;margin:9px 2px}
 @media(max-width:950px){.album-social-insights{grid-template-columns:1fr}}
+
+/* Album journey: photographs first, history next, destinations last. */
+.album-next-destinations .album-route-intro{margin-top:0}
+.album-finale nav a:first-child{
+ background:#f0d7a8;
+ color:#163428;
+ border:1px solid #ead0a0;
+ border-radius:3px;
+ padding:11px 20px;
+ font-weight:700;
+}
+.album-finale nav a:first-child:hover,.album-finale nav a:first-child:focus-visible{
+ background:#fff1d4;
+ color:#163428;
+ outline-offset:3px;
+}
