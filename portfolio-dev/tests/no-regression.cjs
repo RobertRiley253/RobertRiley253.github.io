@@ -177,12 +177,15 @@ for(const [page,{required,sections}] of Object.entries(intakePages)){
    failures.push('Missing intake styles on '+page);
  for(const id of sections)if(!html.includes('id="'+id+'"'))
    failures.push('Missing curated section '+id+' on '+page);
- const urls=[...html.matchAll(/<img[^>]*src="(incoming-portfolio-2026-11-15\/[^"]+)"[^>]*>/g)];
+ const urls=[...html.matchAll(/<img[^>]*src="((?:incoming-portfolio-2026-11-15|oriented)\/[^"]+)"[^>]*>/g)];
  if(urls.length!==required)
    failures.push('New intake image count on '+page+': '+urls.length+' expected '+required);
  for(const [tag,src] of urls){
-   const name=decodeURIComponent(path.basename(src)),file=path.resolve(intakeDir,name);
-   if(!file.startsWith(intakeDir+path.sep)||!fs.existsSync(file))
+   const name=decodeURIComponent(path.basename(src));
+   const rotated=src.startsWith('oriented/');
+   const file=path.resolve(rotated?path.join(dev,'oriented'):intakeDir,name);
+   const ownerOriginal=path.resolve(intakeDir,name);
+   if(!file.startsWith(dev+path.sep)||!fs.existsSync(file)||(rotated&&!fs.existsSync(ownerOriginal)))
      failures.push('Missing curated image: '+page+' '+src);
    if(!/alt="[^"]+"/.test(tag))
      failures.push('Missing meaningful curated image alt: '+src);
